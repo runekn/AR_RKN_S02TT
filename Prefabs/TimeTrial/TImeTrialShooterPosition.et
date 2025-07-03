@@ -1,0 +1,21 @@
+GenericEntity {
+ ID "65BAE8B71236E194"
+ components {
+  RKN_TimeTrialShooterPositionSlot "{65BAA09C846E881C}" {
+   m_bShowDebugShapesDuringRuntime 0
+   m_bShowDebugShapesInWorkbench 1
+   m_aPlugins {
+    SCR_ScenarioFrameworkPluginTrigger "{65BAE8B220E74406}" {
+     m_fAreaRadius 2
+     m_fUpdateRate 0.5
+    }
+   }
+   m_sObjectToSpawn "{DA58C3DF4455555E}Prefabs/Systems/ScenarioFramework/Triggers/ScenarioFrameworkTrigger.et"
+   m_SectionGetter RKN_GetParent "{65C67CC10E19CF5F}" {
+   }
+  }
+  Hierarchy "{65BAA09C8ABA6D44}" {
+  }
+ }
+ coords -0.786 0 2.503
+}

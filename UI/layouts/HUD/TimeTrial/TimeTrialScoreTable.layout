@@ -1,0 +1,85 @@
+FrameWidgetClass {
+ Name "Frame0"
+ {
+  OverlayWidgetClass "{65BAE897C6A7B360}" {
+   Name "Overlay0"
+   Slot FrameWidgetSlot "{5230DA69B5A5BC25}" {
+    Anchor 0.95 0.05 0.95 0.05
+    PositionX 0
+    OffsetLeft 0
+    PositionY 0
+    OffsetTop 0
+    OffsetRight -100
+    SizeY 30
+    OffsetBottom -30
+    Alignment 1 0
+    SizeToContent 1
+   }
+   {
+    BlurWidgetClass "{65BAE897C6A7B362}" {
+     Name "BackgroundBlur"
+     Slot OverlayWidgetSlot "{73CAA7587064FBC3}" {
+      HorizontalAlign 3
+      VerticalAlign 3
+     }
+     Color 0.588 0.588 0.588 1
+     Intensity 0.75
+    }
+    VerticalLayoutWidgetClass "{65BAE897C6A7B365}" {
+     Name "Table"
+     Slot OverlayWidgetSlot "{73CAA7587064FBAC}" {
+      HorizontalAlign 3
+     }
+     {
+      HorizontalLayoutWidgetClass "{65BAE897C6A773DF}" {
+       Name "HorizontalLayout0"
+       Slot LayoutSlot "{5230DA69B5A5BFF3}" {
+       }
+       {
+        TextWidgetClass "{65BAE897C6A773DE}" {
+         Name "Text0"
+         Slot LayoutSlot "{5230DA69B5A5BFED}" {
+          SizeMode Fill
+          FillWeight 0.75
+         }
+         Text "NAME"
+         FontProperties FontProperties "{51C68CA43965BB34}" {
+         }
+        }
+        TextWidgetClass "{65BAE897C6A773DD}" {
+         Name "Text1"
+         Slot LayoutSlot "{5230DA69B5A5BF20}" {
+          SizeMode Fill
+          FillWeight 0.25
+         }
+         Text "TIME"
+         "Horizontal Alignment" Center
+         Offset 0 0
+        }
+        TextWidgetClass "{65BAE897C6A737EC}" {
+         Name "Text2"
+         Slot LayoutSlot "{5230DA69B5A5BF20}" {
+          SizeMode Fill
+          FillWeight 0.25
+         }
+         Rotation 0
+         Text "TOTAL"
+         "Horizontal Alignment" Center
+        }
+       }
+      }
+      ImageWidgetClass "{65BAE897C6A737ED}" {
+       Name "Image0"
+       Slot LayoutSlot "{5230DA69B5A5BF40}" {
+        HorizontalAlign 1
+        VerticalAlign 1
+        Padding 0 2 0 2
+       }
+       Size 500 0
+      }
+     }
+    }
+   }
+  }
+ }
+}

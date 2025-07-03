@@ -1,0 +1,48 @@
+OverlayWidgetClass {
+ Name "Row"
+ {
+  ImageWidgetClass "{65BAE89763F6CBFB}" {
+   Name "Background"
+   Slot OverlayWidgetSlot "{54C26759772A59BB}" {
+    HorizontalAlign 3
+    VerticalAlign 3
+   }
+   Color 0 0 0 0.392
+   Size 1 1
+  }
+  HorizontalLayoutWidgetClass "{65BAE89763F6CBF8}" {
+   Name "HorizontalLayout0"
+   Slot OverlayWidgetSlot "{51DA82CDBAED3B21}" {
+    HorizontalAlign 3
+   }
+   {
+    TextWidgetClass "{65BAE89763F6CBFE}" {
+     Name "Name"
+     Slot LayoutSlot "{51DA82CDBAED3B71}" {
+      SizeMode Fill
+      FillWeight 0.75
+     }
+     Text "SARGE"
+    }
+    TextWidgetClass "{65BAE89763F558D0}" {
+     Name "Time"
+     Slot LayoutSlot "{51C68CA45A57FCDA}" {
+      SizeMode Fill
+      FillWeight 0.25
+     }
+     Text "9001"
+     "Horizontal Alignment" Right
+    }
+    TextWidgetClass "{65BAE89763F558D1}" {
+     Name "Total"
+     Slot LayoutSlot "{51C68CA45A57FCDA}" {
+      SizeMode Fill
+      FillWeight 0.25
+     }
+     Text "9001"
+     "Horizontal Alignment" Right
+    }
+   }
+  }
+ }
+}

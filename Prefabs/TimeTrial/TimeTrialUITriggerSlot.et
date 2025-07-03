@@ -1,0 +1,19 @@
+GenericEntity {
+ ID "65BC4EC92A168C01"
+ components {
+  RKN_TimeTrialScoreTableTriggerSlot "{65BC4EC9D745A686}" {
+   m_bShowDebugShapesDuringRuntime 1
+   m_bShowDebugShapesInWorkbench 1
+   m_aPlugins {
+    SCR_ScenarioFrameworkPluginTrigger "{65BC4EC9D308841E}" {
+     m_fAreaRadius 2
+    }
+   }
+   m_CourseGetter RKN_GetParent "{65BC4EC9C9CE0E03}" {
+   }
+  }
+  Hierarchy "{65BC4EC9DB5A8A79}" {
+  }
+ }
+ coords 7598.619 166.156 4232.929
+}

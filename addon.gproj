@@ -1,0 +1,8 @@
+GameProject {
+ ID "rknSP02TT"
+ GUID "65AB380985EBE462"
+ TITLE "rkn_SP02TT"
+ Dependencies {
+  "58D0FB3206B6F859"
+ }
+}

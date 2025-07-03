@@ -1,0 +1,26 @@
+GenericEntity {
+ ID "65BAA0B86FC8D574"
+ components {
+  MeshObject "{65BA6C59E0938B11}" {
+   Object "{AD51E776526588CC}Assets/Structures/Military/Training/RangeCP_01/RangeCP_01.xob"
+  }
+  RigidBody "{65BA6C595A1C5803}" {
+   ModelGeometry 1
+   Static 1
+  }
+  ActionsManagerComponent "{65BA6C59EA853AB6}" {
+   ActionContexts {
+    UserActionContext "{65BAA0B92F02CC06}" {
+     Position PointInfo "{65BAA0B84AF8CDBB}" {
+      Offset 0 1.3552 0.1255
+     }
+    }
+   }
+  }
+  RplComponent "{65BA6C59F1AD3E1D}" {
+  }
+  Hierarchy "{65BA6C59F21134B3}" {
+  }
+ }
+ coords 7596.035 166.156 4238.243
+}

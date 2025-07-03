@@ -1,0 +1,43 @@
+RKN_TimeTrialStandardTarget {
+ ID "65BA6C4958ED7C83"
+ components {
+  SignalsManagerComponent "{65BA6C49DBEFDB5E}" {
+  }
+  MeshObject "{65BA6C49D7F11BB2}" {
+   Object "{74A9218974C65D05}Assets/Props/Military/Training/TargetInfantry_01/TargetInfantry_01.xob"
+  }
+  RigidBody "{65BA6C49C2CF4A6A}" {
+   ResponseIndex "TinyDestructible"
+   ModelGeometry 1
+   Static 1
+  }
+  ProcAnimComponent "{65BA6C49E848AC28}" {
+   Parameters {
+    ProcAnimParams "{65BA6C491DD097F2}" {
+     ResourceName "{89156B35C5C3A439}Assets/Props/Military/Training/TargetInfantry_01/TargetInfantry_01_folding.pap"
+     BoneNames {
+      "Target"
+     }
+     SimulationDistance 120
+    }
+   }
+  }
+  SCR_SoundDataComponent "{65BA6C490973E955}" {
+   m_aAudioSourceConfiguration {
+    SCR_AudioSourceConfiguration "{65BA6C490AF73DD4}" {
+     m_sSoundProject "{C5762439172CA203}Sounds/Props/ShootingRangeTarget/Props_ShootingRangeTarget.acp"
+     m_sSoundEventName "SOUND_TARGET_DOWN"
+    }
+    SCR_AudioSourceConfiguration "{65BA6C493BDE32AB}" {
+     m_sSoundProject "{C5762439172CA203}Sounds/Props/ShootingRangeTarget/Props_ShootingRangeTarget.acp"
+     m_sSoundEventName "SOUND_TARGET_UP"
+    }
+   }
+  }
+  RplComponent "{65BA6C4929E8289E}" {
+  }
+  Hierarchy "{65BA6C492B706EE6}" {
+  }
+ }
+ coords 7579.147 166.156 4250.787
+}

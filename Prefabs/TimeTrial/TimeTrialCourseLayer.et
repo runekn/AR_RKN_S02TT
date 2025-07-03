@@ -1,0 +1,10 @@
+GenericEntity {
+ ID "65BA6C59DFAD3F0F"
+ components {
+  RKN_TimeTrialCourseLayer "{65BA6C59A0F2E93C}" {
+  }
+  Hierarchy "{65BA6C59A6D6F006}" {
+  }
+ }
+ coords 7596.599 166.156 4236.54
+}

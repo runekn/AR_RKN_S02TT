@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{3440F82E4043655C}UI/layouts/HUD/FiringRangeScoreboard/TImeTrialScoreTable.layout"
+ Configurations {
+  LayoutResourceClass PC {
+  }
+  LayoutResourceClass XBOX_ONE : PC {
+  }
+  LayoutResourceClass XBOX_SERIES : PC {
+  }
+  LayoutResourceClass PS4 : PC {
+  }
+  LayoutResourceClass PS5 : PC {
+  }
+  LayoutResourceClass HEADLESS : PC {
+  }
+ }
+}
