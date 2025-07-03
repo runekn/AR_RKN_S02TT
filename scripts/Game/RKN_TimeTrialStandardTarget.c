@@ -7,6 +7,7 @@ class RKN_TimeTrialStandardTargetClass : BaseBuildingClass
 class RKN_TimeTrialStandardTarget : BaseBuilding
 {
 	// target scoring points 
+	// TODO: move to slot. entity should just report location
 	const float SCORE_CENTER   = 1500;
 	const float SCORE_CIRCLE_1 =  1000;
 	const float SCORE_CIRCLE_2 =  500;
