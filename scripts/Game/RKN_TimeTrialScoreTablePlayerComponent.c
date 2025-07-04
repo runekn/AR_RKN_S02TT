@@ -111,7 +111,9 @@ class RKN_TimeTrialScoreTablePlayerComponent : ScriptComponent
 		{
 			string name = SCR_PlayerNamesFilterCache.GetInstance().GetPlayerDisplayName(m_ActiveCourse.m_iPlayer);
 			WorldTimestamp timestamp = GetGame().GetWorld().GetTimestamp();
-			int time = timestamp.DiffMilliseconds(m_ActiveCourse.m_StartTimestamp);
+			int time = 0;
+			if (m_ActiveCourse.m_StartTimestamp)
+				time = timestamp.DiffMilliseconds(m_ActiveCourse.m_StartTimestamp);
 			UpdateRow(m_wActivePlayerWidget, name, time, m_ActiveCourse.m_iModifiers);
 		}
 		else

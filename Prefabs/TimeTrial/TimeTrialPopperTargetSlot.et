@@ -1,0 +1,25 @@
+GenericEntity : "{C62AFC64D4F5495E}Prefabs/TimeTrial/TimeTrialTargetSlot.et" {
+ ID "65BA6C598EA5B504"
+ components {
+  RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
+   m_sObjectToSpawn "{08F0874EC0924271}Prefabs/TimeTrial/TimeTrialPopperTarget.et"
+   m_SectionGetter RKN_GetParent "{65C9127971A98F74}" {
+   }
+   m_aHitAreas {
+    RKN_TimeTrialTargetHitArea "{65C9127B9B30EA14}" {
+     m_sKey "head"
+     m_iScore 0.3
+    }
+    RKN_TimeTrialTargetHitArea "{65C9127BAE949F59}" {
+     m_sKey "circle"
+     m_iScore 0.5
+    }
+    RKN_TimeTrialTargetHitArea "{65C9127BA78E789C}" {
+     m_sKey "legs"
+    }
+   }
+  }
+ }
+ coords 3.823 0 0.636
+ angleY -76.435
+}

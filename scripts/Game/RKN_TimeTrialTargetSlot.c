@@ -5,6 +5,9 @@ class RKN_TimeTrialTargetSlotClass : RKN_TimeTrialObjectiveSlotClass
 
 class RKN_TimeTrialTargetSlot : RKN_TimeTrialObjectiveSlot
 {
+	[Attribute()]
+	ref array<ref RKN_TimeTrialTargetHitArea> m_aHitAreas;
+	
 	[Attribute("-1")]
 	int m_iTimeoutSeconds;
 	
@@ -20,13 +23,17 @@ class RKN_TimeTrialTargetSlot : RKN_TimeTrialObjectiveSlot
 	[Attribute("false")]
 	bool m_bMoveCycle;
 	
-	RKN_TimeTrialStandardTarget m_Target;
+	ref map<string, int> m_mHitAreasMap = new map<string, int>();
+	RKN_TimeTrialTargetEntity m_Target;
 	vector m_vDesiredPosition;
 	bool m_bMoveCycleActive;
 	
 	override void FinishInit()
 	{
-		m_Target = RKN_TimeTrialStandardTarget.Cast(m_Entity);
+		foreach (RKN_TimeTrialTargetHitArea area : m_aHitAreas)
+			m_mHitAreasMap.Set(area.m_sKey, area.m_iScore * 1000);
+		
+		m_Target = RKN_TimeTrialTargetEntity.Cast(m_Entity);
 		if (m_Target)
 		{
 			m_Target.Event_TargetHit.Insert(OnTargetHit);
@@ -73,8 +80,9 @@ class RKN_TimeTrialTargetSlot : RKN_TimeTrialObjectiveSlot
 		FinishObjective();
 	}
 	
-	void OnTargetHit(float score)
+	void OnTargetHit(string hitKey, int playerID)
 	{
+		int score = m_mHitAreasMap.Get(hitKey);
 		if (score > 0)
 			m_Section.m_Course.ApplyScoreModifier(-score);
 		FinishObjective();
@@ -124,4 +132,14 @@ class RKN_TimeTrialTargetSlot : RKN_TimeTrialObjectiveSlot
 		m_MovePoint.GetWorldTransform(mat);
 		return mat[3];
 	}
+}
+
+[BaseContainerProps(), SCR_ContainerActionTitle()]
+class RKN_TimeTrialTargetHitArea
+{
+	[Attribute()]
+	string m_sKey;
+	
+	[Attribute()]
+	float m_iScore;
 }

@@ -1,9 +1,43 @@
-RKN_TimeTrialStandardTarget : "{6207A6079E54B288}Prefabs/TimeTrial/TimeTrialStandardTarget.et" {
- ID "65BA6C4958ED7C83"
+RKN_TimeTrialPopperTarget {
+ ID "65C9127A3A5696EC"
  components {
-  MeshObject "{65BA6C49D7F11BB2}" {
+  SignalsManagerComponent "{65C9127A0B0C71B5}" {
+  }
+  MeshObject "{65C9127A0B0C7040}" {
    Object "{AE1E15CDAD71E703}Assets/TimeTrial/popper.xob"
   }
+  RigidBody "{65C9127A0B0C704D}" {
+   ResponseIndex "TinyDestructible"
+   ModelGeometry 1
+   Static 1
+  }
+  ProcAnimComponent "{65C9127A0B0C706E}" {
+   Parameters {
+    ProcAnimParams "{65C9127A0B0C706F}" {
+     ResourceName "{89156B35C5C3A439}Assets/Props/Military/Training/TargetInfantry_01/TargetInfantry_01_folding.pap"
+     BoneNames {
+      "Target"
+     }
+     SimulationDistance 120
+    }
+   }
+  }
+  SCR_SoundDataComponent "{65C9127A0B0C7006}" {
+   m_aAudioSourceConfiguration {
+    SCR_AudioSourceConfiguration "{65C9127A0B0C7003}" {
+     m_sSoundProject "{C5762439172CA203}Sounds/Props/ShootingRangeTarget/Props_ShootingRangeTarget.acp"
+     m_sSoundEventName "SOUND_TARGET_DOWN"
+    }
+    SCR_AudioSourceConfiguration "{65C9127A0B0C7007}" {
+     m_sSoundProject "{C5762439172CA203}Sounds/Props/ShootingRangeTarget/Props_ShootingRangeTarget.acp"
+     m_sSoundEventName "SOUND_TARGET_UP"
+    }
+   }
+  }
+  RplComponent "{65C9127A0B0C700C}" {
+  }
+  Hierarchy "{65C9127A0B0C7013}" {
+  }
  }
- coords 7598.423 166.174 4233.901
+ coords 7595.722 166.156 4234.443
 }

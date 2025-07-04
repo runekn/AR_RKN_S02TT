@@ -40,6 +40,7 @@ class RKN_TimeTrialCourseLayer : SCR_ScenarioFrameworkLayerBase
 	void RpcAsk_CancelCourse()
 	{
 		GetGame().GetCallqueue().Remove(StartCourse);
+		RemoveScoreTable(m_iPlayer);
 		ResetCourse();
 	}
 	
@@ -91,6 +92,8 @@ class RKN_TimeTrialCourseLayer : SCR_ScenarioFrameworkLayerBase
 	
 	private void ResetCourse()
 	{
+		m_StartTimestamp = null;
+		m_iModifiers = 0;
 		m_iActiveSection = 0;
 		m_iPlayer = 0;
 		foreach(RKN_TimeTrialSectionLayer section : m_aSections)

@@ -3,10 +3,6 @@ GenericEntity {
  components {
   RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
    m_sObjectToSpawn "{6207A6079E54B288}Prefabs/TimeTrial/TimeTrialStandardTarget.et"
-   m_SectionGetter RKN_GetParent "{65BC4ECDEE5A3263}" {
-   }
-   m_DependentObjectiveGetter RKN_TimeTrialGetShooterPosition "{65BC4ECDD6EA8EF6}" {
-   }
   }
   Hierarchy "{65BA6C4C8C5B8B93}" {
   }
