@@ -11,6 +11,7 @@ class RKN_TimeTrialSectionLayer : SCR_ScenarioFrameworkLayerBase
 	ref array<RKN_TimeTrialObjectiveSlot> m_aOptionalObjectives = {};
 	RKN_TimeTrialCourseLayer m_Course;
 	int m_iCompletedObjectives;
+	bool m_bActive;
 	
 	override bool InitOtherThings()
 	{
@@ -51,6 +52,7 @@ class RKN_TimeTrialSectionLayer : SCR_ScenarioFrameworkLayerBase
 	
 	void ActivateSection()
 	{
+		m_bActive = true;
 		foreach (RKN_TimeTrialObjectiveSlot obj : m_aObjectives)
 			obj.ActivateObjective();
 		foreach (RKN_TimeTrialObjectiveSlot obj : m_aOptionalObjectives)
@@ -59,6 +61,7 @@ class RKN_TimeTrialSectionLayer : SCR_ScenarioFrameworkLayerBase
 	
 	void ResetSection()
 	{
+		m_bActive = false;
 		m_iCompletedObjectives = 0;
 		foreach (RKN_TimeTrialObjectiveSlot obj : m_aObjectives)
 			obj.ResetObjective();
@@ -68,6 +71,9 @@ class RKN_TimeTrialSectionLayer : SCR_ScenarioFrameworkLayerBase
 	
 	void FinishObjective(RKN_TimeTrialObjectiveSlot objective)
 	{
+		if (!m_bActive)
+			return;
+		Print("Finished obj " + objective);
 		if (++m_iCompletedObjectives >= m_aObjectives.Count())
 		{
 			m_Course.FinishSection(this);

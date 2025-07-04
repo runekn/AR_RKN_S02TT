@@ -1,4 +1,4 @@
-GenericEntity {
+RKN_TimeTrialControlPanelEntity {
  ID "65BAA0B86FC8D574"
  components {
   MeshObject "{65BA6C59E0938B11}" {
@@ -8,11 +8,53 @@ GenericEntity {
    ModelGeometry 1
    Static 1
   }
+  SCR_SoundDataComponent "{65C87C10CEB537BF}" {
+   m_aAudioSourceConfiguration {
+    SCR_AudioSourceConfiguration "{65C87C10C93DEB00}" {
+     m_sSoundProject "{5A46144CB8BFC66B}Sounds/Structures/Military/Training/RangeCP/Structures_RangeCP.acp"
+     m_sSoundEventName "SOUND_RANGECP_ROUNDSTART"
+    }
+    SCR_AudioSourceConfiguration "{65C87C10F8DF7865}" {
+     m_sSoundProject "{5A46144CB8BFC66B}Sounds/Structures/Military/Training/RangeCP/Structures_RangeCP.acp"
+     m_sSoundEventName "SOUND_RANGECP_ROUNDABORT"
+    }
+    SCR_AudioSourceConfiguration "{65C87C10F9AB0E8F}" {
+     m_sSoundProject "{5A46144CB8BFC66B}Sounds/Structures/Military/Training/RangeCP/Structures_RangeCP.acp"
+     m_sSoundEventName "SOUND_RANGECP_STARTBUTTON"
+    }
+   }
+  }
   ActionsManagerComponent "{65BA6C59EA853AB6}" {
    ActionContexts {
     UserActionContext "{65BAA0B92F02CC06}" {
+     ContextName "StartCourse"
      Position PointInfo "{65BAA0B84AF8CDBB}" {
       Offset 0 1.3552 0.1255
+     }
+     Omnidirectional 0
+    }
+   }
+   additionalActions {
+    RKN_StartTimeTrialAction "{65BAA0BBD470EC68}" {
+     ParentContextList {
+      "StartCourse"
+     }
+     UIInfo UIInfo "{65BAA0BBCB532A5F}" {
+      Name "Start Course"
+     }
+     Duration 0.5
+     m_CourseGetter RKN_GetParent "{65BC4ECD4E2D84D6}" {
+     }
+    }
+    RKN_CancelTimeTrialAction "{65C8B9EB45E1E3B1}" {
+     ParentContextList {
+      "StartCourse"
+     }
+     UIInfo UIInfo "{65C8B9EB45E1E26E}" {
+      Name "Cancel Course"
+     }
+     Duration 0.5
+     m_CourseGetter RKN_GetParent "{65C8B9EB45E1E274}" {
      }
     }
    }

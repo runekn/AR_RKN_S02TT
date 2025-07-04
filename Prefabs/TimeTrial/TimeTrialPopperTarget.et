@@ -1,0 +1,9 @@
+RKN_TimeTrialStandardTarget : "{6207A6079E54B288}Prefabs/TimeTrial/TimeTrialStandardTarget.et" {
+ ID "65BA6C4958ED7C83"
+ components {
+  MeshObject "{65BA6C49D7F11BB2}" {
+   Object "{AE1E15CDAD71E703}Assets/TimeTrial/popper.xob"
+  }
+ }
+ coords 7598.423 166.174 4233.901
+}

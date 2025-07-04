@@ -1,3 +1,6 @@
+SCR_FiringRangeManager : "{4E79356AF4204F88}Prefabs/Props/Military/Training/FiringRangeBasePrefab.et" {
+ coords 7567.361 166.156 4250.55
+}
 $grp StaticModelEntity : "{AD5D1A7FF5FB5FA2}Prefabs/Structures/Military/Fortifications/Trenches/TrenchOld_01/TrenchOld_01_pole_metal.et" {
  {
   coords 7597.584 0 4239.872
@@ -68,23 +71,16 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
     }
     coords 0 0 0
     {
-     GenericEntity : "{0B9BA8A5C109109D}Prefabs/TimeTrial/TimeTrialButton.et" {
+     RKN_TimeTrialControlPanelEntity : "{0B9BA8A5C109109D}Prefabs/TimeTrial/TimeTrialButton.et" {
       components {
-       ActionsManagerComponent "{65BA6C59EA853AB6}" {
-        ActionContexts {
-         UserActionContext "{65BAA0B92F02CC06}" {
-          ContextName "StartCourse"
-         }
-        }
-        additionalActions {
-         RKN_StartTimeTrialAction "{65BAA0BBD470EC68}" {
-          ParentContextList {
-           "StartCourse"
-          }
-          UIInfo UIInfo "{65BAA0BBCB532A5F}" {
-           Name "Start Course"
-          }
-          m_CourseGetter RKN_GetParent "{65BC4ECD4E2D84D6}" {
+       SignalsManagerComponent "{65C9126FA87C02F0}" {
+       }
+       ProcAnimComponent "{65C912606320AC33}" {
+        Parameters {
+         ProcAnimParams "{65C9126F9DB02AEC}" {
+          ResourceName "{45EF0AFFC6C42B29}Assets/Structures/Military/Training/RangeCP_01/RangeCP_01.pap"
+          BoneNames {
+           "Button_start"
           }
          }
         }
@@ -117,6 +113,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
          TimeTrialTargetSlot1 {
           components {
            RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
+            m_sObjectToSpawn "{08F0874EC0924271}Prefabs/TimeTrial/TimeTrialPopperTarget.et"
             m_DependentObjectiveGetter RKN_TimeTrialGetShooterPosition "{65BC4ECDDF4D3D25}" {
             }
            }

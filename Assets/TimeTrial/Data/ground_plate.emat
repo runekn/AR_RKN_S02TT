@@ -1,0 +1,5 @@
+MatPBRBasic {
+ Color 0.102 0.102 0.102 1
+ BCRMap "{B110A67AA17EFED3}Assets/TimeTrial/Data/ground_plate_BCR.edds"
+ NMOMap "{89C81DE87809AC4D}Assets/TimeTrial/Data/ground_plate_NMO.edds"
+}

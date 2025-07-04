@@ -41,6 +41,7 @@ class RKN_TimeTrialTargetSlot : RKN_TimeTrialObjectiveSlot
 	{
 		super.ResetObjective();
 		m_Target.SetState(ETargetState.TARGET_DOWN);
+		GetGame().GetCallqueue().Remove(Timeout);
 		if (m_MovePoint)
 		{
 			m_vDesiredPosition = GetOwner().GetOrigin();
@@ -66,8 +67,9 @@ class RKN_TimeTrialTargetSlot : RKN_TimeTrialObjectiveSlot
 	
 	void Timeout()
 	{
-		m_Section.m_Course.ApplyScoreModifier(m_iTimeoutPenaltySeconds * 1000);
 		m_Target.SetState(ETargetState.TARGET_DOWN);
+		if (!m_bBonusObjective)
+			m_Section.m_Course.ApplyScoreModifier(m_iTimeoutPenaltySeconds * 1000);
 		FinishObjective();
 	}
 	

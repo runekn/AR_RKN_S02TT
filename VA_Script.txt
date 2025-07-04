@@ -1,0 +1,39 @@
+Penalty:
+	"Penalty!"
+	"Foul"
+	"Wrong target"
+	"Look before shooting"
+
+Bonus:
+	"Nice!"
+	"Bonus"
+	"Well spotted"
+	"Good shot"
+
+Start:
+	"Three. Two. One. Go!"
+
+Finish section:
+	"Next one"
+	"Next"
+	"Move on"
+	"Proceed"
+	"Clear"
+
+Finish course:
+	"You can do better"
+	"Good shooting"
+	"New personal best"
+	"You're not old enough for tremors. Get better."
+	"Outstanding time!"
+
+Misc:
+	"Faster!"
+	"Good pace"
+	"Crouch"
+	"Lie down"
+	"Prone"
+	"Go prone"
+	"Lean out of cover"
+	"Lean"
+	"Hit"

@@ -31,17 +31,41 @@ class RKN_TimeTrialCourseLayer : SCR_ScenarioFrameworkLayerBase
 		super.FinishInit();
 	}
 	
-	void StartCourse(IEntity player)
+	void CancelCourse()
+	{
+		Rpc(RpcAsk_CancelCourse);
+	}
+	
+	[RplRpc(RplChannel.Reliable, RplRcver.Owner)]
+	void RpcAsk_CancelCourse()
+	{
+		GetGame().GetCallqueue().Remove(StartCourse);
+		ResetCourse();
+	}
+	
+	void ScheduleCourse(int playerId, int delay)
+	{
+		Rpc(RpcAsk_ScheduleCourse, playerId, delay);
+	}
+	
+	[RplRpc(RplChannel.Reliable, RplRcver.Owner)]
+	void RpcAsk_ScheduleCourse(int playerId, int delay)
 	{
 		if (m_iPlayer > 0)
 		{
 			Print("Only one player can use the course at a time", LogLevel.ERROR);
 			return;
 		}
-		m_iPlayer = GetGame().GetPlayerManager().GetPlayerIdFromControlledEntity(player);
+		m_iPlayer = playerId;
+		IEntity player = GetGame().GetPlayerManager().GetPlayerControlledEntity(playerId);
 		FindPlayerUIComponent(player).ShowScoreTable(this, true);
 		
-		// TODO: Countdown. Or should the action trigger do the countdown?
+		GetGame().GetCallqueue().CallLater(StartCourse, delay, false);
+		Replication.BumpMe();
+	}
+	
+	private void StartCourse()
+	{
 		m_StartTimestamp = GetGame().GetWorld().GetTimestamp();
 		ActivateNextSectionOrFinish();
 		Replication.BumpMe();
@@ -65,7 +89,7 @@ class RKN_TimeTrialCourseLayer : SCR_ScenarioFrameworkLayerBase
 			m_aSections[m_iActiveSection++].ActivateSection();
 	}
 	
-	void ResetCourse()
+	private void ResetCourse()
 	{
 		m_iActiveSection = 0;
 		m_iPlayer = 0;
@@ -73,7 +97,7 @@ class RKN_TimeTrialCourseLayer : SCR_ScenarioFrameworkLayerBase
 			section.ResetSection();
 	}
 	
-	void FinishCourse()
+	private void FinishCourse()
 	{
 		WorldTimestamp timestamp = GetGame().GetWorld().GetTimestamp();
 		float time = timestamp.DiffMilliseconds(m_StartTimestamp);
@@ -84,7 +108,7 @@ class RKN_TimeTrialCourseLayer : SCR_ScenarioFrameworkLayerBase
 		Replication.BumpMe();
 	}
 	
-	void SubmitScore(int player, int time, int total)
+	private void SubmitScore(int player, int time, int total)
 	{
 		bool n = true;
 		foreach (RKN_TimeTrialScoreInfo info : m_aAllPlayersInfo)
@@ -123,7 +147,7 @@ class RKN_TimeTrialCourseLayer : SCR_ScenarioFrameworkLayerBase
 		Replication.BumpMe();
 	}
 	
-	void RemoveScoreTable(int playerId)
+	private void RemoveScoreTable(int playerId)
 	{
 		FindPlayerUIComponent(GetGame().GetPlayerManager().GetPlayerControlledEntity(playerId)).RemoveScoreTable(this, true);
 	}
