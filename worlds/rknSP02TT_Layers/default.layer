@@ -82,20 +82,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
     coords 0 0 0
     {
      RKN_TimeTrialControlPanelEntity : "{0B9BA8A5C109109D}Prefabs/TimeTrial/TimeTrialButton.et" {
-      components {
-       SignalsManagerComponent "{65C9126FA87C02F0}" {
-       }
-       ProcAnimComponent "{65C912606320AC33}" {
-        Parameters {
-         ProcAnimParams "{65C9126F9DB02AEC}" {
-          ResourceName "{45EF0AFFC6C42B29}Assets/Structures/Military/Training/RangeCP_01/RangeCP_01.pap"
-          BoneNames {
-           "Button_start"
-          }
-         }
-        }
-       }
-      }
       coords -4.596 0 -1.241
       angleY -41.972
      }
@@ -104,22 +90,20 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
        coords 0 0 0
        {
         GenericEntity TimeTrialPoleTargetLayer1 : "{32CA6C7DC12FAF33}Prefabs/TimeTrial/TimeTrialPoleTargetLayer.et" {
-         coords 1.953 0 -0.177
-         angleY -150.2
+         coords 2.132 0 0.082
+         angleY -152.778
          {
           GenericEntity Slot8 {
            ID "65CA703858848AB0"
-           coords 0 0.021 0
           }
-          GenericEntity {
+          GenericEntity TimeTrialTargetSlot2 {
            ID "65CA703858848AB3"
            components {
             RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
              m_bBonusObjective 1
-             m_fBonusAwardSeconds 0.8
+             m_fBonusAwardSeconds 0.5
             }
            }
-           coords 0.026 1.398 0
           }
          }
         }

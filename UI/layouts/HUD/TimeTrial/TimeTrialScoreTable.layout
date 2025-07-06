@@ -25,57 +25,311 @@ FrameWidgetClass {
      Color 0.588 0.588 0.588 1
      Intensity 0.75
     }
-    VerticalLayoutWidgetClass "{65BAE897C6A7B365}" {
-     Name "Table"
-     Slot OverlayWidgetSlot "{73CAA7587064FBAC}" {
+    VerticalLayoutWidgetClass "{65CCC6876126FD24}" {
+     Name "VerticalLayout"
+     Slot OverlayWidgetSlot "{65CCC6876126FDCF}" {
       HorizontalAlign 3
      }
      {
-      HorizontalLayoutWidgetClass "{65BAE897C6A773DF}" {
-       Name "HorizontalLayout0"
-       Slot LayoutSlot "{5230DA69B5A5BFF3}" {
+      VerticalLayoutWidgetClass "{65CCC6926731705E}" {
+       Name "CourseInfoLayout"
+       Slot LayoutSlot "{65CCC69267317078}" {
        }
        {
-        TextWidgetClass "{65BAE897C6A773DE}" {
-         Name "Text0"
-         Slot LayoutSlot "{5230DA69B5A5BFED}" {
-          SizeMode Fill
-          FillWeight 0.75
+        HorizontalLayoutWidgetClass "{65CCC68C98B83776}" {
+         Name "HorizontalLayout2"
+         Slot LayoutSlot "{65CCC68C98B83713}" {
          }
-         Text "NAME"
-         FontProperties FontProperties "{51C68CA43965BB34}" {
+         {
+          TextWidgetClass "{65CCC68F7802E0CB}" {
+           Name "Text0"
+           Slot LayoutSlot "{65CCC68F7802E0E7}" {
+           }
+           Text "Course: "
+           "Font Size" 27
+          }
+          TextWidgetClass "{65CCC68C9A65ACF3}" {
+           Name "CourseNameText"
+           Slot LayoutSlot "{65CCC68F7802E0E7}" {
+           }
+           Text "Blue 1"
+           "Font Size" 26
+          }
          }
         }
-        TextWidgetClass "{65BAE897C6A773DD}" {
-         Name "Text1"
-         Slot LayoutSlot "{5230DA69B5A5BF20}" {
-          SizeMode Fill
-          FillWeight 0.25
+        HorizontalLayoutWidgetClass "{65CCC696A27644C5}" {
+         Name "HorizontalLayout3"
+         Slot LayoutSlot "{65CCC696A27644E1}" {
          }
-         Text "TIME"
-         "Horizontal Alignment" Center
-         Offset 0 0
-        }
-        TextWidgetClass "{65BAE897C6A737EC}" {
-         Name "Text2"
-         Slot LayoutSlot "{5230DA69B5A5BF20}" {
-          SizeMode Fill
-          FillWeight 0.25
+         {
+          HorizontalLayoutWidgetClass "{65CCC69482C99E40}" {
+           Name "HorizontalLayout2"
+           Slot LayoutSlot "{65CCC69482C99E5A}" {
+            HorizontalAlign 1
+            SizeMode Fill
+           }
+           {
+            ImageWidgetClass "{65CCC696F5369683}" {
+             Name "Image0"
+             Slot LayoutSlot "{65CCC696F536969D}" {
+             }
+             Color 0.6795 0.4913 0.0225 1
+             Texture "{188707A8E6E9148B}UI/Textures/gold.edds"
+            }
+            TextWidgetClass "{65CCC694AB4D5B09}" {
+             Name "GoldTimeText"
+             Slot LayoutSlot "{65CCC68F7802E0E7}" {
+              Padding 5 0 0 0
+             }
+             Text "00:00:00"
+             "Font Size" 27
+            }
+           }
+          }
+          HorizontalLayoutWidgetClass "{65CCC69483A82B95}" {
+           Name "HorizontalLayout1"
+           Slot LayoutSlot "{65CCC69483A82BA8}" {
+            HorizontalAlign 1
+            SizeMode Fill
+           }
+           {
+            ImageWidgetClass "{65CCC694AF796F16}" {
+             Name "Image0"
+             Slot LayoutSlot "{65CCC696F536969D}" {
+             }
+             Color 0.6308 0.6002 0.6002 1
+             Texture "{188707A8E6E9148B}UI/Textures/gold.edds"
+            }
+            TextWidgetClass "{65CCC694D4E25EE2}" {
+             Name "SilverTimeText"
+             Slot LayoutSlot "{65CCC68F7802E0E7}" {
+              Padding 5 0 0 0
+             }
+             Text "00:00:00"
+             "Font Size" 27
+            }
+           }
+          }
+          HorizontalLayoutWidgetClass "{65CCC694808DAB1D}" {
+           Name "HorizontalLayout0"
+           Slot LayoutSlot "{65CCC694808DAB35}" {
+            HorizontalAlign 1
+            SizeMode Fill
+           }
+           {
+            ImageWidgetClass "{65CCC694AEE1C184}" {
+             Name "Image0"
+             Slot LayoutSlot "{65CCC696F536969D}" {
+             }
+             Color 0.6235 0.3064 0.0441 1
+             Texture "{188707A8E6E9148B}UI/Textures/gold.edds"
+            }
+            TextWidgetClass "{65CCC694D79FB9AA}" {
+             Name "BronzeTimeText"
+             Slot LayoutSlot "{65CCC68F7802E0E7}" {
+              Padding 5 0 0 0
+             }
+             Text "00:00:00"
+             "Font Size" 27
+            }
+           }
+          }
          }
-         Rotation 0
-         Text "TOTAL"
-         "Horizontal Alignment" Center
         }
        }
       }
-      ImageWidgetClass "{65BAE897C6A737ED}" {
+      ImageWidgetClass "{65CCC68F6A1E5087}" {
        Name "Image0"
        Slot LayoutSlot "{5230DA69B5A5BF40}" {
         HorizontalAlign 1
         VerticalAlign 1
         Padding 0 2 0 2
        }
-       Size 500 0
+       Color 0.6235 0.5059 0.1569 1
+       Size 500 2
+      }
+      VerticalLayoutWidgetClass "{65CCC693B31C27A4}" {
+       Name "RunInfoLayout"
+       Slot LayoutSlot "{65CCC693B31C2650}" {
+       }
+       {
+        HorizontalLayoutWidgetClass "{65CCC68F30166DBE}" {
+         Name "HorizontalLayout1"
+         Slot LayoutSlot "{65CCC68F30166C59}" {
+         }
+         {
+          TextWidgetClass "{65CCC68F3EA5DAE7}" {
+           Name "Text0"
+           Slot LayoutSlot "{65CCC68F3EA5DA80}" {
+            Padding 0 0 5.2 0
+           }
+           Text "Competitor:"
+          }
+          TextWidgetClass "{65CCC68F2D061D80}" {
+           Name "PlayerNameText"
+           Slot LayoutSlot "{65CCC68F3EA5DA80}" {
+           }
+           Text "Bob"
+          }
+         }
+        }
+        HorizontalLayoutWidgetClass "{65CCC68FFD8FC596}" {
+         Name "HorizontalLayout0"
+         Slot LayoutSlot "{65CCC697081D49C2}" {
+          Padding 0 0 0 15
+         }
+         {
+          HorizontalLayoutWidgetClass "{65CCC695564E9D0D}" {
+           Name "HorizontalLayout0"
+           Slot LayoutSlot "{65CCC695564E9D38}" {
+            HorizontalAlign 1
+            VerticalAlign 1
+            SizeMode Fill
+           }
+           {
+            ImageWidgetClass "{65CCC6954A86A73A}" {
+             Name "TrophyImage"
+             Slot LayoutSlot "{65CCC696F536969D}" {
+              VerticalAlign 1
+             }
+             Color 0.6795 0.4913 0.0225 1
+             Texture "{188707A8E6E9148B}UI/Textures/gold.edds"
+            }
+            TextWidgetClass "{65CCC68F1E6C4FF2}" {
+             Name "TimeText"
+             Slot LayoutSlot "{65CCC68F1E6C4F8C}" {
+              HorizontalAlign 1
+              VerticalAlign 1
+              SizeMode Fill
+             }
+             Text "12:31.12"
+             "Font Size" 46
+            }
+           }
+          }
+          VerticalLayoutWidgetClass "{65CCC68FE15FB173}" {
+           Name "VerticalLayout0"
+           Slot LayoutSlot "{65CCC68FE15FB10B}" {
+            SizeMode Fill
+            FillWeight 1.3
+           }
+           {
+            HorizontalLayoutWidgetClass "{65CCC68C35F5117D}" {
+             Name "HorizontalLayout0"
+             Slot LayoutSlot "{65CCC68C35F51117}" {
+             }
+             {
+              TextWidgetClass "{65CCC68F14397FB8}" {
+               Name "Text1"
+               Slot LayoutSlot "{65CCC68F14397E57}" {
+               }
+               Color 0.0706 0.5608 0.1922 1
+               Text "-"
+              }
+              TextWidgetClass "{65CCC68C330FE2F0}" {
+               Name "BonusText"
+               Slot LayoutSlot "{65CCC68F14397E57}" {
+               }
+               Color 0.0706 0.5608 0.1922 1
+               Text "1"
+              }
+              TextWidgetClass "{65CCC68C334BEDBF}" {
+               Name "Text2"
+               Slot LayoutSlot "{65CCC68F14397E57}" {
+               }
+               Color 0.0706 0.5608 0.1922 1
+               Text " sec"
+              }
+             }
+            }
+            HorizontalLayoutWidgetClass "{65CCC68C54A48996}" {
+             Name "HorizontalLayout1"
+             Slot LayoutSlot "{65CCC68C54A489B3}" {
+             }
+             {
+              TextWidgetClass "{65CCC68F15D54D80}" {
+               Name "Text0"
+               Slot LayoutSlot "{65CCC68F15D54D9F}" {
+               }
+               Color 0.6235 0.1569 0.1569 1
+               Text "+"
+              }
+              TextWidgetClass "{65CCC68C503998A1}" {
+               Name "PenaltyText"
+               Slot LayoutSlot "{65CCC68F15D54D9F}" {
+               }
+               Color 0.6235 0.1569 0.1569 1
+               Text "2.5"
+              }
+              TextWidgetClass "{65CCC68C5075E12D}" {
+               Name "Text2"
+               Slot LayoutSlot "{65CCC68F15D54D9F}" {
+               }
+               Color 0.6235 0.1569 0.1569 1
+               Text " sec"
+              }
+             }
+            }
+           }
+          }
+         }
+        }
+       }
+      }
+      VerticalLayoutWidgetClass "{65BAE897C6A7B365}" {
+       Name "Table"
+       Slot LayoutSlot "{65CCC697081D49A1}" {
+        Padding 0 15 0 0
+       }
+       {
+        HorizontalLayoutWidgetClass "{65BAE897C6A773DF}" {
+         Name "HorizontalLayout0"
+         Slot LayoutSlot "{5230DA69B5A5BFF3}" {
+         }
+         {
+          TextWidgetClass "{65BAE897C6A773DE}" {
+           Name "Text0"
+           Slot LayoutSlot "{5230DA69B5A5BFED}" {
+            SizeMode Fill
+            FillWeight 0.75
+           }
+           Text "NAME"
+           FontProperties FontProperties "{51C68CA43965BB34}" {
+           }
+          }
+          TextWidgetClass "{65BAE897C6A773DD}" {
+           Name "Text1"
+           Slot LayoutSlot "{5230DA69B5A5BF20}" {
+            SizeMode Fill
+            FillWeight 0.25
+           }
+           Text "TIME"
+           "Horizontal Alignment" Center
+           Offset 0 0
+          }
+          TextWidgetClass "{65BAE897C6A737EC}" {
+           Name "Text2"
+           Slot LayoutSlot "{5230DA69B5A5BF20}" {
+            SizeMode Fill
+            FillWeight 0.25
+           }
+           Rotation 0
+           Text "TOTAL"
+           "Horizontal Alignment" Center
+          }
+         }
+        }
+        ImageWidgetClass "{65BAE897C6A737ED}" {
+         Name "Image0"
+         Slot LayoutSlot "{5230DA69B5A5BF40}" {
+          HorizontalAlign 1
+          VerticalAlign 1
+          Padding 0 2 0 2
+         }
+         Color 0.6235 0.5059 0.1569 1
+         Size 500 2
+        }
+       }
       }
      }
     }

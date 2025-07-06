@@ -1,4 +1,4 @@
-class RKN_CancelTimeTrialAction : ScriptedUserAction
+class RKN_CancelTimeTrialAction : SCR_ScriptedUserAction
 {
 	[Attribute()]
 	ref RKN_Get m_CourseGetter;
@@ -31,6 +31,6 @@ class RKN_CancelTimeTrialAction : ScriptedUserAction
 		if (!entity)
 			return false;
 		RKN_TimeTrialCourseLayer course = RKN_TimeTrialCourseLayer.Cast(entity.FindComponent(RKN_TimeTrialCourseLayer));
-		return course.m_iPlayer > 0;
+		return course.m_CurrentScoreInfo;
 	}
 }

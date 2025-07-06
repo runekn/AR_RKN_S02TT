@@ -2,61 +2,68 @@
 //! Holds scoring data of players.
 class RKN_TimeTrialScoreInfo
 {
+	RKN_TimeTrialScoreType m_eType
 	int m_iID = -1;
-	int m_iPrevTime = 0;
-	int m_iPrevTotal = 0;
-	int m_iBestTime = 0;
-	int m_iBestTotal = 0;
+	WorldTimestamp m_iStart;
+	WorldTimestamp m_iEnd;
+	int m_iPenalty;
+	int m_iBonus;
+	
+	[SortAttribute()]
+	int m_iTotal; // Only used for sorting
 	
 	//################################################################################################
 	//! Codec methods
 	//------------------------------------------------------------------------------------------------
 	static void Encode(SSnapSerializerBase snapshot, ScriptCtx ctx, ScriptBitSerializer packet) 
 	{
-		snapshot.Serialize(packet, 20);
+		snapshot.Serialize(packet, 24);
 	}
 	
 	//------------------------------------------------------------------------------------------------
 	static bool Decode(ScriptBitSerializer packet, ScriptCtx ctx, SSnapSerializerBase snapshot) 
 	{
-		return snapshot.Serialize(packet, 20);
+		return snapshot.Serialize(packet, 24);
 	}
 	
 	//------------------------------------------------------------------------------------------------
 	static bool SnapCompare(SSnapSerializerBase lhs, SSnapSerializerBase rhs, ScriptCtx ctx) 
 	{	
-		return lhs.CompareSnapshots(rhs, 20);
+		return lhs.CompareSnapshots(rhs, 24);
 	}
 	
 	//------------------------------------------------------------------------------------------------
 	static bool PropCompare(RKN_TimeTrialScoreInfo prop, SSnapSerializerBase snapshot, ScriptCtx ctx) 
 	{
 		return snapshot.Compare(prop.m_iID, 4) 
-			&& snapshot.Compare(prop.m_iPrevTime, 4)
-			&& snapshot.Compare(prop.m_iPrevTotal, 4)
-			&& snapshot.Compare(prop.m_iBestTime, 4)
-			&& snapshot.Compare(prop.m_iBestTotal, 4);
+			&& snapshot.Compare(prop.m_eType, 4)
+			&& snapshot.Compare(prop.m_iStart, 4)
+			&& snapshot.Compare(prop.m_iEnd, 4)
+			&& snapshot.Compare(prop.m_iPenalty, 4)
+			&& snapshot.Compare(prop.m_iBonus, 4);
 	}
 	
 	//------------------------------------------------------------------------------------------------
 	static bool Extract(RKN_TimeTrialScoreInfo prop, ScriptCtx ctx, SSnapSerializerBase snapshot) 
 	{		
+		snapshot.SerializeBytes(prop.m_eType, 4);
 		snapshot.SerializeBytes(prop.m_iID, 4);
-		snapshot.SerializeBytes(prop.m_iPrevTime, 4);
-		snapshot.SerializeBytes(prop.m_iPrevTotal, 4);
-		snapshot.SerializeBytes(prop.m_iBestTime, 4);
-		snapshot.SerializeBytes(prop.m_iBestTotal, 4);
+		snapshot.SerializeBytes(prop.m_iStart, 4);
+		snapshot.SerializeBytes(prop.m_iEnd, 4);
+		snapshot.SerializeBytes(prop.m_iPenalty, 4);
+		snapshot.SerializeBytes(prop.m_iBonus, 4);
 		return true;
 	}
 	
 	//------------------------------------------------------------------------------------------------
 	static bool Inject(SSnapSerializerBase snapshot, ScriptCtx ctx, RKN_TimeTrialScoreInfo prop) 
 	{
+		snapshot.SerializeBytes(prop.m_eType, 4);
 		snapshot.SerializeBytes(prop.m_iID, 4);
-		snapshot.SerializeBytes(prop.m_iPrevTime, 4);
-		snapshot.SerializeBytes(prop.m_iPrevTotal, 4);
-		snapshot.SerializeBytes(prop.m_iBestTime, 4);
-		snapshot.SerializeBytes(prop.m_iBestTotal, 4);
+		snapshot.SerializeBytes(prop.m_iStart, 4);
+		snapshot.SerializeBytes(prop.m_iEnd, 4);
+		snapshot.SerializeBytes(prop.m_iPenalty, 4);
+		snapshot.SerializeBytes(prop.m_iBonus, 4);
 		
 		return true;
 	}
@@ -68,4 +75,36 @@ class RKN_TimeTrialScoreInfo
 	{
 		return SCR_PlayerNamesFilterCache.GetInstance().GetPlayerDisplayName(m_iID);
 	}
+	
+	int GetTime()
+	{
+		if (m_iStart == 0)
+			return 0;
+		if (m_iEnd == 0)
+			return GetGame().GetWorld().GetTimestamp().DiffMilliseconds(m_iStart);
+		return m_iEnd.DiffMilliseconds(m_iStart);
+	}
+	
+	int GetTotal()
+	{
+		return GetTime() + m_iPenalty - m_iBonus;
+	}
+	
+	RKN_TimeTrialScoreInfo CopyAs(RKN_TimeTrialScoreType type)
+	{
+		RKN_TimeTrialScoreInfo c = new RKN_TimeTrialScoreInfo();
+		c.m_eType = type;
+		c.m_iID = m_iID;
+		c.m_iStart = m_iStart;
+		c.m_iEnd = m_iEnd;
+		c.m_iPenalty = m_iPenalty;
+		c.m_iBonus = m_iBonus;
+		return c;
+	}
 };
+
+enum RKN_TimeTrialScoreType
+{
+	PREVIOUS, BEST, // For attempt history
+	TRAINING, COMPETITIVE // For active attempt
+}

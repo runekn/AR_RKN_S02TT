@@ -17,11 +17,11 @@ class RKN_TimeTrialControlPanelEntity : GenericEntity
 		m_SignalManager = SignalsManagerComponent.Cast(FindComponent(SignalsManagerComponent));
 	}
 	
-	void StartCountdown(IEntity pUserEntity, RKN_TimeTrialCourseLayer course)
+	void StartCountdown(IEntity pUserEntity, RKN_TimeTrialCourseLayer course, bool competitive)
 	{
 		int playerId = GetGame().GetPlayerManager().GetPlayerIdFromControlledEntity(pUserEntity);
 		RplId courseId = Replication.FindId(course);
-		Rpc(RpcAsk_StartCountdown, playerId, courseId);
+		Rpc(RpcAsk_StartCountdown, playerId, courseId, competitive);
 		AnimateButton();
 	}
 	
@@ -43,7 +43,7 @@ class RKN_TimeTrialControlPanelEntity : GenericEntity
 	}
 	
 	[RplRpc(RplChannel.Reliable, RplRcver.Owner)]
-	void RpcAsk_StartCountdown(int playerId, RplId courseId)
+	void RpcAsk_StartCountdown(int playerId, RplId courseId, bool competitive)
 	{
 		RKN_TimeTrialCourseLayer course = RKN_TimeTrialCourseLayer.Cast(Replication.FindItem(courseId));
 		SCR_SoundManagerEntity soundManagerEntity = GetGame().GetSoundManagerEntity();
@@ -52,7 +52,7 @@ class RKN_TimeTrialControlPanelEntity : GenericEntity
 			soundManagerEntity.CreateAndPlayAudioSource(this, SCR_SoundEvent.SOUND_RANGECP_STARTBUTTON);
 			soundManagerEntity.CreateAndPlayAudioSource(this, SCR_SoundEvent.SOUND_RANGECP_ROUNDSTART);
 		}
-		course.ScheduleCourse(playerId, COUNTDOWN_TIME);
+		course.ScheduleCourse(playerId, COUNTDOWN_TIME, competitive);
 	}
 	
 	void AnimateButton()

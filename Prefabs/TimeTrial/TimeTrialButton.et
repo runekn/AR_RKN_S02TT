@@ -1,12 +1,24 @@
 RKN_TimeTrialControlPanelEntity {
  ID "65BAA0B86FC8D574"
  components {
+  SignalsManagerComponent "{65C9126FA87C02F0}" {
+  }
   MeshObject "{65BA6C59E0938B11}" {
    Object "{AD51E776526588CC}Assets/Structures/Military/Training/RangeCP_01/RangeCP_01.xob"
   }
   RigidBody "{65BA6C595A1C5803}" {
    ModelGeometry 1
    Static 1
+  }
+  ProcAnimComponent "{65C912606320AC33}" {
+   Parameters {
+    ProcAnimParams "{65C9126F9DB02AEC}" {
+     ResourceName "{45EF0AFFC6C42B29}Assets/Structures/Military/Training/RangeCP_01/RangeCP_01.pap"
+     BoneNames {
+      "Button_start"
+     }
+    }
+   }
   }
   SCR_SoundDataComponent "{65C87C10CEB537BF}" {
    m_aAudioSourceConfiguration {
@@ -40,8 +52,9 @@ RKN_TimeTrialControlPanelEntity {
       "StartCourse"
      }
      UIInfo UIInfo "{65BAA0BBCB532A5F}" {
-      Name "Start Course"
+      Name "Start Training"
      }
+     ActionTitle "Training"
      Duration 0.5
      m_CourseGetter RKN_GetParent "{65BC4ECD4E2D84D6}" {
      }
@@ -53,9 +66,22 @@ RKN_TimeTrialControlPanelEntity {
      UIInfo UIInfo "{65C8B9EB45E1E26E}" {
       Name "Cancel Course"
      }
+     ActionTitle "Cancel"
      Duration 0.5
      m_CourseGetter RKN_GetParent "{65C8B9EB45E1E274}" {
      }
+    }
+    RKN_StartTimeTrialAction "{65CD0837E4CB9E72}" {
+     ParentContextList {
+      "StartCourse"
+     }
+     UIInfo UIInfo "{65BAA0BBCB532A5F}" {
+      Name "Start Competitive"
+     }
+     ActionTitle "Competitive"
+     m_CourseGetter RKN_GetParent "{65CD083731DBD442}" {
+     }
+     m_bCompetitive 1
     }
    }
   }

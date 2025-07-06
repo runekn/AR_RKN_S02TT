@@ -8,20 +8,13 @@ class RKN_TimeTrialCourseLayer : SCR_ScenarioFrameworkLayerBase
 	[Attribute(params: "conf", category: "Time trial")]
 	ResourceName m_CourseConfig;
 	
-	// Execution related
-	[RplProp()]
-	int m_iPlayer;
 	ref array<RKN_TimeTrialSectionLayer> m_aSections = {};
-	int m_iActiveSection;
-	
-	// Score related
-	[RplProp()]
-	WorldTimestamp m_StartTimestamp;
-	[RplProp()]
-	int m_iModifiers;
-	[RplProp()]
-	ref array<ref RKN_TimeTrialScoreInfo> m_aAllPlayersInfo = new array<ref RKN_TimeTrialScoreInfo>;
 	ref RKN_TimeTrialCourseConfig m_Config;
+	int m_iActiveSection;
+	[RplProp()]
+	ref RKN_TimeTrialScoreInfo m_CurrentScoreInfo;
+	[RplProp()]
+	ref array<ref RKN_TimeTrialScoreInfo> m_aScoreInfoHistory = new array<ref RKN_TimeTrialScoreInfo>;
 	
 	override void FinishInit()
 	{
@@ -39,27 +32,36 @@ class RKN_TimeTrialCourseLayer : SCR_ScenarioFrameworkLayerBase
 	[RplRpc(RplChannel.Reliable, RplRcver.Owner)]
 	void RpcAsk_CancelCourse()
 	{
+		m_CurrentScoreInfo.m_iEnd = GetGame().GetWorld().GetTimestamp();
 		GetGame().GetCallqueue().Remove(StartCourse);
-		RemoveScoreTable(m_iPlayer);
-		ResetCourse();
+		GetGame().GetCallqueue().Remove(ResetRun);
+		ResetRun();
 	}
 	
-	void ScheduleCourse(int playerId, int delay)
+	void ScheduleCourse(int playerId, int delay, bool competitive)
 	{
-		Rpc(RpcAsk_ScheduleCourse, playerId, delay);
+		Rpc(RpcAsk_ScheduleCourse, playerId, delay, competitive);
 	}
 	
 	[RplRpc(RplChannel.Reliable, RplRcver.Owner)]
-	void RpcAsk_ScheduleCourse(int playerId, int delay)
+	void RpcAsk_ScheduleCourse(int playerId, int delay, bool competitive)
 	{
-		if (m_iPlayer > 0)
+		if (m_CurrentScoreInfo)
 		{
 			Print("Only one player can use the course at a time", LogLevel.ERROR);
 			return;
 		}
-		m_iPlayer = playerId;
+		m_CurrentScoreInfo = new RKN_TimeTrialScoreInfo();
+		if (competitive)
+			m_CurrentScoreInfo.m_eType = RKN_TimeTrialScoreType.COMPETITIVE;
+		else
+			m_CurrentScoreInfo.m_eType = RKN_TimeTrialScoreType.TRAINING;
+		m_CurrentScoreInfo.m_iID = playerId;
 		IEntity player = GetGame().GetPlayerManager().GetPlayerControlledEntity(playerId);
 		FindPlayerUIComponent(player).ShowScoreTable(this, true);
+		
+		if (competitive)
+			ApplyCompetitiveLoadout(player);
 		
 		GetGame().GetCallqueue().CallLater(StartCourse, delay, false);
 		Replication.BumpMe();
@@ -67,7 +69,7 @@ class RKN_TimeTrialCourseLayer : SCR_ScenarioFrameworkLayerBase
 	
 	private void StartCourse()
 	{
-		m_StartTimestamp = GetGame().GetWorld().GetTimestamp();
+		m_CurrentScoreInfo.m_iStart = GetGame().GetWorld().GetTimestamp();
 		ActivateNextSectionOrFinish();
 		Replication.BumpMe();
 	}
@@ -92,71 +94,115 @@ class RKN_TimeTrialCourseLayer : SCR_ScenarioFrameworkLayerBase
 	
 	private void ResetCourse()
 	{
-		m_StartTimestamp = null;
-		m_iModifiers = 0;
+		m_CurrentScoreInfo = null;
 		m_iActiveSection = 0;
-		m_iPlayer = 0;
 		foreach(RKN_TimeTrialSectionLayer section : m_aSections)
 			section.ResetSection();
 	}
 	
 	private void FinishCourse()
 	{
-		WorldTimestamp timestamp = GetGame().GetWorld().GetTimestamp();
-		float time = timestamp.DiffMilliseconds(m_StartTimestamp);
-		SubmitScore(m_iPlayer, time, time + m_iModifiers);
-		Print("Finished course in " + time + " ms");
-		GetGame().GetCallqueue().CallLater(RemoveScoreTable, 5000, false, m_iPlayer);
-		ResetCourse();
+		m_CurrentScoreInfo.m_iEnd = GetGame().GetWorld().GetTimestamp();
+		if (m_CurrentScoreInfo.m_eType == RKN_TimeTrialScoreType.COMPETITIVE)
+			SubmitScore();
+		GetGame().GetCallqueue().CallLater(ResetRun, 5000, false);
 		Replication.BumpMe();
 	}
 	
-	private void SubmitScore(int player, int time, int total)
+	private void SubmitScore()
 	{
-		bool n = true;
-		foreach (RKN_TimeTrialScoreInfo info : m_aAllPlayersInfo)
+		bool newBest = true;
+		int prevIndex = -1;
+		int bestIndex = -1;
+		for (int i = 0; i < m_aScoreInfoHistory.Count(); i++)
 		{
-			if (info.m_iID == m_iPlayer)
+			RKN_TimeTrialScoreInfo info = m_aScoreInfoHistory[i];
+			if (info.m_iID == m_CurrentScoreInfo.m_iID)
 			{
-				info.m_iPrevTime = time;
-				info.m_iPrevTotal = total;
-				if (info.m_iBestTotal > total)
+				if (info.m_eType == RKN_TimeTrialScoreType.PREVIOUS)
 				{
-					info.m_iBestTime = time;
-					info.m_iBestTotal = total;
+					prevIndex = i;
 				}
-				n = false;
-				break;
+				else
+				{
+					if (info.GetTotal() > m_CurrentScoreInfo.GetTotal())
+						bestIndex = i;
+					else
+						newBest = false;
+				}
 			}
+			
+			// Prepare for sorting
+			if (info.m_iTotal == 0)
+				info.m_iTotal = info.GetTotal();
 		}
 		
-		if (n)
+		if (prevIndex != -1)
+			m_aScoreInfoHistory[prevIndex] = m_CurrentScoreInfo.CopyAs(RKN_TimeTrialScoreType.PREVIOUS);
+		else
+			m_aScoreInfoHistory.Insert(m_CurrentScoreInfo.CopyAs(RKN_TimeTrialScoreType.PREVIOUS));
+			
+		if (newBest)
 		{
-			RKN_TimeTrialScoreInfo info = new RKN_TimeTrialScoreInfo();
-			info.m_iPrevTime = time;
-			info.m_iPrevTotal = total;
-			info.m_iBestTime = time;
-			info.m_iBestTotal = total;
-			info.m_iID = player;
-			m_aAllPlayersInfo.Insert(info);
+			if (bestIndex != -1)
+				m_aScoreInfoHistory[bestIndex] = m_CurrentScoreInfo.CopyAs(RKN_TimeTrialScoreType.BEST);
+			else
+				m_aScoreInfoHistory.Insert(m_CurrentScoreInfo.CopyAs(RKN_TimeTrialScoreType.BEST));
 		}
 		
-		// TODO: sort
+		m_aScoreInfoHistory.Sort(true);
 	}
 	
 	void ApplyScoreModifier(int mod)
 	{
-		m_iModifiers += mod;
+		if (mod > 0)
+			m_CurrentScoreInfo.m_iPenalty += mod;
+		if (mod < 0)
+			m_CurrentScoreInfo.m_iBonus += -mod;
 		Replication.BumpMe();
 	}
 	
-	private void RemoveScoreTable(int playerId)
+	private void ResetRun()
 	{
-		FindPlayerUIComponent(GetGame().GetPlayerManager().GetPlayerControlledEntity(playerId)).RemoveScoreTable(this, true);
+		FindPlayerUIComponent(GetGame().GetPlayerManager().GetPlayerControlledEntity(m_CurrentScoreInfo.m_iID)).RemoveScoreTable(this, true);
+		ResetCourse();
+		Replication.BumpMe();
 	}
 	
 	RKN_TimeTrialScoreTablePlayerComponent FindPlayerUIComponent(IEntity player)
 	{
 		return RKN_TimeTrialScoreTablePlayerComponent.Cast(player.FindComponent(RKN_TimeTrialScoreTablePlayerComponent));
+	}
+	
+	void ApplyCompetitiveLoadout(IEntity player)
+	{
+		if (!m_Config.m_sCompetitiveLoadout)
+			return;
+		SCR_BasePlayerLoadout loadout = GetGame().GetLoadoutManager().GetLoadoutByName(m_Config.m_sCompetitiveLoadout);
+		if (!loadout)
+		{
+			Print("Loadout not found: " + m_Config.m_sCompetitiveLoadout, LogLevel.ERROR);
+			return;
+		}
+		InventoryStorageManagerComponent comp = InventoryStorageManagerComponent.Cast(player.FindComponent(InventoryStorageManagerComponent));
+		array<IEntity> items = {};
+		comp.GetItems(items);
+		foreach (IEntity item : items)
+		{
+			if (!item)
+				continue;
+			BaseLoadoutClothComponent cloth = BaseLoadoutClothComponent.Cast(item.FindComponent(BaseLoadoutClothComponent));
+			if (cloth && 
+				(LoadoutHandwearSlotArea.Cast(cloth.GetAreaType()) || 
+				LoadoutBootsArea.Cast(cloth.GetAreaType()) || 
+				LoadoutHeadCoverArea.Cast(cloth.GetAreaType()) ||
+				LoadoutJacketArea.Cast(cloth.GetAreaType()) || 
+				LoadoutPantsArea.Cast(cloth.GetAreaType()) || 
+				LoadoutPantsArea.Cast(cloth.GetAreaType()))
+			)
+				continue;
+			
+			comp.TryDeleteItem(item);
+		}
 	}
 }

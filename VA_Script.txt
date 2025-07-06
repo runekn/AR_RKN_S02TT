@@ -1,4 +1,4 @@
-Instructions: Speak rapidly, so voicelines can keep up with fast players
+Instructions: Speak rapidly, so voicelines can keep up with fast players (except "Finish course" section)
 
 Penalty:
 	"Penalty!"
@@ -11,6 +11,7 @@ Bonus:
 	"Bonus"
 	"Well spotted"
 	"Good shot"
+	"Bullseye!"
 
 Start:
 	"Three. Two. One. Go!" -- TRY TO TIME WITH RECORDING --
@@ -19,23 +20,26 @@ Start:
 
 Finish section:
 	"Next one"
+	"Next section"
 	"Next"
 	"Move on"
 	"Proceed"
 	"Clear"
 
 Finish course:
-	"You can do better"
+	"I know you can do better"
 	"Good shooting"
 	"New personal best"
-	"You're not old enough for tremors. Get better."
+	"You're not old enough for tremors. Try again."
 	"Outstanding time!"
-	"Double back and try again"
+	"Good. Double back and try again"
 
 Misc:
 	"Faster!"
 	"Good pace"
 	"Speed up"
+	"Hit"
+	"Target down"
 	
 Requirements:
 	"Stand"
@@ -47,7 +51,7 @@ Requirements:
 	"Go prone"
 	"Lean out of cover"
 	"Lean"
-	"Hit"
+	"Lean from cover"
 	"Pistol"
 	"Rifle"
 	"Grenade"

@@ -35,15 +35,16 @@ class RKN_TimeTrialStruct : SCR_JsonApiStruct
 			RKN_TimeTrialCourseLayer course = RKN_TimeTrialCourseLayer.Cast(entity.FindComponent(RKN_TimeTrialCourseLayer));
 			if (!course)
 				continue;
-			foreach (RKN_TimeTrialPlayerInfoStruct infoStruct : courseStruct.m_aAllPlayerInfo)
+			foreach (RKN_TimeTrialPlayerInfoStruct infoStruct : courseStruct.m_aScoreInfoHistory)
 			{
 				RKN_TimeTrialScoreInfo info = new RKN_TimeTrialScoreInfo();
 				info.m_iID = infoStruct.m_iID;
-				info.m_iPrevTime = infoStruct.m_iPrevTime;
-				info.m_iPrevTotal = infoStruct.m_iPrevTotal;
-				info.m_iBestTime = infoStruct.m_iBestTime;
-				info.m_iBestTotal = infoStruct.m_iBestTotal;
-				course.m_aAllPlayersInfo.Insert(info)
+				info.m_eType = infoStruct.m_eType;
+				info.m_iStart = infoStruct.m_iStart;
+				info.m_iEnd = infoStruct.m_iEnd;
+				info.m_iPenalty = infoStruct.m_iPenalty;
+				info.m_iBonus = infoStruct.m_iBonus;
+				course.m_aScoreInfoHistory.Insert(info)
 			}
 		}
 		return true;
@@ -53,37 +54,40 @@ class RKN_TimeTrialStruct : SCR_JsonApiStruct
 class RKN_TimeTrialCourseStruct : SCR_JsonApiStruct
 {
 	string m_sName;
-	ref array<ref RKN_TimeTrialPlayerInfoStruct> m_aAllPlayerInfo = {};
+	ref array<ref RKN_TimeTrialPlayerInfoStruct> m_aScoreInfoHistory = {};
 	
 	void RKN_TimeTrialCourseStruct(RKN_TimeTrialCourseLayer course)
 	{
 		m_sName = course.GetName();
-		foreach (RKN_TimeTrialScoreInfo info : course.m_aAllPlayersInfo)
-			m_aAllPlayerInfo.Insert(new RKN_TimeTrialPlayerInfoStruct(info));
+		foreach (RKN_TimeTrialScoreInfo info : course.m_aScoreInfoHistory)
+			m_aScoreInfoHistory.Insert(new RKN_TimeTrialPlayerInfoStruct(info));
 		RegV("m_sName");
-		RegV("m_aAllPlayerInfo");
+		RegV("m_aScoreInfoHistory");
 	}
 }
 
 class RKN_TimeTrialPlayerInfoStruct : SCR_JsonApiStruct
 {
-	int m_iID;
-	int m_iPrevTime;
-	int m_iPrevTotal;
-	int m_iBestTime;
-	int m_iBestTotal;
+	RKN_TimeTrialScoreType m_eType
+	int m_iID = -1;
+	WorldTimestamp m_iStart;
+	WorldTimestamp m_iEnd;
+	int m_iPenalty;
+	int m_iBonus;
 	
 	void RKN_TimeTrialPlayerInfoStruct(RKN_TimeTrialScoreInfo info)
 	{
+		m_eType = info.m_eType;
 		m_iID = info.m_iID;
-		m_iPrevTime = info.m_iPrevTime;
-		m_iPrevTotal = info.m_iPrevTotal;
-		m_iBestTime = info.m_iBestTime;
-		m_iBestTotal = info.m_iBestTotal;
+		m_iStart = info.m_iStart;
+		m_iEnd = info.m_iEnd;
+		m_iPenalty = info.m_iPenalty;
+		m_iBonus = info.m_iBonus;
+		RegV("m_eType");
 		RegV("m_iID");
-		RegV("m_iPrevTime");
-		RegV("m_iPrevTotal");
-		RegV("m_iBestTime");
-		RegV("m_iBestTotal");
+		RegV("m_iStart");
+		RegV("m_iEnd");
+		RegV("m_iPenalty");
+		RegV("m_iBonus");
 	}
 }

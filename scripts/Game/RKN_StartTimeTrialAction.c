@@ -1,7 +1,9 @@
-class RKN_StartTimeTrialAction : ScriptedUserAction
+class RKN_StartTimeTrialAction : SCR_ScriptedUserAction
 {
 	[Attribute()]
 	ref RKN_Get m_CourseGetter;
+	[Attribute("false")]
+	bool m_bCompetitive;
 	
 	override void PerformAction(IEntity pOwnerEntity, IEntity pUserEntity) 
 	{
@@ -17,7 +19,7 @@ class RKN_StartTimeTrialAction : ScriptedUserAction
 			return;
 		}
 		RKN_TimeTrialCourseLayer course = RKN_TimeTrialCourseLayer.Cast(entity.FindComponent(RKN_TimeTrialCourseLayer));
-		RKN_TimeTrialControlPanelEntity.Cast(pOwnerEntity).StartCountdown(pUserEntity, course);
+		RKN_TimeTrialControlPanelEntity.Cast(pOwnerEntity).StartCountdown(pUserEntity, course, m_bCompetitive);
 	}
 	
 	override bool CanBeShownScript(IEntity user)
@@ -31,7 +33,12 @@ class RKN_StartTimeTrialAction : ScriptedUserAction
 		if (!entity)
 			return false;
 		RKN_TimeTrialCourseLayer course = RKN_TimeTrialCourseLayer.Cast(entity.FindComponent(RKN_TimeTrialCourseLayer));
-		return course.m_iPlayer <= 0;
+		if (!course.m_CurrentScoreInfo)
+		{
+			SetCannotPerformReason("This will erase your current loadout!"); // Doesn't work
+			return true;
+		}
+		return false;
 	}
 	
 	

@@ -85,6 +85,7 @@ class RKN_TimeTrialTargetSlot : RKN_TimeTrialObjectiveSlot
 	
 	void OnTargetHit(string hitKey, int playerID)
 	{
+		GetGame().GetCallqueue().Remove(Timeout);
 		int score = m_mHitAreasMap.Get(hitKey);
 		if (score > 0)
 			m_Section.m_Course.ApplyScoreModifier(-score);
