@@ -1,0 +1,36 @@
+MetaFileClass {
+ Name "{CC8227E703624819}Assets/TimeTrial/target_pole.xob"
+ Configurations {
+  FBXResourceClass PC {
+   MaterialAssigns {
+    MaterialAssignClass "{65CA703624F77FFA}" {
+     SourceMaterial "target_pole"
+     AssignedMaterial "{97FE60EFF464BC3F}Assets/TimeTrial/Data/target_pole.emat"
+    }
+   }
+   MeshParams {
+    MeshParam target_pole {
+    }
+   }
+   GeometryParams {
+    GeometryParam UTM_target_pole {
+     SurfaceProperties {
+      "{F139046E18E93C02}Common/Materials/Game/Wood/wood_5mm.gamemat"
+     }
+     Mass 0
+     Margin 0
+    }
+   }
+  }
+  FBXResourceClass XBOX_ONE : PC {
+  }
+  FBXResourceClass XBOX_SERIES : PC {
+  }
+  FBXResourceClass PS4 : PC {
+  }
+  FBXResourceClass PS5 : PC {
+  }
+  FBXResourceClass HEADLESS : PC {
+  }
+ }
+}

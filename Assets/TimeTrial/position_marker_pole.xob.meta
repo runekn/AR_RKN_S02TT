@@ -1,0 +1,27 @@
+MetaFileClass {
+ Name "{621877D29646972C}Assets/TimeTrial/position_marker_pole.xob"
+ Configurations {
+  FBXResourceClass PC {
+   MaterialAssigns {
+    MaterialAssignClass "{65CA704631D03ACB}" {
+     SourceMaterial "pos_marker_pole"
+     AssignedMaterial "{234F3B8320C80CFC}Assets/TimeTrial/Data/pos_marker_pole.emat"
+    }
+   }
+   MeshParams {
+    MeshParam pole {
+    }
+   }
+  }
+  FBXResourceClass XBOX_ONE : PC {
+  }
+  FBXResourceClass XBOX_SERIES : PC {
+  }
+  FBXResourceClass PS4 : PC {
+  }
+  FBXResourceClass PS5 : PC {
+  }
+  FBXResourceClass HEADLESS : PC {
+  }
+ }
+}

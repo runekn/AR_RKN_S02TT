@@ -1,0 +1,15 @@
+GenericEntity {
+ ID "65CA7038D6BC0152"
+ components {
+  MeshObject "{65CA70361EDCA162}" {
+   Object "{CC8227E70362481A}Assets/TimeTrial/target_pole.xob"
+  }
+  RigidBody "{65CAFE1A7201261F}" {
+   ModelGeometry 1
+   Static 1
+  }
+  RplComponent "{65CA7038BA5D7E99}" {
+  }
+ }
+ coords 7591.492 166.156 4240.552
+}

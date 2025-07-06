@@ -1,0 +1,5 @@
+MatPBRBasic {
+ Color 0.558 0.558 0.558 1
+ BCRMap "{ECB582A851F26BE3}Assets/TimeTrial/Data/target_pole_clay_holder_BCR.edds"
+ NMOMap "{D46D393A8885397D}Assets/TimeTrial/Data/target_pole_clay_holder_NMO.edds"
+}

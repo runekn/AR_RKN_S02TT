@@ -1,0 +1,12 @@
+GenericEntity {
+ ID "65CA70497071B588"
+ components {
+  MeshObject "{65CA704951DEA89D}" {
+   Object "{621877D29646972C}Assets/TimeTrial/position_marker_pole.xob"
+  }
+  RplComponent "{65CA704954F68F29}" {
+  }
+ }
+ coords 7594.924 166.156 4238.57
+ scale 0.76
+}

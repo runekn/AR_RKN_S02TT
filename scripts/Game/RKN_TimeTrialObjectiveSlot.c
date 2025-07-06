@@ -4,16 +4,16 @@ class RKN_TimeTrialObjectiveSlotClass : SCR_ScenarioFrameworkSlotBaseClass
 
 class RKN_TimeTrialObjectiveSlot : SCR_ScenarioFrameworkSlotBase
 {
-	[Attribute()]
+	[Attribute(category: "Time trial")]
 	ref RKN_Get m_SectionGetter;
 	
-	[Attribute()]
+	[Attribute(category: "Time trial")]
 	ref RKN_Get m_DependentObjectiveGetter;
 	
-	[Attribute("false")]
+	[Attribute("false", category: "Time trial")]
 	bool m_bBonusObjective;
 	
-	[Attribute("0")]
+	[Attribute("0", category: "Time trial")]
 	float m_fBonusAwardSeconds;
 	
 	RKN_TimeTrialSectionLayer m_Section;
@@ -30,6 +30,7 @@ class RKN_TimeTrialObjectiveSlot : SCR_ScenarioFrameworkSlotBase
 		{
 			SCR_ScenarioFrameworkParamBase param = m_DependentObjectiveGetter.Get(GetOwner());
 			SCR_ScenarioFrameworkParam<IEntity> single = SCR_ScenarioFrameworkParam<IEntity>.Cast(param);
+			SCR_ScenarioFrameworkParam<array<IEntity>> arr = SCR_ScenarioFrameworkParam<array<IEntity>>.Cast(param);
 			if (single)
 			{
 				IEntity entity = single.GetValue();
@@ -37,7 +38,15 @@ class RKN_TimeTrialObjectiveSlot : SCR_ScenarioFrameworkSlotBase
 				obj.m_OnFinish.Insert(DependentFinished);
 				m_DependentObjectives.Insert(obj);
 			}
-			// TODO: handle array
+			else if (arr)
+			{
+				foreach (IEntity entity : arr.GetValue())
+				{
+					RKN_TimeTrialObjectiveSlot obj = RKN_TimeTrialObjectiveSlot.Cast(entity.FindComponent(RKN_TimeTrialObjectiveSlot));	
+					obj.m_OnFinish.Insert(DependentFinished);
+					m_DependentObjectives.Insert(obj);
+				}
+			}
 		}
 		return super.InitOtherThings();
 	}
@@ -87,7 +96,7 @@ class RKN_TimeTrialObjectiveSlot : SCR_ScenarioFrameworkSlotBase
 		if (!m_bBonusObjective)
 			m_Section.FinishObjective(this);
 		else
-			if (m_fBonusAwardSeconds > 0)
+			if (m_fBonusAwardSeconds != 0)
 				m_Section.m_Course.ApplyScoreModifier(-m_fBonusAwardSeconds * 1000);
 		m_OnFinish.Invoke();
 	}

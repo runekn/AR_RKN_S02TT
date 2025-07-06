@@ -4,7 +4,7 @@ class RKN_TimeTrialSectionLayerClass : SCR_ScenarioFrameworkLayerBaseClass
 
 class RKN_TimeTrialSectionLayer : SCR_ScenarioFrameworkLayerBase
 {
-	[Attribute()]
+	[Attribute(category: "Time trial")]
 	ref RKN_Get m_CourseGetter;
 	
 	ref array<RKN_TimeTrialObjectiveSlot> m_aObjectives = {};

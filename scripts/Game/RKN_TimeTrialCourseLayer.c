@@ -5,7 +5,7 @@ class RKN_TimeTrialCourseLayerClass : SCR_ScenarioFrameworkLayerBaseClass
 
 class RKN_TimeTrialCourseLayer : SCR_ScenarioFrameworkLayerBase
 {	
-	[Attribute(params: "conf")]
+	[Attribute(params: "conf", category: "Time trial")]
 	ResourceName m_CourseConfig;
 	
 	// Execution related

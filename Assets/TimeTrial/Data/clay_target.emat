@@ -1,0 +1,5 @@
+MatPBRBasic {
+ Color 0.584 0.082 0.057 1
+ BCRMap "{0FDD8E566DC8812C}Assets/_SharedData/Dirt/ST_Clay_Rough01_1m_BCR.edds"
+ NMOMap "{370535C4B4BFD3B2}Assets/_SharedData/Dirt/ST_Clay_Rough01_1m_NMO.edds"
+}

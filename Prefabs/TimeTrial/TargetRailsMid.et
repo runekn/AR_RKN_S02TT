@@ -1,0 +1,12 @@
+GenericEntity {
+ ID "65CA706F4557D5BA"
+ components {
+  MeshObject "{65CA706EE840CC7B}" {
+   Object "{4E1D5A5D359747C4}Assets/TimeTrial/target_rails_mid.xob"
+  }
+  RplComponent "{65CA706EED2EFB5B}" {
+  }
+ }
+ coords 7603.738 166.156 4237.551
+ angleY 18.388
+}

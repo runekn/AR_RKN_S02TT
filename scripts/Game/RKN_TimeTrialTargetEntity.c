@@ -104,15 +104,28 @@ class RKN_TimeTrialTargetEntity : BaseBuilding
 	
 	//------------------------------------------------------------------------------------------------
 	//! Check what part of the target projectile hit.
-	bool IsHitValid(vector coordOfHit);
+	bool IsHitValid(vector coordOfHit)
+	{
+		return true;
+	}
 	
 	//------------------------------------------------------------------------------------------------
 	//! Return states of target <0, 1> standing or lies
 	int GetState()
 	{
 		if (!m_SignalManager)
-			return 0;
+			return m_iDesiredState;
 		return m_SignalManager.GetSignalValue(m_SignalManager.FindSignal("target_hit"));
+	}
+	
+	void ResetTarget()
+	{
+		SetState(ETargetState.TARGET_DOWN);
+	}
+	
+	void ActivateTarget()
+	{
+		SetState(ETargetState.TARGET_UP);
 	}
 	
 	//------------------------------------------------------------------------------------------------
@@ -160,7 +173,10 @@ class RKN_TimeTrialTargetEntity : BaseBuilding
 	
 	//------------------------------------------------------------------------------------------------
 	//! Evaluate the hit coordinates to a key
-	string GetHitKey(vector coordOfHit);
+	string GetHitKey(vector coordOfHit)
+	{
+		return "";
+	}
 	
 	//------------------------------------------------------------------------------------------------
 	override bool RplSave(ScriptBitWriter writer)

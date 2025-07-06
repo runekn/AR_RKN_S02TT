@@ -1,0 +1,14 @@
+GenericEntity : "{C62AFC64D4F5495E}Prefabs/TimeTrial/TimeTrialTargetSlot.et" {
+ ID "65BA6C598EA5B504"
+ components {
+  RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
+   m_sObjectToSpawn "{8965956A4E6CA639}Prefabs/TimeTrial/TimeTrialCivTarget.et"
+   m_SectionGetter RKN_TimeTrialGetSectionParent "{65CC5C0BD7A98B7D}" {
+   }
+   m_bBonusObjective 1
+   m_fBonusAwardSeconds -1
+  }
+ }
+ coords 4.013 0 2.542
+ angleY -160.093
+}

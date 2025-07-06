@@ -1,0 +1,4 @@
+MatPBRBasic {
+ BCRMap "{6154474606BF5392}Assets/TimeTrial/Data/target_pole_BCR.edds"
+ NMOMap "{598CFCD4DFC8010C}Assets/TimeTrial/Data/target_pole_NMO.edds"
+}

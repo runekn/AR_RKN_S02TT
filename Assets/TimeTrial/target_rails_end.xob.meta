@@ -1,0 +1,34 @@
+MetaFileClass {
+ Name "{F5736E3FB075AA37}Assets/TimeTrial/target_rails_end.xob"
+ Configurations {
+  FBXResourceClass PC {
+   ExportSceneHierarchy 1
+   MaterialAssigns {
+    MaterialAssignClass "{65CA705398E5AA10}" {
+     SourceMaterial "chain_end"
+     AssignedMaterial "{0BEB20256D0BA5EA}Assets/TimeTrial/Data/chain_end.emat"
+    }
+    MaterialAssignClass "{65CA705398E5AA18}" {
+     SourceMaterial "rails_end"
+     AssignedMaterial "{6339B946D8B1B61E}Assets/TimeTrial/Data/rails_end.emat"
+    }
+   }
+   MeshParams {
+    MeshParam end1_rails {
+    }
+    MeshParam end1_chain {
+    }
+   }
+  }
+  FBXResourceClass XBOX_ONE : PC {
+  }
+  FBXResourceClass XBOX_SERIES : PC {
+  }
+  FBXResourceClass PS4 : PC {
+  }
+  FBXResourceClass PS5 : PC {
+  }
+  FBXResourceClass HEADLESS : PC {
+  }
+ }
+}

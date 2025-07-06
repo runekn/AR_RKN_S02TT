@@ -1,0 +1,51 @@
+MetaFileClass {
+ Name "{975D63DA4126A4DD}Assets/TimeTrial/target_civ.xob"
+ Configurations {
+  FBXResourceClass PC {
+   MaterialAssigns {
+    MaterialAssignClass "{65CC5C08EDE2F237}" {
+     SourceMaterial "civ_target_plank"
+     AssignedMaterial "{1C0592BEBB4346D2}Assets/TimeTrial/Data/civ_target_plank.emat"
+    }
+    MaterialAssignClass "{65CC5C08EDE2F23E}" {
+     SourceMaterial "civ_target_plate"
+     AssignedMaterial "{17F6FA3DAD0E82B5}Assets/TimeTrial/Data/civ_target_plate.emat"
+    }
+   }
+   MeshParams {
+    MeshParam plank {
+    }
+    MeshParam plate {
+    }
+   }
+   GeometryParams {
+    GeometryParam UCX_Plank {
+     LayerPreset "FireGeo"
+     SurfaceProperties {
+      "{EDFC3AF8A2483BC4}Common/Materials/Game/Wood/wood_10mm.gamemat"
+     }
+     Mass 0
+     Margin 0
+    }
+    GeometryParam UTM_Plate {
+     LayerPreset "PropFireView"
+     SurfaceProperties {
+      "{F139046E18E93C02}Common/Materials/Game/Wood/wood_5mm.gamemat"
+     }
+     Mass 0
+     Margin 0
+    }
+   }
+  }
+  FBXResourceClass XBOX_ONE : PC {
+  }
+  FBXResourceClass XBOX_SERIES : PC {
+  }
+  FBXResourceClass PS4 : PC {
+  }
+  FBXResourceClass PS5 : PC {
+  }
+  FBXResourceClass HEADLESS : PC {
+  }
+ }
+}

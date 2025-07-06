@@ -1,0 +1,17 @@
+RKN_TimeTrialClayTarget {
+ ID "65CA70395EEE9FAC"
+ components {
+  MeshObject "{65CA70392F17EFAA}" {
+   Object "{8EB69F7821436CA8}Assets/TimeTrial/target_clay.xob"
+   PixelSizeScale 10
+  }
+  RigidBody "{65CAFE1A385DC16D}" {
+   ResponseIndex "TinyDestructible"
+   ModelGeometry 1
+   Static 1
+  }
+  RplComponent "{65CA703925FDE64C}" {
+  }
+ }
+ coords 7590.941 166.156 4238.422
+}

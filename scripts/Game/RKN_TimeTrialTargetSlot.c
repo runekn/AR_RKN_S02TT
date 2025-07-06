@@ -5,22 +5,25 @@ class RKN_TimeTrialTargetSlotClass : RKN_TimeTrialObjectiveSlotClass
 
 class RKN_TimeTrialTargetSlot : RKN_TimeTrialObjectiveSlot
 {
-	[Attribute()]
+	[Attribute(category: "Time trial")]
+	ref array<ref SCR_ScenarioFrameworkActionBase> m_aOnHitActions;
+	
+	[Attribute(category: "Time trial")]
 	ref array<ref RKN_TimeTrialTargetHitArea> m_aHitAreas;
 	
-	[Attribute("-1")]
+	[Attribute("-1", category: "Time trial")]
 	int m_iTimeoutSeconds;
 	
-	[Attribute("2")]
+	[Attribute("2", category: "Time trial")]
 	int m_iTimeoutPenaltySeconds;
 	
-	[Attribute()]
+	[Attribute(category: "Time trial")]
 	ref PointInfo m_MovePoint;
 	
-	[Attribute("1")]
+	[Attribute("1", category: "Time trial")]
 	float m_fMoveSpeedMetersPerSecond;
 	
-	[Attribute("false")]
+	[Attribute("false", category: "Time trial")]
 	bool m_bMoveCycle;
 	
 	ref map<string, int> m_mHitAreasMap = new map<string, int>();
@@ -47,7 +50,7 @@ class RKN_TimeTrialTargetSlot : RKN_TimeTrialObjectiveSlot
 	override void ResetObjective()
 	{
 		super.ResetObjective();
-		m_Target.SetState(ETargetState.TARGET_DOWN);
+		m_Target.ResetTarget();
 		GetGame().GetCallqueue().Remove(Timeout);
 		if (m_MovePoint)
 		{
@@ -69,7 +72,7 @@ class RKN_TimeTrialTargetSlot : RKN_TimeTrialObjectiveSlot
 			m_vDesiredPosition = GetMovePosition();
 			m_bMoveCycleActive = m_bMoveCycle;
 		}
-		m_Target.SetState(ETargetState.TARGET_UP);
+		m_Target.ActivateTarget();
 	}
 	
 	void Timeout()
@@ -86,6 +89,8 @@ class RKN_TimeTrialTargetSlot : RKN_TimeTrialObjectiveSlot
 		if (score > 0)
 			m_Section.m_Course.ApplyScoreModifier(-score);
 		FinishObjective();
+		foreach (SCR_ScenarioFrameworkActionBase action : m_aOnHitActions)
+			action.Init(GetOwner());
 	}
 	
 	override void EOnFrame(IEntity owner, float timeSlice)

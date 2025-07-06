@@ -1,0 +1,5 @@
+MatPBRBasic {
+ Color 1 1 1 0
+ AlphaTest 1
+ OpacityMap "{DF1F056340230E00}system/textures/defBlack.edds"
+}

@@ -1,3 +1,5 @@
+Instructions: Speak rapidly, so voicelines can keep up with fast players
+
 Penalty:
 	"Penalty!"
 	"Foul"
@@ -11,7 +13,9 @@ Bonus:
 	"Good shot"
 
 Start:
-	"Three. Two. One. Go!"
+	"Three. Two. One. Go!" -- TRY TO TIME WITH RECORDING --
+	"Start on buzzer"
+	"Wait for countdown. Go!" -- TRY TO TIME WITH RECORDING --
 
 Finish section:
 	"Next one"
@@ -26,14 +30,24 @@ Finish course:
 	"New personal best"
 	"You're not old enough for tremors. Get better."
 	"Outstanding time!"
+	"Double back and try again"
 
 Misc:
 	"Faster!"
 	"Good pace"
+	"Speed up"
+	
+Requirements:
+	"Stand"
+	"On your feet"
 	"Crouch"
+	"Take a knee"
 	"Lie down"
 	"Prone"
 	"Go prone"
 	"Lean out of cover"
 	"Lean"
 	"Hit"
+	"Pistol"
+	"Rifle"
+	"Grenade"

@@ -1,0 +1,5 @@
+MatPBRBasic {
+ Color 0.445 0.445 0.445 1
+ BCRMap "{DFE62D48EAC7B13B}Assets/_SharedData/Metal/ST_Steel_Battered_02_BCR.edds"
+ NMOMap "{5E9B5A9AF633BD94}Assets/_SharedData/Metal/ST_Steel_Battered_NMO.edds"
+}

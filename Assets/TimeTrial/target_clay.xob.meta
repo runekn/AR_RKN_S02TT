@@ -1,0 +1,37 @@
+MetaFileClass {
+ Name "{8EB69F7821436CA8}Assets/TimeTrial/target_clay.xob"
+ Configurations {
+  FBXResourceClass PC {
+   MaterialAssigns {
+    MaterialAssignClass "{65CAFE0C5EF84547}" {
+     SourceMaterial "clay_target"
+     AssignedMaterial "{01F9237A746AF8E9}Assets/TimeTrial/Data/clay_target.emat"
+    }
+   }
+   MeshParams {
+    MeshParam clay_target {
+    }
+   }
+   GeometryParams {
+    GeometryParam UCX_ClayTarget {
+     LayerPreset "PropFireView"
+     SurfaceProperties {
+      "{A210124331C1CBD2}Common/Materials/Game/target_clay.gamemat"
+     }
+     Mass 0
+     Margin 0
+    }
+   }
+  }
+  FBXResourceClass XBOX_ONE : PC {
+  }
+  FBXResourceClass XBOX_SERIES : PC {
+  }
+  FBXResourceClass PS4 : PC {
+  }
+  FBXResourceClass PS5 : PC {
+  }
+  FBXResourceClass HEADLESS : PC {
+  }
+ }
+}

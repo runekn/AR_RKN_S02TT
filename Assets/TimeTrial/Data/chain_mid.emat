@@ -1,0 +1,4 @@
+MatPBRBasic {
+ BCRMap "{071142185E8DFE8A}Assets/_SharedData/Vehicle/ST_Rubber_BCR.edds"
+ NMOMap "{55A1ABD2C579FCC1}Assets/_SharedData/Vehicle/ST_Rubber_N.edds"
+}

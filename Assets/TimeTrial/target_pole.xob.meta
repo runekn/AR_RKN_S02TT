@@ -1,0 +1,43 @@
+MetaFileClass {
+ Name "{CC8227E70362481A}Assets/TimeTrial/target_pole.xob"
+ Configurations {
+  FBXResourceClass PC {
+   MaterialAssigns {
+    MaterialAssignClass "{65CAFE077C5FD901}" {
+     SourceMaterial "target_pole_clay_holder"
+     AssignedMaterial "{96EC1BD3E3049611}Assets/TimeTrial/Data/target_pole_clay_holder.emat"
+    }
+    MaterialAssignClass "{65CAFE077C5FD90B}" {
+     SourceMaterial "target_pole"
+     AssignedMaterial "{97FE60EFF464BC3F}Assets/TimeTrial/Data/target_pole.emat"
+    }
+   }
+   MeshParams {
+    MeshParam holder {
+    }
+    MeshParam pole {
+    }
+   }
+   GeometryParams {
+    GeometryParam UCX_Pole {
+     LayerPreset "PropFireView"
+     SurfaceProperties {
+      "{F139046E18E93C02}Common/Materials/Game/Wood/wood_5mm.gamemat"
+     }
+     Mass 0
+     Margin 0
+    }
+   }
+  }
+  FBXResourceClass XBOX_ONE : PC {
+  }
+  FBXResourceClass XBOX_SERIES : PC {
+  }
+  FBXResourceClass PS4 : PC {
+  }
+  FBXResourceClass PS5 : PC {
+  }
+  FBXResourceClass HEADLESS : PC {
+  }
+ }
+}

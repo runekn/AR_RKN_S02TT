@@ -1,0 +1,34 @@
+MetaFileClass {
+ Name "{4E1D5A5D359747C4}Assets/TimeTrial/target_rails_mid.xob"
+ Configurations {
+  FBXResourceClass PC {
+   ExportSceneHierarchy 1
+   MaterialAssigns {
+    MaterialAssignClass "{65CA70538EDF9642}" {
+     SourceMaterial "chain_mid"
+     AssignedMaterial "{6C15C0D6A54D2E1D}Assets/TimeTrial/Data/chain_mid.emat"
+    }
+    MaterialAssignClass "{65CA70538EDF964B}" {
+     SourceMaterial "rails_mid"
+     AssignedMaterial "{04C759B510F73DE9}Assets/TimeTrial/Data/rails_mid.emat"
+    }
+   }
+   MeshParams {
+    MeshParam chain {
+    }
+    MeshParam rails {
+    }
+   }
+  }
+  FBXResourceClass XBOX_ONE : PC {
+  }
+  FBXResourceClass XBOX_SERIES : PC {
+  }
+  FBXResourceClass PS4 : PC {
+  }
+  FBXResourceClass PS5 : PC {
+  }
+  FBXResourceClass HEADLESS : PC {
+  }
+ }
+}

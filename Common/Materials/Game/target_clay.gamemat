@@ -1,0 +1,14 @@
+GameMaterial {
+ SoundInfo SoundInfo "{65CAFE12C28213C4}" {
+ }
+ HitEffectInfo HitEffectInfo "{65CAFE12FA8C4C98}" {
+  ParticleEffect "{C589B20C7A712100}Particles/TimeTrial/Hit_TimeTrialClay.ptc"
+  DecalMaterial "{310A7FC0F64E6ABF}Assets/TimeTrial/Data/empty.emat"
+ }
+ CollisionInfo CollisionInfo "{65CAFE12F0160F85}" {
+  ParticleEffect "{C589B20C7A712100}Particles/TimeTrial/Hit_TimeTrialClay.ptc"
+ }
+ BallisticInfo BallisticInfo "{65CAFE12E515CD2B}" {
+  Density 1
+ }
+}

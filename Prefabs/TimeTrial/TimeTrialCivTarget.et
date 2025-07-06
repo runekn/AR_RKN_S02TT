@@ -1,0 +1,16 @@
+RKN_TimeTrialTargetEntity {
+ ID "65CC5C0B95D2D151"
+ components {
+  MeshObject "{65CC5C084372538A}" {
+   Object "{975D63DA4126A4DD}Assets/TimeTrial/target_civ.xob"
+  }
+  RigidBody "{65CC5C0844B13371}" {
+   ResponseIndex "SmallDestructible"
+   ModelGeometry 1
+   Static 1
+  }
+  RplComponent "{65CC5C084ACB3D92}" {
+  }
+ }
+ coords 7595.384 166.156 4235.347
+}
