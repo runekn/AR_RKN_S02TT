@@ -69,7 +69,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
   }
   coords 7597.873 166.156 4236.113
   {
-   GenericEntity TimeTrialCourseLayer1 : "{E41ABB2A25E246B5}Prefabs/TimeTrial/TimeTrialCourseLayer.et" {
+   GenericEntity TimeTrialCourseLayer1 : "{E41ABB2A25E246B5}Prefabs/TimeTrial/ScenarioFramework/TimeTrialCourseLayer.et" {
     components {
      RKN_TimeTrialCourseLayer "{65BA6C59A0F2E93C}" {
       m_CourseConfig "{B6221B8CD3C2DA8E}Configs/TimeTrial/TestCourseConfig.conf"
