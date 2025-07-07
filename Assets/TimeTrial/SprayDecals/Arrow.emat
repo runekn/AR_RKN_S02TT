@@ -1,0 +1,7 @@
+MatPBRDecal {
+ Color 1 0.204 0.204 1
+ BlendMode AlphaBlend
+ CavityFromAO 0
+ BCRMap "{D8AA92E52CF70AB6}Assets/TimeTrial/SprayDecals/Arrow.edds"
+ OpacityMap "{D8AA92E52CF70AB6}Assets/TimeTrial/SprayDecals/Arrow.edds"
+}

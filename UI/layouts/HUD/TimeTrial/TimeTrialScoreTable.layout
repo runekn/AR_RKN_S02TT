@@ -75,6 +75,7 @@ FrameWidgetClass {
              }
              Color 0.6795 0.4913 0.0225 1
              Texture "{188707A8E6E9148B}UI/Textures/gold.edds"
+             Size 20 20
             }
             TextWidgetClass "{65CCC694AB4D5B09}" {
              Name "GoldTimeText"
@@ -82,7 +83,8 @@ FrameWidgetClass {
               Padding 5 0 0 0
              }
              Text "00:00:00"
-             "Font Size" 27
+             "Font Size" 20
+             "Min Font Size" 20
             }
            }
           }
@@ -99,6 +101,7 @@ FrameWidgetClass {
              }
              Color 0.6308 0.6002 0.6002 1
              Texture "{188707A8E6E9148B}UI/Textures/gold.edds"
+             Size 20 20
             }
             TextWidgetClass "{65CCC694D4E25EE2}" {
              Name "SilverTimeText"
@@ -106,7 +109,8 @@ FrameWidgetClass {
               Padding 5 0 0 0
              }
              Text "00:00:00"
-             "Font Size" 27
+             "Font Size" 20
+             "Min Font Size" 20
             }
            }
           }
@@ -123,6 +127,7 @@ FrameWidgetClass {
              }
              Color 0.6235 0.3064 0.0441 1
              Texture "{188707A8E6E9148B}UI/Textures/gold.edds"
+             Size 20 20
             }
             TextWidgetClass "{65CCC694D79FB9AA}" {
              Name "BronzeTimeText"
@@ -130,7 +135,8 @@ FrameWidgetClass {
               Padding 5 0 0 0
              }
              Text "00:00:00"
-             "Font Size" 27
+             "Font Size" 20
+             "Min Font Size" 20
             }
            }
           }
@@ -146,7 +152,7 @@ FrameWidgetClass {
         Padding 0 2 0 2
        }
        Color 0.6235 0.5059 0.1569 1
-       Size 500 2
+       Size 400 2
       }
       VerticalLayoutWidgetClass "{65CCC693B31C27A4}" {
        Name "RunInfoLayout"
@@ -210,8 +216,9 @@ FrameWidgetClass {
           VerticalLayoutWidgetClass "{65CCC68FE15FB173}" {
            Name "VerticalLayout0"
            Slot LayoutSlot "{65CCC68FE15FB10B}" {
+            Padding 5 0 0 0
             SizeMode Fill
-            FillWeight 1.3
+            FillWeight 1
            }
            {
             HorizontalLayoutWidgetClass "{65CCC68C35F5117D}" {
@@ -225,6 +232,8 @@ FrameWidgetClass {
                }
                Color 0.0706 0.5608 0.1922 1
                Text "-"
+               "Font Size" 20
+               "Min Font Size" 20
               }
               TextWidgetClass "{65CCC68C330FE2F0}" {
                Name "BonusText"
@@ -232,6 +241,8 @@ FrameWidgetClass {
                }
                Color 0.0706 0.5608 0.1922 1
                Text "1"
+               "Font Size" 20
+               "Min Font Size" 20
               }
               TextWidgetClass "{65CCC68C334BEDBF}" {
                Name "Text2"
@@ -239,6 +250,8 @@ FrameWidgetClass {
                }
                Color 0.0706 0.5608 0.1922 1
                Text " sec"
+               "Font Size" 20
+               "Min Font Size" 20
               }
              }
             }
@@ -253,6 +266,8 @@ FrameWidgetClass {
                }
                Color 0.6235 0.1569 0.1569 1
                Text "+"
+               "Font Size" 20
+               "Min Font Size" 20
               }
               TextWidgetClass "{65CCC68C503998A1}" {
                Name "PenaltyText"
@@ -260,6 +275,8 @@ FrameWidgetClass {
                }
                Color 0.6235 0.1569 0.1569 1
                Text "2.5"
+               "Font Size" 20
+               "Min Font Size" 20
               }
               TextWidgetClass "{65CCC68C5075E12D}" {
                Name "Text2"
@@ -267,6 +284,8 @@ FrameWidgetClass {
                }
                Color 0.6235 0.1569 0.1569 1
                Text " sec"
+               "Font Size" 20
+               "Min Font Size" 20
               }
              }
             }
@@ -294,6 +313,8 @@ FrameWidgetClass {
             FillWeight 0.75
            }
            Text "NAME"
+           "Font Size" 20
+           "Min Font Size" 20
            FontProperties FontProperties "{51C68CA43965BB34}" {
            }
           }
@@ -304,6 +325,8 @@ FrameWidgetClass {
             FillWeight 0.25
            }
            Text "TIME"
+           "Font Size" 20
+           "Min Font Size" 20
            "Horizontal Alignment" Center
            Offset 0 0
           }
@@ -315,6 +338,8 @@ FrameWidgetClass {
            }
            Rotation 0
            Text "TOTAL"
+           "Font Size" 20
+           "Min Font Size" 20
            "Horizontal Alignment" Center
           }
          }
@@ -327,7 +352,7 @@ FrameWidgetClass {
           Padding 0 2 0 2
          }
          Color 0.6235 0.5059 0.1569 1
-         Size 500 2
+         Size 400 2
         }
        }
       }

@@ -1,0 +1,10 @@
+RKN_TimeTrialClayTarget : "{BD2C44EC63B4C577}Prefabs/TimeTrial/TimeTrialTargetPoleClay.et" {
+ ID "65CA70395EEE9FAC"
+ coords 7463.388 139.289 4721.16
+ {
+  GenericEntity : "{E995D6824320BCDA}Prefabs/TimeTrial/TimeTrialTargetPole.et" {
+   ID "65CE7B720E83DCA9"
+   coords -0.025 -1.376 0
+  }
+ }
+}

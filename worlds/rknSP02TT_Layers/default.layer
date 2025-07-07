@@ -1,10 +1,7 @@
-SCR_FactionManager FactionManager_FFA1 : "{A1C54BBE72C5C696}Prefabs/MP/Managers/Factions/FactionManager_FFA.et" {
- coords 7586.488 166.156 4240.93
- Factions {
-  SCR_FreeForAllFaction "{56B491183BEFD56B}" {
-   FactionKey "CIV"
-  }
- }
+DecalEntity {
+ coords 7453.415 138.309 4753.376
+ TerrainOnly 0
+ Mat "{BE113C00D36F9BBB}Assets/TimeTrial/SprayDecals/Arrow.emat"
 }
 SCR_DestructibleEntity : "{13219FE011DD3FEF}Prefabs/Structures/Walls/Wooden/WoodenWall_02/WoodenWall_02_4m_A.et" {
  coords 7593.653 0 4241.106
@@ -52,10 +49,11 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
        SCR_ScenarioFrameworkSlotBase "{5A22E1D67E712EC8}" {
         m_aPlugins {
          SCR_ScenarioFrameworkPluginSpawnPoint "{65AB38F319447228}" {
+          m_fSpawnRadius 2
           m_sFaction "CIV"
          }
         }
-        m_sObjectToSpawn "{5A2220DD0C16958B}Prefabs/MP/Spawning/SpawnPoint_US.et"
+        m_sObjectToSpawn "{F26BA0860D54B7DF}Prefabs/MP/Spawning/SpawnPoint_CIV.et"
        }
       }
       coords 0 0 0
@@ -82,6 +80,23 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
     coords 0 0 0
     {
      RKN_TimeTrialControlPanelEntity : "{0B9BA8A5C109109D}Prefabs/TimeTrial/TimeTrialButton.et" {
+      components {
+       ActionsManagerComponent "{65BA6C59EA853AB6}" {
+        additionalActions {
+         RKN_StartTimeTrialAction "{65BAA0BBD470EC68}" {
+          UIInfo UIInfo "{65BAA0BBCB532A5F}" {
+           Name "Start Training (Custom loadout)"
+          }
+         }
+         RKN_StartTimeTrialAction "{65CD0837E4CB9E72}" {
+          UIInfo UIInfo "{65BAA0BBCB532A5F}" {
+           Name "Start Competitive (Predefined loadout)"
+          }
+          Duration 0.5
+         }
+        }
+       }
+      }
       coords -4.596 0 -1.241
       angleY -41.972
      }
@@ -89,24 +104,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
       TimeTrialSectionLayer1 {
        coords 0 0 0
        {
-        GenericEntity TimeTrialPoleTargetLayer1 : "{32CA6C7DC12FAF33}Prefabs/TimeTrial/TimeTrialPoleTargetLayer.et" {
-         coords 2.132 0 0.082
-         angleY -152.778
-         {
-          GenericEntity Slot8 {
-           ID "65CA703858848AB0"
-          }
-          GenericEntity TimeTrialTargetSlot2 {
-           ID "65CA703858848AB3"
-           components {
-            RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
-             m_bBonusObjective 1
-             m_fBonusAwardSeconds 0.5
-            }
-           }
-          }
-         }
-        }
         $grp GenericEntity : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Components/Layer.et" {
          Rail_layer {
           coords 5.905 0 1.444
@@ -227,6 +224,19 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
          coords 3.533 0 0.387
          angleY -69.035
         }
+        GenericEntity TimeTrialTargetSlot2 : "{C62AFC64D4F5495E}Prefabs/TimeTrial/TimeTrialTargetSlot.et" {
+         components {
+          RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
+           m_sObjectToSpawn "{3C8C365B0D8B263B}TimeTrialTargetPoleWithClay.et"
+           m_SectionGetter RKN_TimeTrialGetSectionParent "{65CE7B727E48EE6B}" {
+           }
+           m_bBonusObjective 1
+           m_fBonusAwardSeconds 1
+          }
+         }
+         coords 0.533 1.16 0.249
+         angleY -155.283
+        }
        }
       }
       TimeTrialSectionLayer3 {
@@ -277,6 +287,14 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
         }
        }
       }
+     }
+     GenericEntity Slot10 : "{AA01691FDC4E9167}Prefabs/Systems/ScenarioFramework/Components/Slot.et" {
+      components {
+       SCR_ScenarioFrameworkSlotBase "{5A22E1D67E712EC8}" {
+        m_sObjectToSpawn "{F542F974956C255F}Prefabs/Props/Military/Compositions/CIV/ArsenalBox_CIV.et"
+       }
+      }
+      coords -8.266 0 -3.57
      }
      GenericEntity TimeTrialUITriggerSlot1 : "{ADC06C4DCF0A9E1B}Prefabs/TimeTrial/TimeTrialUITriggerSlot.et" {
       components {

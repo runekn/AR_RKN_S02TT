@@ -4,17 +4,40 @@ SCR_AIWorld : "{70CCCF16487C927F}Prefabs/AI/SCR_AIWorld_Eden.et" {
 PerceptionManager PerceptionManager1 : "{028DAEAD63E056BE}Prefabs/World/Game/PerceptionManager.et" {
  coords 7580.319 166.156 4253.104
 }
+SCR_FactionManager FactionManager_FFA1 : "{A1C54BBE72C5C696}Prefabs/MP/Managers/Factions/FactionManager_FFA.et" {
+ coords 7586.488 166.156 4240.93
+ Factions {
+  SCR_FreeForAllFaction "{56B491183BEFD56B}" {
+   FactionKey "CIV"
+   UIInfo SCR_FactionUIInfo "{56B49118D8D0A9C5}" {
+    Name "Competitors"
+    Icon "{7BB7AE674BE729CE}UI/Textures/Editor/EditableEntities/Factions/EditableEntity_Faction_CIV.edds"
+    m_sNameUpper "COMPETITORS"
+   }
+   m_sFactionFlag "{76A2D42714BB3806}UI/Textures/Flags/Civilian-flag-base_3it.edds"
+   m_FactionFlagMaterial "{41FF5ED4614840C9}Assets/Props/Fabric/Flags/Data/Flag_1_2_CIVILIAN.emat"
+   m_FactionLabel FACTION_CIV
+   m_aEntityCatalogs {
+    SCR_EntityCatalogMultiList "{65CE64D66178866C}" : "{9D7E5804BB2E9B28}Configs/EntityCatalog/CIV/InventoryItems_EntityCatalog_CIV.conf" {
+    }
+    SCR_EntityCatalogMultiList "{65CE64D1BB11F7A8}" : "{E908001749419691}Configs/EntityCatalog/FIA/InventoryItems_EntityCatalog_FIA.conf" {
+    }
+    SCR_EntityCatalogMultiList "{65CE64D1B292C534}" : "{5F7EC52FC40A03E2}Configs/EntityCatalog/US/InventoryItems_EntityCatalog_US.conf" {
+    }
+    SCR_EntityCatalogMultiList "{65CE64D1A52EB0F0}" : "{C53421647C3D0D2E}Configs/EntityCatalog/USSR/InventoryItems_EntityCatalog_USSR.conf" {
+    }
+   }
+  }
+ }
+}
 RadioManagerEntity : "{B8E09FAB91C4ECCD}Prefabs/Radio/RadioManager.et" {
  coords 7580.521 166.156 4250.438
 }
 SCR_BaseGameMode GameModeSF1 : "{ECEEDB2D3737204B}Prefabs/Systems/ScenarioFramework/GameModeSF.et" {
  components {
-  SCR_FiringRangeScoringComponent "{65AB38F0DA5DE466}" {
-  }
   SCR_RespawnSystemComponent "{56B2B4793051E7C9}" {
-   m_SpawnLogic SCR_AutoSpawnLogic "{5D36888CC966608A}" {
-    m_sForcedFaction "US"
-    m_sForcedLoadout "Competition Participant"
+   m_SpawnLogic SCR_MenuSpawnLogic "{5D36888CC966608A}" {
+    m_sForcedFaction "CIV"
    }
   }
   SCR_SaveLoadComponent "{65C64E30CBFA8E33}" {
@@ -30,6 +53,9 @@ SCR_BaseGameMode GameModeSF1 : "{ECEEDB2D3737204B}Prefabs/Systems/ScenarioFramew
   }
  }
  coords 7579.335 166.156 4251.918
+ m_aDisabledResourceTypes {
+  0
+ }
 }
 SCR_BaseTaskManager : "{1AC69CD7907FB4F8}Prefabs/Systems/ScenarioFramework/Tasks/TaskManager.et" {
  coords 7580.908 166.156 4246.803
@@ -37,10 +63,11 @@ SCR_BaseTaskManager : "{1AC69CD7907FB4F8}Prefabs/Systems/ScenarioFramework/Tasks
 SCR_LoadoutManager : "{AA4E7419A1FF65B0}Prefabs/MP/Managers/Loadouts/LoadoutManager_Base.et" {
  coords 7585.824 166.156 4238.925
  m_aPlayerLoadouts {
-  SCR_PlayerLoadout "{65BD07D383467A1A}" {
+  SCR_FactionPlayerLoadout "{65BD07D383467A1A}" {
    m_sLoadoutName "Competition Participant"
-   m_sLoadoutResource "{3058A14A68CD2886}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_TT.et"
-   m_sLoadoutImage "{2B0877799B9B6C66}UI/Textures/EditorPreviews/Characters/BLUFOR/US_Army/Character_US_Rifleman.edds"
+   m_sLoadoutResource "{B45122B8CA9FF54E}Prefabs/Characters/Factions/CIV/Character_CIV_Competitor_1.et"
+   m_sLoadoutImage "{2707FCF56D200CC4}UI/Textures/EditorPreviews/Characters/CIV/Character_CIV_DenimJacket_1.edds"
+   m_sAffiliatedFaction "CIV"
   }
  }
 }

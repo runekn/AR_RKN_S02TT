@@ -1,0 +1,8 @@
+SCR_ChimeraCharacter : "{3AE3C1A509298D9D}Prefabs/Characters/Factions/CIV/GenericCivilians/Character_CIV_DenimJacket_2.et" {
+ ID "520EC961A090B1EE"
+ components {
+  RKN_TimeTrialScoreTablePlayerComponent "{65CE5B99FA658EC4}" {
+  }
+ }
+ coords 7587.601 166.156 4247.125
+}

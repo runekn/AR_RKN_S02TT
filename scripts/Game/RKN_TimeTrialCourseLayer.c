@@ -176,15 +176,11 @@ class RKN_TimeTrialCourseLayer : SCR_ScenarioFrameworkLayerBase
 	
 	void ApplyCompetitiveLoadout(IEntity player)
 	{
-		if (!m_Config.m_sCompetitiveLoadout)
+		if (m_Config.m_aCompetitiveLoadout.IsEmpty())
 			return;
-		SCR_BasePlayerLoadout loadout = GetGame().GetLoadoutManager().GetLoadoutByName(m_Config.m_sCompetitiveLoadout);
-		if (!loadout)
-		{
-			Print("Loadout not found: " + m_Config.m_sCompetitiveLoadout, LogLevel.ERROR);
-			return;
-		}
-		InventoryStorageManagerComponent comp = InventoryStorageManagerComponent.Cast(player.FindComponent(InventoryStorageManagerComponent));
+		
+		// Delete current loadout - except clothing
+		SCR_InventoryStorageManagerComponent comp = SCR_InventoryStorageManagerComponent.Cast(player.FindComponent(SCR_InventoryStorageManagerComponent));
 		array<IEntity> items = {};
 		comp.GetItems(items);
 		foreach (IEntity item : items)
@@ -203,6 +199,15 @@ class RKN_TimeTrialCourseLayer : SCR_ScenarioFrameworkLayerBase
 				continue;
 			
 			comp.TryDeleteItem(item);
+		}
+		
+		// Insert competitive loadout
+		foreach (RKN_TimeTrialLoadoutItem item : m_Config.m_aCompetitiveLoadout)
+		{
+			for (int i = 0; i < item.m_iCount; i++)
+			{
+				comp.TrySpawnPrefabToStorage(item.m_sPrefab);
+			}
 		}
 	}
 }

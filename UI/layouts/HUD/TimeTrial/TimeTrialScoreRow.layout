@@ -23,6 +23,8 @@ OverlayWidgetClass {
       FillWeight 0.75
      }
      Text "SARGE"
+     "Font Size" 20
+     "Min Font Size" 20
     }
     TextWidgetClass "{65BAE89763F558D0}" {
      Name "Time"
@@ -31,6 +33,8 @@ OverlayWidgetClass {
       FillWeight 0.25
      }
      Text "9001"
+     "Font Size" 20
+     "Min Font Size" 20
      "Horizontal Alignment" Right
     }
     TextWidgetClass "{65BAE89763F558D1}" {
@@ -40,6 +44,8 @@ OverlayWidgetClass {
       FillWeight 0.25
      }
      Text "9001"
+     "Font Size" 20
+     "Min Font Size" 20
      "Horizontal Alignment" Right
     }
    }
