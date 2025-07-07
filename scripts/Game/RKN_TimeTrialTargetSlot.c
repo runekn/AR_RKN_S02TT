@@ -60,8 +60,9 @@ class RKN_TimeTrialTargetSlot : RKN_TimeTrialObjectiveSlot
 		}
 	}
 	
-	override void ActivateObjectiveImpl()
+	override void ActivateObjective()
 	{
+		super.ActivateObjective();
 		if (m_iTimeoutSeconds > 0)
 		{
 			GetGame().GetCallqueue().CallLater(Timeout, m_iTimeoutSeconds * 1000, false);

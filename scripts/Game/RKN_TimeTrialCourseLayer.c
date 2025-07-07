@@ -155,6 +155,8 @@ class RKN_TimeTrialCourseLayer : SCR_ScenarioFrameworkLayerBase
 	
 	void ApplyScoreModifier(int mod)
 	{
+		if (m_CurrentScoreInfo.m_iEnd)
+			return;
 		if (mod > 0)
 			m_CurrentScoreInfo.m_iPenalty += mod;
 		if (mod < 0)

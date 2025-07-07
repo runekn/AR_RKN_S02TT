@@ -10,6 +10,15 @@ class RKN_TimeTrialObjectiveSlot : SCR_ScenarioFrameworkSlotBase
 	[Attribute(category: "Time trial")]
 	ref RKN_Get m_DependentObjectiveGetter;
 	
+	[Attribute(category: "Time trial")]
+	float m_fActivationDelaySeconds;
+	
+	[Attribute(category: "Time trial")]
+	ref array<ref SCR_ScenarioFrameworkActionBase> m_aOnActivationActions;
+	
+	[Attribute(category: "Time trial")]
+	ref array<ref SCR_ScenarioFrameworkActionBase> m_aOnResetActions;
+	
 	[Attribute("false", category: "Time trial")]
 	bool m_bBonusObjective;
 	
@@ -74,22 +83,36 @@ class RKN_TimeTrialObjectiveSlot : SCR_ScenarioFrameworkSlotBase
 		m_Section.RegisterObjective(this, m_bBonusObjective);
 	}
 	
+	void TryActivateObjective()
+	{
+		if (!m_DependentObjectives.IsEmpty())
+			return;
+		if (m_fActivationDelaySeconds > 0)
+			GetGame().GetCallqueue().CallLater(ActivateObjective, m_fActivationDelaySeconds * 1000, false);
+		else
+			ActivateObjective();
+	}
+	
 	void ActivateObjective()
 	{
-		if (m_DependentObjectives.IsEmpty())
-			ActivateObjectiveImpl();
+		foreach (SCR_ScenarioFrameworkActionBase action : m_aOnActivationActions)
+			action.Init(GetOwner());
 	}
 	
 	void DependentFinished()
 	{
 		if (++m_iDependentFinished >= m_DependentObjectives.Count())
 		{
-			ActivateObjectiveImpl();
+			if (m_fActivationDelaySeconds > 0)
+				GetGame().GetCallqueue().CallLater(ActivateObjective, m_fActivationDelaySeconds * 1000, false);
+			else
+				ActivateObjective();
 		}
 	}
 	
 	void FinishObjective()
 	{
+		Print("Finished objective " + GetName());
 		if (m_bFinished)
 			return;
 		m_bFinished = true;
@@ -103,10 +126,10 @@ class RKN_TimeTrialObjectiveSlot : SCR_ScenarioFrameworkSlotBase
 	
 	void ResetObjective()
 	{
+		GetGame().GetCallqueue().Remove(ActivateObjective);
 		m_bFinished = false;
 		m_iDependentFinished = 0;
+		foreach (SCR_ScenarioFrameworkActionBase action : m_aOnResetActions)
+			action.Init(GetOwner());
 	}
-	
-	
-	void ActivateObjectiveImpl();
 }

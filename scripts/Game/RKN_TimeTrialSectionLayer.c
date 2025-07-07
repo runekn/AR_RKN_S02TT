@@ -7,6 +7,9 @@ class RKN_TimeTrialSectionLayer : SCR_ScenarioFrameworkLayerBase
 	[Attribute(category: "Time trial")]
 	ref RKN_Get m_CourseGetter;
 	
+	[Attribute(category: "Time trial")]
+	ref array<ref SCR_ScenarioFrameworkActionBase> m_aOnResetActions;
+	
 	ref array<RKN_TimeTrialObjectiveSlot> m_aObjectives = {};
 	ref array<RKN_TimeTrialObjectiveSlot> m_aOptionalObjectives = {};
 	RKN_TimeTrialCourseLayer m_Course;
@@ -54,9 +57,9 @@ class RKN_TimeTrialSectionLayer : SCR_ScenarioFrameworkLayerBase
 	{
 		m_bActive = true;
 		foreach (RKN_TimeTrialObjectiveSlot obj : m_aObjectives)
-			obj.ActivateObjective();
+			obj.TryActivateObjective();
 		foreach (RKN_TimeTrialObjectiveSlot obj : m_aOptionalObjectives)
-			obj.ActivateObjective();
+			obj.TryActivateObjective();
 	}
 	
 	void ResetSection()
@@ -67,6 +70,8 @@ class RKN_TimeTrialSectionLayer : SCR_ScenarioFrameworkLayerBase
 			obj.ResetObjective();
 		foreach (RKN_TimeTrialObjectiveSlot obj : m_aOptionalObjectives)
 			obj.ResetObjective();
+		foreach (SCR_ScenarioFrameworkActionBase action : m_aOnResetActions)
+			action.Init(GetOwner());
 	}
 	
 	void FinishObjective(RKN_TimeTrialObjectiveSlot objective)

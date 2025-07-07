@@ -1,9 +1,9 @@
-GenericEntity : "{C62AFC64D4F5495E}Prefabs/TimeTrial/TimeTrialTargetSlot.et" {
+GenericEntity : "{C62AFC64D4F5495E}Prefabs/TimeTrial/ScenarioFramework/TimeTrialTargetSlot.et" {
  ID "65BA6C598EA5B504"
  components {
   RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
    m_sObjectToSpawn "{08F0874EC0924271}Prefabs/TimeTrial/TimeTrialPopperTarget.et"
-   m_SectionGetter RKN_GetParent "{65C9127971A98F74}" {
+   m_SectionGetter RKN_TimeTrialGetSectionParent "{65CE7B4C59E17ED5}" {
    }
    m_aHitAreas {
     RKN_TimeTrialTargetHitArea "{65C9127B9B30EA14}" {

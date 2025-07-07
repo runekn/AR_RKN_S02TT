@@ -141,7 +141,7 @@ class RKN_TimeTrialScoreTablePlayerComponent : ScriptComponent
 		
 		
 		// History table
-		if (m_ActiveCourse.m_CurrentScoreInfo && m_ActiveCourse.m_CurrentScoreInfo.m_iID == me)
+		if (m_ActiveCourse.m_CurrentScoreInfo && m_ActiveCourse.m_CurrentScoreInfo.m_iID == me && !m_ActiveCourse.m_CurrentScoreInfo.m_iEnd)
 		{
 			m_wTableWidget.SetVisible(false);
 		}

@@ -79,6 +79,7 @@ RKN_TimeTrialControlPanelEntity {
       Name "Start Competitive"
      }
      ActionTitle "Competitive"
+     Duration 0.5
      m_CourseGetter RKN_GetParent "{65CD083731DBD442}" {
      }
      m_bCompetitive 1
