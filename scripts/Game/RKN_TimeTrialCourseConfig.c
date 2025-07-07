@@ -6,11 +6,26 @@ class RKN_TimeTrialCourseConfig
 	[Attribute()]
 	ref array<ref RKN_TimeTrialLoadoutItem> m_aCompetitiveLoadout;
 	[Attribute()]
-	int m_iBronze;
+	float m_fBronzeSeconds;
 	[Attribute()]
-	int m_iSilver;
+	float m_fSilverSeconds;
 	[Attribute()]
-	int m_iGold;
+	float m_fGoldSeconds;
+	
+	int GetGoldMilliseconds()
+	{
+		return m_fGoldSeconds * 1000;
+	}
+	
+	int GetSilverMilliseconds()
+	{
+		return m_fSilverSeconds * 1000;
+	}
+	
+	int GetBronzeMilliseconds()
+	{
+		return m_fBronzeSeconds * 1000;
+	}
 }
 
 [BaseContainerProps()]

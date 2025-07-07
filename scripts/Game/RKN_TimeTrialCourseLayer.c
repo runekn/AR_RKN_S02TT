@@ -6,10 +6,9 @@ class RKN_TimeTrialCourseLayerClass : SCR_ScenarioFrameworkLayerBaseClass
 class RKN_TimeTrialCourseLayer : SCR_ScenarioFrameworkLayerBase
 {	
 	[Attribute(params: "conf", category: "Time trial")]
-	ResourceName m_CourseConfig;
+	ref RKN_TimeTrialCourseConfig m_Config;
 	
 	ref array<RKN_TimeTrialSectionLayer> m_aSections = {};
-	ref RKN_TimeTrialCourseConfig m_Config;
 	int m_iActiveSection;
 	[RplProp()]
 	ref RKN_TimeTrialScoreInfo m_CurrentScoreInfo;
@@ -18,9 +17,6 @@ class RKN_TimeTrialCourseLayer : SCR_ScenarioFrameworkLayerBase
 	
 	override void FinishInit()
 	{
-		Resource configContainer = BaseContainerTools.LoadContainer(m_CourseConfig);
-		if (configContainer && configContainer.IsValid())
-			m_Config = RKN_TimeTrialCourseConfig.Cast(BaseContainerTools.CreateInstanceFromContainer(configContainer.GetResource().ToBaseContainer()));
 		super.FinishInit();
 	}
 	

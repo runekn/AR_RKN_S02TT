@@ -105,11 +105,11 @@ class RKN_TimeTrialScoreTablePlayerComponent : ScriptComponent
 			m_wCourseNameWidget = TextWidget.Cast(m_wCourseLayout.FindAnyWidget("CourseNameText"));
 			m_wCourseNameWidget.SetText(m_ActiveCourse.m_Config.m_sName);
 			m_wGoldTimeWidget = TextWidget.Cast(m_wCourseLayout.FindAnyWidget("GoldTimeText"));
-			m_wGoldTimeWidget.SetText(FormatTime(m_ActiveCourse.m_Config.m_iGold));
+			m_wGoldTimeWidget.SetText(FormatTime(m_ActiveCourse.m_Config.GetGoldMilliseconds()));
 			m_wSilverTimeWidget = TextWidget.Cast(m_wCourseLayout.FindAnyWidget("SilverTimeText"));
-			m_wSilverTimeWidget.SetText(FormatTime(m_ActiveCourse.m_Config.m_iSilver));
+			m_wSilverTimeWidget.SetText(FormatTime(m_ActiveCourse.m_Config.GetSilverMilliseconds()));
 			m_wBronzeTimeWidget = TextWidget.Cast(m_wCourseLayout.FindAnyWidget("BronzeTimeText"));
-			m_wBronzeTimeWidget.SetText(FormatTime(m_ActiveCourse.m_Config.m_iBronze));
+			m_wBronzeTimeWidget.SetText(FormatTime(m_ActiveCourse.m_Config.GetBronzeMilliseconds()));
 			
 			m_wPlayerLayout = m_wRoot.FindAnyWidget("RunInfoLayout");
 			m_wPlayerNameWidget = TextWidget.Cast(m_wPlayerLayout.FindAnyWidget("PlayerNameText"));
@@ -216,11 +216,11 @@ class RKN_TimeTrialScoreTablePlayerComponent : ScriptComponent
 	Color GetTrophyColor()
 	{
 		int totalTime = m_ActiveCourse.m_CurrentScoreInfo.GetTotal();
-		if (totalTime < m_ActiveCourse.m_Config.m_iGold)
+		if (totalTime < m_ActiveCourse.m_Config.GetGoldMilliseconds())
 			return m_cGoldColor;
-		if (totalTime < m_ActiveCourse.m_Config.m_iSilver)
+		if (totalTime < m_ActiveCourse.m_Config.GetSilverMilliseconds())
 			return m_cSilverColor;
-		if (totalTime < m_ActiveCourse.m_Config.m_iBronze)
+		if (totalTime < m_ActiveCourse.m_Config.GetBronzeMilliseconds())
 			return m_cBronzeColor;
 		else
 			return Color.White;

@@ -67,7 +67,21 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
    GenericEntity TimeTrialCourseLayer1 : "{E41ABB2A25E246B5}Prefabs/TimeTrial/ScenarioFramework/TimeTrialCourseLayer.et" {
     components {
      RKN_TimeTrialCourseLayer "{65BA6C59A0F2E93C}" {
-      m_CourseConfig "{B6221B8CD3C2DA8E}Configs/TimeTrialCourses/TestCourseConfig.conf"
+      m_Config RKN_TimeTrialCourseConfig "{65CF415E4F2FFCCC}" {
+       m_sName "Test"
+       m_aCompetitiveLoadout {
+        RKN_TimeTrialLoadoutItem "{65CF415E4896BF6C}" {
+         m_sPrefab "{1353C6EAD1DCFE43}Prefabs/Weapons/Handguns/M9/Handgun_M9.et"
+         m_iCount 3
+        }
+        RKN_TimeTrialLoadoutItem "{65CF415E43F9A113}" {
+         m_sPrefab "{9C05543A503DB80E}Prefabs/Weapons/Magazines/Magazine_9x19_M9_15rnd_Ball.et"
+        }
+       }
+       m_fBronzeSeconds 10
+       m_fSilverSeconds 8
+       m_fGoldSeconds 5
+      }
      }
      RplComponent "{65BD24DE8A8E231A}" {
      }
@@ -339,7 +353,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
    GenericEntity CourseRed1 : "{E41ABB2A25E246B5}Prefabs/TimeTrial/ScenarioFramework/TimeTrialCourseLayer.et" {
     components {
      RKN_TimeTrialCourseLayer "{65BA6C59A0F2E93C}" {
-      m_CourseConfig "{01E8D44B14388402}Configs/TimeTrialCourses/Red1CourseConfig.conf"
+      m_Config RKN_TimeTrialCourseConfig "{65CF415E262DD431}" : "{01E8D44B14388402}Configs/TimeTrialCourses/Red1CourseConfig.conf" {
+      }
      }
      RplComponent "{65CE7B4BF9DC7962}" {
      }
