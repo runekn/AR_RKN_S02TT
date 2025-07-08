@@ -5,8 +5,11 @@ class RKN_TimeTrialCourseLayerClass : SCR_ScenarioFrameworkLayerBaseClass
 
 class RKN_TimeTrialCourseLayer : SCR_ScenarioFrameworkLayerBase
 {	
-	[Attribute(params: "conf", category: "Time trial")]
+	[Attribute(category: "Time trial")]
 	ref RKN_TimeTrialCourseConfig m_Config;
+	
+	[Attribute(category: "Time trial")]
+	ref array<ref SCR_ScenarioFrameworkActionBase> m_aOnResetActions;
 	
 	ref array<RKN_TimeTrialSectionLayer> m_aSections = {};
 	int m_iActiveSection;
@@ -14,11 +17,6 @@ class RKN_TimeTrialCourseLayer : SCR_ScenarioFrameworkLayerBase
 	ref RKN_TimeTrialScoreInfo m_CurrentScoreInfo;
 	[RplProp()]
 	ref array<ref RKN_TimeTrialScoreInfo> m_aScoreInfoHistory = new array<ref RKN_TimeTrialScoreInfo>;
-	
-	override void FinishInit()
-	{
-		super.FinishInit();
-	}
 	
 	void CancelCourse()
 	{
@@ -60,6 +58,7 @@ class RKN_TimeTrialCourseLayer : SCR_ScenarioFrameworkLayerBase
 			ApplyCompetitiveLoadout(player);
 		
 		GetGame().GetCallqueue().CallLater(StartCourse, delay, false);
+		ResetCourse(resetScore: false);
 		Replication.BumpMe();
 	}
 	
@@ -88,12 +87,15 @@ class RKN_TimeTrialCourseLayer : SCR_ScenarioFrameworkLayerBase
 			m_aSections[m_iActiveSection++].ActivateSection();
 	}
 	
-	private void ResetCourse()
+	private void ResetCourse(bool resetScore = true)
 	{
-		m_CurrentScoreInfo = null;
+		if (resetScore)
+			m_CurrentScoreInfo = null;
 		m_iActiveSection = 0;
 		foreach(RKN_TimeTrialSectionLayer section : m_aSections)
 			section.ResetSection();
+		foreach (SCR_ScenarioFrameworkActionBase action : m_aOnResetActions)
+			action.Init(GetOwner());
 	}
 	
 	private void FinishCourse()
