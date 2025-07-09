@@ -17,8 +17,11 @@ class RKN_TimeTrialVoiceLine : SCR_ScenarioFrameworkActionVoiceOverPlayLine
 		{
 			RKN_TimeTrialCourseLayer course = RKN_TimeTrialCourseLayer.Cast(object.FindComponent(RKN_TimeTrialCourseLayer));
 			RKN_TimeTrialObjectiveSlot obj = RKN_TimeTrialObjectiveSlot.Cast(object.FindComponent(RKN_TimeTrialObjectiveSlot));
+			RKN_TimeTrialSectionLayer section = RKN_TimeTrialSectionLayer.Cast(object.FindComponent(RKN_TimeTrialSectionLayer));
 			if (obj)
 				course = obj.m_Section.m_Course;
+			else if (section)
+				course = section.m_Course;
 			
 			if (!course)
 			{

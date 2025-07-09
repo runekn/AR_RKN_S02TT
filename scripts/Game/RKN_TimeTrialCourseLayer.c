@@ -14,6 +14,9 @@ class RKN_TimeTrialCourseLayer : SCR_ScenarioFrameworkLayerBase
 	[Attribute(category: "Time trial")]
 	ref array<ref SCR_ScenarioFrameworkActionBase> m_aOnCancelActions;
 	
+	[Attribute(category: "Time trial")]
+	ref array<ref SCR_ScenarioFrameworkActionBase> m_aOnFinishActions;
+	
 	[Attribute("{62AA1DC9919E6E61}Prefabs/TimeTrial_Radio_ANPRC68.et", params: "et", category: "Time trial")]
 	private ResourceName m_sRadioPrefab;
 	
@@ -128,6 +131,8 @@ class RKN_TimeTrialCourseLayer : SCR_ScenarioFrameworkLayerBase
 			SubmitScore();
 		GetGame().GetCallqueue().CallLater(ResetRun, 5000, false);
 		m_OnFinish.Invoke();
+		foreach (SCR_ScenarioFrameworkActionBase action : m_aOnFinishActions)
+			action.Init(GetOwner());
 		Replication.BumpMe();
 	}
 	

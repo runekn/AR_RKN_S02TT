@@ -4,6 +4,13 @@ GenericEntity {
   RKN_TimeTrialSectionLayer "{65BA6C59BAF2330C}" {
    m_CourseGetter RKN_GetParent "{65BC4ECD11740973}" {
    }
+   m_aOnFinishActions {
+    RKN_TimeTrialVoiceLine "{65D2F04835CDD115}" {
+     m_sLineName "SECTION"
+     m_PlayerGetter SCR_ScenarioFrameworkGetPlayerEntity "{65D2F04831162C9C}" {
+     }
+    }
+   }
   }
   Hierarchy "{65BA6C5982D310F0}" {
   }

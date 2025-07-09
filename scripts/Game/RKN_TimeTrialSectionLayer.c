@@ -10,6 +10,9 @@ class RKN_TimeTrialSectionLayer : SCR_ScenarioFrameworkLayerBase
 	[Attribute(category: "Time trial")]
 	ref array<ref SCR_ScenarioFrameworkActionBase> m_aOnResetActions;
 	
+	[Attribute(category: "Time trial")]
+	ref array<ref SCR_ScenarioFrameworkActionBase> m_aOnFinishActions;
+	
 	ref ScriptInvoker m_OnActive = new ScriptInvoker();
 	ref ScriptInvoker m_OnFinish = new ScriptInvoker();
 	
@@ -62,6 +65,8 @@ class RKN_TimeTrialSectionLayer : SCR_ScenarioFrameworkLayerBase
 			return;
 		if (++m_iCompletedObjectives >= m_aObjectives.Count())
 		{
+			foreach (SCR_ScenarioFrameworkActionBase action : m_aOnFinishActions)
+				action.Init(GetOwner());
 			m_Course.FinishSection(this);
 		}
 	}

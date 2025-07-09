@@ -7,7 +7,7 @@ GenericEntity {
    m_aPlugins {
     SCR_ScenarioFrameworkPluginTrigger "{65BAE8B220E74406}" {
      m_fAreaRadius 2
-     m_fUpdateRate 0.5
+     m_fUpdateRate 0.3
     }
    }
    m_sObjectToSpawn "{5D1A95FADACF19B0}Prefabs/Systems/ScenarioFramework/Triggers/ScenarioFrameworkBoxTrigger.et"

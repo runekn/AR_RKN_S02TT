@@ -410,7 +410,7 @@ AudioClass {
    id 95241
    name "TIMETRIAL_RO_SPAWN_1"
    version 5
-   tl -167.335 -858.987
+   tl -167.335 -860.137
    parent "{64A825EC9DC1123C}Sounds/_SharedData/Configs/Sound/Tutorial/Sound_Tutorial_VO_Radio.conf"
    ins {
     ConnectionsClass connections {

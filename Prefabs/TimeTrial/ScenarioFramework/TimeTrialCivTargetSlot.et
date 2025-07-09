@@ -1,4 +1,4 @@
-GenericEntity : "{C62AFC64D4F5495E}Prefabs/TimeTrial/TimeTrialTargetSlot.et" {
+GenericEntity : "{C62AFC64D4F5495E}Prefabs/TimeTrial/ScenarioFramework/TimeTrialTargetSlot.et" {
  ID "65BA6C598EA5B504"
  components {
   RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
@@ -7,6 +7,13 @@ GenericEntity : "{C62AFC64D4F5495E}Prefabs/TimeTrial/TimeTrialTargetSlot.et" {
    }
    m_bBonusObjective 1
    m_fBonusAwardSeconds -1
+   m_aOnHitActions {
+    RKN_TimeTrialVoiceLine "{65D2F04543B0CD7B}" {
+     m_sLineName "PENALTY"
+     m_PlayerGetter SCR_ScenarioFrameworkGetPlayerEntity "{65D2F04575EB8C76}" {
+     }
+    }
+   }
   }
  }
  coords 4.013 0 2.542
