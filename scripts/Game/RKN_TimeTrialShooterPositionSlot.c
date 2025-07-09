@@ -71,6 +71,13 @@ class RKN_TimeTrialShooterPositionSlot : RKN_TimeTrialObjectiveSlot
 			m_Area.GetOnAllChildrenSpawned().Remove(AfterParentAreaChildrenSpawned);
 	}
 	
+	override void ResetObjective()
+	{
+		super.ResetObjective();
+		m_Trigger.EnablePeriodicQueries(false);
+		m_Trigger.SetInitSequenceDone(false);
+	}
+	
 	override void ActivateObjective()
 	{
 		super.ActivateObjective();

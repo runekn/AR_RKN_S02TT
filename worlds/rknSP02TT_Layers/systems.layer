@@ -35,6 +35,9 @@ RadioManagerEntity : "{B8E09FAB91C4ECCD}Prefabs/Radio/RadioManager.et" {
 }
 SCR_BaseGameMode GameModeSF1 : "{ECEEDB2D3737204B}Prefabs/Systems/ScenarioFramework/GameModeSF.et" {
  components {
+  SCR_GameModeSFManager "{5A96783ABCA252AE}" {
+   m_sVoiceOverDataConfig "{0725E01C4A68AC4D}Configs/TimeTrialCourses/RangeOfficerCommentary.conf"
+  }
   SCR_RespawnSystemComponent "{56B2B4793051E7C9}" {
    m_SpawnLogic SCR_MenuSpawnLogic "{5D36888CC966608A}" {
     m_sForcedFaction "CIV"

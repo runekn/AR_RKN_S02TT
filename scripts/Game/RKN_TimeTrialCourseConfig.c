@@ -36,4 +36,7 @@ class RKN_TimeTrialLoadoutItem
 	
 	[Attribute("1")]
 	int m_iCount;
+	
+	[Attribute("false")]
+	bool m_bEquip;
 }

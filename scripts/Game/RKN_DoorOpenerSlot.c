@@ -45,7 +45,8 @@ class RKN_DoorOpenerSlot : SCR_ScenarioFrameworkSlotBase
 		}
 		// set state
 		foreach (DoorStruct door : m_aQueriedDoors)
-			door.component.SetControlValue(m_fControlValue);
+			if (door.component.GetControlValue() != m_fControlValue)
+				door.component.SetControlValue(m_fControlValue);
 		
 		return super.InitOtherThings();
 	}

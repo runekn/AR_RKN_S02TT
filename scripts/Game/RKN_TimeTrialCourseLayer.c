@@ -9,7 +9,19 @@ class RKN_TimeTrialCourseLayer : SCR_ScenarioFrameworkLayerBase
 	ref RKN_TimeTrialCourseConfig m_Config;
 	
 	[Attribute(category: "Time trial")]
-	ref array<ref SCR_ScenarioFrameworkActionBase> m_aOnResetActions;
+	ref array<ref SCR_ScenarioFrameworkActionBase> m_aOnScheduleActions;
+	
+	[Attribute(category: "Time trial")]
+	ref array<ref SCR_ScenarioFrameworkActionBase> m_aOnCancelActions;
+	
+	[Attribute("{62AA1DC9919E6E61}Prefabs/TimeTrial_Radio_ANPRC68.et", params: "et", category: "Time trial")]
+	private ResourceName m_sRadioPrefab;
+	
+	ref ScriptInvoker m_OnCancel = new ScriptInvoker();
+	ref ScriptInvoker m_OnReset = new ScriptInvoker();
+	ref ScriptInvoker m_OnSchedule = new ScriptInvoker();
+	ref ScriptInvoker m_OnActive = new ScriptInvoker();
+	ref ScriptInvoker m_OnFinish = new ScriptInvoker();
 	
 	ref array<RKN_TimeTrialSectionLayer> m_aSections = {};
 	int m_iActiveSection;
@@ -29,7 +41,12 @@ class RKN_TimeTrialCourseLayer : SCR_ScenarioFrameworkLayerBase
 		m_CurrentScoreInfo.m_iEnd = GetGame().GetWorld().GetTimestamp();
 		GetGame().GetCallqueue().Remove(StartCourse);
 		GetGame().GetCallqueue().Remove(ResetRun);
-		ResetRun();
+		FindPlayerUIComponent(GetGame().GetPlayerManager().GetPlayerControlledEntity(m_CurrentScoreInfo.m_iID)).RemoveScoreTable(this, true);
+		ResetCourse();
+		m_OnCancel.Invoke();
+		foreach (SCR_ScenarioFrameworkActionBase action : m_aOnCancelActions)
+			action.Init(GetOwner());
+		Replication.BumpMe();
 	}
 	
 	void ScheduleCourse(int playerId, int delay, bool competitive)
@@ -59,14 +76,24 @@ class RKN_TimeTrialCourseLayer : SCR_ScenarioFrameworkLayerBase
 		
 		GetGame().GetCallqueue().CallLater(StartCourse, delay, false);
 		ResetCourse(resetScore: false);
+		m_OnSchedule.Invoke();
+		foreach (SCR_ScenarioFrameworkActionBase action : m_aOnScheduleActions)
+			action.Init(GetOwner());
 		Replication.BumpMe();
 	}
 	
 	private void StartCourse()
 	{
+		m_OnActive.Invoke();
 		m_CurrentScoreInfo.m_iStart = GetGame().GetWorld().GetTimestamp();
 		ActivateNextSectionOrFinish();
 		Replication.BumpMe();
+	}
+	
+	void FailCourse()
+	{
+		Print("Fail!");
+		RpcAsk_CancelCourse();
 	}
 	
 	void RegisterSection(RKN_TimeTrialSectionLayer section)
@@ -92,10 +119,6 @@ class RKN_TimeTrialCourseLayer : SCR_ScenarioFrameworkLayerBase
 		if (resetScore)
 			m_CurrentScoreInfo = null;
 		m_iActiveSection = 0;
-		foreach(RKN_TimeTrialSectionLayer section : m_aSections)
-			section.ResetSection();
-		foreach (SCR_ScenarioFrameworkActionBase action : m_aOnResetActions)
-			action.Init(GetOwner());
 	}
 	
 	private void FinishCourse()
@@ -104,6 +127,7 @@ class RKN_TimeTrialCourseLayer : SCR_ScenarioFrameworkLayerBase
 		if (m_CurrentScoreInfo.m_eType == RKN_TimeTrialScoreType.COMPETITIVE)
 			SubmitScore();
 		GetGame().GetCallqueue().CallLater(ResetRun, 5000, false);
+		m_OnFinish.Invoke();
 		Replication.BumpMe();
 	}
 	
@@ -166,6 +190,7 @@ class RKN_TimeTrialCourseLayer : SCR_ScenarioFrameworkLayerBase
 	{
 		FindPlayerUIComponent(GetGame().GetPlayerManager().GetPlayerControlledEntity(m_CurrentScoreInfo.m_iID)).RemoveScoreTable(this, true);
 		ResetCourse();
+		m_OnReset.Invoke();
 		Replication.BumpMe();
 	}
 	
@@ -198,16 +223,41 @@ class RKN_TimeTrialCourseLayer : SCR_ScenarioFrameworkLayerBase
 			)
 				continue;
 			
+			if (item.GetPrefabData().GetPrefabName() == m_sRadioPrefab)
+				continue;
+			
 			comp.TryDeleteItem(item);
 		}
 		
 		// Insert competitive loadout
-		foreach (RKN_TimeTrialLoadoutItem item : m_Config.m_aCompetitiveLoadout)
+		foreach (RKN_TimeTrialLoadoutItem loadoutItem : m_Config.m_aCompetitiveLoadout)
 		{
-			for (int i = 0; i < item.m_iCount; i++)
-			{
-				comp.TrySpawnPrefabToStorage(item.m_sPrefab);
-			}
+			InventoryOperationCallback cb = null;		
+			if (loadoutItem.m_bEquip)
+				cb = new RKN_EquipItemCallback(CharacterControllerComponent.Cast(player.FindComponent(CharacterControllerComponent)));
+			comp.TrySpawnPrefabToStorage(loadoutItem.m_sPrefab, count: loadoutItem.m_iCount, cb: cb);
 		}
+	}
+}
+
+class RKN_EquipItemCallback : ScriptedInventoryOperationCallback
+{
+	CharacterControllerComponent m_pController;
+	
+	void RKN_EquipItemCallback(CharacterControllerComponent pController)
+	{
+		m_pController = pController;
+	}
+	
+	override void OnComplete()
+	{
+		RplId id = GetItem();
+		IEntity e = RplComponent.Cast(Replication.FindItem(id)).GetEntity();
+		m_pController.TryEquipRightHandItem(e, EEquipItemType.EEquipTypeWeapon);
+	}
+	
+	override void OnFailed()
+	{
+		Print("Failed to equip item", LogLevel.ERROR);
 	}
 }

@@ -81,6 +81,9 @@ class RKN_TimeTrialObjectiveSlot : SCR_ScenarioFrameworkSlotBase
 			return;
 		}
 		m_Section.RegisterObjective(this, m_bBonusObjective);
+		m_Section.m_OnActive.Insert(TryActivateObjective);
+		m_Section.m_Course.m_OnReset.Insert(ResetObjective);
+		m_Section.m_Course.m_OnCancel.Insert(ResetObjective);
 	}
 	
 	void TryActivateObjective()

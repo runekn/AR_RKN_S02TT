@@ -19,6 +19,22 @@ class RKN_Get
 		return null;
 	}
 	
+	protected SCR_ScenarioFrameworkParam<IEntity> findChild(IEntity parent, typename entityType)
+	{
+		IEntity entity = parent.GetChildren();
+		while (entity)
+		{
+			
+			if (entity.Type() == entityType)
+				return new SCR_ScenarioFrameworkParam<IEntity>(entity);
+			SCR_ScenarioFrameworkParam<IEntity> r = findChild(entity, entityType);
+			if (r)
+				return r;
+			entity = entity.GetSibling();
+		}
+		return null;
+	}
+	
 	protected SCR_ScenarioFrameworkParam<IEntity> findComponentInParents(IEntity owner, typename component)
 	{
 		while (owner != null)
@@ -73,5 +89,14 @@ class RKN_TimeTrialGetShooterPosition : RKN_TimeTrialGetSectionParent
 			return null;
 		IEntity entity = SCR_ScenarioFrameworkParam<IEntity>.Cast(parentBase).GetValue();
 		return findComponentInChildren(entity, RKN_TimeTrialShooterPositionSlot);
+	}
+}
+
+[BaseContainerProps(), SCR_ContainerActionTitle()]
+class RKN_TimeTrialGetConsole : RKN_Get
+{	
+	override SCR_ScenarioFrameworkParamBase Get(IEntity owner)
+	{
+		return findChild(owner, RKN_TimeTrialControlPanelEntity);
 	}
 }

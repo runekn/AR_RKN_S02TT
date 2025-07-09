@@ -10,6 +10,9 @@ class RKN_TimeTrialSectionLayer : SCR_ScenarioFrameworkLayerBase
 	[Attribute(category: "Time trial")]
 	ref array<ref SCR_ScenarioFrameworkActionBase> m_aOnResetActions;
 	
+	ref ScriptInvoker m_OnActive = new ScriptInvoker();
+	ref ScriptInvoker m_OnFinish = new ScriptInvoker();
+	
 	ref array<RKN_TimeTrialObjectiveSlot> m_aObjectives = {};
 	ref array<RKN_TimeTrialObjectiveSlot> m_aOptionalObjectives = {};
 	RKN_TimeTrialCourseLayer m_Course;
@@ -32,44 +35,23 @@ class RKN_TimeTrialSectionLayer : SCR_ScenarioFrameworkLayerBase
 	
 	void RegisterSection()
 	{
-		IEntity entity;
-		if (m_CourseGetter)
-		{
-			SCR_ScenarioFrameworkParamBase paramBase = m_CourseGetter.Get(GetOwner());
-			entity = SCR_ScenarioFrameworkParam<IEntity>.Cast(paramBase).GetValue();
-		}
-		
-		if (!entity)
-		{
-			Print("Course not found!", LogLevel.ERROR);
-			return;
-		}
-		m_Course = RKN_TimeTrialCourseLayer.Cast(entity.FindComponent(RKN_TimeTrialCourseLayer));
+		m_Course = RKN_TimeTrialUtils.FindCourse(m_CourseGetter, GetOwner());
 		if (!m_Course)
-		{
-			Print("Course entity does not have course component!", LogLevel.ERROR);
 			return;
-		}
 		m_Course.RegisterSection(this);
+		m_Course.m_OnReset.Insert(ResetSection);
 	}
 	
 	void ActivateSection()
 	{
 		m_bActive = true;
-		foreach (RKN_TimeTrialObjectiveSlot obj : m_aObjectives)
-			obj.TryActivateObjective();
-		foreach (RKN_TimeTrialObjectiveSlot obj : m_aOptionalObjectives)
-			obj.TryActivateObjective();
+		m_OnActive.Invoke();
 	}
 	
 	void ResetSection()
 	{
 		m_bActive = false;
 		m_iCompletedObjectives = 0;
-		foreach (RKN_TimeTrialObjectiveSlot obj : m_aObjectives)
-			obj.ResetObjective();
-		foreach (RKN_TimeTrialObjectiveSlot obj : m_aOptionalObjectives)
-			obj.ResetObjective();
 		foreach (SCR_ScenarioFrameworkActionBase action : m_aOnResetActions)
 			action.Init(GetOwner());
 	}
@@ -78,7 +60,6 @@ class RKN_TimeTrialSectionLayer : SCR_ScenarioFrameworkLayerBase
 	{
 		if (!m_bActive)
 			return;
-		Print("Finished obj " + objective);
 		if (++m_iCompletedObjectives >= m_aObjectives.Count())
 		{
 			m_Course.FinishSection(this);

@@ -1,0 +1,41 @@
+GenericEntity : "{73950FBA2D7DB5C5}Prefabs/Items/Equipment/Radios/Radio_ANPRC68.et" {
+ ID "508AB2013EEE1E00"
+ components {
+  SCR_CommunicationSoundComponent "{65D13D07B02A55BD}" {
+   Filenames {
+    "{8DEFEA60355EB3C0}Sounds/TimeTrial/RangeOfficer.acp"
+   }
+   IncludeInactive 1
+  }
+  ActionsManagerComponent "{508AB5952B584B2E}" {
+   ActionContexts {
+    UserActionContext "{5A6C68D89FC6B6F6}" {
+     Radius 0.01
+    }
+    UserActionContext "{5A6C68D886CBB1B0}" {
+     Radius 0.01
+    }
+    UserActionContext "{65D13D07B02A5444}" {
+     ContextName "talk"
+     Position PointInfo "{65D13D07B02A5446}" {
+      Offset 0.0259 0.1797 -0.0205
+     }
+     Radius 0.15
+    }
+   }
+   additionalActions {
+    SCR_EquipGadgetAction "{553AEBE8F3B60801}" {
+    }
+    SCR_RadioTuningUserAction "{5A6C68D870C367A4}" {
+     "Sort Priority" 1
+    }
+    SCR_RadioTuningUserAction "{5A6C68D86B2E64E0}" {
+     "Sort Priority" 1
+    }
+    SCR_RadioToggleUserAction "{5A6C68D85E74BF75}" {
+     "Sort Priority" 1
+    }
+   }
+  }
+ }
+}

@@ -3,6 +3,12 @@ SCR_ChimeraCharacter : "{3AE3C1A509298D9D}Prefabs/Characters/Factions/CIV/Generi
  components {
   RKN_TimeTrialScoreTablePlayerComponent "{65CE5B99FA658EC4}" {
   }
+  SCR_InventoryStorageManagerComponent "{520EA1D2DB118DE5}" {
+   InitialInventoryItems {
+    ItemsInitConfigurationItem "{60DCBCECAC6C6E65}" {
+    }
+   }
+  }
  }
  coords 7587.601 166.156 4247.125
 }

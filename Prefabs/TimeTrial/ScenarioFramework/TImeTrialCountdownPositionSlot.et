@@ -1,0 +1,18 @@
+GenericEntity : "{032C15BBEBE9E1E9}Prefabs/Systems/ScenarioFramework/Components/SlotTrigger.et" {
+ ID "6118D659EDB70841"
+ components {
+  RKN_TimeTrialCountdownPositionSlot "{6118D659EDB7084E}" {
+   m_bShowDebugShapesInWorkbench 0
+   m_aPlugins {
+    SCR_ScenarioFrameworkPluginTrigger "{6118D659EDB7085B}" {
+     m_fUpdateRate 0.2
+    }
+   }
+   m_sObjectToSpawn "{5D1A95FADACF19B0}Prefabs/Systems/ScenarioFramework/Triggers/ScenarioFrameworkBoxTrigger.et"
+   m_sOverrideObjectDisplayName "CountdownTriggerEntity"
+   m_CourseGetter RKN_GetParent "{65D1352A06973AF1}" {
+   }
+  }
+ }
+ coords 7457.328 136.98 4746.021
+}
