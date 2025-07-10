@@ -1,6 +1,3 @@
-SCR_ScenarioFrameworkTriggerEntity : "{5D1A95FADACF19B0}Prefabs/Systems/ScenarioFramework/Triggers/ScenarioFrameworkBoxTrigger.et" {
- coords 7460.176 136.838 4744.358
-}
 $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Components/Area.et" {
  Area1 {
   coords 7586.061 166.156 4250.01
@@ -356,9 +353,14 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             }
            }
           }
-          RKN_TimeTrialVoiceSequence "{65D25B7873041D17}" {
-           m_sSequenceName "SPAWN"
-           m_PlayerGetter SCR_ScenarioFrameworkGetPlayerEntity "{65D25B7F28BA81F2}" {
+          SCR_ScenarioFrameworkActionWaitAndExecute "{65D4578C0338490E}" {
+           m_iDelayInSeconds 1
+           m_aActions {
+            RKN_TimeTrialVoiceSequence "{65D4578C358DB38D}" {
+             m_sSequenceName "SPAWN"
+             m_PlayerGetter SCR_ScenarioFrameworkGetPlayerEntity "{65D25B7F28BA81F2}" {
+             }
+            }
            }
           }
          }

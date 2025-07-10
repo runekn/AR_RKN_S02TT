@@ -428,7 +428,7 @@ AudioClass {
   }
   SoundClass : "{64A825EC9DC1123C}Sounds/_SharedData/Configs/Sound/Tutorial/Sound_Tutorial_VO_Radio.conf" {
    id 99337
-   name "TIMETRIAL_RO_FINISH_PB"
+   name "TIMETRIAL_RO_HIT"
    version 5
    tl -184.926 2878
    parent "{64A825EC9DC1123C}Sounds/_SharedData/Configs/Sound/Tutorial/Sound_Tutorial_VO_Radio.conf"
@@ -531,11 +531,11 @@ AudioClass {
        port 65
       }
       ConnectionClass connection {
-       id 95241
+       id 99337
        port 65
       }
       ConnectionClass connection {
-       id 99337
+       id 95241
        port 65
       }
      }
@@ -2780,11 +2780,11 @@ AudioClass {
        port 5
       }
       ConnectionClass connection {
-       id 95241
+       id 99337
        port 5
       }
       ConnectionClass connection {
-       id 99337
+       id 95241
        port 5
       }
      }
@@ -2889,11 +2889,11 @@ AudioClass {
        port 5
       }
       ConnectionClass connection {
-       id 95241
+       id 99337
        port 5
       }
       ConnectionClass connection {
-       id 99337
+       id 95241
        port 5
       }
      }

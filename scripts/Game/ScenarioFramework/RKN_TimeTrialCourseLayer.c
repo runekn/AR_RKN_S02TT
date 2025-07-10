@@ -60,6 +60,7 @@ class RKN_TimeTrialCourseLayer : SCR_ScenarioFrameworkLayerBase
 	[RplRpc(RplChannel.Reliable, RplRcver.Owner)]
 	void RpcAsk_ScheduleCourse(int playerId, int delay, bool competitive)
 	{
+		Print("RpcAsk_ScheduleCourse");
 		if (m_CurrentScoreInfo)
 		{
 			Print("Only one player can use the course at a time", LogLevel.ERROR);
@@ -193,6 +194,7 @@ class RKN_TimeTrialCourseLayer : SCR_ScenarioFrameworkLayerBase
 	
 	private void ResetRun()
 	{
+		Print("ResetRun");
 		FindPlayerUIComponent(GetGame().GetPlayerManager().GetPlayerControlledEntity(m_CurrentScoreInfo.m_iID)).RemoveScoreTable(this, true);
 		ResetCourse();
 		m_OnReset.Invoke();

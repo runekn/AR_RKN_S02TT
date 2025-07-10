@@ -43,6 +43,7 @@ class RKN_TimeTrialSectionLayer : SCR_ScenarioFrameworkLayerBase
 			return;
 		m_Course.RegisterSection(this);
 		m_Course.m_OnReset.Insert(ResetSection);
+		m_Course.m_OnCancel.Insert(ResetSection);
 	}
 	
 	void ActivateSection()
