@@ -59,6 +59,7 @@ Misc:
 	"Targets at long range" - New
 	"Jumpscare!" - New
 	"Fire at the range" - New
+	"Too slow" - New
 	
 Requirements:
 	"Stand"
@@ -78,3 +79,5 @@ Requirements:
 	"Drive the car to the next section" - New
 	"Use the vehicle to get to the next section" - New
 	"Fly to the next section" - New
+	"Get to the roof" - New
+	"Down the ladder" - New

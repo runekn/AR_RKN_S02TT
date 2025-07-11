@@ -40,23 +40,9 @@ SCR_BaseGameMode GameModeSF1 : "{ECEEDB2D3737204B}Prefabs/Systems/ScenarioFramew
     RKN_TimeTrialCourseConfig "{65D53C52C896E598}" : "{01E8D44B14388402}Configs/TimeTrialCourses/Red1CourseConfig.conf" {
      m_sId "red1"
     }
-    RKN_TimeTrialCourseConfig "{65D53C52C379A06D}" {
-     m_sId "test"
-     m_sName "Test"
-     m_aCompetitiveLoadout {
-      RKN_TimeTrialLoadoutItem "{65CF415E4896BF6C}" {
-       m_sPrefab "{1353C6EAD1DCFE43}Prefabs/Weapons/Handguns/M9/Handgun_M9.et"
-       m_iCount 3
-      }
-      RKN_TimeTrialLoadoutItem "{65CF415E43F9A113}" {
-       m_sPrefab "{9C05543A503DB80E}Prefabs/Weapons/Magazines/Magazine_9x19_M9_15rnd_Ball.et"
-      }
-     }
-     m_fBronzeSeconds 10
-     m_fSilverSeconds 8
-     m_fGoldSeconds 5
-    }
     RKN_TimeTrialCourseConfig "{65D6AAAD9BA21E24}" : "{4772812B10251DBA}Configs/TimeTrialCourses/Red2CourseConfig.conf" {
+    }
+    RKN_TimeTrialCourseConfig "{65D6F2F57315035E}" : "{7AFB4DF4EC2E6AD2}Configs/TimeTrialCourses/Red3CourseConfig.conf" {
     }
    }
   }

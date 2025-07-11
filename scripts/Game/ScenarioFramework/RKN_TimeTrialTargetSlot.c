@@ -90,9 +90,9 @@ class RKN_TimeTrialTargetSlot : RKN_TimeTrialObjectiveSlot
 		int score = m_mHitAreasMap.Get(hitKey);
 		if (score > 0)
 			m_Section.m_Course.ApplyScoreModifier(-score);
-		FinishObjective();
 		foreach (SCR_ScenarioFrameworkActionBase action : m_aOnHitActions)
 			action.Init(GetOwner());
+		FinishObjective();
 	}
 	
 	override void EOnFrame(IEntity owner, float timeSlice)

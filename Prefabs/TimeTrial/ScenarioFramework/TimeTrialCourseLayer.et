@@ -2,6 +2,52 @@ GenericEntity {
  ID "65BA6C59DFAD3F0F"
  components {
   RKN_TimeTrialCourseLayer "{65BA6C59A0F2E93C}" {
+   m_aOnScheduleActions {
+    RKN_TimeTrialVoiceLine "{65D6F2F86A414579}" {
+     m_sLineName "START"
+     m_PlayerGetter SCR_ScenarioFrameworkGetPlayerEntity "{65D13D070B6FA4A6}" {
+     }
+    }
+   }
+   m_aOnCancelActions {
+    RKN_ActionPlaySoundOnEntity "{65D6F2FB9DA463FF}" {
+     m_RknGetter RKN_TimeTrialGetConsole "{65D6F2ECC8490D81}" {
+     }
+     m_sSound "SOUND_RANGECP_ROUNDABORT"
+    }
+   }
+   m_aOnFinishActions {
+    RKN_TimeTrialActionsBasedOnTrophy "{65D6F2F878916E37}" {
+     m_aOnGoldActions {
+      RKN_TimeTrialVoiceLine "{65D2F04D6C9745D6}" {
+       m_sLineName "FINISH_GOLD"
+       m_PlayerGetter SCR_ScenarioFrameworkGetPlayerEntity "{65D2F04D6EEA0CF2}" {
+       }
+      }
+     }
+     m_aOnSilverActions {
+      RKN_TimeTrialVoiceLine "{65D2F04D6051DF2E}" {
+       m_sLineName "FINISH_SILVER"
+       m_PlayerGetter SCR_ScenarioFrameworkGetPlayerEntity "{65D2F04D6EEA0CF2}" {
+       }
+      }
+     }
+     m_aOnBronzeActions {
+      RKN_TimeTrialVoiceLine "{65D2F04E9E8150B9}" {
+       m_sLineName "FINISH_BRONZE"
+       m_PlayerGetter SCR_ScenarioFrameworkGetPlayerEntity "{65D2F04D6EEA0CF2}" {
+       }
+      }
+     }
+     m_aOnNoneActions {
+      RKN_TimeTrialVoiceLine "{65D2F04E95385D6B}" {
+       m_sLineName "FINISH_NONE"
+       m_PlayerGetter SCR_ScenarioFrameworkGetPlayerEntity "{65D2F04D6EEA0CF2}" {
+       }
+      }
+     }
+    }
+   }
   }
   Hierarchy "{65BA6C59A6D6F006}" {
   }
