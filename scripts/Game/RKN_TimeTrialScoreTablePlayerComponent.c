@@ -17,7 +17,7 @@ class RKN_TimeTrialScoreTablePlayerComponent : ScriptComponent
 	[Attribute("5")]
 	int m_iHistoryMaxOtherPlayers;
 		
-	RKN_TimeTrialCourseLayer m_ActiveCourse;
+	int m_iActiveCourse = -1;
 	RplComponent m_RplComponent;
 	Widget m_wRoot;
 	
@@ -44,36 +44,33 @@ class RKN_TimeTrialScoreTablePlayerComponent : ScriptComponent
 		super.OnPostInit(owner);
 	}
 	
-	void ShowScoreTable(RKN_TimeTrialCourseLayer courseLayer, bool active)
+	void ShowScoreTable(int courseId, bool active)
 	{
-		RplId courseLayerId = Replication.FindId(courseLayer);
-		Rpc(RpcDo_ShowScoreTable, courseLayerId, active);
+		Rpc(RpcDo_ShowScoreTable, courseId, active);
 	}
 	
-	void RemoveScoreTable(RKN_TimeTrialCourseLayer courseLayer, bool active)
+	void RemoveScoreTable(int courseId, bool active)
 	{
-		RplId courseLayerId = Replication.FindId(courseLayer);
-		Rpc(RpcDo_RemoveScoreTable, courseLayerId, active);
+		Rpc(RpcDo_RemoveScoreTable, courseId, active);
 	}
 	
 	[RplRpc(RplChannel.Reliable, RplRcver.Owner)]
-	void RpcDo_ShowScoreTable(RplId courseLayerId, bool active)
+	void RpcDo_ShowScoreTable(int courseId, bool active)
 	{
-		m_ActiveCourse = RKN_TimeTrialCourseLayer.Cast(Replication.FindItem(courseLayerId));
+		m_iActiveCourse = courseId;
 		if (active && !m_bActive)
 			m_bActive = active;
 		SetEventMask(GetOwner(), EntityEvent.FRAME);
 	}
 	
 	[RplRpc(RplChannel.Reliable, RplRcver.Owner)]
-	void RpcDo_RemoveScoreTable(RplId courseLayerId, bool active)
+	void RpcDo_RemoveScoreTable(int courseId, bool active)
 	{
-		RKN_TimeTrialCourseLayer course = RKN_TimeTrialCourseLayer.Cast(Replication.FindItem(courseLayerId));
-		if ((active || !m_bActive) && m_ActiveCourse == course)
+		if ((active || !m_bActive) && m_iActiveCourse == courseId)
 		{
 			m_wRoot.RemoveFromHierarchy();
 			m_wRoot = null;
-			m_ActiveCourse = null;
+			m_iActiveCourse = -1;
 			m_aPlayerRowWidgets.Clear();
 			if (m_bActive)
 				m_bActive = false;
@@ -85,7 +82,7 @@ class RKN_TimeTrialScoreTablePlayerComponent : ScriptComponent
 	{
 		if (!m_RplComponent)
 			m_RplComponent = BaseGameEntity.Cast(GetOwner()).GetRplComponent();
-		if (m_ActiveCourse && m_RplComponent.IsOwner())
+		if (m_iActiveCourse > -1 && m_RplComponent.IsOwner())
 		{
 			UpdateTable();
 		}
@@ -93,7 +90,8 @@ class RKN_TimeTrialScoreTablePlayerComponent : ScriptComponent
 	
 	void UpdateTable()
 	{
-		int me = GetGame().GetPlayerController().GetPlayerId();
+		int me = GetGame().GetPlayerController().GetPlayerId();	
+		RKN_TimeTrialCourseData data = RKN_TimeTrialUtils.GetCourseDataRepo().GetData(m_iActiveCourse);
 		
 		if (!m_wRoot)
 		{
@@ -103,13 +101,13 @@ class RKN_TimeTrialScoreTablePlayerComponent : ScriptComponent
 			
 			m_wCourseLayout = m_wRoot.FindAnyWidget("CourseInfoLayout");
 			m_wCourseNameWidget = TextWidget.Cast(m_wCourseLayout.FindAnyWidget("CourseNameText"));
-			m_wCourseNameWidget.SetText(m_ActiveCourse.m_Config.m_sName);
+			m_wCourseNameWidget.SetText(data.m_Config.m_sName);
 			m_wGoldTimeWidget = TextWidget.Cast(m_wCourseLayout.FindAnyWidget("GoldTimeText"));
-			m_wGoldTimeWidget.SetText(FormatTime(m_ActiveCourse.m_Config.GetGoldMilliseconds()));
+			m_wGoldTimeWidget.SetText(FormatTime(data.m_Config.GetGoldMilliseconds()));
 			m_wSilverTimeWidget = TextWidget.Cast(m_wCourseLayout.FindAnyWidget("SilverTimeText"));
-			m_wSilverTimeWidget.SetText(FormatTime(m_ActiveCourse.m_Config.GetSilverMilliseconds()));
+			m_wSilverTimeWidget.SetText(FormatTime(data.m_Config.GetSilverMilliseconds()));
 			m_wBronzeTimeWidget = TextWidget.Cast(m_wCourseLayout.FindAnyWidget("BronzeTimeText"));
-			m_wBronzeTimeWidget.SetText(FormatTime(m_ActiveCourse.m_Config.GetBronzeMilliseconds()));
+			m_wBronzeTimeWidget.SetText(FormatTime(data.m_Config.GetBronzeMilliseconds()));
 			
 			m_wPlayerLayout = m_wRoot.FindAnyWidget("RunInfoLayout");
 			m_wPlayerNameWidget = TextWidget.Cast(m_wPlayerLayout.FindAnyWidget("PlayerNameText"));
@@ -122,17 +120,17 @@ class RKN_TimeTrialScoreTablePlayerComponent : ScriptComponent
 		}
 		
 		// Current attempt info
-		if (m_ActiveCourse.m_CurrentScoreInfo)
+		if (data.m_CurrentScoreInfo)
 		{
 			m_wPlayerLayout.SetVisible(true);
-			string name = m_ActiveCourse.m_CurrentScoreInfo.GetName();
-			if (m_ActiveCourse.m_CurrentScoreInfo.m_eType == RKN_TimeTrialScoreType.TRAINING)
+			string name = data.m_CurrentScoreInfo.GetName();
+			if (data.m_CurrentScoreInfo.m_eType == RKN_TimeTrialScoreType.TRAINING)
 				name += " (Training)";
 			m_wPlayerNameWidget.SetText(name);
-			m_wPlayerTimeWidget.SetText(FormatTime(m_ActiveCourse.m_CurrentScoreInfo.GetTime()));
-			m_wPlayerPenaltyWidget.SetText(MillisToSeconds(m_ActiveCourse.m_CurrentScoreInfo.m_iPenalty).ToString(lenDec: 2));
-			m_wPlayerBonusWidget.SetText(MillisToSeconds(m_ActiveCourse.m_CurrentScoreInfo.m_iBonus).ToString(lenDec: 2));
-			m_wPlayerTrophyWidget.SetColor(GetTrophyColor());
+			m_wPlayerTimeWidget.SetText(FormatTime(data.m_CurrentScoreInfo.GetTime()));
+			m_wPlayerPenaltyWidget.SetText(MillisToSeconds(data.m_CurrentScoreInfo.m_iPenalty).ToString(lenDec: 2));
+			m_wPlayerBonusWidget.SetText(MillisToSeconds(data.m_CurrentScoreInfo.m_iBonus).ToString(lenDec: 2));
+			m_wPlayerTrophyWidget.SetColor(GetTrophyColor(data));
 		}
 		else
 		{
@@ -141,14 +139,14 @@ class RKN_TimeTrialScoreTablePlayerComponent : ScriptComponent
 		
 		
 		// History table
-		if ((m_ActiveCourse.m_CurrentScoreInfo && m_ActiveCourse.m_CurrentScoreInfo.m_iID == me && !m_ActiveCourse.m_CurrentScoreInfo.m_iEnd) || m_ActiveCourse.m_aScoreInfoHistory.IsEmpty())
+		if ((data.m_CurrentScoreInfo && data.m_CurrentScoreInfo.m_iID == me && !data.m_CurrentScoreInfo.m_iEnd) || data.m_aScoreInfoHistory.IsEmpty())
 		{
 			m_wTableWidget.SetVisible(false);
 		}
 		else
 		{
 			m_wTableWidget.SetVisible(true);
-			if (m_aPlayerRowWidgets.Count() != m_ActiveCourse.m_aScoreInfoHistory.Count())
+			if (m_aPlayerRowWidgets.Count() != data.m_aScoreInfoHistory.Count())
 			{
 				// Delete and generate new rows for current players
 				foreach (Widget w : m_aPlayerRowWidgets)
@@ -157,7 +155,7 @@ class RKN_TimeTrialScoreTablePlayerComponent : ScriptComponent
 				}
 				m_aPlayerRowWidgets.Clear();
 				
-				foreach (RKN_TimeTrialScoreInfo info : m_ActiveCourse.m_aScoreInfoHistory)
+				foreach (RKN_TimeTrialScoreInfo info : data.m_aScoreInfoHistory)
 				{
 					Widget w = GetGame().GetWorkspace().CreateWidgets(m_sRowWidget, m_wTableWidget);
 					m_aPlayerRowWidgets.Insert(w);
@@ -165,10 +163,10 @@ class RKN_TimeTrialScoreTablePlayerComponent : ScriptComponent
 			}
 			
 			int otherPlayersHistory;
-			for (int i = 0; i < m_ActiveCourse.m_aScoreInfoHistory.Count(); i++)
+			for (int i = 0; i < data.m_aScoreInfoHistory.Count(); i++)
 			{
 				Widget w = m_aPlayerRowWidgets[i];
-				RKN_TimeTrialScoreInfo info = m_ActiveCourse.m_aScoreInfoHistory[i];
+				RKN_TimeTrialScoreInfo info = data.m_aScoreInfoHistory[i];
 				
 				if (info.m_iID == me)
 				{
@@ -213,14 +211,14 @@ class RKN_TimeTrialScoreTablePlayerComponent : ScriptComponent
 		return time / 1000.0;
 	}
 	
-	Color GetTrophyColor()
+	Color GetTrophyColor(RKN_TimeTrialCourseData data)
 	{
-		int totalTime = m_ActiveCourse.m_CurrentScoreInfo.GetTotal();
-		if (totalTime < m_ActiveCourse.m_Config.GetGoldMilliseconds())
+		int totalTime = data.m_CurrentScoreInfo.GetTotal();
+		if (totalTime < data.m_Config.GetGoldMilliseconds())
 			return m_cGoldColor;
-		if (totalTime < m_ActiveCourse.m_Config.GetSilverMilliseconds())
+		if (totalTime < data.m_Config.GetSilverMilliseconds())
 			return m_cSilverColor;
-		if (totalTime < m_ActiveCourse.m_Config.GetBronzeMilliseconds())
+		if (totalTime < data.m_Config.GetBronzeMilliseconds())
 			return m_cBronzeColor;
 		else
 			return Color.White;

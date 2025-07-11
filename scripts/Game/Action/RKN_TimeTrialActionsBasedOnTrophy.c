@@ -13,15 +13,16 @@ class RKN_TimeTrialActionsBasedOnTrophy : SCR_ScenarioFrameworkActionBase
 	override void OnActivate(IEntity object)
 	{
 		RKN_TimeTrialCourseLayer course = RKN_TimeTrialCourseLayer.Cast(object.FindComponent(RKN_TimeTrialCourseLayer));
+		RKN_TimeTrialCourseData data = RKN_TimeTrialUtils.GetCourseDataRepo().GetData(course.m_iCourseIndex);
 		array<ref SCR_ScenarioFrameworkActionBase> actions;
 		
-		int total = course.m_CurrentScoreInfo.GetTotal();
+		int total = data.m_CurrentScoreInfo.GetTotal();
 		
-		if (total < course.m_Config.GetGoldMilliseconds())
+		if (total < data.m_Config.GetGoldMilliseconds())
 			actions = m_aOnGoldActions;
-		else if (total < course.m_Config.GetSilverMilliseconds())
+		else if (total < data.m_Config.GetSilverMilliseconds())
 			actions = m_aOnSilverActions;
-		else if (total < course.m_Config.GetBronzeMilliseconds())
+		else if (total < data.m_Config.GetBronzeMilliseconds())
 			actions = m_aOnBronzeActions;
 		else
 			actions = m_aOnNoneActions;

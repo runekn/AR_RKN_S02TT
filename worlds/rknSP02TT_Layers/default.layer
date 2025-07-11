@@ -24,10 +24,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
   }
  }
  TimeTrial_area {
-  components {
-   RplComponent "{65BD38AE0E96673C}" {
-   }
-  }
   coords 7597.873 166.156 4236.113
   {
    SCR_DestructibleEntity : "{13219FE011DD3FEF}Prefabs/Structures/Walls/Wooden/WoodenWall_02/WoodenWall_02_4m_A.et" {
@@ -68,23 +64,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
     components {
      RKN_TimeTrialCourseLayer "{65BA6C59A0F2E93C}" {
       m_eActivationType ON_TRIGGER_ACTIVATION
-      m_Config RKN_TimeTrialCourseConfig "{65CF415E4F2FFCCC}" {
-       m_sName "Test"
-       m_aCompetitiveLoadout {
-        RKN_TimeTrialLoadoutItem "{65CF415E4896BF6C}" {
-         m_sPrefab "{1353C6EAD1DCFE43}Prefabs/Weapons/Handguns/M9/Handgun_M9.et"
-         m_iCount 3
-        }
-        RKN_TimeTrialLoadoutItem "{65CF415E43F9A113}" {
-         m_sPrefab "{9C05543A503DB80E}Prefabs/Weapons/Magazines/Magazine_9x19_M9_15rnd_Ball.et"
-        }
-       }
-       m_fBronzeSeconds 10
-       m_fSilverSeconds 8
-       m_fGoldSeconds 5
-      }
-     }
-     RplComponent "{65BD24DE8A8E231A}" {
+      m_sCourseId "test"
      }
     }
     coords 0 0 0
@@ -320,10 +300,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
   }
  }
  CourseRed_area {
-  components {
-   RplComponent "{65CE7B4BF4DFBD45}" {
-   }
-  }
   coords 7456.157 137.034 4749.71
   {
    $grp GenericEntity : "{AA01691FDC4E9167}Prefabs/Systems/ScenarioFramework/Components/Slot.et" {
@@ -375,8 +351,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
    GenericEntity CourseRed1 : "{E41ABB2A25E246B5}Prefabs/TimeTrial/ScenarioFramework/TimeTrialCourseLayer.et" {
     components {
      RKN_TimeTrialCourseLayer "{65BA6C59A0F2E93C}" {
-      m_Config RKN_TimeTrialCourseConfig "{65CF415E262DD431}" : "{01E8D44B14388402}Configs/TimeTrialCourses/Red1CourseConfig.conf" {
-      }
+      m_sCourseId "red1"
       m_aOnScheduleActions {
        SCR_ScenarioFrameworkActionRestoreLayerToDefault "{65D110D0E559682D}" {
         m_Getter SCR_ScenarioFrameworkGetLayerBase "{65D110DED220D5E5}" {
@@ -434,8 +409,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
        }
       }
      }
-     RplComponent "{65CE7B4BF9DC7962}" {
-     }
     }
     coords 0.245 0.001 -1.548
     {
@@ -451,35 +424,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
        TerrainOnly 0
        Mat "{BE113C00D36F9BBB}Assets/TimeTrial/SprayDecals/Arrow.emat"
       }
-     }
-     RKN_TimeTrialControlPanelEntity : "{0B9BA8A5C109109D}Prefabs/TimeTrial/TimeTrialButton.et" {
-      components {
-       SCR_SoundDataComponent "{65C87C10CEB537BF}" {
-        m_aAudioSourceConfiguration {
-         SCR_AudioSourceConfiguration "{65C87C10C93DEB00}" {
-          m_sSoundProject "{A2BDC8999D2BCF84}Sounds/Structures/Military/Training/RangeCP/TimeTrialConsole.acp"
-         }
-         SCR_AudioSourceConfiguration "{65C87C10F8DF7865}" {
-          m_sSoundProject "{A2BDC8999D2BCF84}Sounds/Structures/Military/Training/RangeCP/TimeTrialConsole.acp"
-         }
-         SCR_AudioSourceConfiguration "{65C87C10F9AB0E8F}" {
-          m_sSoundProject "{A2BDC8999D2BCF84}Sounds/Structures/Military/Training/RangeCP/TimeTrialConsole.acp"
-         }
-         SCR_AudioSourceConfiguration "{65D25B7321FA58FC}" {
-          m_sSoundProject "{A2BDC8999D2BCF84}Sounds/Structures/Military/Training/RangeCP/TimeTrialConsole.acp"
-          m_sSoundEventName "SOUND_RANGECP_ROUNDABORT"
-         }
-        }
-       }
-       ActionsManagerComponent "{65BA6C59EA853AB6}" {
-        additionalActions {
-         RKN_StartTimeTrialAction "{65CD0837E4CB9E72}" {
-         }
-        }
-       }
-      }
-      coords -2.177 -0.004 0.706
-      angleY 88.209
      }
      $grp GenericEntity : "{25C8B889A777399D}Prefabs/Props/Infrastructure/ConeTraffic/ConeTraffic_01_red.et" {
       {
@@ -733,6 +677,10 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
         }
        }
       }
+     }
+     GenericEntity TimeTrialCourseControlPanel1 : "{759B64907C040A78}Prefabs/TimeTrial/ScenarioFramework/TimeTrialCourseControlPanel.et" {
+      coords -2.185 -0.012 0.844
+      angleY 88.359
      }
      GenericEntity TimeTrialUITriggerSlot2 : "{ADC06C4DCF0A9E1B}Prefabs/TimeTrial/ScenarioFramework/TimeTrialUITriggerSlot.et" {
       coords -0.562 0 8.579

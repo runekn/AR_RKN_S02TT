@@ -2,6 +2,8 @@
 class RKN_TimeTrialCourseConfig
 {
 	[Attribute()]
+	string m_sId;
+	[Attribute()]
 	LocalizedString m_sName;
 	[Attribute()]
 	ref array<ref RKN_TimeTrialLoadoutItem> m_aCompetitiveLoadout;

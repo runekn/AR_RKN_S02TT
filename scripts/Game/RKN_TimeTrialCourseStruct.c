@@ -1,16 +1,16 @@
 [BaseContainerProps()]
 class RKN_TimeTrialStruct : SCR_JsonApiStruct
 {
-	ref array<RKN_TimeTrialCourseStruct> m_aCourseStructs = {};
+	//ref array<RKN_TimeTrialCourseStruct> m_aCourseStructs = {};
 	
 	void RKN_TimeTrialStruct()
 	{
-		RegV("m_aCourseStructs");
+		//RegV("m_aCourseStructs");
 	}
 	
 	override bool Serialize()
 	{
-		foreach (SCR_ScenarioFrameworkArea area : SCR_ScenarioFrameworkSystem.GetInstance().GetAreas())
+		/*foreach (SCR_ScenarioFrameworkArea area : SCR_ScenarioFrameworkSystem.GetInstance().GetAreas())
 		{
 			array<SCR_ScenarioFrameworkLayerBase> layers = {};
 			area.GetAllLayers(layers);
@@ -21,13 +21,13 @@ class RKN_TimeTrialStruct : SCR_JsonApiStruct
 					continue;
 				m_aCourseStructs.Insert(new RKN_TimeTrialCourseStruct(course));
 			}
-		}
+		}*/
 		return true;
 	}
 	
 	override bool Deserialize()
 	{
-		foreach (RKN_TimeTrialCourseStruct courseStruct : m_aCourseStructs)
+		/*foreach (RKN_TimeTrialCourseStruct courseStruct : m_aCourseStructs)
 		{
 			IEntity entity = GetGame().GetWorld().FindEntityByName(courseStruct.m_sName);
 			if (!entity)
@@ -46,12 +46,12 @@ class RKN_TimeTrialStruct : SCR_JsonApiStruct
 				info.m_iBonus = infoStruct.m_iBonus;
 				course.m_aScoreInfoHistory.Insert(info)
 			}
-		}
+		}*/
 		return true;
 	}
 }
 
-class RKN_TimeTrialCourseStruct : SCR_JsonApiStruct
+/*class RKN_TimeTrialCourseStruct : SCR_JsonApiStruct
 {
 	string m_sName;
 	ref array<ref RKN_TimeTrialPlayerInfoStruct> m_aScoreInfoHistory = {};
@@ -90,4 +90,4 @@ class RKN_TimeTrialPlayerInfoStruct : SCR_JsonApiStruct
 		RegV("m_iPenalty");
 		RegV("m_iBonus");
 	}
-}
+}*/

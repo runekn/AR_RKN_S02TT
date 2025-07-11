@@ -111,13 +111,15 @@ class RKN_TimeTrialVoiceSequence : SCR_ScenarioFrameworkActionVoiceOverPlaySeque
 				return false;
 			}
 			
-			if (!course.m_CurrentScoreInfo)
+			RKN_TimeTrialCourseData data = RKN_TimeTrialUtils.GetCourseDataRepo().GetData(course.m_iCourseIndex);
+			
+			if (!data.m_CurrentScoreInfo)
 			{
 				Print("No active player on course", LogLevel.ERROR);
 				return false;
 			}
 			
-			player = SCR_ChimeraCharacter.Cast(GetGame().GetPlayerManager().GetPlayerControlledEntity(course.m_CurrentScoreInfo.m_iID));
+			player = SCR_ChimeraCharacter.Cast(GetGame().GetPlayerManager().GetPlayerControlledEntity(data.m_CurrentScoreInfo.m_iID));
 		}
 		
 		if (!player)

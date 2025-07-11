@@ -52,7 +52,7 @@ class RKN_TimeTrialScoreTableTriggerSlot : SCR_ScenarioFrameworkSlotTrigger
 			{
 				RKN_TimeTrialScoreTablePlayerComponent playerComponent = m_CourseLayer.FindPlayerUIComponent(player);
 				if (playerComponent)
-					playerComponent.ShowScoreTable(m_CourseLayer, false);
+					playerComponent.ShowScoreTable(m_CourseLayer.m_iCourseIndex, false);
 			}
 			return;
 		}
@@ -60,7 +60,7 @@ class RKN_TimeTrialScoreTableTriggerSlot : SCR_ScenarioFrameworkSlotTrigger
 		{
 			RKN_TimeTrialScoreTablePlayerComponent playerComponent = m_CourseLayer.FindPlayerUIComponent(param.GetValue());
 			if (playerComponent)
-				playerComponent.RemoveScoreTable(m_CourseLayer, false);
+				playerComponent.RemoveScoreTable(m_CourseLayer.m_iCourseIndex, false);
 		}
 		
 		/*int playersInArea = m_Trigger.GetCountInsideTrigger();

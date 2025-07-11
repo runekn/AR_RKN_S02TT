@@ -23,16 +23,20 @@ RKN_TimeTrialControlPanelEntity {
   SCR_SoundDataComponent "{65C87C10CEB537BF}" {
    m_aAudioSourceConfiguration {
     SCR_AudioSourceConfiguration "{65C87C10C93DEB00}" {
-     m_sSoundProject "{5A46144CB8BFC66B}Sounds/Structures/Military/Training/RangeCP/Structures_RangeCP.acp"
+     m_sSoundProject "{A2BDC8999D2BCF84}Sounds/Structures/Military/Training/RangeCP/TimeTrialConsole.acp"
      m_sSoundEventName "SOUND_RANGECP_ROUNDSTART"
     }
     SCR_AudioSourceConfiguration "{65C87C10F8DF7865}" {
-     m_sSoundProject "{5A46144CB8BFC66B}Sounds/Structures/Military/Training/RangeCP/Structures_RangeCP.acp"
+     m_sSoundProject "{A2BDC8999D2BCF84}Sounds/Structures/Military/Training/RangeCP/TimeTrialConsole.acp"
      m_sSoundEventName "SOUND_RANGECP_ROUNDABORT"
     }
     SCR_AudioSourceConfiguration "{65C87C10F9AB0E8F}" {
-     m_sSoundProject "{5A46144CB8BFC66B}Sounds/Structures/Military/Training/RangeCP/Structures_RangeCP.acp"
+     m_sSoundProject "{A2BDC8999D2BCF84}Sounds/Structures/Military/Training/RangeCP/TimeTrialConsole.acp"
      m_sSoundEventName "SOUND_RANGECP_STARTBUTTON"
+    }
+    SCR_AudioSourceConfiguration "{65D25B7321FA58FC}" {
+     m_sSoundProject "{A2BDC8999D2BCF84}Sounds/Structures/Military/Training/RangeCP/TimeTrialConsole.acp"
+     m_sSoundEventName "SOUND_RANGECP_ROUNDABORT"
     }
    }
   }
@@ -56,8 +60,6 @@ RKN_TimeTrialControlPanelEntity {
      }
      ActionTitle "Training"
      Duration 0.5
-     m_CourseGetter RKN_GetParent "{65BC4ECD4E2D84D6}" {
-     }
     }
     RKN_CancelTimeTrialAction "{65C8B9EB45E1E3B1}" {
      ParentContextList {
@@ -68,8 +70,6 @@ RKN_TimeTrialControlPanelEntity {
      }
      ActionTitle "Cancel"
      Duration 0.5
-     m_CourseGetter RKN_GetParent "{65C8B9EB45E1E274}" {
-     }
     }
     RKN_StartTimeTrialAction "{65CD0837E4CB9E72}" {
      ParentContextList {
@@ -80,8 +80,6 @@ RKN_TimeTrialControlPanelEntity {
      }
      ActionTitle "Competitive"
      Duration 0.5
-     m_CourseGetter RKN_GetParent "{65CD083731DBD442}" {
-     }
      m_bCompetitive 1
     }
    }

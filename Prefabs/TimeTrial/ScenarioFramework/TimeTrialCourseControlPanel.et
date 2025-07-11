@@ -1,0 +1,13 @@
+GenericEntity {
+ ID "65D53C525CF764C7"
+ components {
+  RKN_TimeTrialConsoleSlot "{65D53C5206103574}" {
+   m_sObjectToSpawn "{0B9BA8A5C109109D}Prefabs/TimeTrial/TimeTrialButton.et"
+   m_CourseGetter RKN_GetParent "{65D53C5230C22E79}" {
+   }
+  }
+  Hierarchy "{65D53C520A2A8B3B}" {
+  }
+ }
+ coords 7454.135 136.907 4744.732
+}

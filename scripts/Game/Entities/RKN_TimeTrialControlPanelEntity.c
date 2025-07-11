@@ -9,6 +9,11 @@ class RKN_TimeTrialControlPanelEntity : GenericEntity
 	const static float BUTTON_PRESSED_STATE = -0.005;
 	const static int BUTTON_DEFAULT_STATE = 0;
 	
+	ref ScriptInvoker m_OnStart = new ScriptInvoker();
+	ref ScriptInvoker m_OnCancel = new ScriptInvoker();
+	[RplProp()]
+	int m_iCourseId = -1;
+	
 	private int m_iPushButtonStart;
 	private SignalsManagerComponent m_SignalManager;
 	
@@ -17,42 +22,38 @@ class RKN_TimeTrialControlPanelEntity : GenericEntity
 		m_SignalManager = SignalsManagerComponent.Cast(FindComponent(SignalsManagerComponent));
 	}
 	
-	void StartCountdown(IEntity pUserEntity, RKN_TimeTrialCourseLayer course, bool competitive)
+	void StartCountdown(IEntity pUserEntity, bool competitive)
 	{
 		int playerId = GetGame().GetPlayerManager().GetPlayerIdFromControlledEntity(pUserEntity);
-		RplId courseId = Replication.FindId(course);
-		Rpc(RpcAsk_StartCountdown, playerId, courseId, competitive);
+		Rpc(RpcAsk_StartCountdown, playerId, competitive);
 		AnimateButton();
 	}
 	
-	void CancelCourse(IEntity pUserEntity, RKN_TimeTrialCourseLayer course)
+	void CancelCourse(IEntity pUserEntity)
 	{
-		RplId courseId = Replication.FindId(course);
-		Rpc(RpcAsk_CancelCourse, courseId);
+		Rpc(RpcAsk_CancelCourse);
 		AnimateButton();
 	}
 	
 	[RplRpc(RplChannel.Reliable, RplRcver.Owner)]
-	void RpcAsk_CancelCourse(RplId courseId)
+	void RpcAsk_CancelCourse()
 	{
-		RKN_TimeTrialCourseLayer course = RKN_TimeTrialCourseLayer.Cast(Replication.FindItem(courseId));
 		SCR_SoundManagerEntity soundManagerEntity = GetGame().GetSoundManagerEntity();
 		if (soundManagerEntity)
 			soundManagerEntity.CreateAndPlayAudioSource(this, SCR_SoundEvent.SOUND_RANGECP_STARTBUTTON);
-		course.CancelCourse();
+		m_OnCancel.Invoke();
 	}
 	
 	[RplRpc(RplChannel.Reliable, RplRcver.Owner)]
-	void RpcAsk_StartCountdown(int playerId, RplId courseId, bool competitive)
+	void RpcAsk_StartCountdown(int playerId, bool competitive)
 	{
-		RKN_TimeTrialCourseLayer course = RKN_TimeTrialCourseLayer.Cast(Replication.FindItem(courseId));
 		SCR_SoundManagerEntity soundManagerEntity = GetGame().GetSoundManagerEntity();
 		if (soundManagerEntity)
 		{
 			soundManagerEntity.CreateAndPlayAudioSource(this, SCR_SoundEvent.SOUND_RANGECP_STARTBUTTON);
 			soundManagerEntity.CreateAndPlayAudioSource(this, SCR_SoundEvent.SOUND_RANGECP_ROUNDSTART);
 		}
-		course.ScheduleCourse(playerId, COUNTDOWN_TIME, competitive);
+		m_OnStart.Invoke(playerId, COUNTDOWN_TIME, competitive);
 	}
 	
 	void AnimateButton()
@@ -65,5 +66,11 @@ class RKN_TimeTrialControlPanelEntity : GenericEntity
 	void ResetButton()
 	{
 		m_SignalManager.SetSignalValue(m_iPushButtonStart, BUTTON_DEFAULT_STATE);
+	}
+	
+	void SetCourseId(int courseId)
+	{
+		m_iCourseId = courseId;
+		Replication.BumpMe();
 	}
 }
