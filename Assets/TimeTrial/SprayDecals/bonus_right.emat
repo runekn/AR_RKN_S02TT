@@ -1,0 +1,8 @@
+MatPBRDecal {
+ Color 1 0.204 0.204 1
+ BlendMode AlphaBlend
+ CavityFromAO 0
+ BCRMap "{26FE3C1F23B8B599}Assets/TimeTrial/SprayDecals/bonus_right.edds"
+ OpacityMap "{26FE3C1F23B8B599}Assets/TimeTrial/SprayDecals/bonus_right.edds"
+ DecalCategory Static
+}

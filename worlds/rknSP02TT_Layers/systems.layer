@@ -56,6 +56,8 @@ SCR_BaseGameMode GameModeSF1 : "{ECEEDB2D3737204B}Prefabs/Systems/ScenarioFramew
      m_fSilverSeconds 8
      m_fGoldSeconds 5
     }
+    RKN_TimeTrialCourseConfig "{65D6AAAD9BA21E24}" : "{4772812B10251DBA}Configs/TimeTrialCourses/Red2CourseConfig.conf" {
+    }
    }
   }
   SCR_GameModeSFManager "{5A96783ABCA252AE}" {

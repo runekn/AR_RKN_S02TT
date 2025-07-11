@@ -1,0 +1,8 @@
+MatPBRDecal {
+ Color 1 0.204 0.204 1
+ BlendMode AlphaBlend
+ CavityFromAO 0
+ BCRMap "{E3F6E71B05E6A4BA}Assets/TimeTrial/SprayDecals/prone.edds"
+ OpacityMap "{E3F6E71B05E6A4BA}Assets/TimeTrial/SprayDecals/prone.edds"
+ DecalCategory Static
+}

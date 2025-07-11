@@ -44,11 +44,11 @@ class RKN_TimeTrialCourseLayer : SCR_ScenarioFrameworkLayerBase
 		GetGame().GetCallqueue().Remove(StartCourse);
 		GetGame().GetCallqueue().Remove(ResetRun);
 		FindPlayerUIComponent(GetGame().GetPlayerManager().GetPlayerControlledEntity(data.m_CurrentScoreInfo.m_iID)).RemoveScoreTable(m_iCourseIndex, true);
-		GetDataRepo().ClearCurrentScore(m_iCourseIndex);
 		m_iActiveSection = 0;
 		m_OnCancel.Invoke();
 		foreach (SCR_ScenarioFrameworkActionBase action : m_aOnCancelActions)
 			action.Init(GetOwner());
+		GetDataRepo().ClearCurrentScore(m_iCourseIndex);
 	}
 	
 	void ScheduleCourse(int playerId, int delay, bool competitive)

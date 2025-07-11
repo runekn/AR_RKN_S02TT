@@ -19,6 +19,9 @@ class RKN_TimeTrialObjectiveSlot : SCR_ScenarioFrameworkSlotBase
 	[Attribute(category: "Time trial")]
 	ref array<ref SCR_ScenarioFrameworkActionBase> m_aOnResetActions;
 	
+	[Attribute(category: "Time trial")]
+	ref array<ref SCR_ScenarioFrameworkActionBase> m_aOnFinishActions;
+	
 	[Attribute("false", category: "Time trial")]
 	bool m_bBonusObjective;
 	
@@ -128,6 +131,8 @@ class RKN_TimeTrialObjectiveSlot : SCR_ScenarioFrameworkSlotBase
 			if (m_fBonusAwardSeconds != 0)
 				m_Section.m_Course.ApplyScoreModifier(-m_fBonusAwardSeconds * 1000);
 		m_OnFinish.Invoke();
+		foreach (SCR_ScenarioFrameworkActionBase action : m_aOnFinishActions)
+			action.Init(GetOwner());
 	}
 	
 	void ResetObjective()

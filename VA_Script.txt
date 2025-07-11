@@ -25,6 +25,10 @@ Finish section:
 	"Move on"
 	"Proceed"
 	"Clear"
+	"Clear the building" - New
+	"Sprint to the finish" - New
+	"Cross the finish line" - New
+	"One last checkpoint" - New
 
 Finish course:
 	"I know you can do better"
@@ -33,6 +37,16 @@ Finish course:
 	"You're not old enough for tremors. Try again."
 	"Outstanding time!"
 	"Good. Double back and try again"
+	"You're supposed to pretend that they might shoot back, so don't take all day." - New
+	"You're supposed to pretend that they might shoot back, in which case, you're dead." - New
+	"There's no shame in picking a different hobby" - New
+	"Stop hitting dirt. My pal Yuri worked hard on that." - New
+	"There's a lot to work on" - New
+	"Like that, but faster." - New
+	"You're doing good" - New
+	"Decent time" - New
+	"Could hardly have done it better myself" - New
+	"Your performance is stellar on this course" - New
 
 Misc:
 	"Faster!"
@@ -40,6 +54,11 @@ Misc:
 	"Speed up"
 	"Hit"
 	"Target down"
+	"Wait til you hear the buzzer" - New
+	"You jumped the gun" - New
+	"Targets at long range" - New
+	"Jumpscare!" - New
+	"Fire at the range" - New
 	
 Requirements:
 	"Stand"
@@ -55,3 +74,7 @@ Requirements:
 	"Pistol"
 	"Rifle"
 	"Grenade"
+	"Carry the ammo box to the marked spot" - New
+	"Drive the car to the next section" - New
+	"Use the vehicle to get to the next section" - New
+	"Fly to the next section" - New

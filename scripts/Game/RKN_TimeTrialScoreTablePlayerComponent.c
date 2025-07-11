@@ -208,7 +208,7 @@ class RKN_TimeTrialScoreTablePlayerComponent : ScriptComponent
 	{
 		float seconds = MillisToSeconds(time);
 		int minutes = seconds / 60;
-		return minutes.ToString(2) + ":" + seconds.ToString(5, 2);
+		return minutes.ToString(2) + ":" + Math.Repeat(seconds, 60).ToString(5, 2);
 	}
 	
 	float MillisToSeconds(float time)

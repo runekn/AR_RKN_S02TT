@@ -1,0 +1,8 @@
+MatPBRDecal {
+ Color 1 0.204 0.204 1
+ BlendMode AlphaBlend
+ CavityFromAO 0
+ BCRMap "{339110A5EADE2683}Assets/TimeTrial/SprayDecals/crouch_text.edds"
+ OpacityMap "{339110A5EADE2683}Assets/TimeTrial/SprayDecals/crouch_text.edds"
+ DecalCategory Static
+}
