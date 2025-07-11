@@ -25,6 +25,9 @@ class RKN_TimeTrialObjectiveSlot : SCR_ScenarioFrameworkSlotBase
 	[Attribute("0", category: "Time trial")]
 	float m_fBonusAwardSeconds;
 	
+	[Attribute("true", category: "Time trial")]
+	bool m_bCountInUI;
+	
 	RKN_TimeTrialSectionLayer m_Section;
 	ref array<RKN_TimeTrialObjectiveSlot> m_DependentObjectives = {};
 	int m_iDependentFinished;

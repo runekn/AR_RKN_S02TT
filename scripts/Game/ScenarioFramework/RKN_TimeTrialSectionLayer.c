@@ -17,7 +17,7 @@ class RKN_TimeTrialSectionLayer : SCR_ScenarioFrameworkLayerBase
 	ref ScriptInvoker m_OnFinish = new ScriptInvoker();
 	
 	ref array<RKN_TimeTrialObjectiveSlot> m_aObjectives = {};
-	ref array<RKN_TimeTrialObjectiveSlot> m_aOptionalObjectives = {};
+	ref array<RKN_TimeTrialObjectiveSlot> m_aOptionalObjectives = {}; // TODO: Not using for anything
 	RKN_TimeTrialCourseLayer m_Course;
 	int m_iCompletedObjectives;
 	bool m_bActive;
@@ -49,6 +49,11 @@ class RKN_TimeTrialSectionLayer : SCR_ScenarioFrameworkLayerBase
 	void ActivateSection()
 	{
 		m_bActive = true;
+		int i = 0;
+		foreach (RKN_TimeTrialObjectiveSlot obj : m_aObjectives)
+			if (obj.m_bCountInUI)
+				i++;
+		m_Course.GetDataRepo().TargetsRemaining(m_Course.m_iCourseIndex, i);
 		m_OnActive.Invoke();
 	}
 	
@@ -64,7 +69,14 @@ class RKN_TimeTrialSectionLayer : SCR_ScenarioFrameworkLayerBase
 	{
 		if (!m_bActive)
 			return;
-		if (++m_iCompletedObjectives >= m_aObjectives.Count())
+		
+		m_iCompletedObjectives++;
+		if (objective.m_bCountInUI)
+		{
+			int prev = m_Course.GetDataRepo().GetData(m_Course.m_iCourseIndex).m_CurrentScoreInfo.m_iSectionTargetsRemaining;
+			m_Course.GetDataRepo().TargetsRemaining(m_Course.m_iCourseIndex, prev - 1);
+		}
+		if (m_iCompletedObjectives >= m_aObjectives.Count())
 		{
 			foreach (SCR_ScenarioFrameworkActionBase action : m_aOnFinishActions)
 				action.Init(GetOwner());

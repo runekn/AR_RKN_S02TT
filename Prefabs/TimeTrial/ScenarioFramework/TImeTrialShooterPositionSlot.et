@@ -13,6 +13,7 @@ GenericEntity {
    m_sObjectToSpawn "{5D1A95FADACF19B0}Prefabs/Systems/ScenarioFramework/Triggers/ScenarioFrameworkBoxTrigger.et"
    m_SectionGetter RKN_TimeTrialGetSectionParent "{65CA704AAEBE5C2B}" {
    }
+   m_bCountInUI 0
   }
   Hierarchy "{65BAA09C8ABA6D44}" {
   }

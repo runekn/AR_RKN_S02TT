@@ -8,6 +8,7 @@ class RKN_TimeTrialScoreInfo
 	WorldTimestamp m_iEnd;
 	int m_iPenalty;
 	int m_iBonus;
+	int m_iSectionTargetsRemaining;
 	
 	[SortAttribute()]
 	int m_iTotal; // Only used for sorting
@@ -17,19 +18,19 @@ class RKN_TimeTrialScoreInfo
 	//------------------------------------------------------------------------------------------------
 	static void Encode(SSnapSerializerBase snapshot, ScriptCtx ctx, ScriptBitSerializer packet) 
 	{
-		snapshot.Serialize(packet, 24);
+		snapshot.Serialize(packet, 36);
 	}
 	
 	//------------------------------------------------------------------------------------------------
 	static bool Decode(ScriptBitSerializer packet, ScriptCtx ctx, SSnapSerializerBase snapshot) 
 	{
-		return snapshot.Serialize(packet, 24);
+		return snapshot.Serialize(packet, 36);
 	}
 	
 	//------------------------------------------------------------------------------------------------
 	static bool SnapCompare(SSnapSerializerBase lhs, SSnapSerializerBase rhs, ScriptCtx ctx) 
 	{	
-		return lhs.CompareSnapshots(rhs, 24);
+		return lhs.CompareSnapshots(rhs, 36);
 	}
 	
 	//------------------------------------------------------------------------------------------------
@@ -37,10 +38,11 @@ class RKN_TimeTrialScoreInfo
 	{
 		return snapshot.Compare(prop.m_iID, 4) 
 			&& snapshot.Compare(prop.m_eType, 4)
-			&& snapshot.Compare(prop.m_iStart, 4)
-			&& snapshot.Compare(prop.m_iEnd, 4)
+			&& snapshot.Compare(prop.m_iStart, 8)
+			&& snapshot.Compare(prop.m_iEnd, 8)
 			&& snapshot.Compare(prop.m_iPenalty, 4)
-			&& snapshot.Compare(prop.m_iBonus, 4);
+			&& snapshot.Compare(prop.m_iBonus, 4)
+			&& snapshot.Compare(prop.m_iSectionTargetsRemaining, 4);
 	}
 	
 	//------------------------------------------------------------------------------------------------
@@ -48,10 +50,11 @@ class RKN_TimeTrialScoreInfo
 	{		
 		snapshot.SerializeBytes(prop.m_eType, 4);
 		snapshot.SerializeBytes(prop.m_iID, 4);
-		snapshot.SerializeBytes(prop.m_iStart, 4);
-		snapshot.SerializeBytes(prop.m_iEnd, 4);
+		snapshot.SerializeBytes(prop.m_iStart, 8);
+		snapshot.SerializeBytes(prop.m_iEnd, 8);
 		snapshot.SerializeBytes(prop.m_iPenalty, 4);
 		snapshot.SerializeBytes(prop.m_iBonus, 4);
+		snapshot.SerializeBytes(prop.m_iSectionTargetsRemaining, 4);
 		return true;
 	}
 	
@@ -60,10 +63,11 @@ class RKN_TimeTrialScoreInfo
 	{
 		snapshot.SerializeBytes(prop.m_eType, 4);
 		snapshot.SerializeBytes(prop.m_iID, 4);
-		snapshot.SerializeBytes(prop.m_iStart, 4);
-		snapshot.SerializeBytes(prop.m_iEnd, 4);
+		snapshot.SerializeBytes(prop.m_iStart, 8);
+		snapshot.SerializeBytes(prop.m_iEnd, 8);
 		snapshot.SerializeBytes(prop.m_iPenalty, 4);
 		snapshot.SerializeBytes(prop.m_iBonus, 4);
+		snapshot.SerializeBytes(prop.m_iSectionTargetsRemaining, 4);
 		
 		return true;
 	}

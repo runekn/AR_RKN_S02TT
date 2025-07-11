@@ -95,6 +95,12 @@ class RKN_TimeTrialScoreRepository : SCR_BaseGameModeComponent
 		Replication.BumpMe();
 	}
 	
+	void TargetsRemaining(int i, int remaining)
+	{
+		m_aCurrentScores[i].m_iSectionTargetsRemaining = remaining;
+		Replication.BumpMe();
+	}
+	
 	void StopTime(int i)
 	{
 		RKN_TimeTrialScoreInfo info = m_aCurrentScores[i];

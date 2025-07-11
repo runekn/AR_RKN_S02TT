@@ -187,14 +187,15 @@ FrameWidgetClass {
         HorizontalLayoutWidgetClass "{65CCC68FFD8FC596}" {
          Name "HorizontalLayout0"
          Slot LayoutSlot "{65CCC697081D49C2}" {
+          FillWeight 0.3
          }
          {
           HorizontalLayoutWidgetClass "{65CCC695564E9D0D}" {
-           Name "HorizontalLayout0"
+           Name "TimeColumn"
            Slot LayoutSlot "{65CCC695564E9D38}" {
             HorizontalAlign 1
             VerticalAlign 1
-            SizeMode Fill
+            FillWeight 0.5
            }
            {
             ImageWidgetClass "{65CCC6954A86A73A}" {
@@ -219,8 +220,9 @@ FrameWidgetClass {
            }
           }
           VerticalLayoutWidgetClass "{65CCC68FE15FB173}" {
-           Name "VerticalLayout0"
+           Name "ModifiersColumn"
            Slot LayoutSlot "{65CCC68FE15FB10B}" {
+            VerticalAlign 1
             Padding 5 0 0 0
             SizeMode Fill
             FillWeight 1
@@ -293,6 +295,35 @@ FrameWidgetClass {
                "Min Font Size" 20
               }
              }
+            }
+           }
+          }
+          HorizontalLayoutWidgetClass "{65D67A9C5B6C8C73}" {
+           Name "ObjectivesColumn"
+           Slot LayoutSlot "{65D67A9C5B6C8C1B}" {
+            HorizontalAlign 1
+            VerticalAlign 1
+            SizeMode Fill
+            FillWeight 1
+           }
+           {
+            ImageWidgetClass "{65D67A9C57BFC0DF}" {
+             Name "Image0"
+             Slot LayoutSlot "{65D67A9C57BFC0F7}" {
+             }
+             Texture "{15A293B1904F942B}UI/Textures/Icons/icon_objective.edds"
+             Size 30 30
+            }
+            TextWidgetClass "{65D67A9C8C24F92D}" {
+             Name "TargetsRemainingText"
+             Slot LayoutSlot "{65D67A9C8C24F9E7}" {
+              HorizontalAlign 1
+              VerticalAlign 1
+              SizeMode Fill
+              FillWeight 0.5
+             }
+             Text "2"
+             "Min Font Size" 20
             }
            }
           }

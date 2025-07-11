@@ -31,6 +31,7 @@ class RKN_TimeTrialScoreTablePlayerComponent : ScriptComponent
 	TextWidget m_wPlayerTimeWidget;
 	TextWidget m_wPlayerPenaltyWidget;
 	TextWidget m_wPlayerBonusWidget;
+	TextWidget m_wPlayerTargetsRemainingWidget;
 	
 	Widget m_wTableWidget;
 	ref array<Widget> m_aPlayerRowWidgets = {};
@@ -117,6 +118,7 @@ class RKN_TimeTrialScoreTablePlayerComponent : ScriptComponent
 			m_wPlayerTimeWidget = TextWidget.Cast(m_wPlayerLayout.FindAnyWidget("TimeText"));
 			m_wPlayerPenaltyWidget = TextWidget.Cast(m_wPlayerLayout.FindAnyWidget("PenaltyText"));
 			m_wPlayerBonusWidget = TextWidget.Cast(m_wPlayerLayout.FindAnyWidget("BonusText"));
+			m_wPlayerTargetsRemainingWidget = TextWidget.Cast(m_wPlayerLayout.FindAnyWidget("TargetsRemainingText"));
 			
 			m_wTableWidget = m_wRoot.FindAnyWidget("Table");
 		}
@@ -133,6 +135,7 @@ class RKN_TimeTrialScoreTablePlayerComponent : ScriptComponent
 			m_wPlayerPenaltyWidget.SetText(MillisToSeconds(data.m_CurrentScoreInfo.m_iPenalty).ToString(lenDec: 2));
 			m_wPlayerBonusWidget.SetText(MillisToSeconds(data.m_CurrentScoreInfo.m_iBonus).ToString(lenDec: 2));
 			m_wPlayerTrophyWidget.SetColorInt(GetTrophyColor(data));
+			m_wPlayerTargetsRemainingWidget.SetText(data.m_CurrentScoreInfo.m_iSectionTargetsRemaining.ToString());
 		}
 		else
 		{
