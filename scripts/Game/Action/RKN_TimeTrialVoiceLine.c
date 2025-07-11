@@ -9,6 +9,21 @@ class RKN_TimeTrialVoiceLine : SCR_ScenarioFrameworkActionVoiceOverPlayLine
 	override bool ValidateInputEntity(IEntity object, SCR_ScenarioFrameworkGet getter, out IEntity entity)
 	{
 		SCR_ChimeraCharacter player;
+		if (getter)
+		{
+			SCR_ScenarioFrameworkParamBase paramBase = getter.Get();
+			if (paramBase)
+				object = SCR_ScenarioFrameworkParam<IEntity>.Cast(paramBase).GetValue();
+		}
+		SCR_ScenarioFrameworkTriggerEntity trigger = SCR_ScenarioFrameworkTriggerEntity.Cast(object);
+		if (trigger)
+		{
+			// Just get whomever is in the trigger
+			array<IEntity> players = {};
+			trigger.GetPlayersByFactionInsideTrigger(players);
+			if (!players.IsEmpty())
+				player = SCR_ChimeraCharacter.Cast(players[0]);
+		}
 		if (SCR_ChimeraCharacter.Cast(object))
 		{
 			player = SCR_ChimeraCharacter.Cast(object);

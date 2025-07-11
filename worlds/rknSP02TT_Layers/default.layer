@@ -444,6 +444,14 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
        coords -1.247 -0.269 10.158
        {
         GenericEntity Red11Trigger2 : "{5128F9666E234EFC}Prefabs/TimeTrial/ScenarioFramework/TImeTrialShooterPositionSlot.et" {
+         components {
+          RKN_TimeTrialShooterPositionSlot "{65BAA09C846E881C}" {
+           m_aPlugins {
+            SCR_ScenarioFrameworkPluginTrigger "{65BAE8B220E74406}" {
+            }
+           }
+          }
+         }
          coords 0.297 0.192 -3.609
         }
         GenericEntity TimeTrialClayTargetSlot1 : "{73D1910748B11511}Prefabs/TimeTrial/ScenarioFramework/TimeTrialClayTargetSlot.et" {
