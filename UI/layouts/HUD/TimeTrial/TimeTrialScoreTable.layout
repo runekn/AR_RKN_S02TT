@@ -29,6 +29,7 @@ FrameWidgetClass {
      Name "VerticalLayout"
      Slot OverlayWidgetSlot "{65CCC6876126FDCF}" {
       HorizontalAlign 3
+      Padding 5 5 5 5
      }
      {
       VerticalLayoutWidgetClass "{65CCC6926731705E}" {
@@ -39,14 +40,17 @@ FrameWidgetClass {
         HorizontalLayoutWidgetClass "{65CCC68C98B83776}" {
          Name "HorizontalLayout2"
          Slot LayoutSlot "{65CCC68C98B83713}" {
+          Padding 0 0 0 2
          }
          {
           TextWidgetClass "{65CCC68F7802E0CB}" {
            Name "Text0"
            Slot LayoutSlot "{65CCC68F7802E0E7}" {
+            VerticalAlign 2
            }
            Text "Course: "
-           "Font Size" 27
+           "Font Size" 20
+           "Min Font Size" 20
           }
           TextWidgetClass "{65CCC68C9A65ACF3}" {
            Name "CourseNameText"
@@ -62,23 +66,23 @@ FrameWidgetClass {
          Slot LayoutSlot "{65CCC696A27644E1}" {
          }
          {
-          HorizontalLayoutWidgetClass "{65CCC69482C99E40}" {
-           Name "HorizontalLayout2"
-           Slot LayoutSlot "{65CCC69482C99E5A}" {
+          HorizontalLayoutWidgetClass "{65CCC694808DAB1D}" {
+           Name "HorizontalLayout0"
+           Slot LayoutSlot "{65CCC694808DAB35}" {
             HorizontalAlign 1
             SizeMode Fill
            }
            {
-            ImageWidgetClass "{65CCC696F5369683}" {
-             Name "Image0"
+            ImageWidgetClass "{65CCC694AEE1C184}" {
+             Name "BronzeImage"
              Slot LayoutSlot "{65CCC696F536969D}" {
              }
-             Color 0.6795 0.4913 0.0225 1
+             Color 0.6235 0.3064 0.0441 1
              Texture "{188707A8E6E9148B}UI/Textures/gold.edds"
              Size 20 20
             }
-            TextWidgetClass "{65CCC694AB4D5B09}" {
-             Name "GoldTimeText"
+            TextWidgetClass "{65CCC694D79FB9AA}" {
+             Name "BronzeTimeText"
              Slot LayoutSlot "{65CCC68F7802E0E7}" {
               Padding 5 0 0 0
              }
@@ -96,7 +100,7 @@ FrameWidgetClass {
            }
            {
             ImageWidgetClass "{65CCC694AF796F16}" {
-             Name "Image0"
+             Name "SilverImage"
              Slot LayoutSlot "{65CCC696F536969D}" {
              }
              Color 0.6308 0.6002 0.6002 1
@@ -114,23 +118,23 @@ FrameWidgetClass {
             }
            }
           }
-          HorizontalLayoutWidgetClass "{65CCC694808DAB1D}" {
-           Name "HorizontalLayout0"
-           Slot LayoutSlot "{65CCC694808DAB35}" {
+          HorizontalLayoutWidgetClass "{65CCC69482C99E40}" {
+           Name "HorizontalLayout2"
+           Slot LayoutSlot "{65CCC69482C99E5A}" {
             HorizontalAlign 1
             SizeMode Fill
            }
            {
-            ImageWidgetClass "{65CCC694AEE1C184}" {
-             Name "Image0"
+            ImageWidgetClass "{65CCC696F5369683}" {
+             Name "GoldImage"
              Slot LayoutSlot "{65CCC696F536969D}" {
              }
-             Color 0.6235 0.3064 0.0441 1
+             Color 0.6795 0.4913 0.0225 1
              Texture "{188707A8E6E9148B}UI/Textures/gold.edds"
              Size 20 20
             }
-            TextWidgetClass "{65CCC694D79FB9AA}" {
-             Name "BronzeTimeText"
+            TextWidgetClass "{65CCC694AB4D5B09}" {
+             Name "GoldTimeText"
              Slot LayoutSlot "{65CCC68F7802E0E7}" {
               Padding 5 0 0 0
              }
@@ -149,7 +153,7 @@ FrameWidgetClass {
        Slot LayoutSlot "{5230DA69B5A5BF40}" {
         HorizontalAlign 1
         VerticalAlign 1
-        Padding 0 2 0 2
+        Padding 0 4 0 0
        }
        Color 0.6235 0.5059 0.1569 1
        Size 400 2
@@ -157,6 +161,7 @@ FrameWidgetClass {
       VerticalLayoutWidgetClass "{65CCC693B31C27A4}" {
        Name "RunInfoLayout"
        Slot LayoutSlot "{65CCC693B31C2650}" {
+        Padding 0 4 0 0
        }
        {
         HorizontalLayoutWidgetClass "{65CCC68F30166DBE}" {
@@ -182,7 +187,6 @@ FrameWidgetClass {
         HorizontalLayoutWidgetClass "{65CCC68FFD8FC596}" {
          Name "HorizontalLayout0"
          Slot LayoutSlot "{65CCC697081D49C2}" {
-          Padding 0 0 0 15
          }
          {
           HorizontalLayoutWidgetClass "{65CCC695564E9D0D}" {
@@ -197,6 +201,7 @@ FrameWidgetClass {
              Name "TrophyImage"
              Slot LayoutSlot "{65CCC696F536969D}" {
               VerticalAlign 1
+              Padding 3 0 5 0
              }
              Color 0.6795 0.4913 0.0225 1
              Texture "{188707A8E6E9148B}UI/Textures/gold.edds"
@@ -351,8 +356,8 @@ FrameWidgetClass {
           VerticalAlign 1
           Padding 0 2 0 2
          }
-         Color 0.6235 0.5059 0.1569 1
-         Size 400 2
+         Color 0.8118 0.7372 0.5059 1
+         Size 400 1
         }
        }
       }

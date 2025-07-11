@@ -8,12 +8,6 @@ class RKN_TimeTrialScoreTablePlayerComponent : ScriptComponent
 	ResourceName m_sTableWidget;
 	[Attribute("{E775E1661BF28CA9}UI/layouts/HUD/TimeTrial/TimeTrialScoreRow.layout", params: ".layout")]
 	ResourceName m_sRowWidget;
-	[Attribute("0.8431 0.7295 0.1621 1", UIWidgets.ColorPicker)]
-	ref Color m_cGoldColor;
-	[Attribute("0.8157 0.7978 0.7978 1", UIWidgets.ColorPicker)]
-	ref Color m_cSilverColor;
-	[Attribute("0.8114 0.5894 0.2323 1", UIWidgets.ColorPicker)]
-	ref Color m_cBronzeColor;
 	[Attribute("5")]
 	int m_iHistoryMaxOtherPlayers;
 		
@@ -26,6 +20,10 @@ class RKN_TimeTrialScoreTablePlayerComponent : ScriptComponent
 	TextWidget m_wGoldTimeWidget;
 	TextWidget m_wSilverTimeWidget;
 	TextWidget m_wBronzeTimeWidget;
+	
+	int m_iGoldColor;
+	int m_iSilverColor;
+	int m_iBronzeColor;
 	
 	Widget m_wPlayerLayout;
 	TextWidget m_wPlayerNameWidget;
@@ -109,6 +107,10 @@ class RKN_TimeTrialScoreTablePlayerComponent : ScriptComponent
 			m_wBronzeTimeWidget = TextWidget.Cast(m_wCourseLayout.FindAnyWidget("BronzeTimeText"));
 			m_wBronzeTimeWidget.SetText(FormatTime(data.m_Config.GetBronzeMilliseconds()));
 			
+			m_iBronzeColor = ImageWidget.Cast(m_wCourseLayout.FindAnyWidget("BronzeImage")).GetColorInt();
+			m_iSilverColor = ImageWidget.Cast(m_wCourseLayout.FindAnyWidget("SilverImage")).GetColorInt();
+			m_iGoldColor = ImageWidget.Cast(m_wCourseLayout.FindAnyWidget("GoldImage")).GetColorInt();
+			
 			m_wPlayerLayout = m_wRoot.FindAnyWidget("RunInfoLayout");
 			m_wPlayerNameWidget = TextWidget.Cast(m_wPlayerLayout.FindAnyWidget("PlayerNameText"));
 			m_wPlayerTrophyWidget = ImageWidget.Cast(m_wPlayerLayout.FindAnyWidget("TrophyImage"));
@@ -130,7 +132,7 @@ class RKN_TimeTrialScoreTablePlayerComponent : ScriptComponent
 			m_wPlayerTimeWidget.SetText(FormatTime(data.m_CurrentScoreInfo.GetTime()));
 			m_wPlayerPenaltyWidget.SetText(MillisToSeconds(data.m_CurrentScoreInfo.m_iPenalty).ToString(lenDec: 2));
 			m_wPlayerBonusWidget.SetText(MillisToSeconds(data.m_CurrentScoreInfo.m_iBonus).ToString(lenDec: 2));
-			m_wPlayerTrophyWidget.SetColor(GetTrophyColor(data));
+			m_wPlayerTrophyWidget.SetColorInt(GetTrophyColor(data));
 		}
 		else
 		{
@@ -211,16 +213,16 @@ class RKN_TimeTrialScoreTablePlayerComponent : ScriptComponent
 		return time / 1000.0;
 	}
 	
-	Color GetTrophyColor(RKN_TimeTrialCourseData data)
+	int GetTrophyColor(RKN_TimeTrialCourseData data)
 	{
 		int totalTime = data.m_CurrentScoreInfo.GetTotal();
 		if (totalTime < data.m_Config.GetGoldMilliseconds())
-			return m_cGoldColor;
+			return m_iGoldColor;
 		if (totalTime < data.m_Config.GetSilverMilliseconds())
-			return m_cSilverColor;
+			return m_iSilverColor;
 		if (totalTime < data.m_Config.GetBronzeMilliseconds())
-			return m_cBronzeColor;
+			return m_iBronzeColor;
 		else
-			return Color.White;
+			return Color.BLACK;
 	}
 }
