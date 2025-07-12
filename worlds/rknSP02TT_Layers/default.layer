@@ -1551,11 +1551,6 @@ GenericEntity CourseRed_area : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramew
          m_sLayerBaseName "Red3DoorCloser1"
         }
        }
-       SCR_ScenarioFrameworkActionRestoreLayerToDefault "{65D6F2CCDBE9FF29}" {
-        m_Getter SCR_ScenarioFrameworkGetLayerBase "{65D6F2CCDBE9FFDD}" {
-         m_sLayerBaseName "Red3GateOpener"
-        }
-       }
        SCR_ScenarioFrameworkActionRestoreLayerToDefault "{65D6F2F2E13F9BFF}" {
         m_Getter SCR_ScenarioFrameworkGetLayerBase "{65D6F2F2E13F9BB4}" {
          m_sLayerBaseName "Red3DoorCloser2"
@@ -1573,7 +1568,7 @@ GenericEntity CourseRed_area : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramew
        }
        SCR_ScenarioFrameworkActionSpawnObjects "{65D6F2F121479503}" {
         m_aNameOfObjectsToSpawnOnActivation {
-         "Red3DoorCloser1" "Red3DoorCloser2" "" "Red3Car"
+         "Red3DoorCloser1" "Red3DoorCloser2" "Red3Car"
         }
        }
       }
@@ -1794,18 +1789,6 @@ GenericEntity CourseRed_area : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramew
          coords 75.99 0.225 20.541
         }
         {
-         coords 145.042 1.162 18.677
-         angleY 60
-        }
-        {
-         coords 172.182 27.146 -199.135
-         angleY 142.296
-        }
-        {
-         coords 72.375 28.5 -398.86
-         angleY -165
-        }
-        {
          coords 28.118 27.347 -443.763
          angleY -85.479
         }
@@ -1884,14 +1867,6 @@ GenericEntity CourseRed_area : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramew
         }
         {
          coords 72.374 0.225 20.541
-        }
-        {
-         coords 176.147 27.146 -195.842
-         angleY 135
-        }
-        {
-         coords 76.91 28.5 -400.076
-         angleY -165
         }
         {
          coords 96.785 29.679 -468.994
@@ -1989,6 +1964,110 @@ GenericEntity CourseRed_area : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramew
        GenericEntity : "{937999008F178E82}Prefabs/Props/Military/Sandbags/Sandbag_01_short_high_burlap.et" {
         coords 11.547 27.398 -410.619
         angleY -28.075
+       }
+       $grp GenericEntity : "{AA3F295D8E086A6D}Prefabs/Compositions/Misc/SubCompositions/TireStack_M939A1_02.et" {
+        {
+         coords 139.917 1.159 20.5
+        }
+        {
+         coords 142.68 1.154 20.009
+        }
+        {
+         coords 146.084 1.326 13.215
+        }
+        {
+         coords 144.949 1.117 18.021
+        }
+        {
+         coords 147.243 10.944 -84.92
+        }
+        {
+         coords 149.695 12.124 -94.048
+        }
+        {
+         coords 145.68 9.757 -76.067
+        }
+        {
+         coords 172.868 18.826 -133.082
+        }
+        {
+         coords 172.468 20.163 -142.612
+        }
+        {
+         coords 169.859 20.665 -147.01
+        }
+        {
+         coords 163.821 21.727 -154.326
+        }
+        {
+         coords 147.696 23.859 -172.068
+        }
+        {
+         coords 145.849 23.223 -168.649
+        }
+        {
+         coords 153.104 25.069 -179.482
+        }
+        {
+         coords 156.672 25.722 -184.461
+        }
+        {
+         coords 174.512 26.738 -190.275
+        }
+        {
+         coords 175.636 26.992 -193.504
+        }
+        {
+         coords 175.592 27.122 -196.052
+        }
+        {
+         coords 173.124 27.194 -199.124
+        }
+        {
+         coords 171.158 27.191 -200.556
+        }
+        {
+         coords 86.299 28.179 -378.326
+        }
+        {
+         coords 87.506 28.11 -373.884
+        }
+        {
+         coords 89.109 28.041 -369.483
+        }
+        {
+         coords 90.814 27.932 -364.544
+        }
+        {
+         coords 77.284 28.15 -375.037
+        }
+        {
+         coords 78.797 28.085 -370.724
+        }
+        {
+         coords 79.791 28.054 -366.313
+        }
+        {
+         coords 80.882 27.925 -361.729
+        }
+        {
+         coords 72.836 28.357 -393.133
+        }
+        {
+         coords 73.202 28.47 -396.412
+        }
+        {
+         coords 76.7 28.494 -399.388
+        }
+        {
+         coords 121.555 29.679 -401.704
+        }
+        {
+         coords 119.627 29.679 -410.209
+        }
+        {
+         coords 116.993 29.679 -419.853
+        }
        }
        $grp GenericEntity : "{B31A14BC1A0E7776}Prefabs/Props/Military/Sandbags/Sandbag_01_round_burlap.et" {
         {
@@ -2142,8 +2221,8 @@ GenericEntity CourseRed_area : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramew
          angleY 14.284
         }
         {
-         coords 74.67 27.915 -399.366
-         angleY 14.284
+         coords 74.832 28.403 -397.736
+         angleY 30.705
         }
        }
        $grp GenericEntity : "{FB41F48964E04C5B}Prefabs/Compositions/Misc/SubCompositions/Fortifications/Sandbag_Corner_BarbedWire_US_01.et" {
@@ -2749,14 +2828,6 @@ GenericEntity CourseRed_area : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramew
        }
        coords 6.518 30.781 -454.799
       }
-      Red3GateOpener {
-       components {
-        RKN_DoorOpenerSlot "{5A22E1D67E712EC8}" {
-         m_fRadius 5
-        }
-       }
-       coords 64.045 27.485 -368.077
-      }
      }
      GenericEntity TImeTrialCountdownPositionSlot4 : "{FE7A51992E39BF1B}Prefabs/TimeTrial/ScenarioFramework/TImeTrialCountdownPositionSlot.et" {
       coords -8.309 -0.461 4.72
@@ -2765,5 +2836,33 @@ GenericEntity CourseRed_area : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramew
     }
    }
   }
+ }
+}
+$grp GenericEntity : "{CD18971542C21223}Prefabs/Structures/Signs/Warnings/SignDangerCurve_01_right.et" {
+ {
+  coords 7535.074 165.159 4365.612
+  angleY -61.958
+ }
+ {
+  coords 7533.537 165.234 4360.802
+  angleY -61.958
+ }
+ {
+  coords 7531.92 165.31 4356.362
+  angleY -61.958
+ }
+}
+$grp GenericEntity : "{F03088B0E46CAA11}Prefabs/Structures/Signs/Warnings/SignDangerCurve_01_base.et" {
+ {
+  coords 7526.407 165.154 4368.031
+  angleY 97.763
+ }
+ {
+  coords 7525.278 165.241 4363.547
+  angleY 97.763
+ }
+ {
+  coords 7524.154 165.295 4359.386
+  angleY 97.763
  }
 }

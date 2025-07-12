@@ -62,6 +62,7 @@ class RKN_TimeTrialScoreTablePlayerComponent : ScriptComponent
 		{
 			m_wRoot.RemoveFromHierarchy();
 			m_wRoot = null;
+			m_aPlayerRowWidgets.Clear();
 		}
 		m_iActiveCourse = courseId;
 		m_bOverride = overrideTable;
