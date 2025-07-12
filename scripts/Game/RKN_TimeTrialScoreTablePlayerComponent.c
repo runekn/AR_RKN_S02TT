@@ -36,45 +36,50 @@ class RKN_TimeTrialScoreTablePlayerComponent : ScriptComponent
 	Widget m_wTableWidget;
 	ref array<Widget> m_aPlayerRowWidgets = {};
 	
-	bool m_bActive;
+	bool m_bOverride;
 	
 	override void OnPostInit(IEntity owner)
 	{
 		super.OnPostInit(owner);
 	}
 	
-	void ShowScoreTable(int courseId, bool active)
+	void ShowScoreTable(int courseId, bool overrideTable)
 	{
-		Rpc(RpcDo_ShowScoreTable, courseId, active);
+		Rpc(RpcDo_ShowScoreTable, courseId, overrideTable);
 	}
 	
-	void RemoveScoreTable(int courseId, bool active)
+	void RemoveScoreTable(int courseId, bool overrideTable)
 	{
-		Rpc(RpcDo_RemoveScoreTable, courseId, active);
+		Rpc(RpcDo_RemoveScoreTable, courseId, overrideTable);
 	}
 	
 	[RplRpc(RplChannel.Reliable, RplRcver.Owner)]
-	void RpcDo_ShowScoreTable(int courseId, bool active)
+	void RpcDo_ShowScoreTable(int courseId, bool overrideTable)
 	{
+		if (m_bOverride)
+			return;
+		if (m_iActiveCourse != courseId && m_wRoot)
+		{
+			m_wRoot.RemoveFromHierarchy();
+			m_wRoot = null;
+		}
 		m_iActiveCourse = courseId;
-		if (active && !m_bActive)
-			m_bActive = active;
+		m_bOverride = overrideTable;
 		SetEventMask(GetOwner(), EntityEvent.FRAME);
 	}
 	
 	[RplRpc(RplChannel.Reliable, RplRcver.Owner)]
-	void RpcDo_RemoveScoreTable(int courseId, bool active)
+	void RpcDo_RemoveScoreTable(int courseId, bool overrideTable)
 	{
-		if ((active || !m_bActive) && m_iActiveCourse == courseId)
-		{
-			m_wRoot.RemoveFromHierarchy();
-			m_wRoot = null;
-			m_iActiveCourse = -1;
-			m_aPlayerRowWidgets.Clear();
-			if (m_bActive)
-				m_bActive = false;
-			ClearEventMask(GetOwner(), EntityEvent.FRAME);
-		}
+		if (m_bOverride && !overrideTable)
+			return;
+		
+		m_wRoot.RemoveFromHierarchy();
+		m_wRoot = null;
+		m_iActiveCourse = -1;
+		m_aPlayerRowWidgets.Clear();
+		m_bOverride = false;
+		ClearEventMask(GetOwner(), EntityEvent.FRAME);
 	}
 	
 	override void EOnFrame(IEntity owner, float timeSlice)

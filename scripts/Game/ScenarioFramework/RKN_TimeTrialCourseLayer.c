@@ -36,10 +36,10 @@ class RKN_TimeTrialCourseLayer : SCR_ScenarioFrameworkLayerBase
 	
 	void CancelCourse()
 	{
-		RKN_TimeTrialCourseData data = GetDataRepo().GetData(m_iCourseIndex);
-		data.m_CurrentScoreInfo.m_iEnd = GetGame().GetWorld().GetTimestamp();
+		GetDataRepo().StopTime(m_iCourseIndex);
 		GetGame().GetCallqueue().Remove(StartCourse);
 		GetGame().GetCallqueue().Remove(ResetRun);
+		RKN_TimeTrialCourseData data = GetDataRepo().GetData(m_iCourseIndex);
 		FindPlayerUIComponent(GetGame().GetPlayerManager().GetPlayerControlledEntity(data.m_CurrentScoreInfo.m_iID)).RemoveScoreTable(m_iCourseIndex, true);
 		m_iActiveSection = 0;
 		m_OnCancel.Invoke();
@@ -50,11 +50,16 @@ class RKN_TimeTrialCourseLayer : SCR_ScenarioFrameworkLayerBase
 	
 	void ScheduleCourse(int playerId, int delay, bool competitive)
 	{
-		Print("RpcAsk_ScheduleCourse");
-		RKN_TimeTrialCourseData data = GetDataRepo().GetData(m_iCourseIndex);
-		if (data.m_CurrentScoreInfo)
+		Print("RKN_TimeTrialCourseLayer: RpcAsk_ScheduleCourse");
+		if (GetDataRepo().HasActiveCompetitor(m_iCourseIndex))
 		{
-			Print("Only one player can use the course at a time", LogLevel.ERROR);
+			Print("RKN_TimeTrialCourseLayer: Only one player can use the course at a time", LogLevel.ERROR);
+			return;
+		}
+		
+		if (GetDataRepo().IsActiveCompetitor(playerId))
+		{
+			Print("RKN_TimeTrialCourseLayer: Player already has active course", LogLevel.ERROR);
 			return;
 		}
 		
@@ -87,7 +92,7 @@ class RKN_TimeTrialCourseLayer : SCR_ScenarioFrameworkLayerBase
 	
 	void FailCourse()
 	{
-		Print("Fail!");
+		Print("RKN_TimeTrialCourseLayer: Fail!");
 		CancelCourse();
 	}
 	
@@ -128,7 +133,7 @@ class RKN_TimeTrialCourseLayer : SCR_ScenarioFrameworkLayerBase
 	
 	private void ResetRun()
 	{
-		Print("ResetRun");
+		Print("RKN_TimeTrialCourseLayer: ResetRun");
 		RKN_TimeTrialCourseData data = GetDataRepo().GetData(m_iCourseIndex);
 		FindPlayerUIComponent(GetGame().GetPlayerManager().GetPlayerControlledEntity(data.m_CurrentScoreInfo.m_iID)).RemoveScoreTable(m_iCourseIndex, true);
 		GetDataRepo().ClearCurrentScore(m_iCourseIndex);
@@ -210,6 +215,6 @@ class RKN_EquipItemCallback : ScriptedInventoryOperationCallback
 	
 	override void OnFailed()
 	{
-		Print("Failed to equip item", LogLevel.ERROR);
+		Print("RKN_TimeTrialCourseLayer: Failed to equip item", LogLevel.ERROR);
 	}
 }

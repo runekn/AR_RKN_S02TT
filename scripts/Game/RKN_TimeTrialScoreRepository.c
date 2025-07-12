@@ -71,6 +71,14 @@ class RKN_TimeTrialScoreRepository : SCR_BaseGameModeComponent
 		return m_aCurrentScores[i] != null;
 	}
 	
+	bool IsActiveCompetitor(int playerId)
+	{
+		foreach (RKN_TimeTrialScoreInfo info : m_aCurrentScores)
+			if (info && info.m_iID == playerId)
+				return true;
+		return false;
+	}
+	
 	void ApplyPenalty(int i, int amount)
 	{
 		RKN_TimeTrialScoreInfo info = m_aCurrentScores[i];
