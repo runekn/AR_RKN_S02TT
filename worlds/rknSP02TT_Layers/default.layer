@@ -1,7 +1,32 @@
 GenericEntity CourseRed_area : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Components/Area.et" {
  coords 7456.157 137.034 4749.71
  {
+  GenericEntity TimeTrialSpawnPointSlot1 : "{701063E0786BE818}Prefabs/TimeTrial/ScenarioFramework/TimeTrialSpawnPointSlot.et" {
+   components {
+    SCR_ScenarioFrameworkSlotBase "{5A22E1D67E712EC8}" {
+     m_aPlugins {
+      SCR_ScenarioFrameworkPluginSpawnPoint "{65AB38F319447228}" {
+       m_sFaction "CIV"
+       m_Info SCR_UIInfo "{65D85EDE9931E3EE}" {
+        Name "Red One, Two & Three"
+       }
+      }
+     }
+    }
+   }
+   coords -6.345 0.252 -16.39
+   angleY 0
+  }
   $grp GenericEntity : "{AA01691FDC4E9167}Prefabs/Systems/ScenarioFramework/Components/Slot.et" {
+   Slot1 {
+    components {
+     SCR_ScenarioFrameworkSlotBase "{5A22E1D67E712EC8}" {
+      m_sObjectToSpawn "{45C675ED3CFBBEC5}Prefabs/Props/Military/Compositions/US/ArsenalBox_US.et"
+     }
+    }
+    coords -0.361 0.373 -16.236
+    angleY -154.385
+   }
    Slot12 {
     components {
      SCR_ScenarioFrameworkSlotBase "{5A22E1D67E712EC8}" {
@@ -9,43 +34,25 @@ GenericEntity CourseRed_area : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramew
      }
     }
     coords -1.975 0.373 -15.415
-    angleY 25.615
+    angleY -154.385
    }
-   Slot11 {
+   Slot3 {
     components {
      SCR_ScenarioFrameworkSlotBase "{5A22E1D67E712EC8}" {
-      m_aPlugins {
-       SCR_ScenarioFrameworkPluginSpawnPoint "{65AB38F319447228}" {
-        m_fSpawnRadius 2
-        m_sFaction "CIV"
-        m_aActionsOnSpawnPointUsed {
-         SCR_ScenarioFrameworkActionAddItemToInventory "{65D13D05E82B0EE5}" {
-          m_Getter SCR_ScenarioFrameworkGetPlayerEntity "{65D13D05E3ABDA40}" {
-          }
-          m_aPrefabFilter {
-           SCR_ScenarioFrameworkPrefabFilterCountNoInheritance "{65D13D051D4AB209}" {
-            m_sPrefabName "{62AA1DC9919E6E61}Prefabs/TimeTrial_Radio_ANPRC68.et"
-           }
-          }
-         }
-         SCR_ScenarioFrameworkActionWaitAndExecute "{65D4578C0338490E}" {
-          m_iDelayInSeconds 1
-          m_aActions {
-           RKN_TimeTrialVoiceSequence "{65D4578C358DB38D}" {
-            m_sSequenceName "SPAWN"
-            m_PlayerGetter SCR_ScenarioFrameworkGetPlayerEntity "{65D25B7F28BA81F2}" {
-            }
-           }
-          }
-         }
-        }
-       }
-      }
-      m_sObjectToSpawn "{F26BA0860D54B7DF}Prefabs/MP/Spawning/SpawnPoint_CIV.et"
+      m_sObjectToSpawn "{B53B98CEA2D72735}Prefabs/Props/Military/Compositions/FIA/ArsenalBox_FIA.et"
      }
     }
-    coords -2.956 0.369 -17.088
-    angleY 16.505
+    coords -3.502 0.373 -14.343
+    angleY -148.055
+   }
+   Slot4 {
+    components {
+     SCR_ScenarioFrameworkSlotBase "{5A22E1D67E712EC8}" {
+      m_sObjectToSpawn "{AD59EDEAA26CE792}Prefabs/Props/Military/Compositions/USSR/ArsenalBox_USSR.et"
+     }
+    }
+    coords 1.332 0.373 -16.877
+    angleY -160.999
    }
   }
   $grp GenericEntity : "{E41ABB2A25E246B5}Prefabs/TimeTrial/ScenarioFramework/TimeTrialCourseLayer.et" {
@@ -2429,7 +2436,7 @@ GenericEntity CourseRed_area : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramew
             m_fActivationDelaySeconds 1
            }
           }
-          coords -5.38 -0 17.299
+          coords -5.38 0 17.299
           angleY 165
          }
          TimeTrialStandardTargetSlot47 {

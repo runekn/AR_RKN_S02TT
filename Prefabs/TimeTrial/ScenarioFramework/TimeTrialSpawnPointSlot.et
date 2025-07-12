@@ -1,0 +1,39 @@
+GenericEntity : "{AA01691FDC4E9167}Prefabs/Systems/ScenarioFramework/Components/Slot.et" {
+ ID "5A22E1D64BC88E05"
+ components {
+  SCR_ScenarioFrameworkSlotBase "{5A22E1D67E712EC8}" {
+   m_aPlugins {
+    SCR_ScenarioFrameworkPluginSpawnPoint "{65AB38F319447228}" {
+     m_fSpawnRadius 2
+     m_sFaction "FFA"
+     m_aActionsOnSpawnPointUsed {
+      SCR_ScenarioFrameworkActionAddItemToInventory "{65D13D05E82B0EE5}" {
+       m_Getter SCR_ScenarioFrameworkGetPlayerEntity "{65D13D05E3ABDA40}" {
+       }
+       m_aPrefabFilter {
+        SCR_ScenarioFrameworkPrefabFilterCountNoInheritance "{65D13D051D4AB209}" {
+         m_sPrefabName "{62AA1DC9919E6E61}Prefabs/TimeTrial_Radio_ANPRC68.et"
+        }
+       }
+      }
+      SCR_ScenarioFrameworkActionWaitAndExecute "{65D4578C0338490E}" {
+       m_iDelayInSeconds 1
+       m_aActions {
+        RKN_TimeTrialVoiceSequence "{65D4578C358DB38D}" {
+         m_sSequenceName "SPAWN"
+         m_PlayerGetter SCR_ScenarioFrameworkGetPlayerEntity "{65D25B7F28BA81F2}" {
+         }
+        }
+       }
+      }
+      RKN_PermanentlyEnableFastTravelAction "{65D85ED91D850880}" {
+      }
+     }
+    }
+   }
+   m_sObjectToSpawn "{CEA2B24051A44525}PrefabsEditable/SpawnPoints/E_SpawnPoint_US.et"
+  }
+ }
+ coords -2.956 0.369 -17.088
+ angleY 16.505
+}

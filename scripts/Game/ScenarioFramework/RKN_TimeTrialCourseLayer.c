@@ -17,9 +17,6 @@ class RKN_TimeTrialCourseLayer : SCR_ScenarioFrameworkLayerBase
 	[Attribute(category: "Time trial")]
 	ref array<ref SCR_ScenarioFrameworkActionBase> m_aOnFinishActions;
 	
-	[Attribute("{62AA1DC9919E6E61}Prefabs/TimeTrial_Radio_ANPRC68.et", params: "et", category: "Time trial")]
-	private ResourceName m_sRadioPrefab;
-	
 	ref ScriptInvoker m_OnCancel = new ScriptInvoker();
 	ref ScriptInvoker m_OnReset = new ScriptInvoker();
 	ref ScriptInvoker m_OnSchedule = new ScriptInvoker();
@@ -164,12 +161,12 @@ class RKN_TimeTrialCourseLayer : SCR_ScenarioFrameworkLayerBase
 				LoadoutBootsArea.Cast(cloth.GetAreaType()) || 
 				LoadoutHeadCoverArea.Cast(cloth.GetAreaType()) ||
 				LoadoutJacketArea.Cast(cloth.GetAreaType()) || 
-				LoadoutPantsArea.Cast(cloth.GetAreaType()) || 
 				LoadoutPantsArea.Cast(cloth.GetAreaType()))
 			)
 				continue;
 			
-			if (item.GetPrefabData().GetPrefabName() == m_sRadioPrefab)
+			SCR_GadgetComponent gadget = SCR_GadgetComponent.Cast(item.FindComponent(SCR_GadgetComponent));
+			if (gadget)
 				continue;
 			
 			comp.TryDeleteItem(item);
