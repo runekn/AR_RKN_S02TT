@@ -58,6 +58,7 @@ Misc:
 	"You jumped the gun" - New
 	"Targets at long range" - New
 	"Jumpscare!" - New
+	"Ambush!" - New
 	"Fire at the range" - New
 	"Too slow" - New
 	

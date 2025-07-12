@@ -5,7 +5,7 @@ GenericEntity : "{AA01691FDC4E9167}Prefabs/Systems/ScenarioFramework/Components/
    m_aPlugins {
     SCR_ScenarioFrameworkPluginSpawnPoint "{65AB38F319447228}" {
      m_fSpawnRadius 2
-     m_sFaction "FFA"
+     m_sFaction "CIV"
      m_aActionsOnSpawnPointUsed {
       SCR_ScenarioFrameworkActionAddItemToInventory "{65D13D05E82B0EE5}" {
        m_Getter SCR_ScenarioFrameworkGetPlayerEntity "{65D13D05E3ABDA40}" {
@@ -31,7 +31,7 @@ GenericEntity : "{AA01691FDC4E9167}Prefabs/Systems/ScenarioFramework/Components/
      }
     }
    }
-   m_sObjectToSpawn "{CEA2B24051A44525}PrefabsEditable/SpawnPoints/E_SpawnPoint_US.et"
+   m_sObjectToSpawn "{A79A87C616EEA08A}PrefabsEditable/SpawnPoints/E_SpawnPoint_CIV.et"
   }
  }
  coords -2.956 0.369 -17.088
