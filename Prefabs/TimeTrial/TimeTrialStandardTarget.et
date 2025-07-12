@@ -5,6 +5,7 @@ RKN_TimeTrialStandardTarget {
   }
   MeshObject "{65BA6C49D7F11BB2}" {
    Object "{74A9218974C65D05}Assets/Props/Military/Training/TargetInfantry_01/TargetInfantry_01.xob"
+   PixelSizeScale 10
   }
   RigidBody "{65BA6C49C2CF4A6A}" {
    ResponseIndex "TinyDestructible"

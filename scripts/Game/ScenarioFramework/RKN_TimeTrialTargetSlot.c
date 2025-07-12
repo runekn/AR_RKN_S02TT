@@ -17,19 +17,38 @@ class RKN_TimeTrialTargetSlot : RKN_TimeTrialObjectiveSlot
 	[Attribute("2", category: "Time trial")]
 	int m_iTimeoutPenaltySeconds;
 	
-	[Attribute(category: "Time trial")]
+	[Attribute(category: "Time trial Movement")]
 	ref PointInfo m_MovePoint;
 	
-	[Attribute("1", category: "Time trial")]
+	[Attribute("1", category: "Time trial Movement")]
 	float m_fMoveSpeedMetersPerSecond;
 	
-	[Attribute("false", category: "Time trial")]
+	[Attribute("false", category: "Time trial Movement")]
 	bool m_bMoveCycle;
+	
+	[Attribute("false", desc: "Auto-generate track sections to move position", params: "et", category: "Time trial Movement")]
+	bool m_bGenerateTracks;
+	
+	[Attribute(params: "et", category: "Time trial Movement")]
+	ResourceName m_sTrackMidSectionPrefabName;
+	
+	[Attribute(params: "et", category: "Time trial Movement")]
+	ResourceName m_sTrackEndSectionPrefabName;
+	
+	[Attribute("false", params: "et", category: "Time trial Movement")]
+	float m_fTrackWidth;
+	
+	[Attribute("false", params: "et", category: "Time trial Movement")]
+	float m_fTrackHeight;
+	
+	[Attribute("true", desc: "End section should have same position as neighboring mid-section", params: "et", category: "Time trial Movement")]
+	bool m_bTrackEndSectionSamePosition;
 	
 	ref map<string, int> m_mHitAreasMap = new map<string, int>();
 	RKN_TimeTrialTargetEntity m_Target;
 	vector m_vDesiredPosition;
 	bool m_bMoveCycleActive;
+	ref array<IEntity> m_aTrackEntities = {};
 	
 	override void FinishInit()
 	{
@@ -131,6 +150,73 @@ class RKN_TimeTrialTargetSlot : RKN_TimeTrialObjectiveSlot
 			m_Target.SetOrigin(newPos);
 			m_Target.Update();
 		}
+	}
+	
+	override IEntity SpawnAsset()
+	{
+		IEntity entity = super.SpawnAsset();
+		SpawnMoveTrack(entity);
+		return entity;
+	}
+	
+	override void SpawnEntityPreview(IEntity owner, Resource resource)
+	{
+		super.SpawnEntityPreview(owner, resource);
+		SpawnMoveTrack(m_PreviewEntity);
+	}
+	
+	void SpawnMoveTrack(IEntity parent)
+	{
+		if (m_bGenerateTracks && m_MovePoint && m_sTrackMidSectionPrefabName)
+		{
+			vector dir = GetMovePosition();
+			float distance = dir.Length();
+			dir.Normalize();
+			float sectionsFloat = (distance / m_fTrackWidth) + 1;
+			int sections = sectionsFloat;
+			if (Math.Mod(sectionsFloat, 1) > 0)
+				sections++;
+			for (int i = 0; i < sections; i++)
+			{
+				vector pos = dir * (m_fTrackWidth * i);
+				SpawnTrackAt(parent, pos, dir, m_sTrackMidSectionPrefabName);
+			}
+			if (m_sTrackEndSectionPrefabName)
+			{
+				if (m_bTrackEndSectionSamePosition)
+				{
+					vector endPos = dir * (m_fTrackWidth * (sections - 1));
+					SpawnTrackAt(parent, endPos, dir * -1, m_sTrackEndSectionPrefabName);
+					SpawnTrackAt(parent, vector.Zero, dir, m_sTrackEndSectionPrefabName);
+				}
+				else
+				{
+					Print("m_bTrackEndSectionSamePosition = false not supported", LogLevel.ERROR);
+				}
+			}
+		}
+	}
+	
+	private void SpawnTrackAt(IEntity parent, vector position, vector direction, ResourceName prefab)
+	{
+		Resource p = Resource.Load(prefab);
+		EntitySpawnParams params = new EntitySpawnParams();
+		position[1] = position[1] + m_fTrackHeight;
+		params.Transform[3] = position;
+		Math3D.DirectionAndUpMatrix(direction, {0, 1, 0}, params.Transform);
+		params.Parent = parent;
+		IEntity entity = GetGame().SpawnEntityPrefab(p, null, params);
+		m_aTrackEntities.Insert(entity);
+	}
+	
+	void ~RKN_TimeTrialTargetSlot()
+	{
+#ifdef WORKBENCH
+		foreach (IEntity e : m_aTrackEntities)
+		{
+			SCR_EntityHelper.DeleteEntityAndChildren(e);
+		}
+#endif
 	}
 	
 	vector GetMovePosition()

@@ -1,4 +1,4 @@
-GenericEntity : "{C62AFC64D4F5495E}Prefabs/TimeTrial/TimeTrialTargetSlot.et" {
+GenericEntity : "{C62AFC64D4F5495E}Prefabs/TimeTrial/ScenarioFramework/TimeTrialTargetSlot.et" {
  ID "65BA6C598EA5B504"
  components {
   RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
@@ -21,6 +21,10 @@ GenericEntity : "{C62AFC64D4F5495E}Prefabs/TimeTrial/TimeTrialTargetSlot.et" {
      m_sKey "circle3"
     }
    }
+   m_sTrackMidSectionPrefabName "{E8A3F5C1239C0F47}Prefabs/TimeTrial/TargetRailsMid.et"
+   m_sTrackEndSectionPrefabName "{C1047729DF8D414E}Prefabs/TimeTrial/TargetRailsEnd.et"
+   m_fTrackWidth 1.15
+   m_fTrackHeight -0.09
   }
  }
  coords 3.823 0 0.636

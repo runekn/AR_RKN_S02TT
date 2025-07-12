@@ -5,6 +5,7 @@ RKN_TimeTrialPopperTarget {
   }
   MeshObject "{65C9127A0B0C7040}" {
    Object "{AE1E15CDAD71E703}Assets/TimeTrial/popper.xob"
+   PixelSizeScale 10
   }
   RigidBody "{65C9127A0B0C704D}" {
    ResponseIndex "TinyDestructible"

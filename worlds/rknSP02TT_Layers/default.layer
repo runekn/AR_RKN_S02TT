@@ -2877,7 +2877,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
       }
      }
     }
-    coords 3.352 -0.789 -6.757
+    coords 17.863 -4.158 -33.63
     angleY 0
    }
    $grp GenericEntity : "{AA01691FDC4E9167}Prefabs/Systems/ScenarioFramework/Components/Slot.et" {
@@ -2887,9 +2887,10 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
        m_sObjectToSpawn "{45C675ED3CFBBEC5}Prefabs/Props/Military/Compositions/US/ArsenalBox_US.et"
       }
      }
-     coords 3.367 -0.52 -3.597
-     angleY -118.938
-     angleZ -3.532
+     coords 20.686 -3.811 -30.292
+     angleX -2.656
+     angleY -167.662
+     angleZ -2.329
     }
     Slot6 {
      components {
@@ -2897,9 +2898,10 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
        m_sObjectToSpawn "{F542F974956C255F}Prefabs/Props/Military/Compositions/CIV/ArsenalBox_CIV.et"
       }
      }
-     coords 2.533 -0.344 -2.007
-     angleY -118.938
-     angleZ -3.532
+     coords 18.937 -3.813 -29.875
+     angleX -2.656
+     angleY -167.662
+     angleZ -2.329
     }
     Slot7 {
      components {
@@ -2907,10 +2909,10 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
        m_sObjectToSpawn "{B53B98CEA2D72735}Prefabs/Props/Military/Compositions/FIA/ArsenalBox_FIA.et"
       }
      }
-     coords 1.921 -0.144 -0.26
-     angleX 0.389
-     angleY -112.62
-     angleZ -3.511
+     coords 17.215 -3.755 -29.189
+     angleX -2.384
+     angleY -161.332
+     angleZ -2.608
     }
     Slot8 {
      components {
@@ -2918,21 +2920,44 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
        m_sObjectToSpawn "{AD59EDEAA26CE792}Prefabs/Props/Military/Compositions/USSR/ArsenalBox_USSR.et"
       }
      }
-     coords 4.367 -0.699 -5.088
-     angleX -0.407
-     angleY -125.54
-     angleZ -3.509
+     coords 22.472 -3.766 -30.518
+     angleX -2.907
+     angleY -174.28
+     angleZ -2.008
     }
    }
    GenericEntity CourseGreen1 : "{E41ABB2A25E246B5}Prefabs/TimeTrial/ScenarioFramework/TimeTrialCourseLayer.et" {
+    components {
+     RKN_TimeTrialCourseLayer "{65BA6C59A0F2E93C}" {
+      m_sCourseId "green1"
+     }
+    }
     coords -15.905 -5.932 -56.497
     {
      GenericEntity Green1Deco {
       coords -8.534 -0.031 -2.005
       {
        GenericEntity : "{192A4FF528CB9DD0}Prefabs/Structures/Military/Camps/Foundations/Foundation_TentUS_01.et" {
-        coords -102.575 -14.352 -87.164
-        angleY 54.545
+        coords -104.12 -14.352 -85.817
+        angleY 71.115
+       }
+       $grp GenericEntity : "{25C8B889A777399D}Prefabs/Props/Infrastructure/ConeTraffic/ConeTraffic_01_red.et" {
+        {
+         coords -6.341 -0.042 -1.658
+         angleX 4.732
+        }
+        {
+         coords -6.796 -0.063 -4.48
+         angleX 4.732
+        }
+        {
+         coords -4.449 -0.031 0.07
+         angleX 4.732
+        }
+       }
+       SCR_DestructibleBuildingEntity : "{2EBA3486062A5A53}Prefabs/Structures/Military/Bunkers/AirfieldBunker_E_01/AirfieldBunker_E_01_big.et" {
+        coords -576.816 -60.06 -199.375
+        angleY -6.444
        }
        $grp GenericEntity : "{3088EF46B1618915}Prefabs/TimeTrial/TimeTrialMarkerPole.et" {
         {
@@ -2948,20 +2973,20 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
          coords -32.88 -11.454 -77.173
         }
         {
-         coords -106.433 -14.365 -88.774
-         angleY 54.051
+         coords -108.276 -14.365 -86.259
+         angleY 70.621
         }
         {
-         coords -104.934 -14.356 -90.752
-         angleY 54.051
+         coords -107.544 -14.356 -88.275
+         angleY 70.621
         }
         {
-         coords -103.717 -14.362 -86.648
-         angleY 54.051
+         coords -105.889 -14.362 -85.277
+         angleY 70.621
         }
         {
-         coords -102.246 -14.358 -88.398
-         angleY 54.051
+         coords -105.12 -14.358 -87.066
+         angleY 70.621
         }
         {
          coords -40.54 -11.065 -79.16
@@ -3008,6 +3033,40 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
         }
         {
          coords 9.889 0.445 0.095
+        }
+        {
+         coords -1.408 -0.972 -8.887
+        }
+        {
+         coords -4.481 -0.839 -8.968
+        }
+        {
+         coords -1.776 -3.631 -20.514
+         angleY 11.218
+        }
+        {
+         coords -4.879 -3.409 -19.546
+         angleY 11.218
+        }
+        {
+         coords -5.348 -5.838 -32.072
+         angleY -29.994
+        }
+        {
+         coords -8.308 -5.545 -31.097
+         angleY -29.994
+        }
+        {
+         coords -11.993 -8.651 -53.906
+        }
+        {
+         coords -14.996 -8.632 -52.928
+        }
+        {
+         coords -22.749 -10.325 -68.442
+        }
+        {
+         coords -24.115 -10.195 -66.011
         }
        }
        $grp DecalEntity : "{4AD6EB80A8B1FA3A}Prefabs/Decals/Dirt/Decal_Dirt_Patch_03.et" {
@@ -3068,14 +3127,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
          coords -34.227 -11.882 -80.846
          angleY -154.087
         }
-        {
-         coords -105.547 -14.354 -90.109
-         angleY 43.45
-        }
-        {
-         coords -106.068 -14.354 -89.499
-         angleY -99.957
-        }
        }
        StaticModelEntity : "{52D00BCAC3D201B9}Prefabs/Compositions/Misc/SubCompositions/Furniture/Chair_Garbage_US_01.et" {
         coords -35.874 -11.628 -79.176
@@ -3084,6 +3135,25 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
        GenericEntity : "{6CD65604C7945A66}Prefabs/Compositions/Misc/CustomEntities/CompositionDecals/CompositionDecal_Dirt_Patch_03.et" {
         coords -96.121 -13.575 -82.423
         angleY -47.072
+       }
+       GenericEntity : "{7C85836D444E3797}Prefabs/Compositions/Slotted/SlotRoadMedium/Checkpoint_M_USSR_01.et" {
+        coords -592.429 -101.898 -401.906
+        angleX 4.016
+        angleY -42.168
+       }
+       $grp GenericEntity : "{8076C9CE59439259}Prefabs/Props/Military/Sandbags/Sandbag_01_empty_base.et" {
+        {
+         coords -108.353 -14.378 -86.985
+         angleX 0.932
+         angleY 76.049
+         angleZ -1.283
+        }
+        {
+         coords -108.035 -14.368 -87.628
+         angleX -0.498
+         angleY -139.932
+         angleZ -0.271
+        }
        }
        $grp DecalEntity : "{AF4AA779A4546D51}Prefabs/Decals/Dirt/Decal_Dirt_Patch_02.et" {
         {
@@ -3103,12 +3173,16 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
         {
          coords -40.883 -11.498 -77.415
          angleX -90
+         angleY 180
+         angleZ 167.849
          scale 5
          FarPlane 2
         }
         {
          coords -53.359 -12.091 -78.505
          angleX -90
+         angleY 180
+         angleZ 132.555
          scale 5
          FarPlane 2
         }
@@ -3132,43 +3206,55 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
         }
         {
          coords -83.778 -13.736 -84.576
-         angleX -90
+         angleX -89.972
+         angleY 180
+         angleZ -149.892
          scale 5
          FarPlane 2
         }
         {
          coords -79.649 -13.554 -83.956
-         angleX -90
+         angleX -89.972
+         angleZ 71.864
          scale 5
          FarPlane 2
         }
         {
          coords -75.144 -13.341 -82.778
          angleX -90
+         angleY 180
+         angleZ -167.626
          scale 5
          FarPlane 2
         }
         {
          coords -67.044 -12.943 -80.858
          angleX -90
+         angleY 180
+         angleZ -137.899
          scale 5
          FarPlane 2
         }
         {
          coords -62.954 -12.743 -80.152
          angleX -90
+         angleY 180
+         angleZ -132.932
          scale 5
          FarPlane 2
         }
         {
          coords -58.487 -12.48 -79.087
-         angleX -90
+         angleX -89.972
+         angleZ -17.784
          scale 5
          FarPlane 2
         }
         {
          coords -49.059 -11.738 -77.557
          angleX -90
+         angleY 180
+         angleZ -143.419
          scale 5
          FarPlane 2
         }
@@ -3178,6 +3264,50 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
          scale 5
          FarPlane 2
         }
+        {
+         coords -3.112 -1.114 -9.266
+         angleX -90
+         angleZ 10.678
+         scale 5
+         FarPlane 2
+        }
+        {
+         coords -3.127 -3.944 -20.114
+         angleX -89.966
+         angleY -180
+         angleZ -123.632
+         scale 5
+         FarPlane 2
+        }
+        {
+         coords -6.884 -5.921 -31.733
+         angleX -90
+         angleY -180
+         angleZ -180
+         scale 5
+         FarPlane 2
+        }
+        {
+         coords -13.458 -9.026 -53.431
+         angleX -89.966
+         angleY -180
+         angleZ -169.816
+         scale 5
+         FarPlane 2
+        }
+        {
+         coords -23.53 -10.615 -66.783
+         angleX -89.98
+         angleY -180
+         angleZ 115.515
+         scale 5
+         FarPlane 2
+        }
+       }
+       Vehicle Ural4320_transport_static1 : "{BE9DA6D61F7C97CE}Prefabs/Vehicles/Wheeled/Ural4320/Ural4320_transport_static.et" {
+        coords -597.341 -100.821 -394.519
+        angleX -7.696
+        angleY 134.125
        }
       }
      }
@@ -3191,42 +3321,818 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
        angleX 4.732
       }
      }
-     GenericEntity TimeTrialSectionLayer1 : "{63F7CA06411FB0BE}Prefabs/TimeTrial/ScenarioFramework/TimeTrialSectionLayer.et" {
-      coords 10.385 0.031 3.99
-      {
-       GenericEntity TImeTrialShooterPositionSlot11 : "{5128F9666E234EFC}Prefabs/TimeTrial/ScenarioFramework/TImeTrialShooterPositionSlot.et" {
-        coords -5.092 0 -2.205
-        angleY -104.958
+     $grp GenericEntity : "{63F7CA06411FB0BE}Prefabs/TimeTrial/ScenarioFramework/TimeTrialSectionLayer.et" {
+      TimeTrialSectionLayer1 {
+       coords 10.385 0.031 3.99
+       {
+        GenericEntity TImeTrialShooterPositionSlot11 : "{5128F9666E234EFC}Prefabs/TimeTrial/ScenarioFramework/TImeTrialShooterPositionSlot.et" {
+         coords -2.958 0 -1.492
+         angleY -107.772
+        }
+        $grp GenericEntity : "{73D1910748B11511}Prefabs/TimeTrial/ScenarioFramework/TimeTrialClayTargetSlot.et" {
+         TimeTrialClayTargetSlot16 {
+          components {
+           RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
+            m_fBonusAwardSeconds 2
+           }
+          }
+          coords 10.674 -6.149 -39.055
+          angleY -111.131
+         }
+         TimeTrialClayTargetSlot18 {
+          components {
+           RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
+            m_fBonusAwardSeconds 2
+           }
+          }
+          coords 11.029 -6.398 -38.918
+          angleY -111.131
+         }
+        }
+        $grp GenericEntity : "{745CC59876B82738}Prefabs/TimeTrial/ScenarioFramework/TimeTrialPopperTargetSlot.et" {
+         TimeTrialPopperTargetSlot20 {
+          coords 0.854 -3.552 -21.224
+          angleX 5.064
+          angleY -17.128
+          angleZ -0.484
+         }
+         TimeTrialPopperTargetSlot24 {
+          coords -2.417 -3.707 -23.633
+          angleX 5.064
+          angleY -17.128
+          angleZ -0.484
+         }
+         TimeTrialPopperTargetSlot25 {
+          coords 0.004 -3.943 -24.153
+          angleX 5.064
+          angleY -17.128
+          angleZ -0.484
+         }
+        }
+        $grp GenericEntity : "{9E30174C2B6FA612}Prefabs/TimeTrial/ScenarioFramework/TimeTrialCivTargetSlot.et" {
+         TimeTrialCivTargetSlot9 {
+          coords 6.64 -7.692 -41.667
+          angleY -106.964
+         }
+         TimeTrialCivTargetSlot11 {
+          coords 1.824 -6.745 -38.393
+          angleY -106.964
+         }
+         TimeTrialCivTargetSlot10 {
+          coords 16.07 -9.055 -51.057
+          angleY -112.634
+         }
+        }
+        $grp GenericEntity : "{E47A9A48C98F1D4B}Prefabs/TimeTrial/ScenarioFramework/TimeTrialStandardTargetSlot.et" {
+         TimeTrialStandardTargetSlot60 {
+          components {
+           RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
+            m_DependentObjectiveGetter RKN_TimeTrialGetShooterPosition "{65D8CEEAC8FBD3C6}" {
+            }
+            m_MovePoint PointInfo "{65D8CEEF0D67F662}" {
+             Offset 9.9999 0.5 0
+            }
+            m_fMoveSpeedMetersPerSecond 2
+            m_bMoveCycle 1
+            m_bGenerateTracks 1
+           }
+          }
+          coords 6.187 -7.752 -44.182
+          angleY -23.303
+         }
+         TimeTrialStandardTargetSlot63 {
+          components {
+           RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
+            m_DependentObjectiveGetter RKN_TimeTrialGetShooterPosition "{65D8CEEAC8FBD3C6}" {
+            }
+            m_MovePoint PointInfo "{65D8CEEF0D67F662}" {
+             Offset -7.0002 -0.2014 0
+            }
+            m_fMoveSpeedMetersPerSecond 1.5
+            m_bMoveCycle 1
+            m_bGenerateTracks 1
+           }
+          }
+          coords 8.747 -8.004 -45.488
+          angleY -23.303
+         }
+         TimeTrialStandardTargetSlot62 {
+          components {
+           RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
+            m_DependentObjectiveGetter RKN_TimeTrialGetShooterPosition "{65D8CEEAC8FBD3C6}" {
+            }
+           }
+          }
+          coords 7.196 -9.351 -57.062
+          angleY -14.021
+         }
+         TimeTrialStandardTargetSlot65 {
+          components {
+           RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
+            m_DependentObjectiveGetter RKN_TimeTrialGetShooterPosition "{65D8CEEAC8FBD3C6}" {
+            }
+           }
+          }
+          coords 14.774 -9.429 -54.374
+          angleY -6.894
+         }
+         TimeTrialStandardTargetSlot66 {
+          components {
+           RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
+            m_DependentObjectiveGetter RKN_TimeTrialGetShooterPosition "{65D8CEEAC8FBD3C6}" {
+            }
+            m_MovePoint PointInfo "{65D8CEEF0D67F662}" {
+             Offset 12.8607 1.8017 9.2723
+            }
+            m_fMoveSpeedMetersPerSecond 2
+            m_bMoveCycle 1
+            m_bGenerateTracks 1
+           }
+          }
+          coords -1.594 -8.244 -49.944
+          angleY -23.303
+         }
+        }
        }
-       $grp GenericEntity : "{745CC59876B82738}Prefabs/TimeTrial/ScenarioFramework/TimeTrialPopperTargetSlot.et" {
-        TimeTrialPopperTargetSlot20 {
-         coords 0.854 -3.552 -21.224
-         angleX 5.064
-         angleY -17.128
-         angleZ -0.484
+      }
+      TimeTrialSectionLayer2 {
+       coords -13.771 -5.515 -30.042
+       {
+        GenericEntity Green1Section2Position1 : "{5128F9666E234EFC}Prefabs/TimeTrial/ScenarioFramework/TImeTrialShooterPositionSlot.et" {
+         coords 2.123 1.738 8.489
         }
-        TimeTrialPopperTargetSlot24 {
-         coords -2.417 -3.707 -23.633
-         angleX 5.064
-         angleY -17.128
-         angleZ -0.484
+        GenericEntity TimeTrialClayTargetSlot17 : "{73D1910748B11511}Prefabs/TimeTrial/ScenarioFramework/TimeTrialClayTargetSlot.et" {
+         coords -4.401 1.158 2.007
+         angleY -56.33
         }
-        TimeTrialPopperTargetSlot25 {
-         coords 0.004 -3.943 -24.153
-         angleX 5.064
-         angleY -17.128
-         angleZ -0.484
+        $grp GenericEntity : "{745CC59876B82738}Prefabs/TimeTrial/ScenarioFramework/TimeTrialPopperTargetSlot.et" {
+         TimeTrialPopperTargetSlot23 {
+          components {
+           RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
+            m_DependentObjectiveGetter RKN_TimeTrialGetShooterPosition "{65D8CEEBEA8C23A2}" {
+            }
+           }
+          }
+          coords -3.313 0.494 2.398
+          angleY 40.733
+         }
+         TimeTrialPopperTargetSlot26 {
+          components {
+           RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
+            m_DependentObjectiveGetter RKN_TimeTrialGetShooterPosition "{65D8CEEBEA8C23A2}" {
+            }
+           }
+          }
+          coords 4.044 -0.375 -1.762
+          angleY -19.591
+         }
+         TimeTrialPopperTargetSlot28 {
+          components {
+           RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
+            m_DependentObjectiveGetter RKN_TimeTrialGetShooterPosition "{65D8CEEBEA8C23A2}" {
+            }
+           }
+          }
+          coords -4.694 0.868 3.347
+          angleY 40.733
+         }
         }
        }
-       GenericEntity TimeTrialStandardTargetSlot60 : "{E47A9A48C98F1D4B}Prefabs/TimeTrial/ScenarioFramework/TimeTrialStandardTargetSlot.et" {
-        coords 6.187 -7.914 -44.182
-        angleY -23.303
+      }
+      TimeTrialSectionLayer3 {
+       coords -15.581 -6.229 -34.626
+       {
+        GenericEntity TImeTrialShooterPositionSlot12 : "{5128F9666E234EFC}Prefabs/TimeTrial/ScenarioFramework/TImeTrialShooterPositionSlot.et" {
+         coords 0.117 0.167 1.004
+         angleY 21.621
+        }
+        $grp GenericEntity : "{745CC59876B82738}Prefabs/TimeTrial/ScenarioFramework/TimeTrialPopperTargetSlot.et" {
+         TimeTrialPopperTargetSlot27 {
+          components {
+           RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
+            m_DependentObjectiveGetter RKN_TimeTrialGetShooterPosition "{65D8CEEBE9C7EF86}" {
+            }
+           }
+          }
+          coords 5.943 -0.932 -4.543
+          angleY -35.47
+         }
+         TimeTrialPopperTargetSlot30 {
+          components {
+           RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
+            m_DependentObjectiveGetter RKN_TimeTrialGetShooterPosition "{65D8CEEBE9C7EF86}" {
+            }
+           }
+          }
+          coords -2.848 -0.833 -5.266
+          angleY 8.915
+         }
+         TimeTrialPopperTargetSlot31 {
+          components {
+           RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
+            m_DependentObjectiveGetter RKN_TimeTrialGetShooterPosition "{65D8CEEBE9C7EF86}" {
+            }
+           }
+          }
+          coords -0.577 -1.056 -6.323
+          angleY 8.915
+         }
+         TimeTrialPopperTargetSlot29 {
+          components {
+           RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
+            m_DependentObjectiveGetter RKN_TimeTrialGetShooterPosition "{65D8CEEBE9C7EF86}" {
+            }
+           }
+          }
+          coords 3.116 -1.596 -9.699
+          angleY -8.433
+         }
+        }
+       }
+      }
+      TimeTrialSectionLayer4 {
+       coords -26.807 -10.237 -65.38
+       {
+        GenericEntity TImeTrialShooterPositionSlot13 : "{5128F9666E234EFC}Prefabs/TimeTrial/ScenarioFramework/TImeTrialShooterPositionSlot.et" {
+         coords 4.887 1.181 9.934
+         angleY 11.703
+        }
+        $grp GenericEntity : "{73D1910748B11511}Prefabs/TimeTrial/ScenarioFramework/TimeTrialClayTargetSlot.et" {
+         TimeTrialClayTargetSlot19 {
+          components {
+           RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
+            m_fBonusAwardSeconds 2
+           }
+          }
+          coords 0.741 1.77 12.485
+          angleY 52.29
+          angleZ -20.757
+         }
+         TimeTrialClayTargetSlot20 {
+          components {
+           RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
+            m_fBonusAwardSeconds 2
+           }
+          }
+          coords 6.579 1.248 0.867
+          angleX -26.65
+          angleY -86.903
+         }
+        }
+        $grp GenericEntity : "{E47A9A48C98F1D4B}Prefabs/TimeTrial/ScenarioFramework/TimeTrialStandardTargetSlot.et" {
+         TimeTrialStandardTargetSlot64 {
+          components {
+           RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
+            m_DependentObjectiveGetter RKN_TimeTrialGetShooterPosition "{65D8CEE8F413302D}" {
+            }
+           }
+          }
+          coords 7.595 -1.015 -9.625
+          angleY -19.27
+         }
+         TimeTrialStandardTargetSlot68 {
+          components {
+           RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
+            m_DependentObjectiveGetter RKN_TimeTrialGetShooterPosition "{65D8CEE8F413302D}" {
+            }
+            m_fActivationDelaySeconds 2
+           }
+          }
+          coords 5.238 -1.015 -10.45
+          angleY -19.27
+         }
+         TimeTrialStandardTargetSlot69 {
+          components {
+           RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
+            m_DependentObjectiveGetter RKN_TimeTrialGetShooterPosition "{65D8CEE8F413302D}" {
+            }
+            m_fActivationDelaySeconds 1
+           }
+          }
+          coords 2.263 -1.015 -11.49
+          angleY -19.27
+         }
+         TimeTrialStandardTargetSlot70 {
+          components {
+           RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
+            m_DependentObjectiveGetter RKN_TimeTrialGetShooterPosition "{65D8CEE8F413302D}" {
+            }
+            m_fActivationDelaySeconds 3
+           }
+          }
+          coords 9.585 -0.982 -8.931
+          angleY -34.257
+         }
+        }
+       }
+      }
+      TimeTrialSectionLayer5 {
+       coords -42.477 -11.614 -80.574
+       {
+        GenericEntity TImeTrialShooterPositionSlot14 : "{5128F9666E234EFC}Prefabs/TimeTrial/ScenarioFramework/TImeTrialShooterPositionSlot.et" {
+         coords 0 0 0
+        }
+        GenericEntity TimeTrialClayTargetSlot25 : "{73D1910748B11511}Prefabs/TimeTrial/ScenarioFramework/TimeTrialClayTargetSlot.et" {
+         components {
+          RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
+           m_fBonusAwardSeconds 10
+          }
+         }
+         coords -42.29 -60.361 -287.86
+         angleY -76.643
+         angleZ -7.91
+        }
+        $grp GenericEntity : "{E47A9A48C98F1D4B}Prefabs/TimeTrial/ScenarioFramework/TimeTrialStandardTargetSlot.et" {
+         TimeTrialStandardTargetSlot67 {
+          components {
+           RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
+            m_DependentObjectiveGetter RKN_TimeTrialGetShooterPosition "{65D8CEF2D5A88EEF}" {
+            }
+            m_aOnHitActions {
+             RKN_TimeTrialVoiceLine "{65D8CEF55186CE30}" {
+              m_sLineName "HIT"
+              m_PlayerGetter SCR_ScenarioFrameworkGetPlayerEntity "{65D8CEF553C8AFA9}" {
+              }
+             }
+            }
+            m_MovePoint PointInfo "{65D8CEE94AABD84A}" {
+             Offset 21.8143 0.2036 5.376
+            }
+            m_bMoveCycle 1
+            m_bGenerateTracks 1
+           }
+          }
+          coords 37.088 -53.664 -290.507
+          angleY -12.956
+         }
+         TimeTrialStandardTargetSlot71 {
+          components {
+           RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
+            m_DependentObjectiveGetter RKN_TimeTrialGetShooterPosition "{65D8CEF2D5A88EEF}" {
+            }
+            m_aOnHitActions {
+             RKN_TimeTrialVoiceLine "{65D8CEF55186CE30}" {
+              m_sLineName "HIT"
+              m_PlayerGetter SCR_ScenarioFrameworkGetPlayerEntity "{65D8CEF553C8AFA9}" {
+              }
+             }
+            }
+            m_MovePoint PointInfo "{65D8CEF6D4574464}" {
+             Offset 24.8687 0.4142 -20.1406
+            }
+            m_bMoveCycle 1
+            m_bGenerateTracks 1
+           }
+          }
+          coords -45.401 -59.324 -258.053
+          angleY 0
+         }
+         TimeTrialStandardTargetSlot72 {
+          components {
+           RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
+            m_DependentObjectiveGetter RKN_TimeTrialGetShooterPosition "{65D8CEF2D5A88EEF}" {
+            }
+            m_aOnHitActions {
+             RKN_TimeTrialVoiceLine "{65D8CEF55186CE30}" {
+              m_sLineName "HIT"
+              m_PlayerGetter SCR_ScenarioFrameworkGetPlayerEntity "{65D8CEF553C8AFA9}" {
+              }
+             }
+            }
+            m_MovePoint PointInfo "{65D8CEF607C39FC3}" {
+             Offset 0 -1.134 0
+            }
+            m_fMoveSpeedMetersPerSecond 0.3
+            m_bMoveCycle 1
+            m_fTrackWidth 1
+           }
+          }
+          coords -47.072 -57.259 -332.107
+          angleY 8.196
+         }
+         TimeTrialStandardTargetSlot73 {
+          components {
+           RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
+            m_DependentObjectiveGetter RKN_TimeTrialGetShooterPosition "{65D8CEF2D5A88EEF}" {
+            }
+            m_aOnHitActions {
+             RKN_TimeTrialVoiceLine "{65D8CEF55186CE30}" {
+              m_sLineName "HIT"
+              m_PlayerGetter SCR_ScenarioFrameworkGetPlayerEntity "{65D8CEF553C8AFA9}" {
+              }
+             }
+            }
+            m_MovePoint PointInfo "{65D8CEF7DE48C6C9}" {
+             Offset -14.9284 -3.4583 34.8609
+            }
+            m_fMoveSpeedMetersPerSecond 0.8
+            m_bMoveCycle 1
+            m_bGenerateTracks 1
+           }
+          }
+          coords 123.671 -55.81 -646.567
+          angleY -18.357
+         }
+         TimeTrialStandardTargetSlot74 {
+          components {
+           RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
+            m_DependentObjectiveGetter RKN_TimeTrialGetShooterPosition "{65D8CEF2D5A88EEF}" {
+            }
+            m_aOnHitActions {
+             RKN_TimeTrialVoiceLine "{65D8CEF55186CE30}" {
+              m_sLineName "HIT"
+              m_PlayerGetter SCR_ScenarioFrameworkGetPlayerEntity "{65D8CEF553C8AFA9}" {
+              }
+             }
+            }
+            m_MovePoint PointInfo "{65D8CEF5D2FD0198}" {
+             Offset -28.6104 -1.139 -0.0001
+            }
+            m_bMoveCycle 1
+            m_bGenerateTracks 1
+           }
+          }
+          coords 10.614 -66.608 -371.714
+          angleY -12.115
+         }
+         TimeTrialStandardTargetSlot76 {
+          components {
+           RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
+            m_DependentObjectiveGetter RKN_TimeTrialGetShooterPosition "{65D8CEF2D5A88EEF}" {
+            }
+            m_fActivationDelaySeconds 5
+            m_aOnHitActions {
+             RKN_TimeTrialVoiceLine "{65D8CEF55186CE30}" {
+              m_sLineName "HIT"
+              m_PlayerGetter SCR_ScenarioFrameworkGetPlayerEntity "{65D8CEF553C8AFA9}" {
+              }
+             }
+            }
+            m_MovePoint PointInfo "{65D8CEF5D2FD0198}" {
+             Offset -28.6104 -1.0183 -0.0001
+            }
+            m_bMoveCycle 1
+            m_bGenerateTracks 1
+           }
+          }
+          coords 11.753 -66.982 -377.021
+          angleY -12.115
+         }
+         TimeTrialStandardTargetSlot75 {
+          components {
+           RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
+            m_DependentObjectiveGetter RKN_TimeTrialGetShooterPosition "{65D8CEF2D5A88EEF}" {
+            }
+            m_aOnHitActions {
+             RKN_TimeTrialVoiceLine "{65D8CEF55186CE30}" {
+              m_sLineName "HIT"
+              m_PlayerGetter SCR_ScenarioFrameworkGetPlayerEntity "{65D8CEF553C8AFA9}" {
+              }
+             }
+            }
+           }
+          }
+          coords 103.729 -58.525 -615.056
+          angleY -27.719
+         }
+        }
+       }
+      }
+      TimeTrialSectionLayer6 {
+       coords -104.688 -10.937 -61.295
+       {
+        GenericEntity TImeTrialShooterPositionSlot15 : "{5128F9666E234EFC}Prefabs/TimeTrial/ScenarioFramework/TImeTrialShooterPositionSlot.et" {
+         coords 29.593 -2.012 -21.473
+         angleY 67.816
+        }
+        $grp GenericEntity : "{73D1910748B11511}Prefabs/TimeTrial/ScenarioFramework/TimeTrialClayTargetSlot.et" {
+         TimeTrialClayTargetSlot21 {
+          components {
+           RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
+            m_fBonusAwardSeconds 2
+           }
+          }
+          coords 7.653 3.067 8.972
+          angleY 64.812
+         }
+         TimeTrialClayTargetSlot23 {
+          components {
+           RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
+            m_fBonusAwardSeconds 2
+           }
+          }
+          coords 6.451 2.112 5.89
+          angleY 64.812
+         }
+         TimeTrialClayTargetSlot24 {
+          components {
+           RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
+            m_fBonusAwardSeconds 2
+           }
+          }
+          coords 2.747 1.824 4.149
+          angleY 48.157
+         }
+        }
+        $grp GenericEntity : "{E47A9A48C98F1D4B}Prefabs/TimeTrial/ScenarioFramework/TimeTrialStandardTargetSlot.et" {
+         TimeTrialStandardTargetSlot77 {
+          components {
+           RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
+            m_DependentObjectiveGetter RKN_TimeTrialGetShooterPosition "{65D8CEF3AF1EB1E6}" {
+            }
+            m_fActivationDelaySeconds 0.5
+            m_MovePoint PointInfo "{65D8CEF21943FC48}" {
+             Offset 2.4487 -3.0378 28.177
+            }
+            m_fMoveSpeedMetersPerSecond 2.1
+            m_bGenerateTracks 1
+           }
+          }
+          coords 3.208 1.707 8.448
+          angleY 140.633
+         }
+         TimeTrialStandardTargetSlot79 {
+          components {
+           RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
+            m_DependentObjectiveGetter RKN_TimeTrialGetShooterPosition "{65D8CEF3AF1EB1E6}" {
+            }
+            m_MovePoint PointInfo "{65D8CEF21943FC48}" {
+             Offset 2.137 -2.4427 25.6177
+            }
+            m_fMoveSpeedMetersPerSecond 2.8
+            m_bGenerateTracks 1
+           }
+          }
+          coords -2.184 0.625 4.024
+          angleY 140.633
+         }
+         TimeTrialStandardTargetSlot80 {
+          components {
+           RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
+            m_DependentObjectiveGetter RKN_TimeTrialGetShooterPosition "{65D8CEF3AF1EB1E6}" {
+            }
+            m_MovePoint PointInfo "{65D8CEF21943FC48}" {
+             Offset 0.0001 -2.5159 27.465
+            }
+            m_fMoveSpeedMetersPerSecond 3
+            m_bGenerateTracks 1
+           }
+          }
+          coords -0.175 1.055 5.673
+          angleY 140.633
+         }
+         TimeTrialStandardTargetSlot81 {
+          components {
+           RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
+            m_DependentObjectiveGetter RKN_TimeTrialGetShooterPosition "{65D8CEF3AF1EB1E6}" {
+            }
+            m_fActivationDelaySeconds 1
+            m_MovePoint PointInfo "{65D8CEF21943FC48}" {
+             Offset 5.124 -3.4632 28.1769
+            }
+            m_fMoveSpeedMetersPerSecond 2.5
+            m_bGenerateTracks 1
+           }
+          }
+          coords 7.576 2.45 12.032
+          angleY 140.633
+         }
+        }
+       }
+      }
+      TimeTrialSectionLayer7 {
+       coords -115.154 -14.389 -88.646
+       angleY 67.622
+       {
+        GenericEntity TImeTrialShooterPositionSlot16 : "{5128F9666E234EFC}Prefabs/TimeTrial/ScenarioFramework/TImeTrialShooterPositionSlot.et" {
+         coords 0.14 0.004 -0.349
+         angleY -3.737
+        }
+        GenericEntity TimeTrialClayTargetSlot22 : "{73D1910748B11511}Prefabs/TimeTrial/ScenarioFramework/TimeTrialClayTargetSlot.et" {
+         components {
+          RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
+           m_fBonusAwardSeconds 20
+          }
+         }
+         coords 99.078 -84.452 -569.856
+         angleY -108.947
+        }
+        $grp GenericEntity : "{E47A9A48C98F1D4B}Prefabs/TimeTrial/ScenarioFramework/TimeTrialStandardTargetSlot.et" {
+         TimeTrialStandardTargetSlot78 {
+          components {
+           RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
+            m_DependentObjectiveGetter RKN_TimeTrialGetShooterPosition "{65D8CEFF1AD6121B}" {
+            }
+            m_fActivationDelaySeconds 15
+            m_MovePoint PointInfo "{65D8CEFCD722DD0E}" {
+             Offset 0 1.0206 0
+            }
+            m_fMoveSpeedMetersPerSecond 2
+           }
+          }
+          coords -0.179 -2.043 -3.32
+          angleY 4.524
+         }
+         TimeTrialStandardTargetSlot82 {
+          components {
+           RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
+            m_DependentObjectiveGetter RKN_TimeTrialGetShooterPosition "{65D8CEFF1AD6121B}" {
+            }
+            m_aOnHitActions {
+             RKN_TimeTrialVoiceLine "{65D8CEFF2535C325}" {
+              m_sLineName "HIT"
+              m_PlayerGetter SCR_ScenarioFrameworkGetPlayerEntity "{65D8CEFF26BC42DF}" {
+              }
+             }
+            }
+            m_MovePoint PointInfo "{65D8CEF017E37649}" {
+             Offset 36.7651 -10.3389 -27.4106
+            }
+            m_fMoveSpeedMetersPerSecond 2
+            m_bMoveCycle 1
+            m_bGenerateTracks 1
+           }
+          }
+          coords -20.194 -40.446 -245.961
+          angleY 6.499
+         }
+         TimeTrialStandardTargetSlot83 {
+          components {
+           RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
+            m_DependentObjectiveGetter RKN_TimeTrialGetShooterPosition "{65D8CEFF1AD6121B}" {
+            }
+            m_aOnHitActions {
+             RKN_TimeTrialVoiceLine "{65D8CEFF2535C325}" {
+              m_sLineName "HIT"
+              m_PlayerGetter SCR_ScenarioFrameworkGetPlayerEntity "{65D8CEFF26BC42DF}" {
+              }
+             }
+            }
+            m_MovePoint PointInfo "{65D8CEF0310477EB}" {
+             Offset -16.6352 1.1742 -3.0983
+            }
+            m_fMoveSpeedMetersPerSecond 1.2
+            m_bMoveCycle 1
+            m_bGenerateTracks 1
+           }
+          }
+          coords -38.385 -33.372 -200.473
+          angleY 8.468
+         }
+         TimeTrialStandardTargetSlot84 {
+          components {
+           RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
+            m_DependentObjectiveGetter RKN_TimeTrialGetShooterPosition "{65D8CEFF1AD6121B}" {
+            }
+            m_aOnHitActions {
+             RKN_TimeTrialVoiceLine "{65D8CEFF2535C325}" {
+              m_sLineName "HIT"
+              m_PlayerGetter SCR_ScenarioFrameworkGetPlayerEntity "{65D8CEFF26BC42DF}" {
+              }
+             }
+            }
+            m_MovePoint PointInfo "{65D8CEF040A93663}" {
+             Offset 18.6873 -3.1309 0.7316
+            }
+            m_bMoveCycle 1
+            m_bGenerateTracks 1
+           }
+          }
+          coords -29.549 -34.02 -192.938
+          angleY 22.511
+         }
+         TimeTrialStandardTargetSlot85 {
+          components {
+           RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
+            m_DependentObjectiveGetter RKN_TimeTrialGetShooterPosition "{65D8CEFF1AD6121B}" {
+            }
+            m_aOnHitActions {
+             RKN_TimeTrialVoiceLine "{65D8CEFF2535C325}" {
+              m_sLineName "HIT"
+              m_PlayerGetter SCR_ScenarioFrameworkGetPlayerEntity "{65D8CEFF26BC42DF}" {
+              }
+             }
+            }
+           }
+          }
+          coords -70.546 -45.662 -473.443
+          angleY 5.719
+         }
+         TimeTrialStandardTargetSlot86 {
+          components {
+           RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
+            m_DependentObjectiveGetter RKN_TimeTrialGetShooterPosition "{65D8CEFF1AD6121B}" {
+            }
+            m_aOnHitActions {
+             RKN_TimeTrialVoiceLine "{65D8CEFF2535C325}" {
+              m_sLineName "HIT"
+              m_PlayerGetter SCR_ScenarioFrameworkGetPlayerEntity "{65D8CEFF26BC42DF}" {
+              }
+             }
+            }
+           }
+          }
+          coords -82.317 -44.283 -466.302
+          angleY 18.222
+         }
+         TimeTrialStandardTargetSlot87 {
+          components {
+           RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
+            m_DependentObjectiveGetter RKN_TimeTrialGetShooterPosition "{65D8CEFF1AD6121B}" {
+            }
+            m_aOnHitActions {
+             RKN_TimeTrialVoiceLine "{65D8CEFF2535C325}" {
+              m_sLineName "HIT"
+              m_PlayerGetter SCR_ScenarioFrameworkGetPlayerEntity "{65D8CEFF26BC42DF}" {
+              }
+             }
+            }
+           }
+          }
+          coords 106.196 -87.711 -568.264
+          angleY -44.899
+         }
+         TimeTrialStandardTargetSlot88 {
+          components {
+           RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
+            m_DependentObjectiveGetter RKN_TimeTrialGetShooterPosition "{65D8CEFF1AD6121B}" {
+            }
+            m_aOnHitActions {
+             RKN_TimeTrialVoiceLine "{65D8CEFF2535C325}" {
+              m_sLineName "HIT"
+              m_PlayerGetter SCR_ScenarioFrameworkGetPlayerEntity "{65D8CEFF26BC42DF}" {
+              }
+             }
+            }
+           }
+          }
+          coords 104.866 -87.52 -568.471
+          angleY 7.8
+         }
+         TimeTrialStandardTargetSlot89 {
+          components {
+           RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
+            m_DependentObjectiveGetter RKN_TimeTrialGetShooterPosition "{65D8CEFF1AD6121B}" {
+            }
+            m_aOnHitActions {
+             RKN_TimeTrialVoiceLine "{65D8CEFF2535C325}" {
+              m_sLineName "HIT"
+              m_PlayerGetter SCR_ScenarioFrameworkGetPlayerEntity "{65D8CEFF26BC42DF}" {
+              }
+             }
+            }
+           }
+          }
+          coords 97.354 -84.832 -570.678
+          angleY -19.868
+          angleZ 8.408
+         }
+         TimeTrialStandardTargetSlot91 {
+          components {
+           RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
+            m_DependentObjectiveGetter RKN_TimeTrialGetShooterPosition "{65D8CEFF1AD6121B}" {
+            }
+            m_aOnHitActions {
+             RKN_TimeTrialVoiceLine "{65D8CEFF2535C325}" {
+              m_sLineName "HIT"
+              m_PlayerGetter SCR_ScenarioFrameworkGetPlayerEntity "{65D8CEFF26BC42DF}" {
+              }
+             }
+            }
+           }
+          }
+          coords 96.388 -84.736 -571.028
+          angleY -19.868
+          angleZ 8.408
+         }
+         TimeTrialStandardTargetSlot92 {
+          components {
+           RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
+            m_DependentObjectiveGetter RKN_TimeTrialGetShooterPosition "{65D8CEFF1AD6121B}" {
+            }
+            m_aOnHitActions {
+             RKN_TimeTrialVoiceLine "{65D8CEFF2535C325}" {
+              m_sLineName "HIT"
+              m_PlayerGetter SCR_ScenarioFrameworkGetPlayerEntity "{65D8CEFF26BC42DF}" {
+              }
+             }
+            }
+           }
+          }
+          coords 95.228 -84.588 -571.447
+          angleY -19.868
+          angleZ 8.408
+         }
+        }
        }
       }
      }
      GenericEntity TimeTrialCourseControlPanel2 : "{759B64907C040A78}Prefabs/TimeTrial/ScenarioFramework/TimeTrialCourseControlPanel.et" {
-      coords 25.254 0.09 10.878
-      angleY 113.865
+      coords 26.142 -0.293 8.218
+      angleY 19.124
+     }
+     GenericEntity TimeTrialUITriggerSlot4 : "{ADC06C4DCF0A9E1B}Prefabs/TimeTrial/ScenarioFramework/TimeTrialUITriggerSlot.et" {
+      coords 22.206 0.061 6.839
      }
      GenericEntity TImeTrialCountdownPositionSlot2 : "{FE7A51992E39BF1B}Prefabs/TimeTrial/ScenarioFramework/TImeTrialCountdownPositionSlot.et" {
       coords 26.691 -0.051 10.098
