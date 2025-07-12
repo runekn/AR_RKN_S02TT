@@ -82,6 +82,14 @@ RKN_TimeTrialControlPanelEntity {
      Duration 0.5
      m_bCompetitive 1
     }
+    RKN_TimeTrialShowCourseDescriptionAction "{65D8CEC1F4BBBEB6}" {
+     ParentContextList {
+      "StartCourse"
+     }
+     UIInfo UIInfo "{65D8CEC1F0FC20F5}" {
+      Name "Show Course Description"
+     }
+    }
    }
   }
   RplComponent "{65BA6C59F1AD3E1D}" {

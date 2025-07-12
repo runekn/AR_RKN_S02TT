@@ -1,0 +1,10 @@
+GenericEntity : "{73D1910748B11511}Prefabs/TimeTrial/ScenarioFramework/TimeTrialClayTargetSlot.et" {
+ ID "65BA6C598EA5B504"
+ components {
+  RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
+   m_sObjectToSpawn "{BD2C44EC63B4C577}Prefabs/TimeTrial/TimeTrialTargetPoleClay.et"
+  }
+ }
+ coords 4150.982 43.763 7775.453
+ angleY 0
+}

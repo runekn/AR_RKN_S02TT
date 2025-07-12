@@ -1,8 +1,5 @@
 class RKN_CancelTimeTrialAction : SCR_ScriptedUserAction
-{
-	[Attribute()]
-	string m_sCourseId;
-	
+{	
 	override void PerformAction(IEntity pOwnerEntity, IEntity pUserEntity) 
 	{
 		RKN_TimeTrialControlPanelEntity.Cast(pOwnerEntity).CancelCourse(pUserEntity);

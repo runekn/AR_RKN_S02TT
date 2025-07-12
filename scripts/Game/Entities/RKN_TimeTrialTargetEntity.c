@@ -5,6 +5,8 @@ class RKN_TimeTrialTargetEntityClass : BaseBuildingClass
 // Shamelessly stole most from SCR_FiringRangeTarget, just without m_FiringRangeManager
 class RKN_TimeTrialTargetEntity : BaseBuilding
 {
+	[Attribute("1")]
+	int m_iRequiredHits;
 	
 	//! Current state at any given time
 	protected int m_iDesiredState;
@@ -23,7 +25,7 @@ class RKN_TimeTrialTargetEntity : BaseBuilding
 	protected bool m_bTargetHit = false;
 	
 	// value of hit (score)
-	private int m_iHitValue; 
+	private int m_iHits; 
 	
 	// state of the target for JIP 
 	private int m_iTargetState;
@@ -75,6 +77,9 @@ class RKN_TimeTrialTargetEntity : BaseBuilding
 		// check if target is in erected state
 		if (GetState() != ETargetState.TARGET_UP)
  			return;
+		
+		if (++m_iHits < m_iRequiredHits)
+			return;
 
 		// target was already hit. Multiple execution check
 		if (m_bTargetHit)
@@ -121,6 +126,7 @@ class RKN_TimeTrialTargetEntity : BaseBuilding
 	void ResetTarget()
 	{
 		SetState(ETargetState.TARGET_DOWN);
+		m_iHits = 0;
 	}
 	
 	void ActivateTarget()

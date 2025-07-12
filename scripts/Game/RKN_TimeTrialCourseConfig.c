@@ -6,6 +6,8 @@ class RKN_TimeTrialCourseConfig
 	[Attribute()]
 	LocalizedString m_sName;
 	[Attribute()]
+	LocalizedString m_sDescription;
+	[Attribute()]
 	ref array<ref RKN_TimeTrialLoadoutItem> m_aCompetitiveLoadout;
 	[Attribute()]
 	float m_fBronzeSeconds;

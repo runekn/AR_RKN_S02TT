@@ -11,6 +11,9 @@ class RKN_TimeTrialTargetSlot : RKN_TimeTrialObjectiveSlot
 	[Attribute(category: "Time trial")]
 	ref array<ref RKN_TimeTrialTargetHitArea> m_aHitAreas;
 	
+	[Attribute("1", category: "Time trial")]
+	int m_iRequiredHits;
+	
 	[Attribute("-1", category: "Time trial")]
 	int m_iTimeoutSeconds;
 	
@@ -60,9 +63,11 @@ class RKN_TimeTrialTargetSlot : RKN_TimeTrialObjectiveSlot
 		{
 			m_Target.Event_TargetHit.Insert(OnTargetHit);
 			ResetObjective();
+			m_Target.m_iRequiredHits = m_iRequiredHits;
 		}
 		if (m_MovePoint)
 			m_MovePoint.Init(GetOwner());
+		
 		super.FinishInit();
 	}
 	

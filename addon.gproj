@@ -5,4 +5,79 @@ GameProject {
  Dependencies {
   "58D0FB3206B6F859"
  }
+ Configurations {
+  GameProjectConfig PC {
+   WidgetManagerSettings WidgetManagerSettings "{AC4BE58770485E02}" {
+    StringTables {
+     StringTableDefinition "{65D8CECE7B75FB23}" {
+      StringTableSource "{E1BF614511427C4D}Language/rknS02TT.st"
+      Languages {
+       LanguageDefinition "{65D8CECE75B9F45B}" {
+        Code "cs_cz"
+        StringTableRuntime "{12B502B1D0C290EE}Language/rknS02TT.cs_cz.conf"
+       }
+       LanguageDefinition "{65D8CECE75B9F47C}" {
+        Code "de_de"
+        StringTableRuntime "{C7CB1882C36181CE}Language/rknS02TT.de_de.conf"
+       }
+       LanguageDefinition "{65D8CECE75B9F408}" {
+        Code "en_us"
+        StringTableRuntime "{993B92C9A99284CF}Language/rknS02TT.en_us.conf"
+       }
+       LanguageDefinition "{65D8CECE75B9F418}" {
+        Code "es_es"
+        StringTableRuntime "{5C77DF404790EFD0}Language/rknS02TT.es_es.conf"
+       }
+       LanguageDefinition "{65D8CECE75B9F425}" {
+        Code "fr_fr"
+        StringTableRuntime "{E7DF2A77A1130CD2}Language/rknS02TT.fr_fr.conf"
+       }
+       LanguageDefinition "{65D8CECE75B9F430}" {
+        Code "it_it"
+        StringTableRuntime "{67C3A5430C318F2B}Language/rknS02TT.it_it.conf"
+       }
+       LanguageDefinition "{65D8CECE75B9F43E}" {
+        Code "ja_jp"
+        StringTableRuntime "{77D818D13240BF80}Language/rknS02TT.ja_jp.conf"
+       }
+       LanguageDefinition "{65D8CECE75B9F4C9}" {
+        Code "ko_kr"
+        StringTableRuntime "{D766307DA16DBCBF}Language/rknS02TT.ko_kr.conf"
+       }
+       LanguageDefinition "{65D8CECE75B9F4D2}" {
+        Code "pl_pl"
+        StringTableRuntime "{8B1796871F8220C3}Language/rknS02TT.pl_pl.conf"
+       }
+       LanguageDefinition "{65D8CECE75B9F4DE}" {
+        Code "pt_br"
+        StringTableRuntime "{5E600C4B247CEA79}Language/rknS02TT.pt_br.conf"
+       }
+       LanguageDefinition "{65D8CECE75B9F4EB}" {
+        Code "ru_ru"
+        StringTableRuntime "{0B2118E3B9058F0F}Language/rknS02TT.ru_ru.conf"
+       }
+       LanguageDefinition "{65D8CECE75B9F4F8}" {
+        Code "uk_ua"
+        StringTableRuntime "{81794D15D52B315A}Language/rknS02TT.uk_ua.conf"
+       }
+       LanguageDefinition "{65D8CECE75B9F485}" {
+        Code "zh_cn"
+        StringTableRuntime "{5BC92328EC8BE147}Language/rknS02TT.zh_cn.conf"
+       }
+      }
+     }
+    }
+   }
+  }
+  GameProjectConfig XBOX_ONE {
+  }
+  GameProjectConfig XBOX_SERIES {
+  }
+  GameProjectConfig PS4 {
+  }
+  GameProjectConfig PS5 {
+  }
+  GameProjectConfig HEADLESS {
+  }
+ }
 }
