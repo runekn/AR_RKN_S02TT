@@ -200,9 +200,10 @@ SCR_BaseGameMode GameModeSF1 : "{ECEEDB2D3737204B}Prefabs/Systems/ScenarioFramew
     }
     m_Struct0 SCR_ScenarioFrameworkStruct "{65C64E300462D4BA}" {
     }
-    m_Struct1 RKN_TimeTrialStruct "{65C64E3BB2C10AC3}" {
+    m_Struct1 RKN_TimeTrialStruct "{65DB2168B7165E66}" {
     }
    }
+   m_iAutosavePeriod 120
    m_DebugHeaderResourceName "{02D116DCB865F31F}Missions/courses01.conf"
   }
   SCR_VotingManagerComponent "{5650BB6B6089393A}" : "{37037CBB8B4CD354}Prefabs/MP/Components/VotingManagerComponent.ct" {

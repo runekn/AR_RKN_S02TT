@@ -35,6 +35,12 @@ class RKN_TimeTrialScoreRepository : SCR_BaseGameModeComponent
 		return m_mDataIndices.Get(courseId);
 	}
 	
+	void LoadSavedHistory(string courseId, array<ref RKN_TimeTrialScoreInfo> history)
+	{
+		int i = GetIndex(courseId);
+		m_aScoreInfoHistory[i] = history;
+	}
+	
 	RKN_TimeTrialCourseData GetData(int i)
 	{
 		RKN_TimeTrialCourseData data = new RKN_TimeTrialCourseData();
@@ -112,7 +118,7 @@ class RKN_TimeTrialScoreRepository : SCR_BaseGameModeComponent
 	void StopTime(int i, bool cancel)
 	{
 		RKN_TimeTrialScoreInfo info = m_aCurrentScores[i];
-		info.m_iEnd = GetGame().GetWorld().GetTimestamp();
+		info.m_iTime = info.GetTime();
 		if (!cancel && info.m_eType == RKN_TimeTrialScoreType.COMPETITIVE)
 			SubmitScore(info, i);
 		Replication.BumpMe();

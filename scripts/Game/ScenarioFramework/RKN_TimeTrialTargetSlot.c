@@ -164,12 +164,6 @@ class RKN_TimeTrialTargetSlot : RKN_TimeTrialObjectiveSlot
 		return entity;
 	}
 	
-	override void SpawnEntityPreview(IEntity owner, Resource resource)
-	{
-		super.SpawnEntityPreview(owner, resource);
-		SpawnMoveTrack(m_PreviewEntity);
-	}
-	
 	void SpawnMoveTrack(IEntity parent)
 	{
 		if (m_bGenerateTracks && m_MovePoint && m_sTrackMidSectionPrefabName)
@@ -214,15 +208,21 @@ class RKN_TimeTrialTargetSlot : RKN_TimeTrialObjectiveSlot
 		m_aTrackEntities.Insert(entity);
 	}
 	
+#ifdef WORKBENCH
+	override void SpawnEntityPreview(IEntity owner, Resource resource)
+	{
+		super.SpawnEntityPreview(owner, resource);
+		SpawnMoveTrack(m_PreviewEntity);
+	}
+	
 	void ~RKN_TimeTrialTargetSlot()
 	{
-#ifdef WORKBENCH
 		foreach (IEntity e : m_aTrackEntities)
 		{
 			SCR_EntityHelper.DeleteEntityAndChildren(e);
 		}
-#endif
 	}
+#endif
 	
 	vector GetMovePosition()
 	{

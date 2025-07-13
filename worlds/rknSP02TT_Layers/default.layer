@@ -1,14 +1,3 @@
-SCR_DestructibleEntity : "{1E2011567EAE09B4}Prefabs/Structures/Walls/Metal/TinWall_01/TinWall_01_6m_Pole.et" {
- coords 4878.817 0.625 11863.08
-}
-$grp GenericEntity : "{64C9C1D1C2C1B38D}Prefabs/Props/Infrastructure/Roadblocks/RoadBlock_01.et" {
- {
-  coords 4873.458 28.594 11863.072
- }
- {
-  coords 4881.26 28.594 11863.072
- }
-}
 $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Components/Area.et" {
  CourseRed_area {
   coords 7456.157 137.034 4749.71
@@ -6159,7 +6148,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
      }
     }
     coords 9.619 0 6.778
-    angleY 0
+    angleY 90
    }
    $grp GenericEntity : "{AA01691FDC4E9167}Prefabs/Systems/ScenarioFramework/Components/Slot.et" {
     Slot14 {
@@ -6227,7 +6216,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
         }
         $grp GenericEntity : "{25C8B889A777399D}Prefabs/Props/Infrastructure/ConeTraffic/ConeTraffic_01_red.et" {
          {
-          coords 3.8 -0 2.897
+          coords 3.8 0 2.897
          }
          {
           coords 5.845 0.001 2.833
@@ -6276,37 +6265,37 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
           angleY 180
          }
          {
-          coords -1.682 1.033 14.559
+          coords -1.678 1.033 14.553
           angleY -180
           placement none
          }
          {
-          coords 1.781 1.033 10.61
+          coords 1.785 1.033 10.604
           angleY 120
           placement none
          }
          {
-          coords 3.815 1.033 8.559
+          coords 3.819 1.033 8.553
           angleY 90
           placement none
          }
          {
-          coords -1.685 1.033 10.559
+          coords -1.681 1.033 10.553
           angleY 90
           placement none
          }
          {
-          coords -7.728 1.033 6.451
+          coords -7.724 1.033 6.445
           angleY -180
           placement none
          }
          {
-          coords 7.937 1 6.663
+          coords 7.941 1 6.657
           angleY 180
           placement none
          }
          {
-          coords 4.625 1 6.648
+          coords 4.629 1 6.643
           angleY 180
           placement none
          }
@@ -6315,7 +6304,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
           angleY 90
          }
          {
-          coords 3.833 1.033 11.725
+          coords 3.837 1.033 11.719
           angleY 90
           placement none
          }
@@ -6378,81 +6367,81 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
           angleY 179.342
          }
          {
-          coords -9.629 1.033 6.424
+          coords -9.625 1.033 6.418
           angleY -90.658
           placement none
          }
          {
-          coords -4.131 1.033 6.481
+          coords -4.126 1.033 6.476
           angleY 179.342
           placement none
          }
          {
-          coords -0.133 1.033 6.526
+          coords -0.128 1.033 6.521
           angleY 179.342
           placement none
          }
          {
-          coords 3.865 1.033 6.573
+          coords 3.87 1.033 6.567
           angleY 179.342
           placement none
          }
          {
-          coords 7.819 1.033 10.617
+          coords 7.823 1.033 10.611
           angleY 89.342
           placement none
          }
          {
-          coords 7.773 1.033 14.617
+          coords 7.777 1.033 14.611
           angleY 89.342
           placement none
          }
          {
-          coords -8.175 1.033 10.436
+          coords -8.17 1.033 10.43
           angleY -90.658
           placement none
          }
          {
-          coords 3.773 1.033 14.574
+          coords 3.777 1.033 14.568
           angleY -0.658
           placement none
          }
          {
-          coords -0.403 1.033 14.524
+          coords -0.398 1.033 14.519
           angleY -0.658
           placement none
          }
          {
-          coords 3.772 1.033 14.573
+          coords 3.776 1.033 14.567
           angleY 89.342
           placement none
          }
          {
-          coords -7.727 1.033 14.439
+          coords -7.723 1.033 14.434
           angleY -0.658
           placement none
          }
          {
-          coords -7.727 1.033 14.439
+          coords -7.723 1.033 14.434
           angleY -0.658
           placement none
          }
          {
-          coords 1.818 1.033 10.549
+          coords 1.822 1.033 10.543
           angleY -90.658
           placement none
          }
          {
-          coords -0.182 1.033 10.526
+          coords -0.178 1.033 10.521
           angleY 179.342
           placement none
          }
          {
-          coords -5.682 0 10.453
+          coords -5.678 0 10.447
           angleY 179.342
          }
          {
-          coords -5.682 1.033 10.463
+          coords -5.678 1.033 10.457
           angleY 179.342
           placement none
          }
@@ -6645,7 +6634,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
         }
        }
        Blue2Section4 {
-        coords -17.44 -0 24.338
+        coords -17.44 0 24.338
         {
          GenericEntity TImeTrialShooterPositionSlot26 : "{5128F9666E234EFC}Prefabs/TimeTrial/ScenarioFramework/TImeTrialShooterPositionSlot.et" {
           coords -1.519 0 0.068
@@ -6776,8 +6765,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
        }
       }
       GenericEntity TimeTrialCourseControlPanel8 : "{759B64907C040A78}Prefabs/TimeTrial/ScenarioFramework/TimeTrialCourseControlPanel.et" {
-       coords -4.425 -0.044 1.991
-       angleY -180
+       coords -3.553 -0.044 1.933
+       angleY -129.784
       }
       GenericEntity TimeTrialUITriggerSlot8 : "{ADC06C4DCF0A9E1B}Prefabs/TimeTrial/ScenarioFramework/TimeTrialUITriggerSlot.et" {
        coords -4.912 0 0.336
@@ -6805,7 +6794,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
        m_sCourseId "blue1"
       }
      }
-     coords 0.045 -0 -1.33
+     coords 0.045 0 -1.33
      {
       $grp DecalEntity {
        {
@@ -6827,6 +6816,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
         TerrainOnly 0
         Mat "{530D60EB4C69DB40}Assets/TimeTrial/SprayDecals/rifle.emat"
        }
+      }
+      SCR_DestructibleEntity : "{1E2011567EAE09B4}Prefabs/Structures/Walls/Metal/TinWall_01/TinWall_01_6m_Pole.et" {
+       coords 0.356 0.625 -5.176
       }
       $grp GenericEntity : "{25C8B889A777399D}Prefabs/Props/Infrastructure/ConeTraffic/ConeTraffic_01_red.et" {
        {
@@ -7280,7 +7272,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
              }
             }
            }
-           coords -1.568 -0 -138.628
+           coords -1.568 0 -138.628
            angleY 0
           }
           TimeTrialStandardTargetSlot153 {
@@ -7338,6 +7330,12 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
       }
       $grp GenericEntity : "{64C9C1D1C2C1B38D}Prefabs/Props/Infrastructure/Roadblocks/RoadBlock_01.et" {
        {
+        coords -5.003 0 -5.184
+       }
+       {
+        coords 2.799 0 -5.184
+       }
+       {
         coords -8.772 0 -1.845
        }
        {
@@ -7371,6 +7369,21 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
       GenericEntity TimeTrialUITriggerSlot9 : "{ADC06C4DCF0A9E1B}Prefabs/TimeTrial/ScenarioFramework/TimeTrialUITriggerSlot.et" {
        coords 6.395 0 -0.749
       }
+      $grp SCR_DestructibleEntity : "{DF3905E54137495D}Prefabs/Structures/Walls/Metal/TinWall_01/TinWall_01_3m.et" {
+       {
+        coords -2.633 0.634 -5.178
+        placement none
+       }
+       {
+        coords -10.183 1.393 -5.178
+        placement none
+       }
+       {
+        coords -7.108 0.918 -5.178
+        angleZ -180
+        placement none
+       }
+      }
       GenericEntity TImeTrialCountdownPositionSlot9 : "{FE7A51992E39BF1B}Prefabs/TimeTrial/ScenarioFramework/TImeTrialCountdownPositionSlot.et" {
        coords 7.478 0 1.266
       }
@@ -7378,20 +7391,5 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
     }
    }
   }
- }
-}
-$grp SCR_DestructibleEntity : "{DF3905E54137495D}Prefabs/Structures/Walls/Metal/TinWall_01/TinWall_01_3m.et" {
- {
-  coords 4875.828 0.634 11863.078
-  placement none
- }
- {
-  coords 4868.278 1.393 11863.078
-  placement none
- }
- {
-  coords 4871.353 0.918 11863.078
-  angleZ 180
-  placement none
  }
 }
