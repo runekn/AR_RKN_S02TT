@@ -14,9 +14,9 @@ Bonus:
 	"Bullseye!"
 
 Start:
-	"Three. Two. One. Go!" -- TRY TO TIME WITH RECORDING --
+	"Three. Two. One. Go!"
 	"Start on buzzer"
-	"Wait for countdown. Go!" -- TRY TO TIME WITH RECORDING --
+	"Wait for countdown. Go!"
 
 Finish section:
 	"Next one"
@@ -29,6 +29,15 @@ Finish section:
 	"Sprint to the finish" - New
 	"Cross the finish line" - New
 	"One last checkpoint" - New
+	"Carry the ammo box to the marked spot" - New
+	"Drive the car to the next section" - New
+	"Use the vehicle to get to the next section" - New
+	"Fly to the next section" - New
+	"Get to the roof" - New
+	"Exit the building" - New
+	"Exit the building through the back door" - New
+	"Exit the building through the front entrance" - New
+	"Down the ladder" - New
 
 Finish course:
 	"I know you can do better"
@@ -56,6 +65,8 @@ Misc:
 	"Target down"
 	"Wait til you hear the buzzer" - New
 	"You jumped the gun" - New
+	"Failed. Stay in the designated area until you've completed the section." - New
+	"Failed. Stay in the designated area until you hear the buzzer." - New
 	"Targets at long range" - New
 	"Jumpscare!" - New
 	"Ambush!" - New
@@ -76,9 +87,4 @@ Requirements:
 	"Pistol"
 	"Rifle"
 	"Grenade"
-	"Carry the ammo box to the marked spot" - New
-	"Drive the car to the next section" - New
-	"Use the vehicle to get to the next section" - New
-	"Fly to the next section" - New
-	"Get to the roof" - New
-	"Down the ladder" - New
+	"Machinegun" - New
