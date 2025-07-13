@@ -78,6 +78,7 @@ class RKN_TimeTrialSectionLayer : SCR_ScenarioFrameworkLayerBase
 		}
 		if (m_iCompletedObjectives >= m_aObjectives.Count())
 		{
+			m_OnFinish.Invoke();
 			foreach (SCR_ScenarioFrameworkActionBase action : m_aOnFinishActions)
 				action.Init(GetOwner());
 			m_Course.FinishSection(this);

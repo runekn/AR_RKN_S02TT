@@ -1,8 +1,109 @@
 StringTable {
  ItemClassName "CustomStringTableItem"
  Items {
+  CustomStringTableItem "{65DA66671FF08947}" {
+   Id "AR-RKN_S02TT-Course_Blue1_Desc"
+   Target_en_us "A course is split into sections. Completing sections usually means shooting all targets from a specific position, before moving on to the next section at a new position. These positions can sometimes have requirements, such as stance and weapon type. Leaving the shooting position before completing the section may result in failure of the course."\
+   ""\
+   "At each section you will notice a number in your upper left corner, which will count down each time you hit a target. This is the counter for remaining required objectives of the current section."\
+   ""\
+   "For this course you must shoot the targets at each of the three positions. They each have stance and weapon requirements, which must be met before the targets are activated."
+   Modified 1708850080
+   Author "Rune"
+   LastChanged "Rune"
+  }
+  CustomStringTableItem "{65DA661C1099D7A7}" {
+   Id "AR-RKN_S02TT-Course_Blue2_Desc"
+   Target_en_us "Train your accuracy while moving and inhibited by obstacles."
+   Modified 1708839249
+   Author "Rune"
+   LastChanged "Rune"
+  }
+  CustomStringTableItem "{65DA6624E48E7FAA}" {
+   Id "AR-RKN_S02TT-Course_Green1_Desc"
+   Target_en_us "1) Engage the targets to your left."\
+   ""\
+   "2) Exit the road and follow the path marked by painted poles."\
+   ""\
+   "3) Move to the first shooting position and engage targets at long range."\
+   ""\
+   "4) Stand and follow the path."\
+   ""\
+   "5) Move to the second shooting position and engage targets at long range."
+   Modified 1708838367
+   Author "Rune"
+   LastChanged "Rune"
+  }
+  CustomStringTableItem "{65DA6612B4DDE26E}" {
+   Id "AR-RKN_S02TT-Course_Intro_Desc"
+   Target_en_us "There are three different targets. Standard, popper, and clay disc."\
+   ""\
+   "Popper targets are the small white metal ones. Standard targets are the large wooden ones with image of a man on the front. Shooting these two types are usually a requirement to proceed."\
+   ""\
+   "Clay targets are the red discs on wooden poles. They are optional targets that give bonus time."\
+   ""\
+   "Popper and standard targets can also give bonus if you hit the center of each."\
+   ""\
+   "Civilian targets are the purple static ones. If hit you will be given a penalty."\
+   ""\
+   "Targets can only be shot while activated. Popper and standard targets can fold, and are activated once they are upright."\
+   ""\
+   "Targets will generally activate once their assigned course section is activated. But their activation can also be configured to be delayed by some time. Additionally, they may have some prerequiside objective. Usually a shooting position, but can also be another target."\
+   ""\
+   "Targets can sometimes be placed on rails, which allow them to move."
+   Modified 1708851417
+   Author "Rune"
+   LastChanged "Rune"
+  }
+  CustomStringTableItem "{65DA660CA6BF930A}" {
+   Id "AR-RKN_S02TT-Course_Orange1_Desc"
+   Target_en_us "1) Engage the targets to the left. Then proceed through the forest to the pond, by follwing the red barriers."\
+   ""\
+   "2) Move to the edge of the pond and engage the targets."\
+   ""\
+   "3) Move clockwise around the pond and engage targets from the first sandbags."\
+   ""\
+   "4) Continue to the second set of sandbags and engage the targets by the bee hives."\
+   ""\
+   "5) Jump over the fence and drive the vehicle along the designated path to the beach."\
+   ""\
+   "6) Enter the bunker and engage the targets on the other side of the bay."
+   Modified 1708838371
+   Author "Rune"
+   LastChanged "Rune"
+  }
+  CustomStringTableItem "{65DA6624E3BFBA07}" {
+   Id "AR-RKN_S02TT-Course_Red1_Desc"
+   Target_en_us "1) Enter the yard and engage targets."\
+   ""\
+   "2) Enter through the backdoor of the building and clear it of targets."\
+   ""\
+   "3) Exit through the front door to the finish line."
+   Modified 1708838374
+   Author "Rune"
+   LastChanged "Rune"
+  }
+  CustomStringTableItem "{65DA66241CF3131B}" {
+   Id "AR-RKN_S02TT-Course_Red2_Desc"
+   Target_en_us "1) Enter the building and move through the corridor to the far-end exit. Engage targets to your left and right along the way."\
+   ""\
+   "2) Clear targets in the backyard and exit through the fence in the back."\
+   ""\
+   "3) Turn left and engage targets at the first range."\
+   ""\
+   "4) Turn right and head into the field where there towards the second range."\
+   ""\
+   "5) Engage the targets at the second range from a crouched position."\
+   ""\
+   "6) Turn right and clear the yard of the next building complex."\
+   ""\
+   "7) Move to the far left side of the yard, climb the stairs, and engage the targets at the third range with your rifle."
+   Modified 1708838377
+   Author "Rune"
+   LastChanged "Rune"
+  }
   CustomStringTableItem "{65D8CECE4034DD39}" {
-   Id "AR-RKN_S01TT-Course_Red1_Desc"
+   Id "AR-RKN_S02TT-Course_Red3_Desc"
    Target_en_us "1) Move to the vehicle while engaging the targets to your right."\
    ""\
    "2) Enter the vehicle and follow the route to the military base. Navigate through the base until you get to the target range, at which point to exit the vehicle."\
@@ -14,7 +115,22 @@ StringTable {
    "5) Engage targets along the mountain at long range."\
    ""\
    "6) Descend the ladder to the finish line."
-   Modified 1708727748
+   Modified 1708838381
+   Author "Rune"
+   LastChanged "Rune"
+  }
+  CustomStringTableItem "{65DA662709656AAA}" {
+   Id "AR-RKN_S02TT-Course_Yellow1_Desc"
+   Target_en_us "1) Clear the building."\
+   ""\
+   "2) Exit to the courtyard through the backdoor, enter the marked position and engage the targets as they activate."\
+   ""\
+   "3) Enter and move through the garage and exit thorugh the south-east door."\
+   ""\
+   "4) Move along the wall, cross the road, and engage the targets in the area."\
+   ""\
+   "5) Move to the finish line down the dirt path."
+   Modified 1708838384
    Author "Rune"
    LastChanged "Rune"
   }

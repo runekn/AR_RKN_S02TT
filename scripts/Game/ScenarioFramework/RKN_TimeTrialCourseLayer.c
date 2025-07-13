@@ -36,7 +36,7 @@ class RKN_TimeTrialCourseLayer : SCR_ScenarioFrameworkLayerBase
 	
 	void CancelCourse()
 	{
-		GetDataRepo().StopTime(m_iCourseIndex);
+		GetDataRepo().StopTime(m_iCourseIndex, true);
 		GetGame().GetCallqueue().Remove(StartCourse);
 		GetGame().GetCallqueue().Remove(ResetRun);
 		RKN_TimeTrialCourseData data = GetDataRepo().GetData(m_iCourseIndex);
@@ -116,7 +116,7 @@ class RKN_TimeTrialCourseLayer : SCR_ScenarioFrameworkLayerBase
 	
 	private void FinishCourse()
 	{
-		GetDataRepo().StopTime(m_iCourseIndex);
+		GetDataRepo().StopTime(m_iCourseIndex, false);
 		GetGame().GetCallqueue().CallLater(ResetRun, 5000, false);
 		m_OnFinish.Invoke();
 		foreach (SCR_ScenarioFrameworkActionBase action : m_aOnFinishActions)

@@ -51,6 +51,18 @@ RKN_TimeTrialControlPanelEntity {
     }
    }
    additionalActions {
+    RKN_StartTimeTrialAction "{65CD0837E4CB9E72}" {
+     ParentContextList {
+      "StartCourse"
+     }
+     UIInfo UIInfo "{65BAA0BBCB532A5F}" {
+      Name "Start Competitive"
+     }
+     ActionTitle "Competitive"
+     Duration 0.5
+     "Sort Priority" 1
+     m_bCompetitive 1
+    }
     RKN_StartTimeTrialAction "{65BAA0BBD470EC68}" {
      ParentContextList {
       "StartCourse"
@@ -60,6 +72,7 @@ RKN_TimeTrialControlPanelEntity {
      }
      ActionTitle "Training"
      Duration 0.5
+     "Sort Priority" 2
     }
     RKN_CancelTimeTrialAction "{65C8B9EB45E1E3B1}" {
      ParentContextList {
@@ -71,17 +84,6 @@ RKN_TimeTrialControlPanelEntity {
      ActionTitle "Cancel"
      Duration 0.5
     }
-    RKN_StartTimeTrialAction "{65CD0837E4CB9E72}" {
-     ParentContextList {
-      "StartCourse"
-     }
-     UIInfo UIInfo "{65BAA0BBCB532A5F}" {
-      Name "Start Competitive"
-     }
-     ActionTitle "Competitive"
-     Duration 0.5
-     m_bCompetitive 1
-    }
     RKN_TimeTrialShowCourseDescriptionAction "{65D8CEC1F4BBBEB6}" {
      ParentContextList {
       "StartCourse"
@@ -89,6 +91,7 @@ RKN_TimeTrialControlPanelEntity {
      UIInfo UIInfo "{65D8CEC1F0FC20F5}" {
       Name "Show Course Description"
      }
+     m_iHintTimeoutSeconds 60
     }
    }
   }

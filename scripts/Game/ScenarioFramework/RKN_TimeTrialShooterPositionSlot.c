@@ -5,7 +5,11 @@ class RKN_TimeTrialShooterPositionSlotClass : RKN_TimeTrialObjectiveSlotClass
 
 class RKN_TimeTrialShooterPositionSlot : RKN_TimeTrialObjectiveSlot
 {	
+	[Attribute(category: "Time trial trigger")]
+	bool m_bFailIfExitBeforeSectionCompletion;
+	
 	SCR_ScenarioFrameworkTriggerEntity m_Trigger;
+	bool m_bShooterWithin;
 	
 	//------------------------------------------------------------------------------------------------
 	//! Initializes trigger entities, disables periodic queries, and sets init sequence done to false.
@@ -21,6 +25,8 @@ class RKN_TimeTrialShooterPositionSlot : RKN_TimeTrialObjectiveSlot
 			{
 				m_Trigger.GetOnActivate().Insert(ShooterEntered);
 				m_Trigger.SetInitSequenceDone(false);
+				if (m_bFailIfExitBeforeSectionCompletion)
+					m_Trigger.GetOnDeactivate().Insert(FailCourse);
 			}
 		}
 		
@@ -59,6 +65,9 @@ class RKN_TimeTrialShooterPositionSlot : RKN_TimeTrialObjectiveSlot
 			plugin.Init(this);
 		}
 		
+		if (m_bFailIfExitBeforeSectionCompletion)
+			m_Trigger.SetOnce(false);
+		
 		foreach (SCR_ScenarioFrameworkActionBase activationAction : m_aActivationActions)
 		{
 			activationAction.Init(GetOwner());
@@ -71,11 +80,18 @@ class RKN_TimeTrialShooterPositionSlot : RKN_TimeTrialObjectiveSlot
 			m_Area.GetOnAllChildrenSpawned().Remove(AfterParentAreaChildrenSpawned);
 	}
 	
+	override void RegisterObjective()
+	{
+		super.RegisterObjective();
+		if (m_bFailIfExitBeforeSectionCompletion)
+			m_Section.m_OnFinish.Insert(DisableTrigger);
+	}
+	
 	override void ResetObjective()
 	{
 		super.ResetObjective();
-		m_Trigger.EnablePeriodicQueries(false);
-		m_Trigger.SetInitSequenceDone(false);
+		DisableTrigger();
+		m_bShooterWithin = false;
 	}
 	
 	override void ActivateObjective()
@@ -87,8 +103,26 @@ class RKN_TimeTrialShooterPositionSlot : RKN_TimeTrialObjectiveSlot
 	
 	void ShooterEntered()
 	{
+		if (m_bShooterWithin)
+			return;
+		if (!m_bFailIfExitBeforeSectionCompletion)
+			DisableTrigger();
+		else
+			m_bShooterWithin = true;
+		FinishObjective();
+	}
+	
+	void FailCourse()
+	{
+		if (!m_bShooterWithin)
+			return;
+		DisableTrigger();
+		m_Section.m_Course.FailCourse();
+	}
+	
+	void DisableTrigger()
+	{
 		m_Trigger.EnablePeriodicQueries(false);
 		m_Trigger.SetInitSequenceDone(false);
-		FinishObjective();
 	}
 }

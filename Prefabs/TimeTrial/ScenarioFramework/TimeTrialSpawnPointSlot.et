@@ -8,7 +8,7 @@ GenericEntity : "{AA01691FDC4E9167}Prefabs/Systems/ScenarioFramework/Components/
      m_sFaction "CIV"
      m_aActionsOnSpawnPointUsed {
       SCR_ScenarioFrameworkActionAddItemToInventory "{65D13D05E82B0EE5}" {
-       m_Getter SCR_ScenarioFrameworkGetPlayerEntity "{65D13D05E3ABDA40}" {
+       m_Getter SCR_ScenarioFrameworkGetPlayerEntity "{65DA6662C5017366}" {
        }
        m_aPrefabFilter {
         SCR_ScenarioFrameworkPrefabFilterCountNoInheritance "{65D13D051D4AB209}" {
@@ -27,6 +27,10 @@ GenericEntity : "{AA01691FDC4E9167}Prefabs/Systems/ScenarioFramework/Components/
        }
       }
       RKN_PermanentlyEnableFastTravelAction "{65D85ED91D850880}" {
+      }
+      SCR_ScenarioFrameworkActionShowHint "{65DA6611281FD13C}" {
+       m_sTitle "Fast Travel"
+       m_sText "Open your map and click the icons to fast travel there. Don't throw away your map!"
       }
      }
     }

@@ -30,6 +30,14 @@ SCR_BaseGameMode GameModeSF1 : "{ECEEDB2D3737204B}Prefabs/Systems/ScenarioFramew
     }
     RKN_TimeTrialCourseConfig "{65D91E0B1B9B5236}" : "{7AD1D23801371FD5}Configs/TimeTrialCourses/Yellow1CourseConfig.conf" {
     }
+    RKN_TimeTrialCourseConfig "{65DA660A282B8408}" : "{61A239E033C10621}Configs/TimeTrialCourses/Orange1CourseConfig.conf" {
+    }
+    RKN_TimeTrialCourseConfig "{65DA6613640D10C3}" : "{E8708B49C1F82A63}Configs/TimeTrialCourses/IntroCourseConfig.conf" {
+    }
+    RKN_TimeTrialCourseConfig "{65DA6668FE139404}" : "{E8708B49C1F82A64}Configs/TimeTrialCourses/Blue1CourseConfig.conf" {
+    }
+    RKN_TimeTrialCourseConfig "{65DA6668F80F4E30}" : "{AEEADE29C5E5B3DB}Configs/TimeTrialCourses/Blue2CourseConfig.conf" {
+    }
    }
   }
   SCR_DataCollectorComponent "{5ADE83EE64329989}" {
@@ -183,6 +191,7 @@ SCR_BaseGameMode GameModeSF1 : "{ECEEDB2D3737204B}Prefabs/Systems/ScenarioFramew
   SCR_RespawnSystemComponent "{56B2B4793051E7C9}" {
    m_SpawnLogic SCR_MenuSpawnLogic "{5D36888CC966608A}" {
     m_sForcedFaction "CIV"
+    m_bUseFadeEffect 1
    }
   }
   SCR_SaveLoadComponent "{65C64E30CBFA8E33}" {

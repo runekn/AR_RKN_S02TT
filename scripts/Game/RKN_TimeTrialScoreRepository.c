@@ -109,11 +109,11 @@ class RKN_TimeTrialScoreRepository : SCR_BaseGameModeComponent
 		Replication.BumpMe();
 	}
 	
-	void StopTime(int i)
+	void StopTime(int i, bool cancel)
 	{
 		RKN_TimeTrialScoreInfo info = m_aCurrentScores[i];
 		info.m_iEnd = GetGame().GetWorld().GetTimestamp();
-		if (info.m_eType == RKN_TimeTrialScoreType.COMPETITIVE)
+		if (!cancel && info.m_eType == RKN_TimeTrialScoreType.COMPETITIVE)
 			SubmitScore(info, i);
 		Replication.BumpMe();
 	}
