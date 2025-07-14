@@ -196,7 +196,7 @@ SCR_BaseGameMode GameModeSF1 : "{ECEEDB2D3737204B}Prefabs/Systems/ScenarioFramew
   }
   SCR_SaveLoadComponent "{65C64E30CBFA8E33}" {
    m_Struct SCR_MissionStruct "{65C64E30CA3C261A}" {
-    m_Meta SCR_MetaStruct "{65C64E30C5F9E9A8}" {
+    m_Meta SCR_MetaStruct "{65DCF26F5690C404}" {
     }
     m_Struct0 SCR_ScenarioFrameworkStruct "{65C64E300462D4BA}" {
     }

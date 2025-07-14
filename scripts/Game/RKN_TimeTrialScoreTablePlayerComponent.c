@@ -38,9 +38,10 @@ class RKN_TimeTrialScoreTablePlayerComponent : ScriptComponent
 	
 	bool m_bOverride;
 	
-	override void OnPostInit(IEntity owner)
+	void ~RKN_TimeTrialScoreTablePlayerComponent()
 	{
-		super.OnPostInit(owner);
+		if (m_wRoot)
+			m_wRoot.RemoveFromHierarchy();
 	}
 	
 	void ShowScoreTable(int courseId, bool overrideTable)
