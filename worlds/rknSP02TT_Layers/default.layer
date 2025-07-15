@@ -1,32 +1,3 @@
-GenericEntity : "{25C8B889A777399D}Prefabs/Props/Infrastructure/ConeTraffic/ConeTraffic_01_red.et" {
- coords 4398.597 10.151 10714.195
-}
-$grp GenericEntity : "{64C9C1D1C2C1B38D}Prefabs/Props/Infrastructure/Roadblocks/RoadBlock_01.et" {
- {
-  coords 4396.903 10.13 10714.148
-  angleX -0.397
-  angleY -9.233
-  angleZ -1.771
- }
- {
-  coords 4405.361 10.346 10713.4
-  angleX -1.771
-  angleY -99.245
-  angleZ 0.397
- }
- {
-  coords 4401.704 10.231 10712.807
-  angleX -0.075
-  angleY -174.24
-  angleZ 1.813
- }
- {
-  coords 4402.943 10.246 10710.563
-  angleX -1.771
-  angleY -99.245
-  angleZ 0.397
- }
-}
 $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Components/Area.et" {
  CourseRed_area {
   coords 7456.157 137.034 4749.71
@@ -7560,6 +7531,31 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
       GenericEntity Black1Deco {
        coords -1.079 0.01 2.491
        {
+        $grp DecalEntity {
+         {
+          coords -118.596 14.722 -107.015
+          angleX -90
+          angleY 180
+          angleZ 171.098
+          TerrainOnly 0
+          Mat "{DF38418A1C8F51EC}Assets/TimeTrial/SprayDecals/number1.emat"
+         }
+         {
+          coords -117.997 14.722 -110.962
+          angleX -90
+          angleZ 171.098
+          TerrainOnly 0
+          Mat "{81D068C9A302DFE3}Assets/TimeTrial/SprayDecals/number2.emat"
+         }
+         {
+          coords -116.51 14.722 -108.61
+          angleX -90
+          angleY -180
+          angleZ -98.902
+          TerrainOnly 0
+          Mat "{75D82F51AEDFB797}Assets/TimeTrial/SprayDecals/number3.emat"
+         }
+        }
         $grp GenericEntity : "{25C8B889A777399D}Prefabs/Props/Infrastructure/ConeTraffic/ConeTraffic_01_red.et" {
          {
           coords -1.361 -0.054 1.276
@@ -7719,6 +7715,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
          {
           coords -168.382 -10.493 -48.662
          }
+         {
+          coords -152.978 -6.104 -126.454
+         }
         }
         $grp GenericEntity : "{3088EF46B1618915}Prefabs/TimeTrial/TimeTrialMarkerPole.et" {
          {
@@ -7846,6 +7845,30 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
          {
           coords -205.973 -11.849 -59.798
           angleY 20.458
+         }
+         {
+          coords -154.672 -6.125 -126.501
+          angleX -0.397
+          angleY -9.233
+          angleZ -1.771
+         }
+         {
+          coords -146.214 -5.909 -127.249
+          angleX -1.771
+          angleY -99.245
+          angleZ 0.397
+         }
+         {
+          coords -149.871 -6.024 -127.843
+          angleX -0.075
+          angleY -174.24
+          angleZ 1.813
+         }
+         {
+          coords -148.632 -6.009 -130.087
+          angleX -1.771
+          angleY -99.245
+          angleZ 0.397
          }
         }
         GenericEntity : "{6762F7C5C3A2419B}Prefabs/Props/Military/Sandbags/Sandbag_01_short_plastic.et" {
@@ -9191,7 +9214,703 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
      }
     }
     CourseBlack2 {
+     components {
+      RKN_TimeTrialCourseLayer "{65BA6C59A0F2E93C}" {
+       m_sCourseId "black2"
+       m_aOnScheduleActions {
+        SCR_ScenarioFrameworkActionRestoreLayerToDefault "{65DE9B1A48A62BF8}" {
+         m_Getter SCR_ScenarioFrameworkGetLayerBase "{65DE9B1A4B2AC6D3}" {
+          m_sLayerBaseName "Black2DoorCloser"
+         }
+        }
+        SCR_ScenarioFrameworkActionSpawnObjects "{65DE9B1A45EE7825}" {
+         m_aNameOfObjectsToSpawnOnActivation {
+          "Black2DoorCloser"
+         }
+        }
+       }
+      }
+     }
      coords 16.443 0.694 -22.927
+     {
+      $grp GenericEntity : "{25C8B889A777399D}Prefabs/Props/Infrastructure/ConeTraffic/ConeTraffic_01_red.et" {
+       {
+        coords 4.311 -0.1 -0.272
+       }
+       {
+        coords 4.647 -0.1 -2.836
+       }
+      }
+      $grp GenericEntity : "{63F7CA06411FB0BE}Prefabs/TimeTrial/ScenarioFramework/TimeTrialSectionLayer.et" {
+       Black2Section1 {
+        coords 19.178 0.808 0.566
+        {
+         $grp GenericEntity : "{745CC59876B82738}Prefabs/TimeTrial/ScenarioFramework/TimeTrialPopperTargetSlot.et" {
+          TimeTrialPopperTargetSlot69 {
+           coords -2.643 2.001 8.603
+           angleY 142.442
+          }
+          TimeTrialPopperTargetSlot73 {
+           coords -2.355 2.001 6.891
+           angleY 127.442
+          }
+          TimeTrialPopperTargetSlot72 {
+           coords 0.476 0.525 10.063
+           angleY 135
+          }
+          TimeTrialPopperTargetSlot74 {
+           coords 6.687 0.012 4.146
+           angleY 119.494
+          }
+          TimeTrialPopperTargetSlot76 {
+           coords 6.876 0.012 4.672
+           angleY 139.127
+          }
+          TimeTrialPopperTargetSlot77 {
+           coords 7.316 0.012 4.953
+           angleY 161.658
+          }
+          TimeTrialPopperTargetSlot78 {
+           coords 8.902 0.012 5.193
+           angleY 172.571
+          }
+          TimeTrialPopperTargetSlot79 {
+           coords 8.15 0.012 5.013
+           angleY 167.931
+          }
+          TimeTrialPopperTargetSlot80 {
+           coords 7.751 1.422 4.927
+           angleY 167.931
+           angleZ 180
+          }
+         }
+         $grp GenericEntity : "{E47A9A48C98F1D4B}Prefabs/TimeTrial/ScenarioFramework/TimeTrialStandardTargetSlot.et" {
+          TimeTrialStandardTargetSlot197 {
+           coords -4.714 0.023 8.841
+           angleY 134.107
+          }
+          TimeTrialStandardTargetSlot200 {
+           coords -4.917 0.023 7.439
+           angleY 134.107
+          }
+          TimeTrialStandardTargetSlot203 {
+           coords -4.451 0.023 6.245
+           angleY 134.107
+          }
+          TimeTrialStandardTargetSlot213 {
+           coords -4.476 0.023 5.022
+           angleY 104.597
+          }
+          TimeTrialStandardTargetSlot223 {
+           coords -4.054 0.023 3.577
+           angleY 96.688
+          }
+          TimeTrialStandardTargetSlot224 {
+           coords -3.423 0.023 2.484
+           angleY 69.877
+          }
+          TimeTrialStandardTargetSlot225 {
+           coords -1.498 0.023 7.566
+           angleY 168.441
+          }
+          TimeTrialStandardTargetSlot226 {
+           coords -0.903 0.023 9.042
+           angleY 168.441
+          }
+          TimeTrialStandardTargetSlot227 {
+           coords -0.351 0.023 7.365
+           angleY 168.441
+          }
+          TimeTrialStandardTargetSlot228 {
+           coords -0.854 0.023 6.082
+           angleY 168.441
+          }
+          TimeTrialStandardTargetSlot229 {
+           coords -1.92 -0.008 -3.832
+           angleY 93.441
+          }
+          TimeTrialStandardTargetSlot230 {
+           coords -1.963 -0.008 -4.979
+           angleY 71.323
+          }
+          TimeTrialStandardTargetSlot231 {
+           coords -0.314 -0.008 -4.842
+           angleY 30.543
+          }
+          TimeTrialStandardTargetSlot232 {
+           coords -0.55 0.891 -2.424
+           angleY 87.791
+          }
+          TimeTrialStandardTargetSlot233 {
+           coords -1.359 3.214 -3.924
+           angleY 93.441
+           angleZ 180
+          }
+          TimeTrialStandardTargetSlot234 {
+           coords -1.783 3.214 -5.672
+           angleY 75.757
+           angleZ -180
+          }
+          TimeTrialStandardTargetSlot235 {
+           coords -1.876 3.214 -3.03
+           angleY 93.441
+           angleZ 180
+          }
+          TimeTrialStandardTargetSlot236 {
+           coords 1 3.214 -2.913
+           angleY 144.812
+           angleZ 180
+          }
+          TimeTrialStandardTargetSlot199 {
+           coords 1.461 0.027 9.694
+           angleY 172.32
+          }
+          TimeTrialStandardTargetSlot238 {
+           coords 2.83 0.027 9.708
+           angleY 172.32
+          }
+          TimeTrialStandardTargetSlot237 {
+           coords 7.692 -0.004 -0.218
+           angleY -105
+          }
+          TimeTrialStandardTargetSlot240 {
+           coords 8.588 -0.004 -1.154
+           angleY -99.149
+          }
+          TimeTrialStandardTargetSlot241 {
+           coords 7.605 -0.004 -2.258
+           angleY -89.062
+          }
+          TimeTrialStandardTargetSlot242 {
+           coords 4.027 -0.004 3.225
+           angleY -157.313
+          }
+          TimeTrialStandardTargetSlot243 {
+           coords 1.991 -0.004 5.125
+           angleY -177.513
+          }
+          TimeTrialStandardTargetSlot239 {
+           coords 12.784 -0.22 1.203
+           angleY -102.884
+          }
+          TimeTrialStandardTargetSlot245 {
+           coords 13.213 -0.22 -1.517
+           angleY -91.176
+          }
+          TimeTrialStandardTargetSlot246 {
+           coords 14.076 -0.22 0.518
+           angleY -113.068
+          }
+          TimeTrialStandardTargetSlot247 {
+           coords 14.513 -0.22 3.528
+           angleY -118.862
+          }
+          TimeTrialStandardTargetSlot244 {
+           coords 7.685 -0.371 -15.312
+           angleY -19.362
+          }
+          TimeTrialStandardTargetSlot248 {
+           coords -0.915 3.315 -8.629
+           angleX -2.144
+           angleY 80.579
+           angleZ -165.15
+          }
+          TimeTrialStandardTargetSlot250 {
+           coords -0.855 3.293 -9
+           angleX -2.144
+           angleY 80.579
+           angleZ 164.85
+          }
+          TimeTrialStandardTargetSlot249 {
+           coords -0.069 -0.021 -7.535
+           angleY 97.705
+          }
+          TimeTrialStandardTargetSlot252 {
+           coords 0.431 -0.021 -9.607
+           angleY 51.187
+          }
+          TimeTrialStandardTargetSlot253 {
+           coords -0.944 -0.021 -8.859
+           angleY 80.568
+          }
+          TimeTrialStandardTargetSlot291 {
+           coords 5.95 1.909 4.017
+           angleY -156.322
+          }
+          TimeTrialStandardTargetSlot307 {
+           coords 2.64 -0.004 3.093
+           angleY -167.825
+          }
+          TimeTrialStandardTargetSlot308 {
+           coords 4.446 -0.004 2.087
+           angleY -145.346
+          }
+          TimeTrialStandardTargetSlot309 {
+           coords 3.4 -0.004 4.515
+           angleY -169.714
+          }
+          TimeTrialStandardTargetSlot310 {
+           coords 9.217 -0.004 -2.308
+           angleY -89.062
+          }
+          TimeTrialStandardTargetSlot311 {
+           coords 6.554 -0.004 -1.369
+           angleY -89.062
+          }
+          TimeTrialStandardTargetSlot312 {
+           coords 6.239 -0.004 -2.742
+           angleY -89.062
+          }
+          TimeTrialStandardTargetSlot313 {
+           coords 5.613 -0.004 -6.568
+           angleY -20.018
+          }
+          TimeTrialStandardTargetSlot314 {
+           coords 4.621 -0.004 -7.973
+           angleY -20.018
+          }
+          TimeTrialStandardTargetSlot315 {
+           coords 4.286 -0.004 -5.273
+           angleY -20.018
+          }
+          TimeTrialStandardTargetSlot316 {
+           coords 4.869 -0.004 -4.487
+           angleY -20.018
+          }
+          TimeTrialStandardTargetSlot317 {
+           coords 4.914 -0.004 -6.836
+           angleY -20.018
+          }
+         }
+        }
+       }
+       Black2Section2 {
+        coords 27.818 4.606 1.102
+        {
+         $grp GenericEntity : "{745CC59876B82738}Prefabs/TimeTrial/ScenarioFramework/TimeTrialPopperTargetSlot.et" {
+          TimeTrialPopperTargetSlot75 {
+           coords -8.638 -0.014 -5.711
+           angleY 34.028
+          }
+          TimeTrialPopperTargetSlot82 {
+           coords -8.888 -0.014 -5.544
+           angleY 34.028
+          }
+          TimeTrialPopperTargetSlot83 {
+           coords -9.152 -0.014 -5.379
+           angleY 34.028
+          }
+          TimeTrialPopperTargetSlot84 {
+           coords -9.44 -0.014 -5.187
+           angleY 34.028
+          }
+          TimeTrialPopperTargetSlot85 {
+           coords -9.708 -0.014 -5.006
+           angleY 34.028
+          }
+          TimeTrialPopperTargetSlot86 {
+           coords -9.954 -0.014 -4.8
+           angleY 34.028
+          }
+          TimeTrialPopperTargetSlot87 {
+           coords -8.071 -0.014 -4.901
+           angleY 34.028
+          }
+          TimeTrialPopperTargetSlot88 {
+           coords -8.321 -0.014 -4.734
+           angleY 34.028
+          }
+          TimeTrialPopperTargetSlot89 {
+           coords -8.585 -0.014 -4.57
+           angleY 34.028
+          }
+          TimeTrialPopperTargetSlot90 {
+           coords -8.873 -0.014 -4.378
+           angleY 34.028
+          }
+          TimeTrialPopperTargetSlot91 {
+           coords -9.142 -0.014 -4.196
+           angleY 34.028
+          }
+          TimeTrialPopperTargetSlot92 {
+           coords -9.387 -0.014 -3.991
+           angleY 34.028
+          }
+          TimeTrialPopperTargetSlot93 {
+           coords -9.783 -0.014 -4.354
+           angleY 67.683
+          }
+          TimeTrialPopperTargetSlot94 {
+           coords -9.898 -0.014 -4.079
+           angleY 67.683
+          }
+          TimeTrialPopperTargetSlot95 {
+           coords -10.027 -0.014 -3.794
+           angleY 67.683
+          }
+          TimeTrialPopperTargetSlot96 {
+           coords -10.161 -0.014 -3.475
+           angleY 67.683
+          }
+          TimeTrialPopperTargetSlot97 {
+           coords -10.285 -0.014 -3.174
+           angleY 67.683
+          }
+          TimeTrialPopperTargetSlot98 {
+           coords -10.374 -0.014 -2.867
+           angleY 67.683
+          }
+          TimeTrialPopperTargetSlot99 {
+           coords -9.31 -0.014 -6.005
+           angleY 34.028
+          }
+          TimeTrialPopperTargetSlot100 {
+           coords -9.56 -0.014 -5.838
+           angleY 34.028
+          }
+          TimeTrialPopperTargetSlot101 {
+           coords -10.28 -0.014 -6.813
+           angleY 71.157
+          }
+          TimeTrialPopperTargetSlot102 {
+           coords -10.376 -0.014 -6.529
+           angleY 71.157
+          }
+          TimeTrialPopperTargetSlot103 {
+           coords -10.909 -0.014 -4.318
+           angleY 80.311
+          }
+          TimeTrialPopperTargetSlot104 {
+           coords -10.96 -0.014 -4.025
+           angleY 80.311
+          }
+          TimeTrialPopperTargetSlot105 {
+           coords -7.221 0.887 -5.896
+           angleY -8.658
+          }
+          TimeTrialPopperTargetSlot106 {
+           coords -7.516 0.887 -5.938
+           angleY -8.658
+          }
+          TimeTrialPopperTargetSlot107 {
+           coords -10.913 0.887 -5.96
+           angleY 61.821
+          }
+          TimeTrialPopperTargetSlot108 {
+           coords -11.051 0.887 -5.698
+           angleY 61.821
+          }
+          TimeTrialPopperTargetSlot109 {
+           coords -11.092 0.887 -5.291
+           angleY 61.821
+          }
+          TimeTrialPopperTargetSlot110 {
+           coords -11.23 0.887 -5.03
+           angleY 61.821
+          }
+          TimeTrialPopperTargetSlot111 {
+           coords -11.165 0.887 -3.298
+           angleY 80.292
+          }
+          TimeTrialPopperTargetSlot112 {
+           coords -11.213 0.887 -3.006
+           angleY 80.292
+          }
+          TimeTrialPopperTargetSlot113 {
+           coords -7.553 -0.014 -5.517
+           angleY 60.848
+          }
+          TimeTrialPopperTargetSlot114 {
+           coords -7.8 -0.014 -5.196
+           angleY 55.34
+          }
+         }
+         $grp GenericEntity : "{9E30174C2B6FA612}Prefabs/TimeTrial/ScenarioFramework/TimeTrialCivTargetSlot.et" {
+          TimeTrialCivTargetSlot28 {
+           components {
+            RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
+             m_fBonusAwardSeconds -3
+            }
+           }
+           coords -9.852 -0.023 -8.635
+           angleY -7.766
+          }
+          TimeTrialCivTargetSlot32 {
+           components {
+            RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
+             m_fBonusAwardSeconds -3
+            }
+           }
+           coords -10.018 -0.023 -9.372
+           angleY -7.766
+          }
+          TimeTrialCivTargetSlot33 {
+           components {
+            RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
+             m_fBonusAwardSeconds -3
+            }
+           }
+           coords -10.646 -0.023 -8.727
+           angleY -7.766
+          }
+          TimeTrialCivTargetSlot34 {
+           components {
+            RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
+             m_fBonusAwardSeconds -3
+            }
+           }
+           coords -10.619 -0.023 -10.106
+           angleY -7.766
+          }
+         }
+         $grp GenericEntity : "{E47A9A48C98F1D4B}Prefabs/TimeTrial/ScenarioFramework/TimeTrialStandardTargetSlot.et" {
+          TimeTrialStandardTargetSlot251 {
+           coords -2.47 -0.014 -8.184
+           angleY -10.879
+          }
+          TimeTrialStandardTargetSlot255 {
+           coords -3.993 -0.014 -8.612
+           angleY -10.879
+          }
+          TimeTrialStandardTargetSlot256 {
+           coords -3.469 -0.014 -7.536
+           angleY -10.879
+          }
+          TimeTrialStandardTargetSlot257 {
+           coords -2.563 -0.014 -6.014
+           angleY -10.879
+          }
+          TimeTrialStandardTargetSlot258 {
+           coords -3.484 -0.014 -5.918
+           angleY -10.879
+          }
+          TimeTrialStandardTargetSlot259 {
+           coords -4.292 -0.014 -6.528
+           angleY -10.879
+          }
+          TimeTrialStandardTargetSlot260 {
+           coords -4.276 -0.014 -5.043
+           angleY -10.879
+          }
+          TimeTrialStandardTargetSlot261 {
+           coords -2.86 -0.014 -4.578
+           angleY 5.932
+          }
+          TimeTrialStandardTargetSlot254 {
+           coords -6.179 0.027 10.315
+           angleY 82.005
+          }
+          TimeTrialStandardTargetSlot263 {
+           coords -6.02 0.027 9.775
+           angleY 54.658
+          }
+          TimeTrialStandardTargetSlot264 {
+           coords -5.687 0.027 9.386
+           angleY 23.022
+          }
+          TimeTrialStandardTargetSlot262 {
+           coords -8.581 -0.024 -9.531
+           angleY 83.14
+          }
+          TimeTrialStandardTargetSlot266 {
+           coords -8.657 -0.024 -8.932
+           angleY 83.14
+          }
+          TimeTrialStandardTargetSlot267 {
+           coords -8.775 -0.024 -8.327
+           angleY 83.14
+          }
+          TimeTrialStandardTargetSlot268 {
+           coords -8.456 -0.024 -10.137
+           angleY 76.507
+          }
+          TimeTrialStandardTargetSlot269 {
+           coords -9.158 3.282 -8.38
+           angleY 89.774
+           angleZ -180
+          }
+          TimeTrialStandardTargetSlot270 {
+           coords -9.134 3.282 -8.996
+           angleY 83.14
+           angleZ -180
+          }
+          TimeTrialStandardTargetSlot271 {
+           coords -9.066 3.282 -9.597
+           angleY 83.14
+           angleZ -180
+          }
+          TimeTrialStandardTargetSlot272 {
+           coords -9.039 3.282 -10.211
+           angleY 83.14
+           angleZ -180
+          }
+          TimeTrialStandardTargetSlot265 {
+           coords -5.041 0.01 4.566
+           angleY 172.148
+          }
+          TimeTrialStandardTargetSlot274 {
+           coords -4.431 0.01 4.711
+           angleY 174.169
+          }
+          TimeTrialStandardTargetSlot275 {
+           coords -5.372 0.01 2.492
+           angleY 174.212
+          }
+          TimeTrialStandardTargetSlot276 {
+           coords -5.977 0.01 2.446
+           angleY 171.051
+          }
+          TimeTrialStandardTargetSlot277 {
+           coords -4.756 0.01 2.535
+           angleY 174.212
+          }
+          TimeTrialStandardTargetSlot278 {
+           coords -5.644 0.01 4.47
+           angleY 168.928
+          }
+          TimeTrialStandardTargetSlot279 {
+           coords -4.071 0.01 0.539
+           angleY 174.212
+          }
+          TimeTrialStandardTargetSlot280 {
+           coords -4.676 0.01 0.493
+           angleY 171.051
+          }
+          TimeTrialStandardTargetSlot281 {
+           coords -3.456 0.01 0.582
+           angleY 174.212
+          }
+          TimeTrialStandardTargetSlot282 {
+           coords -6.217 3.308 3.768
+           angleY 163.687
+           angleZ -180
+          }
+          TimeTrialStandardTargetSlot283 {
+           coords -3.93 3.308 2.254
+           angleY 166.805
+           angleZ -180
+          }
+          TimeTrialStandardTargetSlot284 {
+           coords -5.095 3.308 1.874
+           angleY 163.643
+           angleZ -180
+          }
+          TimeTrialStandardTargetSlot285 {
+           coords -4.977 3.308 -0.232
+           angleY 163.643
+           angleZ -180
+          }
+          TimeTrialStandardTargetSlot286 {
+           coords -4.399 3.308 -0.047
+           angleY 166.805
+           angleZ -180
+          }
+          TimeTrialStandardTargetSlot287 {
+           coords -4.508 3.308 2.066
+           angleY 163.643
+           angleZ -180
+          }
+          TimeTrialStandardTargetSlot288 {
+           coords -5.598 3.308 3.863
+           angleY 165.707
+           angleZ -180
+          }
+          TimeTrialStandardTargetSlot289 {
+           coords -5.563 3.308 -0.424
+           angleY 163.643
+           angleZ -180
+          }
+          TimeTrialStandardTargetSlot290 {
+           coords -5.001 3.308 4.001
+           angleY 168.928
+           angleZ -180
+          }
+          TimeTrialStandardTargetSlot273 {
+           coords -2.096 -0.001 -0.363
+           angleY 9.564
+          }
+          TimeTrialStandardTargetSlot292 {
+           coords -1.381 3.272 0.463
+           angleY 14.359
+           angleZ -180
+          }
+          TimeTrialStandardTargetSlot293 {
+           coords 0.876 -0.001 -0.769
+           angleY -3.462
+          }
+          TimeTrialStandardTargetSlot294 {
+           coords -0.12 -0.001 -0.824
+           angleY 5.882
+          }
+          TimeTrialStandardTargetSlot295 {
+           coords -1.051 -0.001 -1.768
+           angleY 5.882
+          }
+          TimeTrialStandardTargetSlot296 {
+           coords 0.777 -0.001 0.971
+           angleY -26.485
+          }
+          TimeTrialStandardTargetSlot297 {
+           coords -11.794 0.015 4.979
+           angleY 165
+          }
+          TimeTrialStandardTargetSlot299 {
+           coords -11.734 0.015 7.643
+           angleY 165
+          }
+          TimeTrialStandardTargetSlot300 {
+           coords -10.355 0.015 7.302
+           angleY 165
+          }
+          TimeTrialStandardTargetSlot301 {
+           coords -9.103 0.015 5.114
+           angleY 165
+          }
+          TimeTrialStandardTargetSlot302 {
+           coords -11.652 0.015 2.663
+           angleY 128.988
+          }
+          TimeTrialStandardTargetSlot303 {
+           coords -11.551 0.015 0.272
+           angleY 102.277
+          }
+          TimeTrialStandardTargetSlot304 {
+           coords -11.158 0.015 -0.847
+           angleY 82.712
+          }
+          TimeTrialStandardTargetSlot305 {
+           coords -10.704 0.015 1.316
+           angleY 113.974
+          }
+          TimeTrialStandardTargetSlot306 {
+           coords -9.533 0.015 2.264
+           angleY 150.638
+          }
+         }
+        }
+       }
+      }
+      GenericEntity TimeTrialCourseControlPanel11 : "{759B64907C040A78}Prefabs/TimeTrial/ScenarioFramework/TimeTrialCourseControlPanel.et" {
+       coords 4.735 -0.151 -0.399
+       angleY -135
+      }
+      GenericEntity TimeTrialUITriggerSlot11 : "{ADC06C4DCF0A9E1B}Prefabs/TimeTrial/ScenarioFramework/TimeTrialUITriggerSlot.et" {
+       coords 5.061 -0.1 -1.558
+      }
+      GenericEntity Black2DoorCloser : "{B450A4E78ACE3742}Prefabs/TimeTrial/ScenarioFramework/DoorOpenerSlot.et" {
+       components {
+        RKN_DoorOpenerSlot "{5A22E1D67E712EC8}" {
+         m_fRadius 15
+         m_fControlValue 0
+        }
+       }
+       coords 22.497 1.972 0.773
+      }
+      GenericEntity TImeTrialCountdownPositionSlot11 : "{FE7A51992E39BF1B}Prefabs/TimeTrial/ScenarioFramework/TImeTrialCountdownPositionSlot.et" {
+       coords 3.791 -0.1 -1.719
+       angleY -99.218
+      }
+     }
     }
    }
   }

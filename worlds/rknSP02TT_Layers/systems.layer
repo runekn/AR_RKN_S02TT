@@ -34,6 +34,8 @@ SCR_BaseGameMode GameModeSF1 : "{ECEEDB2D3737204B}Prefabs/Systems/ScenarioFramew
     }
     RKN_TimeTrialCourseConfig "{65DE6371A1E04363}" : "{F6995A4122E677C3}Configs/TimeTrialCourses/Black1CourseConfig.conf" {
     }
+    RKN_TimeTrialCourseConfig "{65DE9B1A014072B8}" : "{B0030F2126FBEE7B}Configs/TimeTrialCourses/Black2CourseConfig.conf" {
+    }
    }
   }
   SCR_DataCollectorComponent "{5ADE83EE64329989}" {

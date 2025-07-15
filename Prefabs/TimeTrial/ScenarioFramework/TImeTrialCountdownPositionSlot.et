@@ -5,6 +5,7 @@ GenericEntity : "{032C15BBEBE9E1E9}Prefabs/Systems/ScenarioFramework/Components/
    m_bShowDebugShapesInWorkbench 0
    m_aPlugins {
     SCR_ScenarioFrameworkPluginTrigger "{6118D659EDB7085B}" {
+     m_eActivationPresence PLAYER
      m_fUpdateRate 0.2
     }
    }
