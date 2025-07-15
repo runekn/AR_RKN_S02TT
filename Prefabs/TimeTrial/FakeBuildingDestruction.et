@@ -1,0 +1,8 @@
+RKN_FakeBuildingDestructionEntity {
+ ID "65DE9B4626C4E8E6"
+ components {
+  RplComponent "{65DE9B4637B17DBA}" {
+  }
+ }
+ coords 4557.014 15.822 10854.414
+}

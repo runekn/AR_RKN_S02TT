@@ -1,9 +1,3 @@
-SCR_AIWorld : "{70CCCF16487C927F}Prefabs/AI/SCR_AIWorld_Eden.et" {
- coords 7579.207 166.156 4251.596
-}
-PerceptionManager PerceptionManager1 : "{028DAEAD63E056BE}Prefabs/World/Game/PerceptionManager.et" {
- coords 7580.319 166.156 4253.104
-}
 SCR_FactionManager FactionManager_Editor1 : "{4A188E44289B9A50}Prefabs/MP/Managers/Factions/FactionManager_Editor.et" {
  coords 7439.06 136.88 4739.782
  Factions {
@@ -37,6 +31,8 @@ SCR_BaseGameMode GameModeSF1 : "{ECEEDB2D3737204B}Prefabs/Systems/ScenarioFramew
     RKN_TimeTrialCourseConfig "{65DA6668FE139404}" : "{E8708B49C1F82A64}Configs/TimeTrialCourses/Blue1CourseConfig.conf" {
     }
     RKN_TimeTrialCourseConfig "{65DA6668F80F4E30}" : "{AEEADE29C5E5B3DB}Configs/TimeTrialCourses/Blue2CourseConfig.conf" {
+    }
+    RKN_TimeTrialCourseConfig "{65DE6371A1E04363}" : "{F6995A4122E677C3}Configs/TimeTrialCourses/Black1CourseConfig.conf" {
     }
    }
   }
@@ -189,6 +185,11 @@ SCR_BaseGameMode GameModeSF1 : "{ECEEDB2D3737204B}Prefabs/Systems/ScenarioFramew
    }
   }
   SCR_RespawnSystemComponent "{56B2B4793051E7C9}" {
+   components {
+    SCR_RespawnTimerComponent "{65DE9B7A35202F04}" {
+     m_fRespawnTime 0
+    }
+   }
    m_SpawnLogic SCR_MenuSpawnLogic "{5D36888CC966608A}" {
     m_sForcedFaction "CIV"
     m_bUseFadeEffect 1

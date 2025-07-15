@@ -1,0 +1,14 @@
+Vehicle : "{A4D16A62B432451A}Prefabs/Vehicles/Wheeled/UAZ469/UAZ469_covered_CIV_red.et" {
+ ID "BBCBA43A9778AE21"
+ components {
+  VehicleWheeledSimulation "{731B26FCA2F19855}" {
+   Simulation Wheeled "{4D8B26DEA5F25978}" {
+    Engine Engine Engine {
+     MaxPower 200
+     MaxTorque 300
+    }
+   }
+  }
+ }
+ coords 7479.397 138.534 4717.324
+}

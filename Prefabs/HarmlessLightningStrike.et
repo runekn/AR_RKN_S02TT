@@ -1,0 +1,27 @@
+Projectile : "{A8FFCD3F3697D77F}Prefabs/Editor/Lightning/LightningStrike.et" {
+ ID "DA5C6308000CDEF2"
+ components {
+  BaseTriggerComponent "{58AAA3E2CF5CABFE}" {
+   PROJECTILE_EFFECTS {
+    ExplosionEffect "{58AAA3E2D7F13E11}" {
+     EffectPrefab "{02E39C4E109CE201}Prefabs/HarmlessLightning_Warhead.et"
+    }
+   }
+  }
+  MissileMoveComponent "{0EF36690881261EF}" {
+   Enabled 0
+   InitSpeed 0
+   Mass 0
+   ProjectileEffects {
+    ProjectileDamage "{56829D01651CE9A7}" {
+     Enabled 0
+     DamageValue 0
+    }
+   }
+  }
+  RigidBody "{529E88841E9EDFB4}" {
+   Enabled 0
+  }
+ }
+ coords 4462.574 13.088 10717.39
+}

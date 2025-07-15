@@ -6,7 +6,7 @@ GenericEntity : "{C62AFC64D4F5495E}Prefabs/TimeTrial/ScenarioFramework/TimeTrial
    m_SectionGetter RKN_TimeTrialGetSectionParent "{65CE7B727E48EE6B}" {
    }
    m_bBonusObjective 1
-   m_fBonusAwardSeconds 1
+   m_fBonusAwardSeconds 2
    m_aOnHitActions {
     RKN_TimeTrialVoiceLine "{65D25B7E07D246B5}" {
      m_sLineName "BONUS"

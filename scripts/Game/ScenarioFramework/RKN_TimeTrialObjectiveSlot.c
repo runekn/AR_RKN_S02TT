@@ -72,7 +72,8 @@ class RKN_TimeTrialObjectiveSlot : SCR_ScenarioFrameworkSlotBase
 		if (m_SectionGetter)
 		{
 			SCR_ScenarioFrameworkParamBase paramBase = m_SectionGetter.Get(GetOwner());
-			entity = SCR_ScenarioFrameworkParam<IEntity>.Cast(paramBase).GetValue();
+			if (paramBase)
+				entity = SCR_ScenarioFrameworkParam<IEntity>.Cast(paramBase).GetValue();
 		}
 		
 		if (!entity)

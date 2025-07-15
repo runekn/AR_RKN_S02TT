@@ -1,0 +1,13 @@
+GenericEntity : "{C371319CFA91289D}Prefabs/Editor/Lightning/Warhead_GM_lightning.et" {
+ ID "5882932047E76F62"
+ components {
+  BaseTriggerComponent "{5882932047E7689B}" {
+   Enabled 0
+   PROJECTILE_EFFECTS {
+    ExplosionDamageContainer "{5882A996E0C3BD46}" {
+    }
+   }
+  }
+ }
+ coords 4441.737 12.496 10716.508
+}

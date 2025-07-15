@@ -166,7 +166,7 @@ class RKN_TimeTrialTargetSlot : RKN_TimeTrialObjectiveSlot
 	
 	void SpawnMoveTrack(IEntity parent)
 	{
-		if (m_bGenerateTracks && m_MovePoint && m_sTrackMidSectionPrefabName)
+		if (m_bGenerateTracks && m_MovePoint && m_sTrackMidSectionPrefabName && m_fTrackWidth > 0)
 		{
 			vector dir = GetMovePosition();
 			float distance = dir.Length();
