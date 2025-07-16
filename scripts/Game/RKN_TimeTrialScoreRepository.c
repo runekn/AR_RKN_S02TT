@@ -1,20 +1,20 @@
-class RKN_TimeTrialScoreRepositoryClass : SCR_BaseGameModeComponentClass
+class RKN_TimeTrialCourseManagerComponentClass : SCR_BaseGameModeComponentClass
 {
 }
 
-class RKN_TimeTrialScoreRepository : SCR_BaseGameModeComponent
+class RKN_TimeTrialCourseManagerComponent : SCR_BaseGameModeComponent
 {
 	[Attribute()]
 	ref array<ref RKN_TimeTrialCourseConfig> m_aCourseConfigs;
 
 	ref map<string, int> m_mDataIndices = new map<string, int>;
-	
+	ref array<RKN_TimeTrialCourseLayer> m_aCourses = {};
 	[RplProp()]
 	ref array<ref RKN_TimeTrialScoreInfo> m_aCurrentScores = {};
 	[RplProp()]
 	ref array<ref array<ref RKN_TimeTrialScoreInfo>> m_aScoreInfoHistory = {};
 	
-	void RKN_TimeTrialScoreRepository(IEntityComponentSource src, IEntity ent, IEntity parent)
+	void RKN_TimeTrialCourseManagerComponent(IEntityComponentSource src, IEntity ent, IEntity parent)
 	{
 		SetEventMask(GetOwner(), EntityEvent.INIT);
 	}
@@ -27,17 +27,30 @@ class RKN_TimeTrialScoreRepository : SCR_BaseGameModeComponent
 			m_mDataIndices.Set(config.m_sId, i);
 			m_aCurrentScores.Insert(null);
 			m_aScoreInfoHistory.Insert({});
+			m_aCourses.Insert(null);
 		}
 	}
 	
-	int GetIndex(string courseId)
+	override void OnPlayerDisconnected(int playerId, KickCauseCode cause, int timeout)
 	{
-		return m_mDataIndices.Get(courseId);
+		StopCourseForPlayer(playerId);
+	}
+	
+	override void OnPlayerKilled(notnull SCR_InstigatorContextData instigatorContextData)
+	{
+		StopCourseForPlayer(instigatorContextData.GetVictimPlayerID());
+	}
+	
+	int RegisterCourse(RKN_TimeTrialCourseLayer course)
+	{
+		int i = m_mDataIndices.Get(course.m_sCourseId);
+		m_aCourses[i] = course;
+		return i;
 	}
 	
 	void LoadSavedHistory(string courseId, array<ref RKN_TimeTrialScoreInfo> history)
 	{
-		int i = GetIndex(courseId);
+		int i = m_mDataIndices.Get(courseId);
 		m_aScoreInfoHistory[i] = history;
 	}
 	
@@ -167,6 +180,22 @@ class RKN_TimeTrialScoreRepository : SCR_BaseGameModeComponent
 		}
 		
 		history.Sort(true);
+	}
+	
+	private void StopCourseForPlayer(int playerId)
+	{
+		if (!Replication.IsServer())
+			return;
+		
+		for (int i = 0; i < m_aCurrentScores.Count(); i++)
+		{
+			RKN_TimeTrialScoreInfo info = m_aCurrentScores[i];
+			if (info && info.m_iID == playerId)
+			{
+				m_aCourses[i].CancelCourse();
+				return;
+			}
+		}
 	}
 }
 

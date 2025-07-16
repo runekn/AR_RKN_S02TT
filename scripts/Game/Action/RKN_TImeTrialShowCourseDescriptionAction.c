@@ -33,8 +33,8 @@ class RKN_TimeTrialShowCourseDescriptionAction : ScriptedUserAction
 		int courseId = RKN_TimeTrialControlPanelEntity.Cast(GetOwner()).m_iCourseId;
 		if (courseId < 0)
 			return null;
-		RKN_TimeTrialScoreRepository repo = RKN_TimeTrialUtils.GetCourseDataRepo();
-		RKN_TimeTrialCourseData data = repo.GetData(courseId);
+		RKN_TimeTrialCourseManagerComponent manager = RKN_TimeTrialUtils.GetCourseManager();
+		RKN_TimeTrialCourseData data = manager.GetData(courseId);
 		if (!data)
 			return null;
 		return data.m_Config;

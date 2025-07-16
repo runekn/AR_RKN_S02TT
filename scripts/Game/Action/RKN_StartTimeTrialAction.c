@@ -14,7 +14,7 @@ class RKN_StartTimeTrialAction : SCR_ScriptedUserAction
 		if (courseId < 0)
 			return false;
 		int playerId = GetGame().GetPlayerController().GetPlayerId();
-		RKN_TimeTrialScoreRepository repo = RKN_TimeTrialUtils.GetCourseDataRepo();
-		return !repo.HasActiveCompetitor(courseId) && !repo.IsActiveCompetitor(playerId);
+		RKN_TimeTrialCourseManagerComponent manager = RKN_TimeTrialUtils.GetCourseManager();
+		return !manager.HasActiveCompetitor(courseId) && !manager.IsActiveCompetitor(playerId);
 	}
 }

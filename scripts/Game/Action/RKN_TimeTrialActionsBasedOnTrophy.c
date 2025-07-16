@@ -13,7 +13,7 @@ class RKN_TimeTrialActionsBasedOnTrophy : SCR_ScenarioFrameworkActionBase
 	override void OnActivate(IEntity object)
 	{
 		RKN_TimeTrialCourseLayer course = RKN_TimeTrialCourseLayer.Cast(object.FindComponent(RKN_TimeTrialCourseLayer));
-		RKN_TimeTrialCourseData data = RKN_TimeTrialUtils.GetCourseDataRepo().GetData(course.m_iCourseIndex);
+		RKN_TimeTrialCourseData data = RKN_TimeTrialUtils.GetCourseManager().GetData(course.m_iCourseIndex);
 		array<ref SCR_ScenarioFrameworkActionBase> actions;
 		
 		int total = data.m_CurrentScoreInfo.GetTotal();

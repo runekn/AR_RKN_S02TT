@@ -10,6 +10,6 @@ class RKN_CancelTimeTrialAction : SCR_ScriptedUserAction
 		int courseId = RKN_TimeTrialControlPanelEntity.Cast(GetOwner()).m_iCourseId;
 		if (courseId < 0)
 			return false;
-		return RKN_TimeTrialUtils.GetCourseDataRepo().HasActiveCompetitor(courseId);
+		return RKN_TimeTrialUtils.GetCourseManager().HasActiveCompetitor(courseId);
 	}
 }

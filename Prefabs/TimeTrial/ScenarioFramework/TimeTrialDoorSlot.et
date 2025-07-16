@@ -1,0 +1,12 @@
+GenericEntity {
+ ID "65E0722C2E310E72"
+ components {
+  RKN_TimeTrialOpenDoorSlot "{65E0722C3D337120}" {
+   m_SectionGetter RKN_TimeTrialGetSectionParent "{65E0722C3A41EE8A}" {
+   }
+  }
+  Hierarchy "{65E0722C01A327FF}" {
+  }
+ }
+ coords 9325.888 208.926 1166.739
+}

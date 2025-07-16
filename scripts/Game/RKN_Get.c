@@ -3,7 +3,7 @@ class RKN_Get
 {	
 	SCR_ScenarioFrameworkParamBase Get(IEntity owner);
 	
-	protected SCR_ScenarioFrameworkParam<IEntity> findComponentInChildren(IEntity parent, typename component)
+	static SCR_ScenarioFrameworkParam<IEntity> findComponentInChildren(IEntity parent, typename component)
 	{
 		IEntity entity = parent.GetChildren();
 		while (entity)
@@ -19,7 +19,7 @@ class RKN_Get
 		return null;
 	}
 	
-	protected SCR_ScenarioFrameworkParam<IEntity> findChild(IEntity parent, typename entityType)
+	static SCR_ScenarioFrameworkParam<IEntity> findChild(IEntity parent, typename entityType)
 	{
 		IEntity entity = parent.GetChildren();
 		while (entity)

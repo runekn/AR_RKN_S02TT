@@ -23,8 +23,8 @@ class RKN_TimeTrialUtils
 		return course;
 	}
 	
-	static RKN_TimeTrialScoreRepository GetCourseDataRepo()
+	static RKN_TimeTrialCourseManagerComponent GetCourseManager()
 	{
-		return RKN_TimeTrialScoreRepository.Cast(GetGame().GetGameMode().FindComponent(RKN_TimeTrialScoreRepository));;
+		return RKN_TimeTrialCourseManagerComponent.Cast(GetGame().GetGameMode().FindComponent(RKN_TimeTrialCourseManagerComponent));
 	}
 }

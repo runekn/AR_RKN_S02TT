@@ -111,7 +111,7 @@ class RKN_TimeTrialVoiceSequence : SCR_ScenarioFrameworkActionVoiceOverPlaySeque
 				return false;
 			}
 			
-			RKN_TimeTrialCourseData data = RKN_TimeTrialUtils.GetCourseDataRepo().GetData(course.m_iCourseIndex);
+			RKN_TimeTrialCourseData data = RKN_TimeTrialUtils.GetCourseManager().GetData(course.m_iCourseIndex);
 			
 			if (!data.m_CurrentScoreInfo)
 			{

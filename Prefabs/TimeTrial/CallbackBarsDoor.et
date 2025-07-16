@@ -1,0 +1,15 @@
+GenericEntity : "{9EC2DF04F7713A63}Prefabs/Structures/BuildingParts/Doors/DoorSet_Bars_L_EXT_B.et" {
+ ID "524ECB712E44079D"
+ coords 9324.796 208.952 1165.81
+ {
+  GenericEntity {
+   ID "567CCED33CF82223"
+   components {
+    RKN_CallbackDoorComponent "{221C667A9F7D4B69}" {
+     DoorAction RKN_CallbackDoorUserAction "{50888D3646A61640}" {
+     }
+    }
+   }
+  }
+ }
+}

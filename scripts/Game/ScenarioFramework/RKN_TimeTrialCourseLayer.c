@@ -25,39 +25,39 @@ class RKN_TimeTrialCourseLayer : SCR_ScenarioFrameworkLayerBase
 	
 	ref array<RKN_TimeTrialSectionLayer> m_aSections = {};
 	int m_iActiveSection;
-	RKN_TimeTrialScoreRepository m_DataRepo;
+	RKN_TimeTrialCourseManagerComponent m_Manager;
 	int m_iCourseIndex;
 	
 	override bool InitOtherThings()
 	{
-		m_iCourseIndex = GetDataRepo().GetIndex(m_sCourseId);
+		m_iCourseIndex = GetCourseManager().RegisterCourse(this);
 		return super.InitOtherThings();
 	}
 	
 	void CancelCourse()
 	{
-		GetDataRepo().StopTime(m_iCourseIndex, true);
+		GetCourseManager().StopTime(m_iCourseIndex, true);
 		GetGame().GetCallqueue().Remove(StartCourse);
 		GetGame().GetCallqueue().Remove(ResetRun);
-		RKN_TimeTrialCourseData data = GetDataRepo().GetData(m_iCourseIndex);
+		RKN_TimeTrialCourseData data = GetCourseManager().GetData(m_iCourseIndex);
 		FindPlayerUIComponent(GetGame().GetPlayerManager().GetPlayerControlledEntity(data.m_CurrentScoreInfo.m_iID)).RemoveScoreTable(m_iCourseIndex, true);
 		m_iActiveSection = 0;
 		m_OnCancel.Invoke();
 		foreach (SCR_ScenarioFrameworkActionBase action : m_aOnCancelActions)
 			action.Init(GetOwner());
-		GetDataRepo().ClearCurrentScore(m_iCourseIndex);
+		GetCourseManager().ClearCurrentScore(m_iCourseIndex);
 	}
 	
 	void ScheduleCourse(int playerId, int delay, bool competitive)
 	{
 		Print("RKN_TimeTrialCourseLayer: RpcAsk_ScheduleCourse");
-		if (GetDataRepo().HasActiveCompetitor(m_iCourseIndex))
+		if (GetCourseManager().HasActiveCompetitor(m_iCourseIndex))
 		{
 			Print("RKN_TimeTrialCourseLayer: Only one player can use the course at a time", LogLevel.ERROR);
 			return;
 		}
 		
-		if (GetDataRepo().IsActiveCompetitor(playerId))
+		if (GetCourseManager().IsActiveCompetitor(playerId))
 		{
 			Print("RKN_TimeTrialCourseLayer: Player already has active course", LogLevel.ERROR);
 			return;
@@ -66,7 +66,7 @@ class RKN_TimeTrialCourseLayer : SCR_ScenarioFrameworkLayerBase
 		RKN_TimeTrialScoreType type = RKN_TimeTrialScoreType.TRAINING;
 		if (competitive)
 			type = RKN_TimeTrialScoreType.COMPETITIVE;
-		GetDataRepo().CreateActiveScore(m_iCourseIndex, playerId, type);
+		GetCourseManager().CreateActiveScore(m_iCourseIndex, playerId, type);
 		
 		IEntity player = GetGame().GetPlayerManager().GetPlayerControlledEntity(playerId);
 		FindPlayerUIComponent(player).ShowScoreTable(m_iCourseIndex, true);
@@ -85,7 +85,7 @@ class RKN_TimeTrialCourseLayer : SCR_ScenarioFrameworkLayerBase
 	
 	private void StartCourse()
 	{
-		GetDataRepo().StartTime(m_iCourseIndex);
+		GetCourseManager().StartTime(m_iCourseIndex);
 		m_OnActive.Invoke();
 		ActivateNextSectionOrFinish();
 	}
@@ -116,7 +116,7 @@ class RKN_TimeTrialCourseLayer : SCR_ScenarioFrameworkLayerBase
 	
 	private void FinishCourse()
 	{
-		GetDataRepo().StopTime(m_iCourseIndex, false);
+		GetCourseManager().StopTime(m_iCourseIndex, false);
 		GetGame().GetCallqueue().CallLater(ResetRun, 5000, false);
 		m_OnFinish.Invoke();
 		foreach (SCR_ScenarioFrameworkActionBase action : m_aOnFinishActions)
@@ -126,17 +126,17 @@ class RKN_TimeTrialCourseLayer : SCR_ScenarioFrameworkLayerBase
 	void ApplyScoreModifier(int mod)
 	{
 		if (mod > 0)
-			GetDataRepo().ApplyPenalty(m_iCourseIndex, mod);
+			GetCourseManager().ApplyPenalty(m_iCourseIndex, mod);
 		if (mod < 0)
-			GetDataRepo().ApplyBonus(m_iCourseIndex, -mod);
+			GetCourseManager().ApplyBonus(m_iCourseIndex, -mod);
 	}
 	
 	private void ResetRun()
 	{
 		Print("RKN_TimeTrialCourseLayer: ResetRun");
-		RKN_TimeTrialCourseData data = GetDataRepo().GetData(m_iCourseIndex);
+		RKN_TimeTrialCourseData data = GetCourseManager().GetData(m_iCourseIndex);
 		FindPlayerUIComponent(GetGame().GetPlayerManager().GetPlayerControlledEntity(data.m_CurrentScoreInfo.m_iID)).RemoveScoreTable(m_iCourseIndex, true);
-		GetDataRepo().ClearCurrentScore(m_iCourseIndex);
+		GetCourseManager().ClearCurrentScore(m_iCourseIndex);
 		m_iActiveSection = 0;
 		m_OnReset.Invoke();
 	}
@@ -148,7 +148,7 @@ class RKN_TimeTrialCourseLayer : SCR_ScenarioFrameworkLayerBase
 	
 	void ApplyCompetitiveLoadout(IEntity player)
 	{
-		RKN_TimeTrialCourseData data = GetDataRepo().GetData(m_iCourseIndex);
+		RKN_TimeTrialCourseData data = GetCourseManager().GetData(m_iCourseIndex);
 		if (data.m_Config.m_aCompetitiveLoadout.IsEmpty())
 			return;
 		
@@ -187,13 +187,13 @@ class RKN_TimeTrialCourseLayer : SCR_ScenarioFrameworkLayerBase
 		}
 	}
 	
-	RKN_TimeTrialScoreRepository GetDataRepo()
+	RKN_TimeTrialCourseManagerComponent GetCourseManager()
 	{
-		if (!m_DataRepo)
+		if (!m_Manager)
 		{
-			m_DataRepo = RKN_TimeTrialUtils.GetCourseDataRepo();
+			m_Manager = RKN_TimeTrialUtils.GetCourseManager();
 		}
-		return m_DataRepo;
+		return m_Manager;
 	}
 }
 

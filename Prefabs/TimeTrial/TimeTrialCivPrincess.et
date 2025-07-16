@@ -1,0 +1,14 @@
+RKN_TimeTrialTargetEntity : "{8965956A4E6CA639}Prefabs/TimeTrial/TimeTrialCivTarget.et" {
+ ID "65CC5C0B95D2D151"
+ components {
+  MeshObject "{65CC5C084372538A}" {
+   Materials {
+    MaterialAssignClass "{65E055D2F9C4F569}" {
+     SourceMaterial "civ_target_plate"
+     AssignedMaterial "{06134632D4547CE0}Assets/TimeTrial/Data/civ_princess_target_plate.emat"
+    }
+   }
+  }
+ }
+ coords 9325.813 208.911 1162.628
+}

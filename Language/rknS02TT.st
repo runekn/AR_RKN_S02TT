@@ -1,6 +1,19 @@
 StringTable {
  ItemClassName "CustomStringTableItem"
  Items {
+  CustomStringTableItem "{65DF3610E1CB3A07}" {
+   Id "AR-RKN_S02TT-Course_Black1_Desc"
+   Modified 1709130415
+   Author "Rune"
+   LastChanged "Rune"
+  }
+  CustomStringTableItem "{65DF3610E3E335DA}" {
+   Id "AR-RKN_S02TT-Course_Black2_Desc"
+   Target_en_us "Oh god they're multiplying!"
+   Modified 1709130439
+   Author "Rune"
+   LastChanged "Rune"
+  }
   CustomStringTableItem "{65DA66671FF08947}" {
    Id "AR-RKN_S02TT-Course_Blue1_Desc"
    Target_en_us "A course is split into sections. Completing sections usually means shooting all targets from a specific position, before moving on to the next section at a new position. These positions can sometimes have requirements, such as stance and weapon type. Leaving the shooting position before completing the section may result in failure of the course."\

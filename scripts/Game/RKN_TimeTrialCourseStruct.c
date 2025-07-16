@@ -10,12 +10,12 @@ class RKN_TimeTrialStruct : SCR_JsonApiStruct
 	
 	override bool Serialize()
 	{
-		RKN_TimeTrialScoreRepository repo = RKN_TimeTrialUtils.GetCourseDataRepo();
-		if (!repo)
+		RKN_TimeTrialCourseManagerComponent manager = RKN_TimeTrialUtils.GetCourseManager();
+		if (!manager)
 			return false;
-		foreach (string id, int index : repo.m_mDataIndices)
+		foreach (string id, int index : manager.m_mDataIndices)
 		{
-			RKN_TimeTrialCourseData data = repo.GetData(index);
+			RKN_TimeTrialCourseData data = manager.GetData(index);
 			if (data.m_aScoreInfoHistory.IsEmpty())
 				continue;
 			m_aCourseStructs.Insert(new RKN_TimeTrialCourseStruct(data));
@@ -25,8 +25,8 @@ class RKN_TimeTrialStruct : SCR_JsonApiStruct
 	
 	override bool Deserialize()
 	{
-		RKN_TimeTrialScoreRepository repo = RKN_TimeTrialUtils.GetCourseDataRepo();
-		if (!repo)
+		RKN_TimeTrialCourseManagerComponent manager = RKN_TimeTrialUtils.GetCourseManager();
+		if (!manager)
 			return false;
 		foreach (RKN_TimeTrialCourseStruct courseStruct : m_aCourseStructs)
 		{
@@ -35,7 +35,7 @@ class RKN_TimeTrialStruct : SCR_JsonApiStruct
 			{
 				history.Insert(infoStruct.ToInfo());
 			}
-			repo.LoadSavedHistory(courseStruct.m_sId, history);
+			manager.LoadSavedHistory(courseStruct.m_sId, history);
 		}
 		return true;
 	}

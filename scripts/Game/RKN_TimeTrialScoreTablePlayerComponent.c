@@ -97,7 +97,7 @@ class RKN_TimeTrialScoreTablePlayerComponent : ScriptComponent
 	void UpdateTable()
 	{
 		int me = GetGame().GetPlayerController().GetPlayerId();	
-		RKN_TimeTrialCourseData data = RKN_TimeTrialUtils.GetCourseDataRepo().GetData(m_iActiveCourse);
+		RKN_TimeTrialCourseData data = RKN_TimeTrialUtils.GetCourseManager().GetData(m_iActiveCourse);
 		
 		if (!m_wRoot)
 		{

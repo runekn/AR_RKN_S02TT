@@ -1,0 +1,7 @@
+MatPBRBasic {
+ Color 0.527 0.527 0.527 1
+ SpecularMul 0.37
+ RoughnessScale 1.186
+ BCRMap "{9C6C7C4017E52E84}Assets/TimeTrial/Data/civ_princess_target_plate_BCR.edds"
+ NMOMap "{A4B4C7D2CE927C1A}Assets/TimeTrial/Data/civ_princess_target_plate_NMO.edds"
+}

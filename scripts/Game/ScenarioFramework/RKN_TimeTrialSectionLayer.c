@@ -53,7 +53,7 @@ class RKN_TimeTrialSectionLayer : SCR_ScenarioFrameworkLayerBase
 		foreach (RKN_TimeTrialObjectiveSlot obj : m_aObjectives)
 			if (obj.m_bCountInUI)
 				i++;
-		m_Course.GetDataRepo().TargetsRemaining(m_Course.m_iCourseIndex, i);
+		m_Course.GetCourseManager().TargetsRemaining(m_Course.m_iCourseIndex, i);
 		m_OnActive.Invoke();
 	}
 	
@@ -73,8 +73,8 @@ class RKN_TimeTrialSectionLayer : SCR_ScenarioFrameworkLayerBase
 		m_iCompletedObjectives++;
 		if (objective.m_bCountInUI)
 		{
-			int prev = m_Course.GetDataRepo().GetData(m_Course.m_iCourseIndex).m_CurrentScoreInfo.m_iSectionTargetsRemaining;
-			m_Course.GetDataRepo().TargetsRemaining(m_Course.m_iCourseIndex, prev - 1);
+			int prev = m_Course.GetCourseManager().GetData(m_Course.m_iCourseIndex).m_CurrentScoreInfo.m_iSectionTargetsRemaining;
+			m_Course.GetCourseManager().TargetsRemaining(m_Course.m_iCourseIndex, prev - 1);
 		}
 		if (m_iCompletedObjectives >= m_aObjectives.Count())
 		{

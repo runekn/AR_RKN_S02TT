@@ -1,0 +1,42 @@
+StaticModelEntity : "{D2EA06188D6495AD}Prefabs/Structures/Walls/Brick/BrickGate_01/BrickGate_01_House_Village_E_1I03.et" {
+ ID "1133272B8B185691"
+ components {
+  SCR_DestructionMultiPhaseComponent "{5AFCF34FE8F1AB15}" {
+   EnableDamage 0
+  }
+ }
+ coords 24.602 5.484 -11.781
+ angleY 90
+ {
+  GenericEntity {
+   ID "5A2E78CD7A4B1BE8"
+   components {
+    DoorComponent "{221C667A9F7D4B69}" {
+     TestContacts 0
+    }
+    ActionsManagerComponent "{F32B667C3C823800}" {
+     ActionContexts {
+      UserActionContext "{50888D37F529F720}" {
+       ContextName ""
+      }
+     }
+    }
+   }
+  }
+  GenericEntity {
+   ID "5A2E78CD7A4B1BEC"
+   components {
+    DoorComponent "{221C667A9F7D4B69}" {
+     TestContacts 0
+    }
+    ActionsManagerComponent "{F32B667C3C823800}" {
+     ActionContexts {
+      UserActionContext "{50888D37F529F720}" {
+       ContextName ""
+      }
+     }
+    }
+   }
+  }
+ }
+}

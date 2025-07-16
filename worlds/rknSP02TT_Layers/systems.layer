@@ -11,7 +11,7 @@ RadioManagerEntity : "{B8E09FAB91C4ECCD}Prefabs/Radio/RadioManager.et" {
 }
 SCR_BaseGameMode GameModeSF1 : "{ECEEDB2D3737204B}Prefabs/Systems/ScenarioFramework/GameModeSF.et" {
  components {
-  RKN_TimeTrialScoreRepository "{65D53C52CEB5A738}" {
+  RKN_TimeTrialCourseManagerComponent "{65D53C52CEB5A738}" {
    m_aCourseConfigs {
     RKN_TimeTrialCourseConfig "{65D53C52C896E598}" : "{01E8D44B14388402}Configs/TimeTrialCourses/Red1CourseConfig.conf" {
      m_sId "red1"
@@ -35,6 +35,8 @@ SCR_BaseGameMode GameModeSF1 : "{ECEEDB2D3737204B}Prefabs/Systems/ScenarioFramew
     RKN_TimeTrialCourseConfig "{65DE6371A1E04363}" : "{F6995A4122E677C3}Configs/TimeTrialCourses/Black1CourseConfig.conf" {
     }
     RKN_TimeTrialCourseConfig "{65DE9B1A014072B8}" : "{B0030F2126FBEE7B}Configs/TimeTrialCourses/Black2CourseConfig.conf" {
+    }
+    RKN_TimeTrialCourseConfig "{65E055D1D697173F}" : "{CB8EDFC92B672641}Configs/TimeTrialCourses/Lime1CourseConfig.conf" {
     }
    }
   }
