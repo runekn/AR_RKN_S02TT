@@ -3,7 +3,7 @@ GenericEntity : "{73950FBA2D7DB5C5}Prefabs/Items/Equipment/Radios/Radio_ANPRC68.
  components {
   SCR_CommunicationSoundComponent "{65D13D07B02A55BD}" {
    Filenames {
-    "{8DEFEA60355EB3C0}Sounds/TimeTrial/RangeOfficer.acp"
+    "{8DEFEA60355EB3C0}Sounds/TimeTrial/RangeOfficer.acp" "{264EB3622C550C32}Sounds/TimeTrial/RangeOfficer2.acp"
    }
    IncludeInactive 1
   }

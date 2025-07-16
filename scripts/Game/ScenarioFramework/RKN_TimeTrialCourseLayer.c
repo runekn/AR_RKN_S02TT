@@ -17,6 +17,9 @@ class RKN_TimeTrialCourseLayer : SCR_ScenarioFrameworkLayerBase
 	[Attribute(category: "Time trial")]
 	ref array<ref SCR_ScenarioFrameworkActionBase> m_aOnFinishActions;
 	
+	[Attribute(category: "Time trial")]
+	ref array<ref SCR_ScenarioFrameworkActionBase> m_aOnFailActions;
+	
 	ref ScriptInvoker m_OnCancel = new ScriptInvoker();
 	ref ScriptInvoker m_OnReset = new ScriptInvoker();
 	ref ScriptInvoker m_OnSchedule = new ScriptInvoker();
@@ -34,7 +37,7 @@ class RKN_TimeTrialCourseLayer : SCR_ScenarioFrameworkLayerBase
 		return super.InitOtherThings();
 	}
 	
-	void CancelCourse()
+	void CancelCourse(bool actions = true)
 	{
 		GetCourseManager().StopTime(m_iCourseIndex, true);
 		GetGame().GetCallqueue().Remove(StartCourse);
@@ -43,8 +46,9 @@ class RKN_TimeTrialCourseLayer : SCR_ScenarioFrameworkLayerBase
 		FindPlayerUIComponent(GetGame().GetPlayerManager().GetPlayerControlledEntity(data.m_CurrentScoreInfo.m_iID)).RemoveScoreTable(m_iCourseIndex, true);
 		m_iActiveSection = 0;
 		m_OnCancel.Invoke();
-		foreach (SCR_ScenarioFrameworkActionBase action : m_aOnCancelActions)
-			action.Init(GetOwner());
+		if (actions)
+			foreach (SCR_ScenarioFrameworkActionBase action : m_aOnCancelActions)
+				action.Init(GetOwner());
 		GetCourseManager().ClearCurrentScore(m_iCourseIndex);
 	}
 	
@@ -93,7 +97,9 @@ class RKN_TimeTrialCourseLayer : SCR_ScenarioFrameworkLayerBase
 	void FailCourse()
 	{
 		Print("RKN_TimeTrialCourseLayer: Fail!");
-		CancelCourse();
+		foreach (SCR_ScenarioFrameworkActionBase action : m_aOnFailActions)
+			action.Init(GetOwner());
+		CancelCourse(false);
 	}
 	
 	void RegisterSection(RKN_TimeTrialSectionLayer section)

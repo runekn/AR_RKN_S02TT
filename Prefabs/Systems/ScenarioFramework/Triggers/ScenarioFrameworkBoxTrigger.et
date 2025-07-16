@@ -1,7 +1,7 @@
 SCR_ScenarioFrameworkTriggerEntity : "{DA58C3DF4455555E}Prefabs/Systems/ScenarioFramework/Triggers/ScenarioFrameworkTrigger.et" {
  ID "6118D65AAA7232D5"
  TriggerShapeType "Oriented Bounding Box"
- BoxMins -1.5 -0.5 -1
- BoxMaxs 1.5 2 1
+ BoxMins -0.5 -0.5 -1
+ BoxMaxs 0.5 2 1
  DrawShape 0
 }

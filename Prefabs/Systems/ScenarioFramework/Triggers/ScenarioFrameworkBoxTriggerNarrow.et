@@ -1,0 +1,8 @@
+SCR_ScenarioFrameworkTriggerEntity : "{5D1A95FADACF19B0}Prefabs/Systems/ScenarioFramework/Triggers/ScenarioFrameworkBoxTrigger.et" {
+ ID "6118D65AAA7232D5"
+ coords 4553.334 17.39 10736.459
+ angleY -5.393
+ BoxMins -0.5 -0.5 -1
+ BoxMaxs 0.5 2 1
+ DrawShape 0
+}

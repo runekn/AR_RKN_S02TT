@@ -48,6 +48,18 @@ GenericEntity {
      }
     }
    }
+   m_aOnFailActions {
+    RKN_TimeTrialVoiceLine "{65E11C3F84EB1079}" {
+     m_sLineName "FAIL"
+     m_PlayerGetter SCR_ScenarioFrameworkGetPlayerEntity "{65E11C3FBD793036}" {
+     }
+    }
+    RKN_ActionPlaySoundOnEntity "{65E147B4038EC275}" {
+     m_RknGetter RKN_TimeTrialGetConsole "{65D6F2ECC8490D81}" {
+     }
+     m_sSound "SOUND_RANGECP_ROUNDABORT"
+    }
+   }
   }
   Hierarchy "{65BA6C59A6D6F006}" {
   }

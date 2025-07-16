@@ -3,7 +3,7 @@ class RKN_Get
 {	
 	SCR_ScenarioFrameworkParamBase Get(IEntity owner);
 	
-	static SCR_ScenarioFrameworkParam<IEntity> findComponentInChildren(IEntity parent, typename component)
+	static SCR_ScenarioFrameworkParam<IEntity> FindComponentInChildren(IEntity parent, typename component)
 	{
 		IEntity entity = parent.GetChildren();
 		while (entity)
@@ -11,7 +11,7 @@ class RKN_Get
 			Managed slot = entity.FindComponent(component);
 			if (slot)
 				return new SCR_ScenarioFrameworkParam<IEntity>(entity);
-			SCR_ScenarioFrameworkParam<IEntity> r = findComponentInChildren(entity, component);
+			SCR_ScenarioFrameworkParam<IEntity> r = FindComponentInChildren(entity, component);
 			if (r)
 				return r;
 			entity = entity.GetSibling();
@@ -19,7 +19,7 @@ class RKN_Get
 		return null;
 	}
 	
-	static SCR_ScenarioFrameworkParam<IEntity> findChild(IEntity parent, typename entityType)
+	static SCR_ScenarioFrameworkParam<IEntity> FindChild(IEntity parent, typename entityType)
 	{
 		IEntity entity = parent.GetChildren();
 		while (entity)
@@ -27,7 +27,7 @@ class RKN_Get
 			
 			if (entity.Type() == entityType)
 				return new SCR_ScenarioFrameworkParam<IEntity>(entity);
-			SCR_ScenarioFrameworkParam<IEntity> r = findChild(entity, entityType);
+			SCR_ScenarioFrameworkParam<IEntity> r = FindChild(entity, entityType);
 			if (r)
 				return r;
 			entity = entity.GetSibling();
@@ -35,7 +35,7 @@ class RKN_Get
 		return null;
 	}
 	
-	protected SCR_ScenarioFrameworkParam<IEntity> findComponentInParents(IEntity owner, typename component)
+	static SCR_ScenarioFrameworkParam<IEntity> FindComponentInParents(IEntity owner, typename component)
 	{
 		while (owner != null)
 		{
@@ -75,7 +75,7 @@ class RKN_TimeTrialGetSectionParent : RKN_Get
 {	
 	override SCR_ScenarioFrameworkParamBase Get(IEntity owner)
 	{
-		return findComponentInParents(owner, RKN_TimeTrialSectionLayer);
+		return FindComponentInParents(owner, RKN_TimeTrialSectionLayer);
 	}
 }
 
@@ -88,7 +88,7 @@ class RKN_TimeTrialGetShooterPosition : RKN_TimeTrialGetSectionParent
 		if (!parentBase)
 			return null;
 		IEntity entity = SCR_ScenarioFrameworkParam<IEntity>.Cast(parentBase).GetValue();
-		return findComponentInChildren(entity, RKN_TimeTrialShooterPositionSlot);
+		return FindComponentInChildren(entity, RKN_TimeTrialShooterPositionSlot);
 	}
 }
 
@@ -97,7 +97,7 @@ class RKN_TimeTrialGetConsole : RKN_Get
 {	
 	override SCR_ScenarioFrameworkParamBase Get(IEntity owner)
 	{
-		SCR_ScenarioFrameworkParam<IEntity> param = findComponentInChildren(owner, RKN_TimeTrialConsoleSlot);
+		SCR_ScenarioFrameworkParam<IEntity> param = FindComponentInChildren(owner, RKN_TimeTrialConsoleSlot);
 		if (!param)
 			return null;
 		return new SCR_ScenarioFrameworkParam<IEntity>(RKN_TimeTrialConsoleSlot.Cast(param.GetValue().FindComponent(RKN_TimeTrialConsoleSlot)).GetSpawnedEntity());

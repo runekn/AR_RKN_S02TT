@@ -80,6 +80,11 @@ class RKN_TimeTrialScoreInfo
 		return SCR_PlayerNamesFilterCache.GetInstance().GetPlayerDisplayName(m_iID);
 	}
 	
+	IEntity GetPlayer()
+	{
+		return GetGame().GetPlayerManager().GetPlayerControlledEntity(m_iID);
+	}
+	
 	int GetTime()
 	{
 		if (!m_iStart)

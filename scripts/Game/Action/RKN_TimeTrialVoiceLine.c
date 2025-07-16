@@ -4,7 +4,12 @@
 class RKN_TimeTrialVoiceLine : SCR_ScenarioFrameworkActionVoiceOverPlayLine
 {
 	[Attribute("{62AA1DC9919E6E61}Prefabs/TimeTrial_Radio_ANPRC68.et", params: "et")]
-	private ResourceName m_sRadioPrefab;
+	ResourceName m_sRadioPrefab;
+	
+	[Attribute("false")]
+	bool m_bResetNumberOfActivations;
+	
+	RKN_TimeTrialCourseLayer m_Course;
 	
 	override bool ValidateInputEntity(IEntity object, SCR_ScenarioFrameworkGet getter, out IEntity entity)
 	{
@@ -30,21 +35,37 @@ class RKN_TimeTrialVoiceLine : SCR_ScenarioFrameworkActionVoiceOverPlayLine
 		}
 		else
 		{
-			RKN_TimeTrialCourseLayer course = RKN_TimeTrialCourseLayer.Cast(object.FindComponent(RKN_TimeTrialCourseLayer));
-			RKN_TimeTrialObjectiveSlot obj = RKN_TimeTrialObjectiveSlot.Cast(object.FindComponent(RKN_TimeTrialObjectiveSlot));
-			RKN_TimeTrialSectionLayer section = RKN_TimeTrialSectionLayer.Cast(object.FindComponent(RKN_TimeTrialSectionLayer));
-			if (obj)
-				course = obj.m_Section.m_Course;
-			else if (section)
-				course = section.m_Course;
-			
-			if (!course)
+			if (!m_Course)
 			{
-				Print("No course found", LogLevel.ERROR);
-				return false;
+				m_Course = RKN_TimeTrialCourseLayer.Cast(object.FindComponent(RKN_TimeTrialCourseLayer));
+				RKN_TimeTrialObjectiveSlot obj = RKN_TimeTrialObjectiveSlot.Cast(object.FindComponent(RKN_TimeTrialObjectiveSlot));
+				RKN_TimeTrialSectionLayer section = RKN_TimeTrialSectionLayer.Cast(object.FindComponent(RKN_TimeTrialSectionLayer));
+				if (obj)
+					m_Course = obj.m_Section.m_Course;
+				else if (section)
+					m_Course = section.m_Course;
+				
+				if (!m_Course)
+				{
+					SCR_ScenarioFrameworkParam<IEntity> param = RKN_Get.FindComponentInParents(object, RKN_TimeTrialCourseLayer);
+					if (param)
+						m_Course = RKN_TimeTrialCourseLayer.Cast(param.GetValue().FindComponent(RKN_TimeTrialCourseLayer));
+				}
+				
+				if (!m_Course)
+				{
+					Print("No course found", LogLevel.ERROR);
+					return false;
+				}
+				
+				if (m_bResetNumberOfActivations)
+				{
+					m_Course.m_OnReset.Insert(ResetNumberOfActivations);
+					m_Course.m_OnCancel.Insert(ResetNumberOfActivations);
+				}
 			}
-			
-			RKN_TimeTrialCourseData data = RKN_TimeTrialUtils.GetCourseManager().GetData(course.m_iCourseIndex);
+				
+			RKN_TimeTrialCourseData data = RKN_TimeTrialUtils.GetCourseManager().GetData(m_Course.m_iCourseIndex);
 			
 			if (!data.m_CurrentScoreInfo)
 			{
@@ -70,5 +91,10 @@ class RKN_TimeTrialVoiceLine : SCR_ScenarioFrameworkActionVoiceOverPlayLine
 		}
 		
 		return true;
+	}
+	
+	void ResetNumberOfActivations()
+	{
+		m_iNumberOfActivations = 0;
 	}
 }

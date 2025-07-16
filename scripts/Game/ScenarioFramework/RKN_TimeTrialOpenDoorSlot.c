@@ -33,7 +33,7 @@ class RKN_TimeTrialOpenDoorSlot : RKN_TimeTrialObjectiveSlot
 		if (entity.FindComponent(RKN_CallbackDoorComponent))
 			return RKN_CallbackDoorComponent.Cast(entity.FindComponent(RKN_CallbackDoorComponent));
 		
-		SCR_ScenarioFrameworkParam<IEntity> param = RKN_Get.findComponentInChildren(entity, RKN_CallbackDoorComponent);
+		SCR_ScenarioFrameworkParam<IEntity> param = RKN_Get.FindComponentInChildren(entity, RKN_CallbackDoorComponent);
 		if (!param)
 			return null;
 		return RKN_CallbackDoorComponent.Cast(param.GetValue().FindComponent(RKN_CallbackDoorComponent));

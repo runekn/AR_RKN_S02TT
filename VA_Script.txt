@@ -25,19 +25,19 @@ Finish section:
 	"Move on"
 	"Proceed"
 	"Clear"
-	"Clear the building" - New
-	"Sprint to the finish" - New
-	"Cross the finish line" - New
-	"One last checkpoint" - New
-	"Carry the ammo box to the marked spot" - New
-	"Drive the car to the next section" - New
-	"Use the vehicle to get to the next section" - New
-	"Fly to the next section" - New
-	"Get to the roof" - New
-	"Exit the building" - New
-	"Exit the building through the back door" - New
-	"Exit the building through the front entrance" - New
-	"Down the ladder" - New
+	"Clear the building"
+	"Sprint to the finish"
+	"Cross the finish line"
+	"One last checkpoint"
+	"Carry the ammo box to the marked spot"
+	"Drive the car to the next section"
+	"Use the vehicle to get to the next section"
+	"Fly to the next section"
+	"Get to the roof"
+	"Exit the building"
+	"Exit the building through the back door"
+	"Exit the building through the front entrance"
+	"Down the ladder"
 
 Finish course:
 	"I know you can do better"
@@ -48,14 +48,14 @@ Finish course:
 	"Good. Double back and try again"
 	"You're supposed to pretend that they might shoot back, so don't take all day." - New
 	"You're supposed to pretend that they might shoot back, in which case, you're dead." - New
-	"There's no shame in picking a different hobby" - New
-	"Stop hitting dirt. My pal Yuri worked hard on that." - New
-	"There's a lot to work on" - New
-	"Like that, but faster." - New
-	"You're doing good" - New
-	"Decent time" - New
-	"Could hardly have done it better myself" - New
-	"Your performance is stellar on this course" - New
+	"There's no shame in picking a different hobby"
+	"Stop hitting dirt. My pal Yuri worked hard on that."
+	"There's a lot to work on"
+	"Like that, but faster."
+	"You're doing good"
+	"Decent time"
+	"Could hardly have done it better myself"
+	"Your performance is stellar on this course"
 
 Misc:
 	"Faster!"
@@ -63,15 +63,15 @@ Misc:
 	"Speed up"
 	"Hit"
 	"Target down"
-	"Wait til you hear the buzzer" - New
-	"You jumped the gun" - New
+	"Wait til you hear the buzzer"
+	"You jumped the gun"
 	"Failed. Stay in the designated area until you've completed the section." - New
 	"Failed. Stay in the designated area until you hear the buzzer." - New
-	"Targets at long range" - New
-	"Jumpscare!" - New
-	"Ambush!" - New
-	"Fire at the range" - New
-	"Too slow" - New
+	"Targets at long range"
+	"Jumpscare!"
+	"Ambush!"
+	"Fire at the range"
+	"Too slow"
 	
 Requirements:
 	"Stand"
@@ -87,5 +87,5 @@ Requirements:
 	"Pistol"
 	"Rifle"
 	"Grenade"
-	"Machinegun" - New
-	"Precision rifle" - New
+	"Machinegun"
+	"Precision rifle"

@@ -68,6 +68,21 @@ StringTable {
    Author "Rune"
    LastChanged "Rune"
   }
+  CustomStringTableItem "{65E0BA89D0709DBF}" {
+   Id "AR-RKN_S02TT-Course_Lime1_Desc"
+   Target_en_us "1) Shoot all targets on or at the base of the walls."\
+   ""\
+   "2) Enter through the opened gate and engage those targets at the entrance."\
+   ""\
+   "3) Turn left and engage targets near the camping area."\
+   ""\
+   "4) Turn right and up the center ruins, and clear it."\
+   ""\
+   "5) Cross the bridge, clear the area, and open the cage."
+   Modified 1709231761
+   Author "Rune"
+   LastChanged "Rune"
+  }
   CustomStringTableItem "{65DA660CA6BF930A}" {
    Id "AR-RKN_S02TT-Course_Orange1_Desc"
    Target_en_us "1) Engage the targets to the left. Then proceed through the forest to the pond, by follwing the red barriers."\

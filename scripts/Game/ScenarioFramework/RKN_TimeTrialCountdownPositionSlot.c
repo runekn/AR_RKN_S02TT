@@ -8,6 +8,9 @@ class RKN_TimeTrialCountdownPositionSlot : SCR_ScenarioFrameworkSlotTrigger
 	[Attribute(category: "Time trial")]
 	ref RKN_Get m_CourseGetter;
 	
+	[Attribute(category: "Time trial")]
+	ref array<ref SCR_ScenarioFrameworkActionBase> m_aOnFailActions;
+	
 	RKN_TimeTrialCourseLayer m_Course;
 	
 	override void FinishInit()
@@ -48,6 +51,8 @@ class RKN_TimeTrialCountdownPositionSlot : SCR_ScenarioFrameworkSlotTrigger
 	{
 		TriggerState(false);
 		m_Course.FailCourse();
+		foreach (SCR_ScenarioFrameworkActionBase action : m_aOnFailActions)
+			action.Init(GetOwner());
 	}
 	
 	void TriggerState(bool state)

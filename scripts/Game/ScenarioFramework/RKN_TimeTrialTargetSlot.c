@@ -11,6 +11,9 @@ class RKN_TimeTrialTargetSlot : RKN_TimeTrialObjectiveSlot
 	[Attribute(category: "Time trial")]
 	ref array<ref RKN_TimeTrialTargetHitArea> m_aHitAreas;
 	
+	[Attribute(uiwidget: UIWidgets.Object, category: "Time trial")]
+	ref array<ref SCR_ScenarioFrameworkActivationConditionBase> m_aHitConditions;
+	
 	[Attribute("1", category: "Time trial")]
 	int m_iRequiredHits;
 	
@@ -111,6 +114,16 @@ class RKN_TimeTrialTargetSlot : RKN_TimeTrialObjectiveSlot
 	void OnTargetHit(string hitKey, int playerID)
 	{
 		GetGame().GetCallqueue().Remove(Timeout);
+		if (!m_aHitConditions.IsEmpty())
+		{
+			RKN_TimeTrialCourseManagerComponent manager = m_Section.m_Course.GetCourseManager();
+			IEntity player = manager.GetData(m_Section.m_Course.m_iCourseIndex).m_CurrentScoreInfo.GetPlayer();
+			if (!SCR_ScenarioFrameworkActivationConditionBase.EvaluateEmptyOrConditions(SCR_EScenarioFrameworkLogicOperators.AND, m_aHitConditions, player))
+			{
+				m_Section.m_Course.FailCourse();
+				return;
+			}
+		}
 		int score = m_mHitAreasMap.Get(hitKey);
 		if (score > 0)
 			m_Section.m_Course.ApplyScoreModifier(-score);
