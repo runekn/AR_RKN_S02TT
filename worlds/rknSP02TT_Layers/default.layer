@@ -1,3 +1,6 @@
+GenericEntity : "{73CAB2F3F13CE291}Prefabs/TimeTrial/IndestructableCone.et" {
+ coords 4167.351 37.687 7799.253
+}
 $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Components/Area.et" {
  CourseRed_area {
   coords 7456.157 137.034 4749.71
@@ -61,6 +64,11 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
       RKN_TimeTrialCourseLayer "{65BA6C59A0F2E93C}" {
        m_sCourseId "red1"
        m_aOnScheduleActions {
+        RKN_TimeTrialVoiceLine "{65D6F2F86A414579}" {
+         m_sLineName "START"
+         m_PlayerGetter SCR_ScenarioFrameworkGetPlayerEntity "{65D13D070B6FA4A6}" {
+         }
+        }
         SCR_ScenarioFrameworkActionRestoreLayerToDefault "{65D110D0E559682D}" {
          m_Getter SCR_ScenarioFrameworkGetLayerBase "{65D110DED220D5E5}" {
           m_sLayerBaseName "Red1CloseDoors"
@@ -122,6 +130,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
              }
             }
            }
+           Hierarchy "{65BAA09C8ABA6D44}" {
+           }
           }
           coords 0.297 0.192 -3.609
          }
@@ -173,6 +183,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
            }
           }
          }
+         Hierarchy "{65BA6C5982D310F0}" {
+         }
         }
         coords 12.787 0 26.054
         {
@@ -218,6 +230,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
               }
              }
             }
+           }
+           Hierarchy "{65BAA09C8ABA6D44}" {
            }
           }
           coords -1.82 -0.917 -1.322
@@ -376,6 +390,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
            }
           }
          }
+         Hierarchy "{65BA6C5982D310F0}" {
+         }
         }
         coords 12.74 0.712 13.544
         {
@@ -483,6 +499,11 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
       RKN_TimeTrialCourseLayer "{65BA6C59A0F2E93C}" {
        m_sCourseId "red2"
        m_aOnScheduleActions {
+        RKN_TimeTrialVoiceLine "{65D6F2F86A414579}" {
+         m_sLineName "START"
+         m_PlayerGetter SCR_ScenarioFrameworkGetPlayerEntity "{65D13D070B6FA4A6}" {
+         }
+        }
         SCR_ScenarioFrameworkActionRestoreLayerToDefault "{65D6AAAE80E6A1FD}" {
          m_Getter SCR_ScenarioFrameworkGetLayerBase "{65D6AAAE829571D2}" {
           m_sLayerBaseName "Red2DoorCloser"
@@ -768,6 +789,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
              }
             }
            }
+           Hierarchy "{65BAA09C8ABA6D44}" {
+           }
           }
           coords 4.074 -0.014 -1.599
           angleY 118.41
@@ -878,6 +901,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
              }
             }
            }
+           Hierarchy "{65BAA09C8ABA6D44}" {
+           }
           }
           coords -6.79 0.153 -5.041
          }
@@ -981,6 +1006,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
            }
           }
          }
+         Hierarchy "{65BA6C5982D310F0}" {
+         }
         }
         coords -54.752 -3.022 6.282
         {
@@ -999,6 +1026,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
               }
              }
             }
+           }
+           Hierarchy "{65BAA09C8ABA6D44}" {
            }
           }
           coords 0.061 0.327 -8.497
@@ -1112,6 +1141,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
               }
              }
             }
+           }
+           Hierarchy "{65BAA09C8ABA6D44}" {
            }
           }
           coords -2.699 1.437 1.168
@@ -1401,6 +1432,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
              }
             }
            }
+           Hierarchy "{65BAA09C8ABA6D44}" {
+           }
           }
           coords 7.245 0.742 2.386
           angleY -107.584
@@ -1607,6 +1640,11 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
       RKN_TimeTrialCourseLayer "{65BA6C59A0F2E93C}" {
        m_sCourseId "red3"
        m_aOnScheduleActions {
+        RKN_TimeTrialVoiceLine "{65D6F2F86A414579}" {
+         m_sLineName "START"
+         m_PlayerGetter SCR_ScenarioFrameworkGetPlayerEntity "{65D13D070B6FA4A6}" {
+         }
+        }
         SCR_ScenarioFrameworkActionRestoreLayerToDefault "{65D6F2F108C7A667}" {
          m_Getter SCR_ScenarioFrameworkGetLayerBase "{65D6F2F10B643086}" {
           m_sLayerBaseName "Red3DoorCloser1"
@@ -2324,6 +2362,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
            }
           }
          }
+         Hierarchy "{65BA6C5982D310F0}" {
+         }
         }
         coords 0.871 0 0.916
         {
@@ -2464,6 +2504,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
            }
           }
          }
+         Hierarchy "{65BA6C5982D310F0}" {
+         }
         }
         coords 22.964 0.06 6.681
         {
@@ -2479,6 +2521,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
              }
              m_sObjectToSpawn "{DA58C3DF4455555E}Prefabs/Systems/ScenarioFramework/Triggers/ScenarioFrameworkTrigger.et"
              m_bCountInUI 1
+            }
+            Hierarchy "{65BAA09C8ABA6D44}" {
             }
            }
            coords 99.173 0.344 17.224
@@ -2500,6 +2544,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
              }
              m_bCountInUI 1
             }
+            Hierarchy "{65BAA09C8ABA6D44}" {
+            }
            }
            coords 65.938 28.925 -434.319
           }
@@ -2520,6 +2566,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
              }
              m_bCountInUI 1
             }
+            Hierarchy "{65BAA09C8ABA6D44}" {
+            }
            }
            coords -5.46 26.701 -444.284
           }
@@ -2534,6 +2582,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             m_sLineName "ROOF"
            }
           }
+         }
+         Hierarchy "{65BA6C5982D310F0}" {
          }
         }
         coords 8.813 26.704 -411.691
@@ -2759,6 +2809,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
            }
           }
          }
+         Hierarchy "{65BA6C5982D310F0}" {
+         }
         }
         coords 10.669 34.226 -462.802
         {
@@ -2772,6 +2824,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
               }
              }
             }
+           }
+           Hierarchy "{65BAA09C8ABA6D44}" {
            }
           }
           coords 0.479 0 -0.282
@@ -3764,6 +3818,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             }
            }
           }
+          Hierarchy "{65BAA09C8ABA6D44}" {
+          }
          }
          coords 0 0 0
         }
@@ -4359,6 +4415,11 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
       m_iDynamicDespawnRange 741
       m_sCourseId "yellow1"
       m_aOnScheduleActions {
+       RKN_TimeTrialVoiceLine "{65D6F2F86A414579}" {
+        m_sLineName "START"
+        m_PlayerGetter SCR_ScenarioFrameworkGetPlayerEntity "{65D13D070B6FA4A6}" {
+        }
+       }
        SCR_ScenarioFrameworkActionRestoreLayerToDefault "{65DA6623885CA9B2}" {
         m_Getter SCR_ScenarioFrameworkGetLayerBase "{65DA66238A0252DC}" {
          m_sLayerBaseName "Yellow1DoorCloser"
@@ -4697,6 +4758,10 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
          angleZ 4.84
         }
        }
+       GenericEntity : "{91E4D4CBB097A9C1}Prefabs/Props/Forest/DeerSkull_01/DeerSkull_01.et" {
+        coords 4.685 0.3 6.526
+        angleY 58.257
+       }
        GenericEntity : "{CFB893B8084ECD2B}Prefabs/Props/Furniture/Armchair_01.et" {
         coords -15.803 4.538 13.359
         angleY 170.253
@@ -4705,6 +4770,17 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
      }
      $grp GenericEntity : "{63F7CA06411FB0BE}Prefabs/TimeTrial/ScenarioFramework/TimeTrialSectionLayer.et" {
       Yellow1Section1 {
+       components {
+        RKN_TimeTrialSectionLayer "{65BA6C59BAF2330C}" {
+         m_aOnFinishActions {
+          RKN_TimeTrialVoiceLine "{65D2F04835CDD115}" {
+           m_sLineName "EXIT_BACKDOOR"
+          }
+         }
+        }
+        Hierarchy "{65BA6C5982D310F0}" {
+        }
+       }
        coords 0 0 0
        {
         $grp GenericEntity : "{5128F9666E234EFC}Prefabs/TimeTrial/ScenarioFramework/TImeTrialShooterPositionSlot.et" {
@@ -4726,6 +4802,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
               }
              }
             }
+           }
+           Hierarchy "{65BAA09C8ABA6D44}" {
            }
           }
           coords 1.44 1.44 -16.278
@@ -4877,6 +4955,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
            m_sObjectToSpawn "{DA58C3DF4455555E}Prefabs/Systems/ScenarioFramework/Triggers/ScenarioFrameworkTrigger.et"
            m_bFailIfExitBeforeSectionCompletion 1
           }
+          Hierarchy "{65BAA09C8ABA6D44}" {
+          }
          }
          coords 0.069 0 0.274
         }
@@ -4898,10 +4978,11 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
               m_sEntityName "CourseYellowRitualTarget8"
              }
             }
+            m_iTimeoutSeconds 4
            }
           }
-          coords -3.067 0.001 1.598
-          angleY 112.674
+          coords -2.933 0.001 1.474
+          angleY 107.748
          }
          CourseYellowRitualTarget6 {
           components {
@@ -4911,6 +4992,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
               m_sEntityName "CourseYellowRitualTarget10"
              }
             }
+            m_iTimeoutSeconds 4
            }
           }
           coords -1.909 0.001 2.695
@@ -4924,6 +5006,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
               m_sEntityName "CourseYellowRitualTarget2"
              }
             }
+            m_iTimeoutSeconds 4
            }
           }
           coords -0.284 0.001 3.369
@@ -4935,9 +5018,10 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             m_DependentObjectiveGetter RKN_TimeTrialGetShooterPosition "{65D91E107353D83E}" {
             }
             m_fActivationDelaySeconds 2
+            m_iTimeoutSeconds 4
            }
           }
-          coords 1.654 0.001 3.29
+          coords 1.407 0.001 3.313
           angleY -159.729
          }
          CourseYellowRitualTarget9 {
@@ -4948,9 +5032,10 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
               m_sEntityName "CourseYellowRitualTarget4"
              }
             }
+            m_iTimeoutSeconds 4
            }
           }
-          coords 2.97 0.001 1.894
+          coords 2.91 0.001 1.994
           angleY -122.49
          }
          CourseYellowRitualTarget10 {
@@ -4961,10 +5046,11 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
               m_sEntityName "CourseYellowRitualTarget9"
              }
             }
+            m_iTimeoutSeconds 4
            }
           }
-          coords 3.378 0.001 -0.284
-          angleY -78.672
+          coords 3.312 0.001 -0.052
+          angleY -84.361
          }
          CourseYellowRitualTarget5 {
           components {
@@ -4974,10 +5060,11 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
               m_sEntityName "CourseYellowRitualTarget2"
              }
             }
+            m_iTimeoutSeconds 4
            }
           }
-          coords 2.338 0.001 -2.011
-          angleY -47.239
+          coords 2.477 0.001 -1.633
+          angleY -50.41
          }
          CourseYellowRitualTarget4 {
           components {
@@ -4987,10 +5074,11 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
               m_sEntityName "CourseYellowRitualTarget1"
              }
             }
+            m_iTimeoutSeconds 4
            }
           }
-          coords 0.484 0.001 -2.909
-          angleY -10.814
+          coords 0.855 0.001 -2.642
+          angleY -16.039
          }
          CourseYellowRitualTarget2 {
           components {
@@ -5000,10 +5088,11 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
               m_sEntityName "CourseYellowRitualTarget6"
              }
             }
+            m_iTimeoutSeconds 4
            }
           }
-          coords -1.026 0.022 -2.689
-          angleY 23.52
+          coords -0.656 0.022 -2.651
+          angleY 12.897
          }
          CourseYellowRitualTarget3 {
           components {
@@ -5013,6 +5102,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
               m_sEntityName "CourseYellowRitualTarget7"
              }
             }
+            m_iTimeoutSeconds 4
            }
           }
           coords -2.333 -0.037 -0.954
@@ -5099,6 +5189,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
            m_sLineName "FINISHLINE"
           }
          }
+        }
+        Hierarchy "{65BA6C5982D310F0}" {
         }
        }
        coords -9.888 2.179 -44.532
@@ -5393,6 +5485,11 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
      RKN_TimeTrialCourseLayer "{65BA6C59A0F2E93C}" {
       m_sCourseId "orange1"
       m_aOnScheduleActions {
+       RKN_TimeTrialVoiceLine "{65D6F2F86A414579}" {
+        m_sLineName "START"
+        m_PlayerGetter SCR_ScenarioFrameworkGetPlayerEntity "{65D13D070B6FA4A6}" {
+        }
+       }
        SCR_ScenarioFrameworkActionDeleteEntity "{65DA663780B3F1AB}" {
         m_Getter SCR_ScenarioFrameworkGetEntityByName "{65DA6637A8E298E2}" {
          m_sEntityName "Orange1CarEntity"
@@ -5808,6 +5905,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
           }
          }
         }
+        Hierarchy "{65BA6C5982D310F0}" {
+        }
        }
        coords 0 0 0
        {
@@ -5985,6 +6084,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
           }
          }
         }
+        Hierarchy "{65BA6C5982D310F0}" {
+        }
        }
        coords 27.882 -3.193 -16.825
        {
@@ -6073,6 +6174,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             m_sObjectToSpawn "{DA58C3DF4455555E}Prefabs/Systems/ScenarioFramework/Triggers/ScenarioFrameworkTrigger.et"
             m_bCountInUI 1
            }
+           Hierarchy "{65BAA09C8ABA6D44}" {
+           }
           }
           coords 466.795 -86.376 266.563
          }
@@ -6092,6 +6195,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
              }
             }
             m_bCountInUI 1
+           }
+           Hierarchy "{65BAA09C8ABA6D44}" {
            }
           }
           coords 978.25 -70.369 195.373
@@ -6113,6 +6218,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             }
             m_bCountInUI 1
            }
+           Hierarchy "{65BAA09C8ABA6D44}" {
+           }
           }
           coords 859.015 -109.103 439.708
          }
@@ -6132,6 +6239,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
              }
             }
            }
+          }
+          Hierarchy "{65BAA09C8ABA6D44}" {
           }
          }
          coords 4.824 0.316 0.499
@@ -7130,6 +7239,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             }
             m_bFailIfExitBeforeSectionCompletion 1
            }
+           Hierarchy "{65BAA09C8ABA6D44}" {
+           }
           }
           coords 0 0 0
          }
@@ -7280,6 +7391,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             }
             m_bFailIfExitBeforeSectionCompletion 1
            }
+           Hierarchy "{65BAA09C8ABA6D44}" {
+           }
           }
           coords 0 0 0
          }
@@ -7414,6 +7527,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
              }
             }
             m_bFailIfExitBeforeSectionCompletion 1
+           }
+           Hierarchy "{65BAA09C8ABA6D44}" {
            }
           }
           coords 0 0 0.001
@@ -7689,6 +7804,15 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
           }
           m_fRespawnTime 2
           m_aActionsOnSpawnPointUsed {
+           SCR_ScenarioFrameworkActionAddItemToInventory "{65D13D05E82B0EE5}" {
+            m_Getter SCR_ScenarioFrameworkGetPlayerEntity "{65DA6662C5017366}" {
+            }
+            m_aPrefabFilter {
+             SCR_ScenarioFrameworkPrefabFilterCountNoInheritance "{65D13D051D4AB209}" {
+              m_sPrefabName "{62AA1DC9919E6E61}Prefabs/TimeTrial_Radio_ANPRC68.et"
+             }
+            }
+           }
            SCR_ScenarioFrameworkActionWaitAndExecute "{65D4578C0338490E}" {
             m_aActions {
              RKN_TimeTrialVoiceSequence "{65D4578C358DB38D}" {
@@ -7700,6 +7824,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
               }
              }
             }
+           }
+           RKN_PermanentlyEnableFastTravelAction "{65D85ED91D850880}" {
            }
            SCR_ScenarioFrameworkActionShowHint "{65DA6611281FD13C}" {
             m_iMaxNumberOfActivations 0
@@ -7802,6 +7928,11 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
       RKN_TimeTrialCourseLayer "{65BA6C59A0F2E93C}" {
        m_sCourseId "black1"
        m_aOnScheduleActions {
+        RKN_TimeTrialVoiceLine "{65D6F2F86A414579}" {
+         m_sLineName "START"
+         m_PlayerGetter SCR_ScenarioFrameworkGetPlayerEntity "{65D13D070B6FA4A6}" {
+         }
+        }
         SCR_ScenarioFrameworkActionRestoreLayerToDefault "{65DE9B68219C78BB}" {
          m_Getter SCR_ScenarioFrameworkGetLayerBase "{65DE9B682357F242}" {
           m_sLayerBaseName "Black1DoorCloser"
@@ -8174,13 +8305,16 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
          angleY -90
          {
           GenericEntity {
-           ID "5D3706BD6662CCED"
            {
             GenericEntity {
-             ID "5E6A90B022FE573D"
              components {
+              SCR_EditableEntityVisibilityChildComponent "{5E6A90B0246F70E2}" {
+               m_State 96
+              }
               SCR_SupportStationAreaMeshComponent "{5E6A90B0246F70C8}" {
                Enabled 0
+              }
+              Hierarchy "{5E6A90B0246F70C3}" {
               }
              }
             }
@@ -9258,6 +9392,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
            }
           }
          }
+         Hierarchy "{65BA6C5982D310F0}" {
+         }
         }
         coords -119.144 14.722 -108.364
         {
@@ -9534,6 +9670,11 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
        m_eActivationType ON_TRIGGER_ACTIVATION
        m_sCourseId "black2"
        m_aOnScheduleActions {
+        RKN_TimeTrialVoiceLine "{65D6F2F86A414579}" {
+         m_sLineName "START"
+         m_PlayerGetter SCR_ScenarioFrameworkGetPlayerEntity "{65D13D070B6FA4A6}" {
+         }
+        }
         SCR_ScenarioFrameworkActionRestoreLayerToDefault "{65DE9B1A48A62BF8}" {
          m_Getter SCR_ScenarioFrameworkGetLayerBase "{65DE9B1A4B2AC6D3}" {
           m_sLayerBaseName "Black2DoorCloser"
@@ -10245,6 +10386,11 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
       RKN_TimeTrialCourseLayer "{65BA6C59A0F2E93C}" {
        m_sCourseId "black3"
        m_aOnScheduleActions {
+        RKN_TimeTrialVoiceLine "{65D6F2F86A414579}" {
+         m_sLineName "START"
+         m_PlayerGetter SCR_ScenarioFrameworkGetPlayerEntity "{65D13D070B6FA4A6}" {
+         }
+        }
         SCR_ScenarioFrameworkActionRestoreLayerToDefault "{65E0F614A73328D5}" {
          m_Getter SCR_ScenarioFrameworkGetLayerBase "{65E0F614A18C916A}" {
           m_sLayerBaseName "Black3DoorCloser"
@@ -10826,6 +10972,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             m_sObjectToSpawn "{0D5D5B4A4103DE7C}Prefabs/Systems/ScenarioFramework/Triggers/ScenarioFrameworkBoxTriggerNarrow.et"
             m_bFailIfExitBeforeSectionCompletion 1
            }
+           Hierarchy "{65BAA09C8ABA6D44}" {
+           }
           }
           coords -0.24 -0.026 4.019
           angleY -6.084
@@ -10936,6 +11084,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
              }
             }
             m_bFailIfExitBeforeSectionCompletion 1
+           }
+           Hierarchy "{65BAA09C8ABA6D44}" {
            }
           }
           coords 8.886 0.597 2.073
@@ -11078,6 +11228,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             }
             m_bFailIfExitBeforeSectionCompletion 1
            }
+           Hierarchy "{65BAA09C8ABA6D44}" {
+           }
           }
           coords -4.637 -0.314 -0.393
           angleY 89.011
@@ -11175,6 +11327,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             }
             m_bFailIfExitBeforeSectionCompletion 1
            }
+           Hierarchy "{65BAA09C8ABA6D44}" {
+           }
           }
           coords -1.331 -0.003 -4.386
           angleY 173.589
@@ -11262,6 +11416,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
              }
             }
             m_bFailIfExitBeforeSectionCompletion 1
+           }
+           Hierarchy "{65BAA09C8ABA6D44}" {
            }
           }
           coords 0.333 -0.019 -4.876
@@ -11370,6 +11526,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
               }
              }
             }
+           }
+           Hierarchy "{65BAA09C8ABA6D44}" {
            }
           }
           coords 0.998 0.337 -4.987
@@ -11511,6 +11669,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             }
             m_bFailIfExitBeforeSectionCompletion 1
            }
+           Hierarchy "{65BAA09C8ABA6D44}" {
+           }
           }
           coords 1.072 0.118 -4.779
           angleY 168.417
@@ -11593,6 +11753,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             }
             m_sObjectToSpawn "{DA58C3DF4455555E}Prefabs/Systems/ScenarioFramework/Triggers/ScenarioFrameworkTrigger.et"
             m_bFailIfExitBeforeSectionCompletion 1
+           }
+           Hierarchy "{65BAA09C8ABA6D44}" {
            }
           }
           coords 0.265 0.008 -0.191
@@ -11731,6 +11893,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
            }
           }
          }
+         Hierarchy "{65BA6C5982D310F0}" {
+         }
         }
         coords -96.351 -4.987 -17.586
         {
@@ -11761,6 +11925,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             }
             m_sObjectToSpawn "{DA58C3DF4455555E}Prefabs/Systems/ScenarioFramework/Triggers/ScenarioFrameworkTrigger.et"
             m_bFailIfExitBeforeSectionCompletion 1
+           }
+           Hierarchy "{65BAA09C8ABA6D44}" {
            }
           }
           coords 0.076 0.008 -0.542
@@ -11991,6 +12157,11 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
      RKN_TimeTrialCourseLayer "{65BA6C59A0F2E93C}" {
       m_sCourseId "lime1"
       m_aOnScheduleActions {
+       RKN_TimeTrialVoiceLine "{65D6F2F86A414579}" {
+        m_sLineName "START"
+        m_PlayerGetter SCR_ScenarioFrameworkGetPlayerEntity "{65D13D070B6FA4A6}" {
+        }
+       }
        SCR_ScenarioFrameworkActionRestoreLayerToDefault "{65E055DC1A7D1BA7}" {
         m_Getter SCR_ScenarioFrameworkGetLayerBase "{65E055DC14D4EDB1}" {
          m_sLayerBaseName "Lime1DoorCloser"
@@ -12388,6 +12559,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
            }
           }
          }
+        }
+        Hierarchy "{65BA6C5982D310F0}" {
         }
        }
        coords 26.217 11.623 -13.608

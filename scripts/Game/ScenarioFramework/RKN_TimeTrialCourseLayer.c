@@ -42,14 +42,8 @@ class RKN_TimeTrialCourseLayer : SCR_ScenarioFrameworkLayerBase
 		GetCourseManager().StopTime(m_iCourseIndex, true);
 		GetGame().GetCallqueue().Remove(StartCourse);
 		GetGame().GetCallqueue().Remove(ResetRun);
-		RKN_TimeTrialCourseData data = GetCourseManager().GetData(m_iCourseIndex);
-		FindPlayerUIComponent(GetGame().GetPlayerManager().GetPlayerControlledEntity(data.m_CurrentScoreInfo.m_iID)).RemoveScoreTable(m_iCourseIndex, true);
-		m_iActiveSection = 0;
 		m_OnCancel.Invoke();
-		if (actions)
-			foreach (SCR_ScenarioFrameworkActionBase action : m_aOnCancelActions)
-				action.Init(GetOwner());
-		GetCourseManager().ClearCurrentScore(m_iCourseIndex);
+		GetGame().GetCallqueue().CallLater(ResetRun, 1000, false, actions);
 	}
 	
 	void ScheduleCourse(int playerId, int delay, bool competitive)
@@ -94,11 +88,12 @@ class RKN_TimeTrialCourseLayer : SCR_ScenarioFrameworkLayerBase
 		ActivateNextSectionOrFinish();
 	}
 	
-	void FailCourse()
+	void FailCourse(bool actions = true)
 	{
 		Print("RKN_TimeTrialCourseLayer: Fail!");
-		foreach (SCR_ScenarioFrameworkActionBase action : m_aOnFailActions)
-			action.Init(GetOwner());
+		if (actions)
+			foreach (SCR_ScenarioFrameworkActionBase action : m_aOnFailActions)
+				action.Init(GetOwner());
 		CancelCourse(false);
 	}
 	
@@ -123,7 +118,7 @@ class RKN_TimeTrialCourseLayer : SCR_ScenarioFrameworkLayerBase
 	private void FinishCourse()
 	{
 		GetCourseManager().StopTime(m_iCourseIndex, false);
-		GetGame().GetCallqueue().CallLater(ResetRun, 5000, false);
+		GetGame().GetCallqueue().CallLater(ResetRun, 5000, false, false);
 		m_OnFinish.Invoke();
 		foreach (SCR_ScenarioFrameworkActionBase action : m_aOnFinishActions)
 			action.Init(GetOwner());
@@ -137,14 +132,18 @@ class RKN_TimeTrialCourseLayer : SCR_ScenarioFrameworkLayerBase
 			GetCourseManager().ApplyBonus(m_iCourseIndex, -mod);
 	}
 	
-	private void ResetRun()
+	private void ResetRun(bool cancelActions)
 	{
 		Print("RKN_TimeTrialCourseLayer: ResetRun");
 		RKN_TimeTrialCourseData data = GetCourseManager().GetData(m_iCourseIndex);
 		FindPlayerUIComponent(GetGame().GetPlayerManager().GetPlayerControlledEntity(data.m_CurrentScoreInfo.m_iID)).RemoveScoreTable(m_iCourseIndex, true);
 		GetCourseManager().ClearCurrentScore(m_iCourseIndex);
 		m_iActiveSection = 0;
-		m_OnReset.Invoke();
+		if (cancelActions)
+			foreach (SCR_ScenarioFrameworkActionBase action : m_aOnCancelActions)
+				action.Init(GetOwner());
+		else
+			m_OnReset.Invoke();
 	}
 	
 	RKN_TimeTrialScoreTablePlayerComponent FindPlayerUIComponent(IEntity player)

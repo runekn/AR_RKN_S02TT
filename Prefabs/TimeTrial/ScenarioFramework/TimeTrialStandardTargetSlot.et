@@ -21,6 +21,13 @@ GenericEntity : "{C62AFC64D4F5495E}Prefabs/TimeTrial/ScenarioFramework/TimeTrial
      m_sKey "circle3"
     }
    }
+   m_aTimeoutActions {
+    RKN_TimeTrialVoiceLine "{65E24A78665F74D4}" {
+     m_sLineName "TIMEOUT"
+     m_PlayerGetter SCR_ScenarioFrameworkGetPlayerEntity "{65E24A7F8FA1FB55}" {
+     }
+    }
+   }
    m_sTrackMidSectionPrefabName "{E8A3F5C1239C0F47}Prefabs/TimeTrial/TargetRailsMid.et"
    m_sTrackEndSectionPrefabName "{C1047729DF8D414E}Prefabs/TimeTrial/TargetRailsEnd.et"
    m_fTrackWidth 1.15

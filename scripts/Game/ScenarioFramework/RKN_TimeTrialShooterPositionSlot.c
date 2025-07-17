@@ -8,6 +8,9 @@ class RKN_TimeTrialShooterPositionSlot : RKN_TimeTrialObjectiveSlot
 	[Attribute(category: "Time trial trigger")]
 	bool m_bFailIfExitBeforeSectionCompletion;
 	
+	[Attribute(category: "Time trial trigger")]
+	ref array<ref SCR_ScenarioFrameworkActionBase> m_aOnFailActions;
+	
 	SCR_ScenarioFrameworkTriggerEntity m_Trigger;
 	bool m_bShooterWithin;
 	
@@ -117,7 +120,9 @@ class RKN_TimeTrialShooterPositionSlot : RKN_TimeTrialObjectiveSlot
 		if (!m_bShooterWithin)
 			return;
 		DisableTrigger();
-		m_Section.m_Course.FailCourse();
+		m_Section.m_Course.FailCourse(false);
+		foreach (SCR_ScenarioFrameworkActionBase action : m_aOnFailActions)
+			action.Init(GetOwner());
 	}
 	
 	void DisableTrigger()

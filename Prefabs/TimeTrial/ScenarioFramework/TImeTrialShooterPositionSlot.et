@@ -14,6 +14,13 @@ GenericEntity {
    m_SectionGetter RKN_TimeTrialGetSectionParent "{65CA704AAEBE5C2B}" {
    }
    m_bCountInUI 0
+   m_aOnFailActions {
+    RKN_TimeTrialVoiceLine "{65E24A79D4ACDF5D}" {
+     m_sLineName "FAIL_POS"
+     m_PlayerGetter SCR_ScenarioFrameworkGetPlayerEntity "{65E24A79D0926E2B}" {
+     }
+    }
+   }
   }
   Hierarchy "{65BAA09C8ABA6D44}" {
   }

@@ -50,7 +50,7 @@ class RKN_TimeTrialCountdownPositionSlot : SCR_ScenarioFrameworkSlotTrigger
 	void OnPlayerExited()
 	{
 		TriggerState(false);
-		m_Course.FailCourse();
+		m_Course.FailCourse(false);
 		foreach (SCR_ScenarioFrameworkActionBase action : m_aOnFailActions)
 			action.Init(GetOwner());
 	}

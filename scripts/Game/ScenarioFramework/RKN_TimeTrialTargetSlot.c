@@ -23,6 +23,9 @@ class RKN_TimeTrialTargetSlot : RKN_TimeTrialObjectiveSlot
 	[Attribute("2", category: "Time trial")]
 	int m_iTimeoutPenaltySeconds;
 	
+	[Attribute(uiwidget: UIWidgets.Object, category: "Time trial")]
+	ref array<ref SCR_ScenarioFrameworkActionBase> m_aTimeoutActions;
+	
 	[Attribute(category: "Time trial Movement")]
 	ref PointInfo m_MovePoint;
 	
@@ -108,6 +111,8 @@ class RKN_TimeTrialTargetSlot : RKN_TimeTrialObjectiveSlot
 		m_Target.SetState(ETargetState.TARGET_DOWN);
 		if (!m_bBonusObjective)
 			m_Section.m_Course.ApplyScoreModifier(m_iTimeoutPenaltySeconds * 1000);
+		foreach (SCR_ScenarioFrameworkActionBase action : m_aTimeoutActions)
+			action.Init(GetOwner());
 		FinishObjective();
 	}
 	
