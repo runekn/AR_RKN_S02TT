@@ -1,6 +1,3 @@
-GenericEntity : "{73CAB2F3F13CE291}Prefabs/TimeTrial/IndestructableCone.et" {
- coords 4167.351 37.687 7799.253
-}
 $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Components/Area.et" {
  CourseRed_area {
   coords 7456.157 137.034 4749.71
@@ -110,14 +107,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
         Mat "{43E2FA49820C7250}Assets/TimeTrial/SprayDecals/pistol.emat"
        }
       }
-      $grp GenericEntity : "{25C8B889A777399D}Prefabs/Props/Infrastructure/ConeTraffic/ConeTraffic_01_red.et" {
-       {
-        coords -1.763 -0.004 1.669
-       }
-       {
-        coords 0.679 0.029 1.622
-       }
-      }
       $grp GenericEntity : "{63F7CA06411FB0BE}Prefabs/TimeTrial/ScenarioFramework/TimeTrialSectionLayer.et" {
        RedSection1 {
         coords -1.247 -0.269 10.158
@@ -129,8 +118,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
              SCR_ScenarioFrameworkPluginTrigger "{65BAE8B220E74406}" {
              }
             }
-           }
-           Hierarchy "{65BAA09C8ABA6D44}" {
            }
           }
           coords 0.297 0.192 -3.609
@@ -183,8 +170,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
            }
           }
          }
-         Hierarchy "{65BA6C5982D310F0}" {
-         }
         }
         coords 12.787 0 26.054
         {
@@ -230,8 +215,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
               }
              }
             }
-           }
-           Hierarchy "{65BAA09C8ABA6D44}" {
            }
           }
           coords -1.82 -0.917 -1.322
@@ -390,8 +373,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
            }
           }
          }
-         Hierarchy "{65BA6C5982D310F0}" {
-         }
         }
         coords 12.74 0.712 13.544
         {
@@ -448,7 +429,10 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
        RedSection4 {
         coords 13.434 0.239 3.539
         {
-         $grp GenericEntity : "{25C8B889A777399D}Prefabs/Props/Infrastructure/ConeTraffic/ConeTraffic_01_red.et" {
+         GenericEntity TImeTrialShooterPositionSlot1 : "{5128F9666E234EFC}Prefabs/TimeTrial/ScenarioFramework/TImeTrialShooterPositionSlot.et" {
+          coords 0.007 0.001 -1.238
+         }
+         $grp GenericEntity : "{73CAB2F3F13CE291}Prefabs/TimeTrial/IndestructableCone.et" {
           {
            coords 1.352 0.004 -0.564
           }
@@ -456,10 +440,15 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
            coords -1.51 -0.012 -0.565
           }
          }
-         GenericEntity TImeTrialShooterPositionSlot1 : "{5128F9666E234EFC}Prefabs/TimeTrial/ScenarioFramework/TImeTrialShooterPositionSlot.et" {
-          coords 0.007 0.001 -1.238
-         }
         }
+       }
+      }
+      $grp GenericEntity : "{73CAB2F3F13CE291}Prefabs/TimeTrial/IndestructableCone.et" {
+       {
+        coords -1.763 -0.004 1.669
+       }
+       {
+        coords 0.679 0.029 1.622
        }
       }
       GenericEntity TimeTrialCourseControlPanel1 : "{759B64907C040A78}Prefabs/TimeTrial/ScenarioFramework/TimeTrialCourseControlPanel.et" {
@@ -585,25 +574,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
         scale 1.463
         TerrainOnly 0
         Mat "{BE113C00D36F9BBB}Assets/TimeTrial/SprayDecals/Arrow.emat"
-       }
-      }
-      $grp GenericEntity : "{25C8B889A777399D}Prefabs/Props/Infrastructure/ConeTraffic/ConeTraffic_01_red.et" {
-       {
-        coords 10.655 -1.436 25.902
-       }
-       {
-        coords 8.625 -1.436 26.712
-       }
-       {
-        coords 7.373 -1.436 23.899
-       }
-       {
-        coords 14.355 -2.145 33.977
-        angleY -153.189
-       }
-       {
-        coords 11.865 -2.222 35.139
-        angleY -153.189
        }
       }
       $grp GenericEntity : "{3088EF46B1618915}Prefabs/TimeTrial/TimeTrialMarkerPole.et" {
@@ -789,8 +759,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
              }
             }
            }
-           Hierarchy "{65BAA09C8ABA6D44}" {
-           }
           }
           coords 4.074 -0.014 -1.599
           angleY 118.41
@@ -901,8 +869,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
              }
             }
            }
-           Hierarchy "{65BAA09C8ABA6D44}" {
-           }
           }
           coords -6.79 0.153 -5.041
          }
@@ -1006,8 +972,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
            }
           }
          }
-         Hierarchy "{65BA6C5982D310F0}" {
-         }
         }
         coords -54.752 -3.022 6.282
         {
@@ -1026,8 +990,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
               }
              }
             }
-           }
-           Hierarchy "{65BAA09C8ABA6D44}" {
            }
           }
           coords 0.061 0.327 -8.497
@@ -1141,8 +1103,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
               }
              }
             }
-           }
-           Hierarchy "{65BAA09C8ABA6D44}" {
            }
           }
           coords -2.699 1.437 1.168
@@ -1432,8 +1392,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
              }
             }
            }
-           Hierarchy "{65BAA09C8ABA6D44}" {
-           }
           }
           coords 7.245 0.742 2.386
           angleY -107.584
@@ -1541,6 +1499,25 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
       SCR_DestructibleBuildingEntity : "{6CDAFB08D5F88533}Prefabs/Structures/Infrastructure/Naval/Piers/Pier_Stairs01.et" {
        coords -73.698 -1.794 27.852
        angleY 90.363
+      }
+      $grp GenericEntity : "{73CAB2F3F13CE291}Prefabs/TimeTrial/IndestructableCone.et" {
+       {
+        coords 10.655 -1.436 25.902
+       }
+       {
+        coords 8.625 -1.436 26.712
+       }
+       {
+        coords 7.373 -1.436 23.899
+       }
+       {
+        coords 14.355 -2.145 33.977
+        angleY -153.189
+       }
+       {
+        coords 11.865 -2.222 35.139
+        angleY -153.189
+       }
       }
       GenericEntity TimeTrialCourseControlPanel3 : "{759B64907C040A78}Prefabs/TimeTrial/ScenarioFramework/TimeTrialCourseControlPanel.et" {
        coords 12.168 -2.269 34.659
@@ -1710,111 +1687,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
          coords 130.754 25.291 -238.897
          angleY 38.386
         }
-        $grp GenericEntity : "{25C8B889A777399D}Prefabs/Props/Infrastructure/ConeTraffic/ConeTraffic_01_red.et" {
-         {
-          coords 43.271 -0.054 15.116
-          angleY -48.524
-         }
-         {
-          coords 41.125 -0.203 12.689
-          angleY -48.524
-         }
-         {
-          coords 39.263 -0.288 10.392
-          angleY -47.585
-         }
-         {
-          coords 34.204 27.397 -435.797
-         }
-         {
-          coords 33.053 27.397 -437.481
-         }
-         {
-          coords 31.205 27.397 -439.229
-         }
-         {
-          coords 29.508 27.397 -440.558
-         }
-         {
-          coords 22.499 27.359 -444.04
-         }
-         {
-          coords 22.66 27.359 -447.159
-         }
-         {
-          coords 22.769 27.393 -451.386
-         }
-         {
-          coords 22.29 27.366 -440.805
-         }
-         {
-          coords 22.928 27.397 -454.575
-         }
-         {
-          coords 29.622 35.606 -473.485
-         }
-         {
-          coords 26.139 35.609 -475.268
-         }
-         {
-          coords 26.708 34.92 -462.814
-         }
-         {
-          coords 24.214 34.92 -462.319
-         }
-         {
-          coords 22.189 34.92 -464.243
-         }
-         {
-          coords 28.531 34.92 -463.208
-         }
-         {
-          coords 21.814 34.92 -466.989
-         }
-         {
-          coords 22.823 34.92 -469.587
-         }
-         {
-          coords 25.112 34.92 -472.454
-         }
-         {
-          coords 19.552 34.92 -471.641
-         }
-         {
-          coords 17.049 34.92 -471.439
-         }
-         {
-          coords 22.471 34.92 -471.912
-         }
-         {
-          coords 23.981 34.92 -470.893
-         }
-         {
-          coords 8.219 27.292 -467.909
-          angleY 29.935
-         }
-         {
-          coords 9.949 27.294 -466.092
-          angleY 29.935
-         }
-         {
-          coords 23.626 31.72 -466.584
-         }
-         {
-          coords 25.962 28.52 -469.348
-         }
-         {
-          coords 25.661 28.52 -471.346
-         }
-         {
-          coords 9.857 0.385 -5.076
-          angleY 124.207
-         }
-         {
-          coords 8.433 0.355 -7.827
-          angleY 124.207
-         }
-        }
         GenericEntity : "{3CD490132ECE6645}Prefabs/Compositions/Misc/SubCompositions/Sandbag_Barricade_USSR_03.et" {
          coords 23.729 27.397 -412.115
          angleY -138.915
@@ -1970,6 +1842,111 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
          {
           coords 57.151 28.585 -456.596
           angleY -165
+         }
+        }
+        $grp GenericEntity : "{73CAB2F3F13CE291}Prefabs/TimeTrial/IndestructableCone.et" {
+         {
+          coords 43.271 -0.054 15.116
+          angleY -48.524
+         }
+         {
+          coords 41.125 -0.203 12.689
+          angleY -48.524
+         }
+         {
+          coords 39.263 -0.288 10.392
+          angleY -47.585
+         }
+         {
+          coords 34.204 27.397 -435.797
+         }
+         {
+          coords 33.053 27.397 -437.481
+         }
+         {
+          coords 31.205 27.397 -439.229
+         }
+         {
+          coords 29.508 27.397 -440.558
+         }
+         {
+          coords 22.499 27.359 -444.04
+         }
+         {
+          coords 22.66 27.359 -447.159
+         }
+         {
+          coords 22.769 27.393 -451.386
+         }
+         {
+          coords 22.29 27.366 -440.805
+         }
+         {
+          coords 22.928 27.397 -454.575
+         }
+         {
+          coords 29.622 35.606 -473.485
+         }
+         {
+          coords 26.139 35.609 -475.268
+         }
+         {
+          coords 26.708 34.92 -462.814
+         }
+         {
+          coords 24.214 34.92 -462.319
+         }
+         {
+          coords 22.189 34.92 -464.243
+         }
+         {
+          coords 28.531 34.92 -463.208
+         }
+         {
+          coords 21.814 34.92 -466.989
+         }
+         {
+          coords 22.823 34.92 -469.587
+         }
+         {
+          coords 25.112 34.92 -472.454
+         }
+         {
+          coords 19.552 34.92 -471.641
+         }
+         {
+          coords 17.049 34.92 -471.439
+         }
+         {
+          coords 22.471 34.92 -471.912
+         }
+         {
+          coords 23.981 34.92 -470.893
+         }
+         {
+          coords 8.219 27.292 -467.909
+          angleY 29.935
+         }
+         {
+          coords 9.949 27.294 -466.092
+          angleY 29.935
+         }
+         {
+          coords 23.626 31.72 -466.584
+         }
+         {
+          coords 25.962 28.52 -469.348
+         }
+         {
+          coords 25.661 28.52 -471.346
+         }
+         {
+          coords 9.857 0.385 -5.076
+          angleY 124.207
+         }
+         {
+          coords 8.433 0.355 -7.827
+          angleY 124.207
          }
         }
         GenericEntity : "{7492BAA88AFCEDCE}Prefabs/Compositions/Slotted/SlotFlatSmall/Bunker_S_USSR_01.et" {
@@ -2362,8 +2339,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
            }
           }
          }
-         Hierarchy "{65BA6C5982D310F0}" {
-         }
         }
         coords 0.871 0 0.916
         {
@@ -2504,8 +2479,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
            }
           }
          }
-         Hierarchy "{65BA6C5982D310F0}" {
-         }
         }
         coords 22.964 0.06 6.681
         {
@@ -2521,8 +2494,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
              }
              m_sObjectToSpawn "{DA58C3DF4455555E}Prefabs/Systems/ScenarioFramework/Triggers/ScenarioFrameworkTrigger.et"
              m_bCountInUI 1
-            }
-            Hierarchy "{65BAA09C8ABA6D44}" {
             }
            }
            coords 99.173 0.344 17.224
@@ -2544,8 +2515,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
              }
              m_bCountInUI 1
             }
-            Hierarchy "{65BAA09C8ABA6D44}" {
-            }
            }
            coords 65.938 28.925 -434.319
           }
@@ -2566,8 +2535,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
              }
              m_bCountInUI 1
             }
-            Hierarchy "{65BAA09C8ABA6D44}" {
-            }
            }
            coords -5.46 26.701 -444.284
           }
@@ -2582,8 +2549,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             m_sLineName "ROOF"
            }
           }
-         }
-         Hierarchy "{65BA6C5982D310F0}" {
          }
         }
         coords 8.813 26.704 -411.691
@@ -2809,8 +2774,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
            }
           }
          }
-         Hierarchy "{65BA6C5982D310F0}" {
-         }
         }
         coords 10.669 34.226 -462.802
         {
@@ -2824,8 +2787,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
               }
              }
             }
-           }
-           Hierarchy "{65BAA09C8ABA6D44}" {
            }
           }
           coords 0.479 0 -0.282
@@ -3119,20 +3080,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
         coords -104.12 -14.352 -85.817
         angleY 71.115
        }
-       $grp GenericEntity : "{25C8B889A777399D}Prefabs/Props/Infrastructure/ConeTraffic/ConeTraffic_01_red.et" {
-        {
-         coords -6.341 -0.042 -1.658
-         angleX 4.732
-        }
-        {
-         coords -6.796 -0.063 -4.48
-         angleX 4.732
-        }
-        {
-         coords -4.449 -0.031 0.07
-         angleX 4.732
-        }
-       }
        SCR_DestructibleBuildingEntity : "{2EBA3486062A5A53}Prefabs/Structures/Military/Bunkers/AirfieldBunker_E_01/AirfieldBunker_E_01_big.et" {
         coords -576.816 -60.06 -199.375
         angleY -6.444
@@ -3314,6 +3261,20 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
         coords -96.121 -13.575 -82.423
         angleY -47.072
        }
+       $grp GenericEntity : "{73CAB2F3F13CE291}Prefabs/TimeTrial/IndestructableCone.et" {
+        {
+         coords -6.341 -0.042 -1.658
+         angleX 4.732
+        }
+        {
+         coords -6.796 -0.063 -4.48
+         angleX 4.732
+        }
+        {
+         coords -4.449 -0.031 0.07
+         angleX 4.732
+        }
+       }
        GenericEntity : "{7C85836D444E3797}Prefabs/Compositions/Slotted/SlotRoadMedium/Checkpoint_M_USSR_01.et" {
         coords -592.429 -101.898 -401.906
         angleX 4.016
@@ -3487,16 +3448,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
         angleX -7.696
         angleY 134.125
        }
-      }
-     }
-     $grp GenericEntity : "{25C8B889A777399D}Prefabs/Props/Infrastructure/ConeTraffic/ConeTraffic_01_red.et" {
-      {
-       coords 25.783 0.121 11.119
-       angleX 7.423
-      }
-      {
-       coords 26.303 -0.28 8.518
-       angleX 4.732
       }
      }
      $grp GenericEntity : "{63F7CA06411FB0BE}Prefabs/TimeTrial/ScenarioFramework/TimeTrialSectionLayer.et" {
@@ -3817,8 +3768,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
              }
             }
            }
-          }
-          Hierarchy "{65BAA09C8ABA6D44}" {
           }
          }
          coords 0 0 0
@@ -4318,6 +4267,16 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
        }
       }
      }
+     $grp GenericEntity : "{73CAB2F3F13CE291}Prefabs/TimeTrial/IndestructableCone.et" {
+      {
+       coords 25.783 0.121 11.119
+       angleX 7.423
+      }
+      {
+       coords 26.303 -0.28 8.518
+       angleX 4.732
+      }
+     }
      GenericEntity TimeTrialCourseControlPanel2 : "{759B64907C040A78}Prefabs/TimeTrial/ScenarioFramework/TimeTrialCourseControlPanel.et" {
       coords 26.142 -0.293 8.218
       angleY 19.124
@@ -4568,71 +4527,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
         coords -54.047 1.3 -16.817
         angleY -40.932
        }
-       $grp GenericEntity : "{25C8B889A777399D}Prefabs/Props/Infrastructure/ConeTraffic/ConeTraffic_01_red.et" {
-        {
-         coords -21.553 -0.796 19.389
-        }
-        {
-         coords -22.902 -0.922 17.495
-        }
-        {
-         coords 4.887 0 4.982
-        }
-        {
-         coords 1.915 0 6.702
-        }
-        {
-         coords 3.366 0 4.07
-        }
-        {
-         coords 4.758 0 6.552
-        }
-        {
-         coords 3.323 0 7.391
-        }
-        {
-         coords 1.29 0 2.307
-        }
-        {
-         coords -0.439 0.024 5.926
-        }
-        {
-         coords 3.916 -0.052 -10.662
-        }
-        {
-         coords 4.488 -0.055 -11.335
-        }
-        {
-         coords 3.933 -0.057 -12.116
-        }
-        {
-         coords 3.467 -0.056 -12.802
-        }
-        {
-         coords -9.708 0.241 -8.735
-        }
-        {
-         coords -11.047 0.251 -8.894
-        }
-        {
-         coords -12.647 0.249 -9.471
-        }
-        {
-         coords -55.12 -2.937 5.511
-        }
-        {
-         coords -57.138 -3.035 4.941
-        }
-        {
-         coords -6.666 0.311 -9.655
-        }
-        {
-         coords -25.177 0.19 8.215
-        }
-        {
-         coords -25.888 0.193 8.703
-        }
-       }
        $grp GenericEntity : "{3088EF46B1618915}Prefabs/TimeTrial/TimeTrialMarkerPole.et" {
         {
          coords -55.963 -2.27 2.22
@@ -4758,6 +4652,71 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
          angleZ 4.84
         }
        }
+       $grp GenericEntity : "{73CAB2F3F13CE291}Prefabs/TimeTrial/IndestructableCone.et" {
+        {
+         coords -21.553 -0.796 19.389
+        }
+        {
+         coords -22.902 -0.922 17.495
+        }
+        {
+         coords 4.887 0 4.982
+        }
+        {
+         coords 1.915 0 6.702
+        }
+        {
+         coords 3.366 0 4.07
+        }
+        {
+         coords 4.758 0 6.552
+        }
+        {
+         coords 3.323 0 7.391
+        }
+        {
+         coords 1.29 0 2.307
+        }
+        {
+         coords -0.439 0.024 5.926
+        }
+        {
+         coords 3.916 -0.052 -10.662
+        }
+        {
+         coords 4.488 -0.055 -11.335
+        }
+        {
+         coords 3.933 -0.057 -12.116
+        }
+        {
+         coords 3.467 -0.056 -12.802
+        }
+        {
+         coords -9.708 0.241 -8.735
+        }
+        {
+         coords -11.047 0.251 -8.894
+        }
+        {
+         coords -12.647 0.249 -9.471
+        }
+        {
+         coords -55.12 -2.937 5.511
+        }
+        {
+         coords -57.138 -3.035 4.941
+        }
+        {
+         coords -6.666 0.311 -9.655
+        }
+        {
+         coords -25.177 0.19 8.215
+        }
+        {
+         coords -25.888 0.193 8.703
+        }
+       }
        GenericEntity : "{91E4D4CBB097A9C1}Prefabs/Props/Forest/DeerSkull_01/DeerSkull_01.et" {
         coords 4.685 0.3 6.526
         angleY 58.257
@@ -4777,8 +4736,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
            m_sLineName "EXIT_BACKDOOR"
           }
          }
-        }
-        Hierarchy "{65BA6C5982D310F0}" {
         }
        }
        coords 0 0 0
@@ -4802,8 +4759,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
               }
              }
             }
-           }
-           Hierarchy "{65BAA09C8ABA6D44}" {
            }
           }
           coords 1.44 1.44 -16.278
@@ -4954,8 +4909,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
            }
            m_sObjectToSpawn "{DA58C3DF4455555E}Prefabs/Systems/ScenarioFramework/Triggers/ScenarioFrameworkTrigger.et"
            m_bFailIfExitBeforeSectionCompletion 1
-          }
-          Hierarchy "{65BAA09C8ABA6D44}" {
           }
          }
          coords 0.069 0 0.274
@@ -5189,8 +5142,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
            m_sLineName "FINISHLINE"
           }
          }
-        }
-        Hierarchy "{65BA6C5982D310F0}" {
         }
        }
        coords -9.888 2.179 -44.532
@@ -5513,20 +5464,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
      GenericEntity Orange1Deco {
       coords 38.838 -2.402 -22.446
       {
-       $grp GenericEntity : "{25C8B889A777399D}Prefabs/Props/Infrastructure/ConeTraffic/ConeTraffic_01_red.et" {
-        {
-         coords -2.352 -0.001 -0.377
-        }
-        {
-         coords -1.745 0.018 2.265
-        }
-        {
-         coords 67.239 -5.89 0.231
-        }
-        {
-         coords 66.229 -6.122 1.743
-        }
-       }
        $grp GenericEntity : "{3088EF46B1618915}Prefabs/TimeTrial/TimeTrialMarkerPole.et" {
         {
          coords -4.777 0.901 -11.591
@@ -5767,6 +5704,20 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
         coords -43.325 3.801 5.556
         angleY 137.439
        }
+       $grp GenericEntity : "{73CAB2F3F13CE291}Prefabs/TimeTrial/IndestructableCone.et" {
+        {
+         coords -2.352 -0.001 -0.377
+        }
+        {
+         coords -1.745 0.018 2.265
+        }
+        {
+         coords 67.239 -5.89 0.231
+        }
+        {
+         coords 66.229 -6.122 1.743
+        }
+       }
        SCR_DestructibleBuildingEntity : "{7F0E9789EB7F1BCF}Prefabs/Structures/Military/Bunkers/AmmoDump_E_01/AmmoDump_E_01_cover.et" {
         coords -20.275 0.5 -8.779
         angleY -149.662
@@ -5904,8 +5855,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
            m_sLineName "CAR"
           }
          }
-        }
-        Hierarchy "{65BA6C5982D310F0}" {
         }
        }
        coords 0 0 0
@@ -6084,8 +6033,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
           }
          }
         }
-        Hierarchy "{65BA6C5982D310F0}" {
-        }
        }
        coords 27.882 -3.193 -16.825
        {
@@ -6174,8 +6121,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             m_sObjectToSpawn "{DA58C3DF4455555E}Prefabs/Systems/ScenarioFramework/Triggers/ScenarioFrameworkTrigger.et"
             m_bCountInUI 1
            }
-           Hierarchy "{65BAA09C8ABA6D44}" {
-           }
           }
           coords 466.795 -86.376 266.563
          }
@@ -6195,8 +6140,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
              }
             }
             m_bCountInUI 1
-           }
-           Hierarchy "{65BAA09C8ABA6D44}" {
            }
           }
           coords 978.25 -70.369 195.373
@@ -6218,8 +6161,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             }
             m_bCountInUI 1
            }
-           Hierarchy "{65BAA09C8ABA6D44}" {
-           }
           }
           coords 859.015 -109.103 439.708
          }
@@ -6239,8 +6180,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
              }
             }
            }
-          }
-          Hierarchy "{65BAA09C8ABA6D44}" {
           }
          }
          coords 4.824 0.316 0.499
@@ -6553,22 +6492,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
         GenericEntity : "{1C531149AF99ACD1}Prefabs/Props/Furniture/TableDining_01.et" {
          coords -3.162 0 9.05
         }
-        $grp GenericEntity : "{25C8B889A777399D}Prefabs/Props/Infrastructure/ConeTraffic/ConeTraffic_01_red.et" {
-         {
-          coords 3.8 0 2.897
-         }
-         {
-          coords 5.845 0.001 2.833
-         }
-         {
-          coords -15.808 0.001 18.377
-          angleY 90
-         }
-         {
-          coords -15.872 0.002 16.331
-          angleY 90
-         }
-        }
         GenericEntity : "{26EC008C42828F5C}Prefabs/Props/Military/Compositions/Dst/PersonnelService_Table_01/PersonnelService_Table_01_dst_01_US.et" {
          coords -7.342 0.001 9.393
          angleY -88.079
@@ -6783,6 +6706,22 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
           coords -5.678 1.033 10.457
           angleY 179.342
           placement none
+         }
+        }
+        $grp GenericEntity : "{73CAB2F3F13CE291}Prefabs/TimeTrial/IndestructableCone.et" {
+         {
+          coords 3.8 0 2.897
+         }
+         {
+          coords 5.845 0.001 2.833
+         }
+         {
+          coords -15.808 0.001 18.377
+          angleY 90
+         }
+         {
+          coords -15.872 0.002 16.331
+          angleY 90
          }
         }
         GenericEntity : "{757FCCE8E756175C}Prefabs/Props/Furniture/MeetingTable_01.et" {
@@ -7002,14 +6941,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
      }
      coords 25.218 0 3.415
      {
-      $grp GenericEntity : "{25C8B889A777399D}Prefabs/Props/Infrastructure/ConeTraffic/ConeTraffic_01_red.et" {
-       {
-        coords -4.41 0 2.577
-       }
-       {
-        coords -4.48 0 -1.939
-       }
-      }
       $grp GenericEntity : "{63F7CA06411FB0BE}Prefabs/TimeTrial/ScenarioFramework/TimeTrialSectionLayer.et" {
        IntroSection1 {
         coords 0.062 0 0.366
@@ -7103,6 +7034,14 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
         coords 1.346 0 -3.87
        }
       }
+      $grp GenericEntity : "{73CAB2F3F13CE291}Prefabs/TimeTrial/IndestructableCone.et" {
+       {
+        coords -4.41 0 2.577
+       }
+       {
+        coords -4.48 0 -1.939
+       }
+      }
       GenericEntity TimeTrialCourseControlPanel8 : "{759B64907C040A78}Prefabs/TimeTrial/ScenarioFramework/TimeTrialCourseControlPanel.et" {
        coords -3.553 -0.044 1.933
        angleY -129.784
@@ -7159,38 +7098,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
       SCR_DestructibleEntity : "{1E2011567EAE09B4}Prefabs/Structures/Walls/Metal/TinWall_01/TinWall_01_6m_Pole.et" {
        coords 0.356 0.625 -5.176
       }
-      $grp GenericEntity : "{25C8B889A777399D}Prefabs/Props/Infrastructure/ConeTraffic/ConeTraffic_01_red.et" {
-       {
-        coords 8.911 -0.001 -4.445
-       }
-       {
-        coords 5.25 0 -4.485
-       }
-       {
-        coords 0.666 0 -4.528
-       }
-       {
-        coords -2.994 0 -4.568
-       }
-       {
-        coords -6.719 -0.001 -4.599
-       }
-       {
-        coords -10.38 0 -4.64
-       }
-       {
-        coords -14.515 0 -1.959
-       }
-       {
-        coords -14.511 0 -4.641
-       }
-       {
-        coords 9.115 0 0.228
-       }
-       {
-        coords 6.023 0 0.201
-       }
-      }
       SCR_DestructibleEntity : "{4F054AD0B0080E78}Prefabs/Structures/Walls/Wooden/WoodenWall_01/WoodenWall_01_4m.et" {
        coords 9.113 -0.722 -4.918
        angleY 179.342
@@ -7238,8 +7145,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
              }
             }
             m_bFailIfExitBeforeSectionCompletion 1
-           }
-           Hierarchy "{65BAA09C8ABA6D44}" {
            }
           }
           coords 0 0 0
@@ -7391,8 +7296,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             }
             m_bFailIfExitBeforeSectionCompletion 1
            }
-           Hierarchy "{65BAA09C8ABA6D44}" {
-           }
           }
           coords 0 0 0
          }
@@ -7527,8 +7430,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
              }
             }
             m_bFailIfExitBeforeSectionCompletion 1
-           }
-           Hierarchy "{65BAA09C8ABA6D44}" {
            }
           }
           coords 0 0 0.001
@@ -7713,6 +7614,38 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
         angleY 90
        }
       }
+      $grp GenericEntity : "{73CAB2F3F13CE291}Prefabs/TimeTrial/IndestructableCone.et" {
+       {
+        coords 8.911 -0.001 -4.445
+       }
+       {
+        coords 5.25 0 -4.485
+       }
+       {
+        coords 0.666 0 -4.528
+       }
+       {
+        coords -2.994 0 -4.568
+       }
+       {
+        coords -6.719 -0.001 -4.599
+       }
+       {
+        coords -10.38 0 -4.64
+       }
+       {
+        coords -14.515 0 -1.959
+       }
+       {
+        coords -14.511 0 -4.641
+       }
+       {
+        coords 9.115 0 0.228
+       }
+       {
+        coords 6.023 0 0.201
+       }
+      }
       GenericEntity TimeTrialCourseControlPanel9 : "{759B64907C040A78}Prefabs/TimeTrial/ScenarioFramework/TimeTrialCourseControlPanel.et" {
        coords 6.293 -0.062 -0.333
        angleY 29.524
@@ -7809,7 +7742,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             }
             m_aPrefabFilter {
              SCR_ScenarioFrameworkPrefabFilterCountNoInheritance "{65D13D051D4AB209}" {
-              m_sPrefabName "{62AA1DC9919E6E61}Prefabs/TimeTrial_Radio_ANPRC68.et"
+              m_sPrefabName "{62AA1DC9919E6E61}Prefabs/TimeTrial/TimeTrial_Radio_ANPRC68.et"
              }
             }
            }
@@ -7979,169 +7912,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
           angleZ -98.902
           TerrainOnly 0
           Mat "{75D82F51AEDFB797}Assets/TimeTrial/SprayDecals/number3.emat"
-         }
-        }
-        $grp GenericEntity : "{25C8B889A777399D}Prefabs/Props/Infrastructure/ConeTraffic/ConeTraffic_01_red.et" {
-         {
-          coords -1.361 -0.054 1.276
-          angleY 1.35
-         }
-         {
-          coords -1.785 -0.142 3.639
-          angleY 1.35
-         }
-         {
-          coords -6.458 -0.181 2.866
-         }
-         {
-          coords -6.052 -0.181 0.686
-         }
-         {
-          coords -3.941 -0.355 -2.488
-         }
-         {
-          coords -5.501 -0.373 -2.794
-         }
-         {
-          coords -4.714 -0.362 -2.553
-         }
-         {
-          coords -89.939 -9.145 -21.965
-         }
-         {
-          coords -90.065 -9.148 -20.897
-         }
-         {
-          coords -160.348 -9.754 -49.047
-         }
-         {
-          coords -160.566 -9.738 -49.99
-         }
-         {
-          coords -202.185 -11.648 -68.373
-         }
-         {
-          coords -202.774 -11.651 -67.718
-         }
-         {
-          coords -214.891 -11.581 -62.86
-         }
-         {
-          coords -215.779 -11.582 -61.578
-         }
-         {
-          coords -114.069 -3.386 -113.465
-         }
-         {
-          coords -112.295 -3.386 -111.455
-         }
-         {
-          coords -113.334 -3.386 -113.182
-         }
-         {
-          coords -112.548 -3.386 -112.421
-         }
-         {
-          coords -114.981 0.222 -113.811
-         }
-         {
-          coords -115.637 6.9 -108.66
-         }
-         {
-          coords -157.029 -6.34 -128.835
-         }
-         {
-          coords -156.75 -6.354 -131.141
-         }
-         {
-          coords -150.669 -6.025 -124.146
-         }
-         {
-          coords -149.636 -6.103 -124.883
-         }
-         {
-          coords -155.15 -6.304 -131.991
-         }
-         {
-          coords -151.559 -6.183 -127.16
-         }
-         {
-          coords -143.973 -5.742 -131.718
-         }
-         {
-          coords -139.338 -5.455 -131.277
-         }
-         {
-          coords -134.266 -5.005 -130.471
-         }
-         {
-          coords -144.586 -5.788 -128.368
-         }
-         {
-          coords -139.757 -5.49 -127.611
-         }
-         {
-          coords -134.291 -4.978 -126.372
-         }
-         {
-          coords -128.991 -4.553 -129.94
-         }
-         {
-          coords -124.902 -4.286 -126.79
-         }
-         {
-          coords -122.395 -4.147 -122.454
-         }
-         {
-          coords -122.527 -3.894 -117.679
-         }
-         {
-          coords -130.8 -4.588 -124.146
-         }
-         {
-          coords -128.242 -4.262 -121.694
-         }
-         {
-          coords -126.966 -3.727 -114.445
-         }
-         {
-          coords -125.052 -3.652 -108.779
-         }
-         {
-          coords -122.582 -3.661 -107.705
-         }
-         {
-          coords -126.697 -3.656 -111.458
-         }
-         {
-          coords -126.785 -3.934 -117.319
-         }
-         {
-          coords -197.403 -11.89 -45.533
-         }
-         {
-          coords -196.612 -11.904 -44.877
-         }
-         {
-          coords -195.549 -11.919 -44.014
-         }
-         {
-          coords -196.183 -11.661 -63.576
-         }
-         {
-          coords -196.771 -11.664 -62.921
-         }
-         {
-          coords -163.183 -9.975 -50.071
-         }
-         {
-          coords -165.557 -10.191 -49.572
-         }
-         {
-          coords -168.382 -10.493 -48.662
-         }
-         {
-          coords -152.978 -6.104 -126.454
          }
         }
         $grp GenericEntity : "{3088EF46B1618915}Prefabs/TimeTrial/TimeTrialMarkerPole.et" {
@@ -8320,6 +8090,169 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             }
            }
           }
+         }
+        }
+        $grp GenericEntity : "{73CAB2F3F13CE291}Prefabs/TimeTrial/IndestructableCone.et" {
+         {
+          coords -1.361 -0.054 1.276
+          angleY 1.35
+         }
+         {
+          coords -1.785 -0.142 3.639
+          angleY 1.35
+         }
+         {
+          coords -6.458 -0.181 2.866
+         }
+         {
+          coords -6.052 -0.181 0.686
+         }
+         {
+          coords -3.941 -0.355 -2.488
+         }
+         {
+          coords -5.501 -0.373 -2.794
+         }
+         {
+          coords -4.714 -0.362 -2.553
+         }
+         {
+          coords -89.939 -9.145 -21.965
+         }
+         {
+          coords -90.065 -9.148 -20.897
+         }
+         {
+          coords -160.348 -9.754 -49.047
+         }
+         {
+          coords -160.566 -9.738 -49.99
+         }
+         {
+          coords -202.185 -11.648 -68.373
+         }
+         {
+          coords -202.774 -11.651 -67.718
+         }
+         {
+          coords -214.891 -11.581 -62.86
+         }
+         {
+          coords -215.779 -11.582 -61.578
+         }
+         {
+          coords -114.069 -3.386 -113.465
+         }
+         {
+          coords -112.295 -3.386 -111.455
+         }
+         {
+          coords -113.334 -3.386 -113.182
+         }
+         {
+          coords -112.548 -3.386 -112.421
+         }
+         {
+          coords -114.981 0.222 -113.811
+         }
+         {
+          coords -115.637 6.9 -108.66
+         }
+         {
+          coords -157.029 -6.34 -128.835
+         }
+         {
+          coords -156.75 -6.354 -131.141
+         }
+         {
+          coords -150.669 -6.025 -124.146
+         }
+         {
+          coords -149.636 -6.103 -124.883
+         }
+         {
+          coords -155.15 -6.304 -131.991
+         }
+         {
+          coords -151.559 -6.183 -127.16
+         }
+         {
+          coords -143.973 -5.742 -131.718
+         }
+         {
+          coords -139.338 -5.455 -131.277
+         }
+         {
+          coords -134.266 -5.005 -130.471
+         }
+         {
+          coords -144.586 -5.788 -128.368
+         }
+         {
+          coords -139.757 -5.49 -127.611
+         }
+         {
+          coords -134.291 -4.978 -126.372
+         }
+         {
+          coords -128.991 -4.553 -129.94
+         }
+         {
+          coords -124.902 -4.286 -126.79
+         }
+         {
+          coords -122.395 -4.147 -122.454
+         }
+         {
+          coords -122.527 -3.894 -117.679
+         }
+         {
+          coords -130.8 -4.588 -124.146
+         }
+         {
+          coords -128.242 -4.262 -121.694
+         }
+         {
+          coords -126.966 -3.727 -114.445
+         }
+         {
+          coords -125.052 -3.652 -108.779
+         }
+         {
+          coords -122.582 -3.661 -107.705
+         }
+         {
+          coords -126.697 -3.656 -111.458
+         }
+         {
+          coords -126.785 -3.934 -117.319
+         }
+         {
+          coords -197.403 -11.89 -45.533
+         }
+         {
+          coords -196.612 -11.904 -44.877
+         }
+         {
+          coords -195.549 -11.919 -44.014
+         }
+         {
+          coords -196.183 -11.661 -63.576
+         }
+         {
+          coords -196.771 -11.664 -62.921
+         }
+         {
+          coords -163.183 -9.975 -50.071
+         }
+         {
+          coords -165.557 -10.191 -49.572
+         }
+         {
+          coords -168.382 -10.493 -48.662
+         }
+         {
+          coords -152.978 -6.104 -126.454
          }
         }
         $grp GenericEntity : "{B6307C189CCCA0B9}Prefabs/Props/Military/Sandbags/Sandbag_01_round_high_plastic.et" {
@@ -9392,8 +9325,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
            }
           }
          }
-         Hierarchy "{65BA6C5982D310F0}" {
-         }
         }
         coords -119.144 14.722 -108.364
         {
@@ -9690,14 +9621,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
      }
      coords 16.443 0.694 -22.927
      {
-      $grp GenericEntity : "{25C8B889A777399D}Prefabs/Props/Infrastructure/ConeTraffic/ConeTraffic_01_red.et" {
-       {
-        coords 4.311 -0.1 -0.272
-       }
-       {
-        coords 4.647 -0.1 -2.836
-       }
-      }
       $grp GenericEntity : "{63F7CA06411FB0BE}Prefabs/TimeTrial/ScenarioFramework/TimeTrialSectionLayer.et" {
        Black2Section1 {
         coords 19.178 0.808 0.566
@@ -10347,6 +10270,14 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
         }
        }
       }
+      $grp GenericEntity : "{73CAB2F3F13CE291}Prefabs/TimeTrial/IndestructableCone.et" {
+       {
+        coords 4.311 -0.1 -0.272
+       }
+       {
+        coords 4.647 -0.1 -2.836
+       }
+      }
       GenericEntity TimeTrialCourseControlPanel11 : "{759B64907C040A78}Prefabs/TimeTrial/ScenarioFramework/TimeTrialCourseControlPanel.et" {
        coords 4.735 -0.151 -0.399
        angleY -135
@@ -10505,70 +10436,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
          coords -85.883 -4.317 -1.338
          angleY -10.958
          angleZ -0.718
-        }
-        $grp GenericEntity : "{25C8B889A777399D}Prefabs/Props/Infrastructure/ConeTraffic/ConeTraffic_01_red.et" {
-         {
-          coords -11.937 -0.747 -1.028
-          angleY -85.479
-         }
-         {
-          coords -12.243 -0.767 1.674
-          angleY -85.479
-         }
-         {
-          coords -9.618 -0.633 -3.798
-          angleY -85.479
-         }
-         {
-          coords -9.539 -0.634 -6.255
-          angleY -85.479
-         }
-         {
-          coords 16.226 0.881 5.962
-         }
-         {
-          coords 15.754 0.845 8.682
-         }
-         {
-          coords -0.601 0.008 4.151
-         }
-         {
-          coords -3.148 -0.166 3.718
-         }
-         {
-          coords -24.593 -1.408 -6.284
-          angleY -85.479
-         }
-         {
-          coords -22.04 -1.264 -6.02
-          angleY -85.479
-         }
-         {
-          coords -48.346 -2.788 -9.623
-          angleY -87.715
-         }
-         {
-          coords -45.805 -2.669 -9.259
-          angleY -87.715
-         }
-         {
-          coords -66.125 -3.579 -9.431
-         }
-         {
-          coords -65.652 -3.565 -12.15
-         }
-         {
-          coords -80.086 -3.987 -13.555
-         }
-         {
-          coords -81.538 -4.025 -13.806
-         }
-         {
-          coords -83.761 -4.063 -14.038
-         }
-         {
-          coords -85.086 -4.101 -14.196
-         }
         }
         GenericEntity : "{35F2A674E602198F}Prefabs/Props/Military/Sandbags/Sandbag_01_end_high_plastic.et" {
          coords 1.232 0.1 3.479
@@ -10803,6 +10670,70 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
           angleZ -2.047
          }
         }
+        $grp GenericEntity : "{73CAB2F3F13CE291}Prefabs/TimeTrial/IndestructableCone.et" {
+         {
+          coords -11.937 -0.747 -1.028
+          angleY -85.479
+         }
+         {
+          coords -12.243 -0.767 1.674
+          angleY -85.479
+         }
+         {
+          coords -9.618 -0.633 -3.798
+          angleY -85.479
+         }
+         {
+          coords -9.539 -0.634 -6.255
+          angleY -85.479
+         }
+         {
+          coords 16.226 0.881 5.962
+         }
+         {
+          coords 15.754 0.845 8.682
+         }
+         {
+          coords -0.601 0.008 4.151
+         }
+         {
+          coords -3.148 -0.166 3.718
+         }
+         {
+          coords -24.593 -1.408 -6.284
+          angleY -85.479
+         }
+         {
+          coords -22.04 -1.264 -6.02
+          angleY -85.479
+         }
+         {
+          coords -48.346 -2.788 -9.623
+          angleY -87.715
+         }
+         {
+          coords -45.805 -2.669 -9.259
+          angleY -87.715
+         }
+         {
+          coords -66.125 -3.579 -9.431
+         }
+         {
+          coords -65.652 -3.565 -12.15
+         }
+         {
+          coords -80.086 -3.987 -13.555
+         }
+         {
+          coords -81.538 -4.025 -13.806
+         }
+         {
+          coords -83.761 -4.063 -14.038
+         }
+         {
+          coords -85.086 -4.101 -14.196
+         }
+        }
         $grp GenericEntity : "{F29A05EBA7063E7C}Prefabs/Props/Military/Sandbags/Sandbag_01_wall_solid_plastic.et" {
          {
           coords -1.211 -0.208 3.202
@@ -10972,8 +10903,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             m_sObjectToSpawn "{0D5D5B4A4103DE7C}Prefabs/Systems/ScenarioFramework/Triggers/ScenarioFrameworkBoxTriggerNarrow.et"
             m_bFailIfExitBeforeSectionCompletion 1
            }
-           Hierarchy "{65BAA09C8ABA6D44}" {
-           }
           }
           coords -0.24 -0.026 4.019
           angleY -6.084
@@ -11084,8 +11013,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
              }
             }
             m_bFailIfExitBeforeSectionCompletion 1
-           }
-           Hierarchy "{65BAA09C8ABA6D44}" {
            }
           }
           coords 8.886 0.597 2.073
@@ -11228,8 +11155,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             }
             m_bFailIfExitBeforeSectionCompletion 1
            }
-           Hierarchy "{65BAA09C8ABA6D44}" {
-           }
           }
           coords -4.637 -0.314 -0.393
           angleY 89.011
@@ -11327,8 +11252,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             }
             m_bFailIfExitBeforeSectionCompletion 1
            }
-           Hierarchy "{65BAA09C8ABA6D44}" {
-           }
           }
           coords -1.331 -0.003 -4.386
           angleY 173.589
@@ -11416,8 +11339,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
              }
             }
             m_bFailIfExitBeforeSectionCompletion 1
-           }
-           Hierarchy "{65BAA09C8ABA6D44}" {
            }
           }
           coords 0.333 -0.019 -4.876
@@ -11526,8 +11447,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
               }
              }
             }
-           }
-           Hierarchy "{65BAA09C8ABA6D44}" {
            }
           }
           coords 0.998 0.337 -4.987
@@ -11669,8 +11588,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             }
             m_bFailIfExitBeforeSectionCompletion 1
            }
-           Hierarchy "{65BAA09C8ABA6D44}" {
-           }
           }
           coords 1.072 0.118 -4.779
           angleY 168.417
@@ -11753,8 +11670,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             }
             m_sObjectToSpawn "{DA58C3DF4455555E}Prefabs/Systems/ScenarioFramework/Triggers/ScenarioFrameworkTrigger.et"
             m_bFailIfExitBeforeSectionCompletion 1
-           }
-           Hierarchy "{65BAA09C8ABA6D44}" {
            }
           }
           coords 0.265 0.008 -0.191
@@ -11893,8 +11808,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
            }
           }
          }
-         Hierarchy "{65BA6C5982D310F0}" {
-         }
         }
         coords -96.351 -4.987 -17.586
         {
@@ -11925,8 +11838,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             }
             m_sObjectToSpawn "{DA58C3DF4455555E}Prefabs/Systems/ScenarioFramework/Triggers/ScenarioFrameworkTrigger.et"
             m_bFailIfExitBeforeSectionCompletion 1
-           }
-           Hierarchy "{65BAA09C8ABA6D44}" {
            }
           }
           coords 0.076 0.008 -0.542
@@ -12307,74 +12218,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
          angleY -90
         }
        }
-       $grp GenericEntity : "{25C8B889A777399D}Prefabs/Props/Infrastructure/ConeTraffic/ConeTraffic_01_red.et" {
-        {
-         coords -119.887 3.855 0.549
-         angleX 2.81
-         angleY 0.318
-         angleZ 6.453
-        }
-        {
-         coords -119.887 3.582 -2.115
-         angleX 7.098
-         angleY 0.402
-         angleZ 6.34
-        }
-        {
-         coords -11.687 -0.02 42.406
-        }
-        {
-         coords -11.553 -0.051 41.344
-        }
-        {
-         coords 15.894 0.618 37.259
-        }
-        {
-         coords 15.3 0.359 38.705
-        }
-        {
-         coords 14.809 0.174 39.986
-        }
-        {
-         coords 14.258 -0.011 41.231
-        }
-        {
-         coords -18.101 12.255 9.133
-        }
-        {
-         coords -18.989 12.255 9.151
-        }
-        {
-         coords -16.82 12.255 27.118
-        }
-        {
-         coords -16.857 12.255 27.961
-        }
-        {
-         coords -16.627 12.311 22.62
-        }
-        {
-         coords -16.676 12.311 23.52
-        }
-        {
-         coords 2.798 0.421 6.241
-        }
-        {
-         coords 2.829 0.352 4.655
-        }
-        {
-         coords 2.923 0.248 3.098
-        }
-        {
-         coords 2.956 0.197 1.404
-        }
-        {
-         coords 2.872 0.193 -0.267
-        }
-        {
-         coords 2.864 0.195 -1.389
-        }
-       }
        $grp StaticModelEntity : "{39F7EE885940DC8F}Prefabs/Structures/Military/Fortifications/DirtCover_01/DirtCover_01_long_v1.et" {
         {
          coords -28.882 -1.446 4.583
@@ -12462,6 +12305,74 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
          angleX -3.013
          angleY -92.993
          angleZ 90.157
+        }
+       }
+       $grp GenericEntity : "{73CAB2F3F13CE291}Prefabs/TimeTrial/IndestructableCone.et" {
+        {
+         coords -119.887 3.855 0.549
+         angleX 2.81
+         angleY 0.318
+         angleZ 6.453
+        }
+        {
+         coords -119.887 3.582 -2.115
+         angleX 7.098
+         angleY 0.402
+         angleZ 6.34
+        }
+        {
+         coords -11.687 -0.02 42.406
+        }
+        {
+         coords -11.553 -0.051 41.344
+        }
+        {
+         coords 15.894 0.618 37.259
+        }
+        {
+         coords 15.3 0.359 38.705
+        }
+        {
+         coords 14.809 0.174 39.986
+        }
+        {
+         coords 14.258 -0.011 41.231
+        }
+        {
+         coords -18.101 12.255 9.133
+        }
+        {
+         coords -18.989 12.255 9.151
+        }
+        {
+         coords -16.82 12.255 27.118
+        }
+        {
+         coords -16.857 12.255 27.961
+        }
+        {
+         coords -16.627 12.311 22.62
+        }
+        {
+         coords -16.676 12.311 23.52
+        }
+        {
+         coords 2.798 0.421 6.241
+        }
+        {
+         coords 2.829 0.352 4.655
+        }
+        {
+         coords 2.923 0.248 3.098
+        }
+        {
+         coords 2.956 0.197 1.404
+        }
+        {
+         coords 2.872 0.193 -0.267
+        }
+        {
+         coords 2.864 0.195 -1.389
         }
        }
        GenericEntity : "{7AF4B627D5C90235}Prefabs/Props/Military/Sandbags/Sandbag_01_round_high_burlap.et" {
@@ -12559,8 +12470,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
            }
           }
          }
-        }
-        Hierarchy "{65BA6C5982D310F0}" {
         }
        }
        coords 26.217 11.623 -13.608

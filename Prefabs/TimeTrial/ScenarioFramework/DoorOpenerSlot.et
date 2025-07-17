@@ -3,12 +3,6 @@ GenericEntity : "{AA01691FDC4E9167}Prefabs/Systems/ScenarioFramework/Components/
  components {
   RKN_DoorOpenerSlot "{5A22E1D67E712EC8}" {
    m_eActivationType ON_TRIGGER_ACTIVATION
-   m_aPlugins {
-    RKN_DoorOpenerPlugin "{65D110DFFAEEFDD8}" {
-     m_fRadius 3
-     m_fControlValue 0
-    }
-   }
    m_fRadius 3
   }
  }
