@@ -1,6 +1,21 @@
 StringTable {
  ItemClassName "CustomStringTableItem"
  Items {
+  CustomStringTableItem "{65E911FDEFB5E5C4}" {
+   Id "AR-RKN_S02TT-Course_Beige1_Desc"
+   Target_en_us "1) Move through the canyon to the tunnel entrance. Engage targets along the way."\
+   ""\
+   "2) Clear out the tunnel."\
+   ""\
+   "3) Take the tunnel exit to left at the fork."\
+   ""\
+   "4) Ascend the hill. Engage targets to the front. Then turn right into the ruins."\
+   ""\
+   "5) Move through the ruins and engage far targets at the shooting position."
+   Modified 1709788265
+   Author "Rune"
+   LastChanged "Rune"
+  }
   CustomStringTableItem "{65DF3610E1CB3A07}" {
    Id "AR-RKN_S02TT-Course_Black1_Desc"
    Target_en_us "1) Engage the targets in front, down the path."\

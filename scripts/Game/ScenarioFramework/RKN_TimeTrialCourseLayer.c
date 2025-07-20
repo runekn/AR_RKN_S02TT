@@ -43,7 +43,7 @@ class RKN_TimeTrialCourseLayer : SCR_ScenarioFrameworkLayerBase
 		GetGame().GetCallqueue().Remove(StartCourse);
 		GetGame().GetCallqueue().Remove(ResetRun);
 		m_OnCancel.Invoke();
-		GetGame().GetCallqueue().CallLater(ResetRun, 1000, false, actions);
+		GetGame().GetCallqueue().CallLater(ResetRun, 0, false, actions);
 	}
 	
 	void ScheduleCourse(int playerId, int delay, bool competitive)

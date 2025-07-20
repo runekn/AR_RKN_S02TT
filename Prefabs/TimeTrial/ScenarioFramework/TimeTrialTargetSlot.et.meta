@@ -1,5 +1,5 @@
 MetaFileClass {
- Name "{C62AFC64D4F5495E}Prefabs/TimeTrial/TimeTrialTargetSlot.et"
+ Name "{C62AFC64D4F5495E}Prefabs/TimeTrial/ScenarioFramework/TimeTrialTargetSlot.et"
  Configurations {
   EntityTemplateResourceClass PC {
   }
