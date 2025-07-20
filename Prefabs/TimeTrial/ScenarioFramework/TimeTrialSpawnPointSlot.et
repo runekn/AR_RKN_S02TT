@@ -8,11 +8,11 @@ GenericEntity : "{AA01691FDC4E9167}Prefabs/Systems/ScenarioFramework/Components/
      m_sFaction "CIV"
      m_aActionsOnSpawnPointUsed {
       SCR_ScenarioFrameworkActionAddItemToInventory "{65D13D05E82B0EE5}" {
-       m_Getter SCR_ScenarioFrameworkGetPlayerEntity "{65DA6662C5017366}" {
+       m_Getter SCR_ScenarioFrameworkGetPlayerEntity "{65E911E6A44DB2BF}" {
        }
        m_aPrefabFilter {
         SCR_ScenarioFrameworkPrefabFilterCountNoInheritance "{65D13D051D4AB209}" {
-         m_sPrefabName "{62AA1DC9919E6E61}Prefabs/TimeTrial_Radio_ANPRC68.et"
+         m_sPrefabName "{62AA1DC9919E6E61}Prefabs/TimeTrial/TimeTrial_Radio_ANPRC68.et"
         }
        }
       }

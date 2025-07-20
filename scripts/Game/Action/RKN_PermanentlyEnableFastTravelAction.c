@@ -10,6 +10,6 @@ class RKN_PermanentlyEnableFastTravelAction : SCR_ScenarioFrameworkActionBase
 			return;
 		}
 		SCR_FastTravelComponent comp = SCR_FastTravelComponent.Cast(GetGame().GetPlayerManager().GetPlayerController(id).FindComponent(SCR_FastTravelComponent));
-		comp.ToggleMapDestinationSelection(true, false);
+		comp.ToggleMapDestinationSelectionOwner(true, false);
 	}
 }
