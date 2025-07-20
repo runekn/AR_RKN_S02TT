@@ -17,6 +17,10 @@ class RKN_FakeBuildingDestructionEntity : GenericEntity
 	
 	override void EOnInit(IEntity owner)
 	{
+		#ifdef WORKBENCH
+		if (!GetGame().InPlayMode())
+			return;
+		#endif
 		BaseWorld world = GetWorld();
 		world.QueryEntitiesBySphere(GetOrigin(), m_fRadius, QueryEntities);
 		if (m_Comp)

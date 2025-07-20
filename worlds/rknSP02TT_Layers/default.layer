@@ -5383,7 +5383,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
      }
     }
     coords 111.278 -8.699 -18.942
-    angleY 0
+    angleY 165
    }
    $grp GenericEntity : "{AA01691FDC4E9167}Prefabs/Systems/ScenarioFramework/Components/Slot.et" {
     Slot15 {
@@ -7710,7 +7710,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
           m_aFinishedActions {
            SCR_ScenarioFrameworkActionSpawnObjects "{65DE9B7E03C5141E}" {
             m_aNameOfObjectsToSpawnOnActivation {
-             "TimeTrialSpawnPointSlot1" "TimeTrialSpawnPointSlot2" "TimeTrialSpawnPointSlot3" "TimeTrialSpawnPointSlot4" "TimeTrialSpawnPointSlot5" "TimeTrialSpawnPointSlot6"
+             "TimeTrialSpawnPointSlot1" "TimeTrialSpawnPointSlot2" "TimeTrialSpawnPointSlot3" "TimeTrialSpawnPointSlot4" "TimeTrialSpawnPointSlot5" "TimeTrialSpawnPointSlot6" "TimeTrialSpawnPointSlot9"
             }
             m_eActivationType SAME_AS_PARENT
            }
@@ -7794,20 +7794,37 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
      }
     }
    }
-   GenericEntity TimeTrialSpawnPointSlot6 : "{701063E0786BE818}Prefabs/TimeTrial/ScenarioFramework/TimeTrialSpawnPointSlot.et" {
-    components {
-     SCR_ScenarioFrameworkSlotBase "{5A22E1D67E712EC8}" {
-      m_aPlugins {
-       SCR_ScenarioFrameworkPluginSpawnPoint "{65AB38F319447228}" {
-        m_Info SCR_UIInfo "{65DE9B674899CBE6}" {
-         Name "St. Phillipe"
+   $grp GenericEntity : "{701063E0786BE818}Prefabs/TimeTrial/ScenarioFramework/TimeTrialSpawnPointSlot.et" {
+    TimeTrialSpawnPointSlot6 {
+     components {
+      SCR_ScenarioFrameworkSlotBase "{5A22E1D67E712EC8}" {
+       m_aPlugins {
+        SCR_ScenarioFrameworkPluginSpawnPoint "{65AB38F319447228}" {
+         m_Info SCR_UIInfo "{65DE9B674899CBE6}" {
+          Name "St. Phillipe N"
+         }
         }
        }
       }
      }
+     coords 1.679 0 0.027
+     angleY 0
     }
-    coords 9.205 0.868 -28.425
-    angleY 0
+    TimeTrialSpawnPointSlot9 {
+     components {
+      SCR_ScenarioFrameworkSlotBase "{5A22E1D67E712EC8}" {
+       m_aPlugins {
+        SCR_ScenarioFrameworkPluginSpawnPoint "{65AB38F319447228}" {
+         m_Info SCR_UIInfo "{65DE9B674899CBE6}" {
+          Name "St. Phillipe S"
+         }
+        }
+       }
+      }
+     }
+     coords 21.66 1.949 -99.836
+     angleY 0
+    }
    }
    $grp GenericEntity : "{AA01691FDC4E9167}Prefabs/Systems/ScenarioFramework/Components/Slot.et" {
     Slot22 {
@@ -7816,7 +7833,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
        m_sObjectToSpawn "{45C675ED3CFBBEC5}Prefabs/Props/Military/Compositions/US/ArsenalBox_US.et"
       }
      }
-     coords 4.601 0.909 -31.089
+     coords -1.669 0.281 -8.435
      angleX 1.243
      angleY -98.371
      angleZ -3.307
@@ -7827,7 +7844,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
        m_sObjectToSpawn "{F542F974956C255F}Prefabs/Props/Military/Compositions/CIV/ArsenalBox_CIV.et"
       }
      }
-     coords 4.371 0.869 -29.307
+     coords -1.899 0.245 -6.652
      angleX 1.243
      angleY -98.371
      angleZ -3.307
@@ -7838,7 +7855,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
        m_sObjectToSpawn "{B53B98CEA2D72735}Prefabs/Props/Military/Compositions/FIA/ArsenalBox_FIA.et"
       }
      }
-     coords 4.41 0.827 -27.451
+     coords -1.86 0.206 -4.797
      angleX 1.598
      angleY -92.049
      angleZ -3.15
@@ -7849,10 +7866,54 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
        m_sObjectToSpawn "{AD59EDEAA26CE792}Prefabs/Props/Military/Compositions/USSR/ArsenalBox_USSR.et"
       }
      }
-     coords 5.02 0.964 -32.843
+     coords -1.25 0.36 -10.189
      angleX 0.853
      angleY -104.975
      angleZ -3.428
+    }
+    Slot30 {
+     components {
+      SCR_ScenarioFrameworkSlotBase "{5A22E1D67E712EC8}" {
+       m_sObjectToSpawn "{AD59EDEAA26CE792}Prefabs/Props/Military/Compositions/USSR/ArsenalBox_USSR.et"
+      }
+     }
+     coords 16.095 1.798 -96.188
+     angleX 0.853
+     angleY -104.975
+     angleZ -3.428
+    }
+    Slot31 {
+     components {
+      SCR_ScenarioFrameworkSlotBase "{5A22E1D67E712EC8}" {
+       m_sObjectToSpawn "{45C675ED3CFBBEC5}Prefabs/Props/Military/Compositions/US/ArsenalBox_US.et"
+      }
+     }
+     coords 15.677 1.72 -94.433
+     angleX 1.243
+     angleY -98.371
+     angleZ -3.307
+    }
+    Slot32 {
+     components {
+      SCR_ScenarioFrameworkSlotBase "{5A22E1D67E712EC8}" {
+       m_sObjectToSpawn "{F542F974956C255F}Prefabs/Props/Military/Compositions/CIV/ArsenalBox_CIV.et"
+      }
+     }
+     coords 15.446 1.683 -92.652
+     angleX 1.243
+     angleY -98.371
+     angleZ -3.307
+    }
+    Slot33 {
+     components {
+      SCR_ScenarioFrameworkSlotBase "{5A22E1D67E712EC8}" {
+       m_sObjectToSpawn "{B53B98CEA2D72735}Prefabs/Props/Military/Compositions/FIA/ArsenalBox_FIA.et"
+      }
+     }
+     coords 15.485 1.645 -90.795
+     angleX 1.598
+     angleY -92.049
+     angleZ -3.15
     }
    }
    $grp GenericEntity : "{E41ABB2A25E246B5}Prefabs/TimeTrial/ScenarioFramework/TimeTrialCourseLayer.et" {
@@ -9013,6 +9074,12 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
                m_sLayerName "TimeTrialSpawnPointSlot6"
               }
              }
+             SCR_ScenarioFrameworkActionDeleteEntity "{65E70C774590AC4F}" {
+              m_iMaxNumberOfActivations 1
+              m_Getter SCR_ScenarioFrameworkGetSpawnedEntity "{65E70C774590AC01}" {
+               m_sLayerName "TimeTrialSpawnPointSlot9"
+              }
+             }
              SCR_ScenarioFrameworkActionRestoreLayerToDefault "{65DE9B7986C7524A}" {
               m_iMaxNumberOfActivations 1
               m_Getter SCR_ScenarioFrameworkGetLayerBase "{65DE9B798212262E}" {
@@ -9463,7 +9530,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
              m_MovePoint PointInfo "{65DE9B1350A882A6}" {
               Offset 0 -0.4713 21.4134
              }
-             m_fMoveSpeedMetersPerSecond 2
+             m_fMoveSpeedMetersPerSecond 2.5
              m_bGenerateTracks 1
             }
            }
@@ -9479,7 +9546,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
              m_MovePoint PointInfo "{65DE9B1350A882A6}" {
               Offset 0.6496 -0.4713 21.3299
              }
-             m_fMoveSpeedMetersPerSecond 2
+             m_fMoveSpeedMetersPerSecond 2.5
              m_bGenerateTracks 1
             }
            }
@@ -9495,7 +9562,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
              m_MovePoint PointInfo "{65DE9B1350A882A6}" {
               Offset 0.8091 -0.4713 21.5706
              }
-             m_fMoveSpeedMetersPerSecond 2
+             m_fMoveSpeedMetersPerSecond 2.5
              m_bGenerateTracks 1
             }
            }
@@ -9511,7 +9578,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
              m_MovePoint PointInfo "{65DE9B1350A882A6}" {
               Offset 1.3598 -0.4713 21.3606
              }
-             m_fMoveSpeedMetersPerSecond 2
+             m_fMoveSpeedMetersPerSecond 2.5
              m_bGenerateTracks 1
             }
            }
@@ -9527,7 +9594,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
              m_MovePoint PointInfo "{65DE9B1350A882A6}" {
               Offset 1.9283 -0.4713 21.4216
              }
-             m_fMoveSpeedMetersPerSecond 2
+             m_fMoveSpeedMetersPerSecond 2.5
              m_bGenerateTracks 1
             }
            }

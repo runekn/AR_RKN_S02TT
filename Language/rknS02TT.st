@@ -3,7 +3,22 @@ StringTable {
  Items {
   CustomStringTableItem "{65DF3610E1CB3A07}" {
    Id "AR-RKN_S02TT-Course_Black1_Desc"
-   Modified 1709130415
+   Target_en_us "1) Engage the targets in front, down the path."\
+   ""\
+   "2) Take a left and enter the dry channel. Move along it while engaging targets."\
+   ""\
+   "3) At the end, take a left up between the rocks and then down to the water front street. Engage the targets on the beach and in the water."\
+   ""\
+   "4) Move through the backalley while engagin targets to the left."\
+   ""\
+   "5) At the road, take a left to the sanbag positions. Engage targets at the refueling station. Turn around and engage targets at the next sandbags."\
+   ""\
+   "6) Move into the church and engage targets from the lower level."\
+   ""\
+   "7) Move up the stairs to the belltower. Engage targets out the doors to your right after ascending the ladder. Then turn 180 and do the same on the other side."\
+   ""\
+   "8) Turn left out the last tower doors onto the roof. Sprint to the finish line on the other end of the roof."
+   Modified 1709644576
    Author "Rune"
    LastChanged "Rune"
   }
@@ -11,6 +26,29 @@ StringTable {
    Id "AR-RKN_S02TT-Course_Black2_Desc"
    Target_en_us "Oh god they're multiplying!"
    Modified 1709130439
+   Author "Rune"
+   LastChanged "Rune"
+  }
+  CustomStringTableItem "{65E70C77D6A20B7A}" {
+   Id "AR-RKN_S02TT-Course_Black3_Desc"
+   Target_en_us "1) Engage targets while leaning from sandbag cover with pistol."\
+   ""\
+   "2) Shoot the targets in prone position under the tin wall."\
+   ""\
+   "3) Move to the left, and engage targets again on the first range with pistol while standing."\
+   ""\
+   "4) Move to next position down the street along the sidewalk. Engage targets in the windows of the opposite building from crouch position. You may need to use the full range of the variable stance system to hit all targets while crouched."\
+   ""\
+   "5) Move further down the street to next position and repeat previous step, from standing position this time."\
+   ""\
+   "6) Move across the street and shoot the targets within the courtyard."\
+   ""\
+   "7) Move back out of the courtyard, take a right towards the sandbag shooting position, and engage targets at long range with precision rifle."\
+   ""\
+   "8) Take a left and shoot targets through the first and then second hole in the sandbag wall."\
+   ""\
+   "9) Sprint to the finish to your left."
+   Modified 1709644173
    Author "Rune"
    LastChanged "Rune"
   }
