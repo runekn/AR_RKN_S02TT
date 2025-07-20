@@ -113,7 +113,7 @@ class RKN_TimeTrialVoiceSequence : SCR_ScenarioFrameworkActionVoiceOverPlaySeque
 			
 			RKN_TimeTrialCourseData data = RKN_TimeTrialUtils.GetCourseManager().GetData(course.m_iCourseIndex);
 			
-			if (!data.m_CurrentScoreInfo)
+			if (data.m_CurrentScoreInfo.IsEmpty())
 			{
 				Print("No active player on course", LogLevel.ERROR);
 				return false;

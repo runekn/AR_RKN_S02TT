@@ -131,7 +131,7 @@ class RKN_TimeTrialScoreTablePlayerComponent : ScriptComponent
 		}
 		
 		// Current attempt info
-		if (data.m_CurrentScoreInfo)
+		if (!data.m_CurrentScoreInfo.IsEmpty())
 		{	
 			m_wPlayerLayout.SetVisible(true);
 			string name = data.m_CurrentScoreInfo.GetName();
@@ -151,7 +151,7 @@ class RKN_TimeTrialScoreTablePlayerComponent : ScriptComponent
 		
 		
 		// History table
-		if ((data.m_CurrentScoreInfo && data.m_CurrentScoreInfo.m_iID == me && data.m_CurrentScoreInfo.m_iTime == 0) || data.m_aScoreInfoHistory.IsEmpty())
+		if ((!data.m_CurrentScoreInfo.IsEmpty() && data.m_CurrentScoreInfo.m_iID == me && data.m_CurrentScoreInfo.m_iTime == 0) || data.m_aScoreInfoHistory.IsEmpty())
 		{
 			m_wTableWidget.SetVisible(false);
 		}

@@ -13,6 +13,13 @@ class RKN_TimeTrialScoreInfo
 	[SortAttribute()]
 	int m_iTotal; // Only used for sorting
 	
+	static RKN_TimeTrialScoreInfo empty()
+	{
+		RKN_TimeTrialScoreInfo info = new RKN_TimeTrialScoreInfo();
+		info.m_eType = RKN_TimeTrialScoreType.NONE;
+		return info;
+	}
+	
 	//################################################################################################
 	//! Codec methods
 	//------------------------------------------------------------------------------------------------
@@ -36,38 +43,44 @@ class RKN_TimeTrialScoreInfo
 	//------------------------------------------------------------------------------------------------
 	static bool PropCompare(RKN_TimeTrialScoreInfo prop, SSnapSerializerBase snapshot, ScriptCtx ctx) 
 	{
-		return snapshot.Compare(prop.m_iID, 4) 
-			&& snapshot.Compare(prop.m_eType, 4)
+		if (!prop)
+			return false;
+		return snapshot.CompareInt(prop.m_eType)
+			&& snapshot.CompareInt(prop.m_iID)
 			&& snapshot.Compare(prop.m_iStart, 8)
-			&& snapshot.Compare(prop.m_iTime, 4)
-			&& snapshot.Compare(prop.m_iPenalty, 4)
-			&& snapshot.Compare(prop.m_iBonus, 4)
-			&& snapshot.Compare(prop.m_iSectionTargetsRemaining, 4);
+			&& snapshot.CompareInt(prop.m_iTime)
+			&& snapshot.CompareInt(prop.m_iPenalty)
+			&& snapshot.CompareInt(prop.m_iBonus)
+			&& snapshot.CompareInt(prop.m_iSectionTargetsRemaining);
 	}
 	
 	//------------------------------------------------------------------------------------------------
 	static bool Extract(RKN_TimeTrialScoreInfo prop, ScriptCtx ctx, SSnapSerializerBase snapshot) 
-	{		
-		snapshot.SerializeBytes(prop.m_eType, 4);
-		snapshot.SerializeBytes(prop.m_iID, 4);
+	{
+		if (!prop)
+		{
+			return true;
+		}
+		snapshot.SerializeInt(prop.m_eType);
+		snapshot.SerializeInt(prop.m_iID);
 		snapshot.SerializeBytes(prop.m_iStart, 8);
-		snapshot.SerializeBytes(prop.m_iTime, 4);
-		snapshot.SerializeBytes(prop.m_iPenalty, 4);
-		snapshot.SerializeBytes(prop.m_iBonus, 4);
-		snapshot.SerializeBytes(prop.m_iSectionTargetsRemaining, 4);
+		snapshot.SerializeInt(prop.m_iTime);
+		snapshot.SerializeInt(prop.m_iPenalty);
+		snapshot.SerializeInt(prop.m_iBonus);
+		snapshot.SerializeInt(prop.m_iSectionTargetsRemaining);
 		return true;
 	}
 	
 	//------------------------------------------------------------------------------------------------
 	static bool Inject(SSnapSerializerBase snapshot, ScriptCtx ctx, RKN_TimeTrialScoreInfo prop) 
 	{
-		snapshot.SerializeBytes(prop.m_eType, 4);
-		snapshot.SerializeBytes(prop.m_iID, 4);
+		snapshot.SerializeInt(prop.m_eType);
+		snapshot.SerializeInt(prop.m_iID);
 		snapshot.SerializeBytes(prop.m_iStart, 8);
-		snapshot.SerializeBytes(prop.m_iTime, 4);
-		snapshot.SerializeBytes(prop.m_iPenalty, 4);
-		snapshot.SerializeBytes(prop.m_iBonus, 4);
-		snapshot.SerializeBytes(prop.m_iSectionTargetsRemaining, 4);
+		snapshot.SerializeInt(prop.m_iTime);
+		snapshot.SerializeInt(prop.m_iPenalty);
+		snapshot.SerializeInt(prop.m_iBonus);
+		snapshot.SerializeInt(prop.m_iSectionTargetsRemaining);
 		
 		return true;
 	}
@@ -91,13 +104,19 @@ class RKN_TimeTrialScoreInfo
 			return 0;
 		else if (m_iTime > 0)
 			return m_iTime;
-		else
-			return GetGame().GetWorld().GetTimestamp().DiffMilliseconds(m_iStart);
+		
+		ChimeraWorld world = GetGame().GetWorld();
+		return world.GetServerTimestamp().DiffMilliseconds(m_iStart);
 	}
 	
 	int GetTotal()
 	{
 		return GetTime() + m_iPenalty - m_iBonus;
+	}
+
+	bool IsEmpty()
+	{
+		return m_eType == RKN_TimeTrialScoreType.NONE;
 	}
 	
 	RKN_TimeTrialScoreInfo CopyAs(RKN_TimeTrialScoreType type)
@@ -115,6 +134,7 @@ class RKN_TimeTrialScoreInfo
 
 enum RKN_TimeTrialScoreType
 {
+	NONE, // When current score is not set
 	PREVIOUS, BEST, // For attempt history
 	TRAINING, COMPETITIVE // For active attempt
 }

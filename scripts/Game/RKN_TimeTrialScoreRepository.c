@@ -25,7 +25,7 @@ class RKN_TimeTrialCourseManagerComponent : SCR_BaseGameModeComponent
 		{
 			RKN_TimeTrialCourseConfig config = m_aCourseConfigs[i];
 			m_mDataIndices.Set(config.m_sId, i);
-			m_aCurrentScores.Insert(null);
+			m_aCurrentScores.Insert(RKN_TimeTrialScoreInfo.empty());
 			m_aScoreInfoHistory.Insert({});
 			m_aCourses.Insert(null);
 		}
@@ -81,13 +81,13 @@ class RKN_TimeTrialCourseManagerComponent : SCR_BaseGameModeComponent
 	
 	void ClearCurrentScore(int i)
 	{
-		m_aCurrentScores[i] = null;
+		m_aCurrentScores[i] = RKN_TimeTrialScoreInfo.empty();
 		Replication.BumpMe();
 	}
 	
 	bool HasActiveCompetitor(int i)
 	{
-		return m_aCurrentScores[i] != null;
+		return !m_aCurrentScores[i].IsEmpty();
 	}
 	
 	bool IsActiveCompetitor(int playerId)
