@@ -6419,7 +6419,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
       m_aPlugins {
        SCR_ScenarioFrameworkPluginSpawnPoint "{65AB38F319447228}" {
         m_Info SCR_UIInfo "{65DA6662F76721D1}" {
-         Name "Airport"
+         Name "Airport (Start here)"
         }
        }
       }
@@ -7710,7 +7710,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
           m_aFinishedActions {
            SCR_ScenarioFrameworkActionSpawnObjects "{65DE9B7E03C5141E}" {
             m_aNameOfObjectsToSpawnOnActivation {
-             "TimeTrialSpawnPointSlot1" "TimeTrialSpawnPointSlot2" "TimeTrialSpawnPointSlot3" "TimeTrialSpawnPointSlot4" "TimeTrialSpawnPointSlot5" "TimeTrialSpawnPointSlot6" "TimeTrialSpawnPointSlot9"
+             "TimeTrialSpawnPointSlot1" "TimeTrialSpawnPointSlot2" "TimeTrialSpawnPointSlot3" "TimeTrialSpawnPointSlot4" "TimeTrialSpawnPointSlot5" "TimeTrialSpawnPointSlot6" "TimeTrialSpawnPointSlot9" "TimeTrialSpawnPointSlot8"
             }
             m_eActivationType SAME_AS_PARENT
            }
@@ -9078,6 +9078,12 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
               m_iMaxNumberOfActivations 1
               m_Getter SCR_ScenarioFrameworkGetSpawnedEntity "{65E70C774590AC01}" {
                m_sLayerName "TimeTrialSpawnPointSlot9"
+              }
+             }
+             SCR_ScenarioFrameworkActionDeleteEntity "{65E94DF9808847A9}" {
+              m_iMaxNumberOfActivations 1
+              m_Getter SCR_ScenarioFrameworkGetSpawnedEntity "{65E94DF980884655}" {
+               m_sLayerName "TimeTrialSpawnPointSlot8"
               }
              }
              SCR_ScenarioFrameworkActionRestoreLayerToDefault "{65DE9B7986C7524A}" {
@@ -12944,7 +12950,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
      }
     }
     coords 23.347 -0.977 -1.254
-    angleY 0
+    angleY -82.156
    }
    GenericEntity CourseBeige1 : "{E41ABB2A25E246B5}Prefabs/TimeTrial/ScenarioFramework/TimeTrialCourseLayer.et" {
     components {
