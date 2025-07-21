@@ -7752,6 +7752,11 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
      }
     }
     CourseBlue3 {
+     components {
+      RKN_TimeTrialCourseLayer "{65BA6C59A0F2E93C}" {
+       m_sCourseId "blue3"
+      }
+     }
      coords 11.228 -0.115 -19.337
      angleY 139.12
      {
