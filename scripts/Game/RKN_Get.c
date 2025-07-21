@@ -97,6 +97,13 @@ class RKN_TimeTrialGetConsole : RKN_Get
 {	
 	override SCR_ScenarioFrameworkParamBase Get(IEntity owner)
 	{
+		if (!owner.FindComponent(RKN_TimeTrialCourseLayer))
+		{
+			SCR_ScenarioFrameworkParam<IEntity> courseParam = FindComponentInParents(owner, RKN_TimeTrialCourseLayer);
+			if (!courseParam)
+				return null;
+			owner = courseParam.GetValue();
+		}
 		SCR_ScenarioFrameworkParam<IEntity> param = FindComponentInChildren(owner, RKN_TimeTrialConsoleSlot);
 		if (!param)
 			return null;

@@ -85,6 +85,17 @@ StringTable {
    Author "Rune"
    LastChanged "Rune"
   }
+  CustomStringTableItem "{65EA5524AC1BAB12}" {
+   Id "AR-RKN_S02TT-Course_Blue3_Desc"
+   Target_en_us "1) Clear all obstacles to the left. "\
+   ""\
+   "2) Turn 180 right and complete the center obstacles."\
+   ""\
+   "3) Sprint to the finish line near the flagpole."
+   Modified 1709891305
+   Author "Rune"
+   LastChanged "Rune"
+  }
   CustomStringTableItem "{65EA555A939F3EE2}" {
    Id "AR-RKN_S02TT-Course_Brown1_Desc"
    Target_en_us "For each section, find the window with the active target. After hitting it a sequence of timed targets will appear."

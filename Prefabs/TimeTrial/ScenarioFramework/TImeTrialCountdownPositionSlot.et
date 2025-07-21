@@ -13,6 +13,18 @@ GenericEntity : "{032C15BBEBE9E1E9}Prefabs/Systems/ScenarioFramework/Components/
    m_sOverrideObjectDisplayName "CountdownTriggerEntity"
    m_CourseGetter RKN_GetParent "{65D1352A06973AF1}" {
    }
+   m_aOnFailActions {
+    RKN_TimeTrialVoiceLine "{65EA55440A15C757}" {
+     m_sLineName "FAIL_START"
+     m_PlayerGetter SCR_ScenarioFrameworkGetPlayerEntity "{65EA554407572FB2}" {
+     }
+    }
+    RKN_ActionPlaySoundOnEntity "{65EA55443DA67F39}" {
+     m_RknGetter RKN_TimeTrialGetConsole "{65EA55443E827BD6}" {
+     }
+     m_sSound "SOUND_RANGECP_ROUNDABORT"
+    }
+   }
   }
  }
  coords 7457.328 136.98 4746.021
