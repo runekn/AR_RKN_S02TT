@@ -471,7 +471,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
        components {
         SCR_ScenarioFrameworkSlotMarker "{5EA2BD9901E5E82E}" {
          m_MapMarkerType SCR_ScenarioFrameworkMarkerCustom "{65E0BA99A3BD73E1}" {
-          m_sMapMarkerText "Home Invasion"
+          m_sMapMarkerText "#AR-RKN_S02TT-Course_Red1_Name"
           m_eMapMarkerIcon POINT_OF_INTEREST
          }
         }
@@ -1577,7 +1577,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
        components {
         SCR_ScenarioFrameworkSlotMarker "{5EA2BD9901E5E82E}" {
          m_MapMarkerType SCR_ScenarioFrameworkMarkerCustom "{65E0BA99A3BD73E1}" {
-          m_sMapMarkerText "Crop Harvesting"
+          m_sMapMarkerText "#AR-RKN_S02TT-Course_Red2_Name"
           m_eMapMarkerIcon POINT_OF_INTEREST
           m_eMapMarkerColor GREEN
          }
@@ -2984,7 +2984,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
        components {
         SCR_ScenarioFrameworkSlotMarker "{5EA2BD9901E5E82E}" {
          m_MapMarkerType SCR_ScenarioFrameworkMarkerCustom "{65E0BA99A3BD73E1}" {
-          m_sMapMarkerText "Drive-in"
+          m_sMapMarkerText "#AR-RKN_S02TT-Course_Red3_Name"
           m_eMapMarkerIcon POINT_OF_INTEREST
           m_eMapMarkerColor RED
          }
@@ -4304,7 +4304,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
       components {
        SCR_ScenarioFrameworkSlotMarker "{5EA2BD9901E5E82E}" {
         m_MapMarkerType SCR_ScenarioFrameworkMarkerCustom "{65E0BA99A3BD73E1}" {
-         m_sMapMarkerText "Extended Range"
+         m_sMapMarkerText "#AR-RKN_S02TT-Course_Green1_Name"
          m_eMapMarkerIcon POINT_OF_INTEREST
          m_eMapMarkerColor ORANGE
         }
@@ -5367,7 +5367,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
       components {
        SCR_ScenarioFrameworkSlotMarker "{5EA2BD9901E5E82E}" {
         m_MapMarkerType SCR_ScenarioFrameworkMarkerCustom "{65E0BA99A3BD73E1}" {
-         m_sMapMarkerText "Funhouse"
+         m_sMapMarkerText "#AR-RKN_S02TT-Course_Yellow1_Name"
          m_eMapMarkerIcon POINT_OF_INTEREST
          m_eMapMarkerColor MAGENTA
         }
@@ -6450,7 +6450,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
       components {
        SCR_ScenarioFrameworkSlotMarker "{5EA2BD9901E5E82E}" {
         m_MapMarkerType SCR_ScenarioFrameworkMarkerCustom "{65E0BA99A3BD73E1}" {
-         m_sMapMarkerText "Fisherman"
+         m_sMapMarkerText "#AR-RKN_S02TT-Course_Orange1_Name"
          m_eMapMarkerIcon POINT_OF_INTEREST
          m_eMapMarkerColor ORANGE
         }
@@ -6998,7 +6998,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
        components {
         SCR_ScenarioFrameworkSlotMarker "{5EA2BD9901E5E82E}" {
          m_MapMarkerType SCR_ScenarioFrameworkMarkerCustom "{65E0BA99A3BD73E1}" {
-          m_sMapMarkerText "Killhouse"
+          m_sMapMarkerText "#AR-RKN_S02TT-Course_Blue2_Name"
           m_eMapMarkerIcon POINT_OF_INTEREST
           m_eMapMarkerColor DARK_PINK
          }
@@ -7126,7 +7126,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
        components {
         SCR_ScenarioFrameworkSlotMarker "{5EA2BD9901E5E82E}" {
          m_MapMarkerType SCR_ScenarioFrameworkMarkerCustom "{65E0BA99A3BD73E1}" {
-          m_sMapMarkerText "Intro"
+          m_sMapMarkerText "#AR-RKN_S02TT-Course_Intro_Name"
           m_eMapMarkerIcon POINT_OF_INTEREST
           m_eMapMarkerColor ORANGE
          }
@@ -7736,7 +7736,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
        components {
         SCR_ScenarioFrameworkSlotMarker "{5EA2BD9901E5E82E}" {
          m_MapMarkerType SCR_ScenarioFrameworkMarkerCustom "{65E0BA99A3BD73E1}" {
-          m_sMapMarkerText "Range Sequence"
+          m_sMapMarkerText "#AR-RKN_S02TT-Course_Blue1_Name"
           m_eMapMarkerIcon POINT_OF_INTEREST
           m_eMapMarkerColor GREEN
          }
@@ -8048,7 +8048,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
        components {
         SCR_ScenarioFrameworkSlotMarker "{5EA2BD9901E5E82E}" {
          m_MapMarkerType SCR_ScenarioFrameworkMarkerCustom "{65E0BA99A3BD73E1}" {
-          m_sMapMarkerText "Obstacle Course"
+          m_sMapMarkerText "#AR-RKN_S02TT-Course_Blue3_Name"
           m_eMapMarkerIcon POINT_OF_INTEREST
          }
         }
@@ -10036,7 +10036,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
        components {
         SCR_ScenarioFrameworkSlotMarker "{5EA2BD9901E5E82E}" {
          m_MapMarkerType SCR_ScenarioFrameworkMarkerCustom "{65E0BA99A3BD73E1}" {
-          m_sMapMarkerText "Naval Nuisance"
+          m_sMapMarkerText "#AR-RKN_S02TT-Course_Black1_Name"
           m_eMapMarkerIcon POINT_OF_INTEREST
           m_eMapMarkerColor BLUE
          }
@@ -10753,7 +10753,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
        components {
         SCR_ScenarioFrameworkSlotMarker "{5EA2BD9901E5E82E}" {
          m_MapMarkerType SCR_ScenarioFrameworkMarkerCustom "{65E0BA99A3BD73E1}" {
-          m_sMapMarkerText "Clownhouse"
+          m_sMapMarkerText "#AR-RKN_S02TT-Course_Black2_Name"
           m_eMapMarkerIcon POINT_OF_INTEREST
           m_eMapMarkerColor DARK_PINK
          }
@@ -12437,7 +12437,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
        components {
         SCR_ScenarioFrameworkSlotMarker "{5EA2BD9901E5E82E}" {
          m_MapMarkerType SCR_ScenarioFrameworkMarkerCustom "{65E0BA99A3BD73E1}" {
-          m_sMapMarkerText "Phillipe's Street"
+          m_sMapMarkerText "#AR-RKN_S02TT-Course_Black3_Name"
           m_eMapMarkerIcon POINT_OF_INTEREST
           m_eMapMarkerColor ORANGE
          }
@@ -13300,7 +13300,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
       components {
        SCR_ScenarioFrameworkSlotMarker "{5EA2BD9901E5E82E}" {
         m_MapMarkerType SCR_ScenarioFrameworkMarkerCustom "{65E0BA99A3BD73E1}" {
-         m_sMapMarkerText "Rescue The Princess"
+         m_sMapMarkerText "#AR-RKN_S02TT-Course_Lime1_Name"
          m_eMapMarkerIcon POINT_OF_INTEREST
          m_eMapMarkerColor DARK_PINK
         }
@@ -14130,7 +14130,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
       components {
        SCR_ScenarioFrameworkSlotMarker "{5EA2BD9901E5E82E}" {
         m_MapMarkerType SCR_ScenarioFrameworkMarkerCustom "{65E0BA99A3BD73E1}" {
-         m_sMapMarkerText "Tunnel Rat"
+         m_sMapMarkerText "#AR-RKN_S02TT-Course_Beige1_Name"
          m_eMapMarkerIcon POINT_OF_INTEREST
          m_eMapMarkerColor INDEPENDENT
         }
@@ -14988,7 +14988,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
       components {
        SCR_ScenarioFrameworkSlotMarker "{5EA2BD9901E5E82E}" {
         m_MapMarkerType SCR_ScenarioFrameworkMarkerCustom "{65E0BA99A3BD73E1}" {
-         m_sMapMarkerText "Wack-an-Invader"
+         m_sMapMarkerText "#AR-RKN_S02TT-Course_Brown1_Name"
          m_eMapMarkerIcon POINT_OF_INTEREST
          m_eMapMarkerColor BLUFOR
         }

@@ -16,6 +16,13 @@ StringTable {
    Author "Rune"
    LastChanged "Rune"
   }
+  CustomStringTableItem "{65EAE144B562167E}" {
+   Id "AR-RKN_S02TT-Course_Beige1_Name"
+   Target_en_us "Tunnel Rat"
+   Modified 1709902137
+   Author "Rune"
+   LastChanged "Rune"
+  }
   CustomStringTableItem "{65DF3610E1CB3A07}" {
    Id "AR-RKN_S02TT-Course_Black1_Desc"
    Target_en_us "1) Engage the targets in front, down the path."\
@@ -37,10 +44,24 @@ StringTable {
    Author "Rune"
    LastChanged "Rune"
   }
+  CustomStringTableItem "{65EAE144AA7FF713}" {
+   Id "AR-RKN_S02TT-Course_Black1_Name"
+   Target_en_us "Naval Nuisance"
+   Modified 1709902160
+   Author "Rune"
+   LastChanged "Rune"
+  }
   CustomStringTableItem "{65DF3610E3E335DA}" {
    Id "AR-RKN_S02TT-Course_Black2_Desc"
    Target_en_us "Oh god they're multiplying!"
    Modified 1709130439
+   Author "Rune"
+   LastChanged "Rune"
+  }
+  CustomStringTableItem "{65EAE144A3640D7B}" {
+   Id "AR-RKN_S02TT-Course_Black2_Name"
+   Target_en_us "Clownhouse"
+   Modified 1709902171
    Author "Rune"
    LastChanged "Rune"
   }
@@ -67,6 +88,13 @@ StringTable {
    Author "Rune"
    LastChanged "Rune"
   }
+  CustomStringTableItem "{65EAE144DBAA7DE0}" {
+   Id "AR-RKN_S02TT-Course_Black3_Name"
+   Target_en_us "Phillip's Street"
+   Modified 1709902186
+   Author "Rune"
+   LastChanged "Rune"
+  }
   CustomStringTableItem "{65DA66671FF08947}" {
    Id "AR-RKN_S02TT-Course_Blue1_Desc"
    Target_en_us "A course is split into sections. Completing sections usually means shooting all targets from a specific position, before moving on to the next section at a new position. These positions can sometimes have requirements, such as stance and weapon type. Leaving the shooting position before completing the section may result in failure of the course."\
@@ -78,10 +106,24 @@ StringTable {
    Author "Rune"
    LastChanged "Rune"
   }
+  CustomStringTableItem "{65EAE144D2D2072F}" {
+   Id "AR-RKN_S02TT-Course_Blue1_Name"
+   Target_en_us "Range Sequence"
+   Modified 1709902202
+   Author "Rune"
+   LastChanged "Rune"
+  }
   CustomStringTableItem "{65DA661C1099D7A7}" {
    Id "AR-RKN_S02TT-Course_Blue2_Desc"
    Target_en_us "Train your accuracy while moving and inhibited by obstacles."
    Modified 1708839249
+   Author "Rune"
+   LastChanged "Rune"
+  }
+  CustomStringTableItem "{65EAE144C9651749}" {
+   Id "AR-RKN_S02TT-Course_Blue2_Name"
+   Target_en_us "Killhouse"
+   Modified 1709902214
    Author "Rune"
    LastChanged "Rune"
   }
@@ -96,10 +138,24 @@ StringTable {
    Author "Rune"
    LastChanged "Rune"
   }
+  CustomStringTableItem "{65EAE144C45209D8}" {
+   Id "AR-RKN_S02TT-Course_Blue3_Name"
+   Target_en_us "Obstacle Course"
+   Modified 1709902221
+   Author "Rune"
+   LastChanged "Rune"
+  }
   CustomStringTableItem "{65EA555A939F3EE2}" {
    Id "AR-RKN_S02TT-Course_Brown1_Desc"
    Target_en_us "For each section, find the window with the active target. After hitting it a sequence of timed targets will appear."
    Modified 1709882503
+   Author "Rune"
+   LastChanged "Rune"
+  }
+  CustomStringTableItem "{65EAE144FBE175EC}" {
+   Id "AR-RKN_S02TT-Course_Brown1_Name"
+   Target_en_us "Whack-an-Invader"
+   Modified 1709902243
    Author "Rune"
    LastChanged "Rune"
   }
@@ -115,6 +171,13 @@ StringTable {
    ""\
    "5) Move to the second shooting position and engage targets at long range."
    Modified 1708838367
+   Author "Rune"
+   LastChanged "Rune"
+  }
+  CustomStringTableItem "{65EAE144F3112D91}" {
+   Id "AR-RKN_S02TT-Course_Green1_Name"
+   Target_en_us "Extended Range"
+   Modified 1709902257
    Author "Rune"
    LastChanged "Rune"
   }
@@ -139,6 +202,13 @@ StringTable {
    Author "Rune"
    LastChanged "Rune"
   }
+  CustomStringTableItem "{65EAE144EA8D0C19}" {
+   Id "AR-RKN_S02TT-Course_Intro_Name"
+   Target_en_us "Introduction Course"
+   Modified 1709902273
+   Author "Rune"
+   LastChanged "Rune"
+  }
   CustomStringTableItem "{65E0BA89D0709DBF}" {
    Id "AR-RKN_S02TT-Course_Lime1_Desc"
    Target_en_us "1) Shoot all targets on or at the base of the walls."\
@@ -151,6 +221,13 @@ StringTable {
    ""\
    "5) Cross the bridge, clear the area, and open the cage."
    Modified 1709231761
+   Author "Rune"
+   LastChanged "Rune"
+  }
+  CustomStringTableItem "{65EAE1441C149833}" {
+   Id "AR-RKN_S02TT-Course_Lime1_Name"
+   Target_en_us "Rescue The Princess"
+   Modified 1709902295
    Author "Rune"
    LastChanged "Rune"
   }
@@ -171,6 +248,13 @@ StringTable {
    Author "Rune"
    LastChanged "Rune"
   }
+  CustomStringTableItem "{65EAE144142619F7}" {
+   Id "AR-RKN_S02TT-Course_Orange1_Name"
+   Target_en_us "Fisherman"
+   Modified 1709902305
+   Author "Rune"
+   LastChanged "Rune"
+  }
   CustomStringTableItem "{65DA6624E3BFBA07}" {
    Id "AR-RKN_S02TT-Course_Red1_Desc"
    Target_en_us "1) Enter the yard and engage targets."\
@@ -179,6 +263,13 @@ StringTable {
    ""\
    "3) Exit through the front door to the finish line."
    Modified 1708838374
+   Author "Rune"
+   LastChanged "Rune"
+  }
+  CustomStringTableItem "{65EAE1440FA6F2ED}" {
+   Id "AR-RKN_S02TT-Course_Red1_Name"
+   Target_en_us "Home Invasion"
+   Modified 1709902319
    Author "Rune"
    LastChanged "Rune"
   }
@@ -201,6 +292,13 @@ StringTable {
    Author "Rune"
    LastChanged "Rune"
   }
+  CustomStringTableItem "{65EAE1440AB7B897}" {
+   Id "AR-RKN_S02TT-Course_Red2_Name"
+   Target_en_us "Crop Harvesting"
+   Modified 1709902328
+   Author "Rune"
+   LastChanged "Rune"
+  }
   CustomStringTableItem "{65D8CECE4034DD39}" {
    Id "AR-RKN_S02TT-Course_Red3_Desc"
    Target_en_us "1) Move to the vehicle while engaging the targets to your right."\
@@ -218,6 +316,13 @@ StringTable {
    Author "Rune"
    LastChanged "Rune"
   }
+  CustomStringTableItem "{65EAE14406DEF5E4}" {
+   Id "AR-RKN_S02TT-Course_Red3_Name"
+   Target_en_us "Drive-in"
+   Modified 1709902339
+   Author "Rune"
+   LastChanged "Rune"
+  }
   CustomStringTableItem "{65DA662709656AAA}" {
    Id "AR-RKN_S02TT-Course_Yellow1_Desc"
    Target_en_us "1) Clear the building."\
@@ -230,6 +335,13 @@ StringTable {
    ""\
    "5) Move to the finish line down the dirt path."
    Modified 1708838384
+   Author "Rune"
+   LastChanged "Rune"
+  }
+  CustomStringTableItem "{65EAE1443ED491BB}" {
+   Id "AR-RKN_S02TT-Course_Yellow1_Name"
+   Target_en_us "Funhouse"
+   Modified 1709902352
    Author "Rune"
    LastChanged "Rune"
   }
