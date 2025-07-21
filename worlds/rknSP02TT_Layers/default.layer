@@ -13894,6 +13894,18 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
     components {
      RKN_TimeTrialCourseLayer "{65BA6C59A0F2E93C}" {
       m_sCourseId "brown1"
+      m_aOnScheduleActions {
+       SCR_ScenarioFrameworkActionRestoreLayerToDefault "{65EA555A67B800AC}" {
+        m_Getter SCR_ScenarioFrameworkGetLayerBase "{65EA555A66F166F1}" {
+         m_sLayerBaseName "Brown1DoorCloser"
+        }
+       }
+       SCR_ScenarioFrameworkActionSpawnObjects "{65EA555A6006C60B}" {
+        m_aNameOfObjectsToSpawnOnActivation {
+         "Brown1DoorCloser"
+        }
+       }
+      }
      }
     }
     coords 0 0 0
@@ -14002,7 +14014,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
              }
             }
             m_fActivationDelaySeconds 0.5
-            m_iTimeoutSeconds 3
+            m_iTimeoutSeconds 2.5
            }
           }
           coords 2.392 -6.366 77.909
@@ -14017,7 +14029,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
              }
             }
             m_fActivationDelaySeconds 0.5
-            m_iTimeoutSeconds 3
+            m_iTimeoutSeconds 2.5
            }
           }
           coords 20.09 -5.364 34.316
@@ -14032,7 +14044,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
              }
             }
             m_fActivationDelaySeconds 0.5
-            m_iTimeoutSeconds 3
+            m_iTimeoutSeconds 2.5
            }
           }
           coords 23.529 -3.748 62.558
@@ -14073,7 +14085,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
              }
             }
             m_fActivationDelaySeconds 0.5
-            m_iTimeoutSeconds 3
+            m_iTimeoutSeconds 2.5
            }
           }
           coords 61.611 -5.323 -59.55
@@ -14088,7 +14100,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
              }
             }
             m_fActivationDelaySeconds 0.5
-            m_iTimeoutSeconds 3
+            m_iTimeoutSeconds 2.5
            }
           }
           coords 32.621 -5.594 -20.276
@@ -14103,7 +14115,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
              }
             }
             m_fActivationDelaySeconds 0.5
-            m_iTimeoutSeconds 3
+            m_iTimeoutSeconds 2.5
            }
           }
           coords 29.623 -5.735 -8.668
@@ -14119,7 +14131,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
              }
             }
             m_fActivationDelaySeconds 0.5
-            m_iTimeoutSeconds 3
+            m_iTimeoutSeconds 2.5
            }
           }
           coords 62.874 -6.375 -13.646
@@ -14134,7 +14146,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
              }
             }
             m_fActivationDelaySeconds 0.5
-            m_iTimeoutSeconds 3
+            m_iTimeoutSeconds 2.5
            }
           }
           coords 27.496 -6.156 -48.552
@@ -14175,7 +14187,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
              }
             }
             m_fActivationDelaySeconds 1
-            m_iTimeoutSeconds 3
+            m_iTimeoutSeconds 2.5
            }
           }
           coords -2.802 -0.991 11.167
@@ -14191,7 +14203,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
              }
             }
             m_fActivationDelaySeconds 0.5
-            m_iTimeoutSeconds 3
+            m_iTimeoutSeconds 2.5
            }
           }
           coords 30.396 -4.08 64.432
@@ -14350,7 +14362,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
              }
             }
             m_fActivationDelaySeconds 0.5
-            m_iTimeoutSeconds 3
+            m_iTimeoutSeconds 2.5
            }
           }
           coords 46.761 -3.125 51.812
@@ -14365,7 +14377,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
              }
             }
             m_fActivationDelaySeconds 0.5
-            m_iTimeoutSeconds 3
+            m_iTimeoutSeconds 2.5
            }
           }
           coords 85.064 -6.243 85.195
@@ -14380,7 +14392,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
              }
             }
             m_fActivationDelaySeconds 0.5
-            m_iTimeoutSeconds 3
+            m_iTimeoutSeconds 2.5
            }
           }
           coords 92.879 -7.613 16.009
@@ -14410,7 +14422,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
              }
             }
             m_fActivationDelaySeconds 0.5
-            m_iTimeoutSeconds 3
+            m_iTimeoutSeconds 2.5
            }
           }
           coords 93.969 -7.363 25.301
@@ -14425,7 +14437,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
              }
             }
             m_fActivationDelaySeconds 0.5
-            m_iTimeoutSeconds 3
+            m_iTimeoutSeconds 2.5
            }
           }
           coords 33.24 -5.359 27.74
@@ -14471,7 +14483,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
              }
             }
             m_fActivationDelaySeconds 1
-            m_iTimeoutSeconds 3
+            m_iTimeoutSeconds 2.5
            }
           }
           coords 78.929 -6.282 31.522
@@ -14501,7 +14513,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
              }
             }
             m_fActivationDelaySeconds 0.5
-            m_iTimeoutSeconds 3
+            m_iTimeoutSeconds 2.5
            }
           }
           coords 72.001 -6.633 60.287
@@ -14516,7 +14528,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
              }
             }
             m_fActivationDelaySeconds 0.5
-            m_iTimeoutSeconds 3
+            m_iTimeoutSeconds 2.5
            }
           }
           coords 58.397 -6.082 1.799
@@ -14572,7 +14584,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
              }
             }
             m_fActivationDelaySeconds 0.5
-            m_iTimeoutSeconds 3
+            m_iTimeoutSeconds 2.5
            }
           }
           coords 127.239 -8.889 -17.531
@@ -14587,7 +14599,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
              }
             }
             m_fActivationDelaySeconds 0.5
-            m_iTimeoutSeconds 2
+            m_iTimeoutSeconds 2.5
            }
           }
           coords 77.423 -8.387 -7.983
@@ -14624,6 +14636,15 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
       }
       coords 3.964 -0.482 4.568
      }
+     GenericEntity Brown1DoorCloser : "{B450A4E78ACE3742}Prefabs/TimeTrial/ScenarioFramework/DoorOpenerSlot.et" {
+      components {
+       RKN_DoorOpenerSlot "{5A22E1D67E712EC8}" {
+        m_bShowDebugShapesInWorkbench 0
+        m_fControlValue 0
+       }
+      }
+      coords 3.768 0.857 9.443
+     }
      DecalEntity : "{BAA55688399B3545}Prefabs/Decals/Dirt/Decal_Dirt_Patch_01.et" {
       components {
        Hierarchy "{56E0B29E5E5F7F36}" {
@@ -14642,6 +14663,18 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
      }
      GenericEntity : "{E51E2E1D77B54223}Prefabs/Compositions/Misc/CustomEntities/CompositionDecals/CompositionDecal_Dirt_Patch_01.et" {
       coords 4.299 -0.509 4.12
+     }
+     GenericEntity SlotMarker14 : "{E537867C6E760514}Prefabs/Systems/ScenarioFramework/Components/SlotMarker.et" {
+      components {
+       SCR_ScenarioFrameworkSlotMarker "{5EA2BD9901E5E82E}" {
+        m_MapMarkerType SCR_ScenarioFrameworkMarkerCustom "{65E0BA99A3BD73E1}" {
+         m_sMapMarkerText "Wack-an-Invader"
+         m_eMapMarkerIcon POINT_OF_INTEREST
+         m_eMapMarkerColor BLUFOR
+        }
+       }
+      }
+      coords 5.93 -0.518 5.112
      }
      GenericEntity TImeTrialCountdownPositionSlot15 : "{FE7A51992E39BF1B}Prefabs/TimeTrial/ScenarioFramework/TImeTrialCountdownPositionSlot.et" {
       components {

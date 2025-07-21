@@ -85,6 +85,13 @@ StringTable {
    Author "Rune"
    LastChanged "Rune"
   }
+  CustomStringTableItem "{65EA555A939F3EE2}" {
+   Id "AR-RKN_S02TT-Course_Brown1_Desc"
+   Target_en_us "For each section, find the window with the active target. After hitting it a sequence of timed targets will appear."
+   Modified 1709882503
+   Author "Rune"
+   LastChanged "Rune"
+  }
   CustomStringTableItem "{65DA6624E48E7FAA}" {
    Id "AR-RKN_S02TT-Course_Green1_Desc"
    Target_en_us "1) Engage the targets to your left."\

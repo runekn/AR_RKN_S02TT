@@ -18,10 +18,10 @@ class RKN_TimeTrialTargetSlot : RKN_TimeTrialObjectiveSlot
 	int m_iRequiredHits;
 	
 	[Attribute("-1", category: "Time trial")]
-	int m_iTimeoutSeconds;
+	float m_iTimeoutSeconds;
 	
 	[Attribute("2", category: "Time trial")]
-	int m_iTimeoutPenaltySeconds;
+	float m_iTimeoutPenaltySeconds;
 	
 	[Attribute(uiwidget: UIWidgets.Object, category: "Time trial")]
 	ref array<ref SCR_ScenarioFrameworkActionBase> m_aTimeoutActions;
@@ -95,7 +95,7 @@ class RKN_TimeTrialTargetSlot : RKN_TimeTrialObjectiveSlot
 		super.ActivateObjective();
 		if (m_iTimeoutSeconds > 0)
 		{
-			GetGame().GetCallqueue().CallLater(Timeout, m_iTimeoutSeconds * 1000, false);
+			GetGame().GetCallqueue().CallLater(Timeout, m_iTimeoutSeconds * 1000.0, false);
 		}
 		if (m_MovePoint)
 		{
@@ -110,7 +110,7 @@ class RKN_TimeTrialTargetSlot : RKN_TimeTrialObjectiveSlot
 	{
 		m_Target.SetState(ETargetState.TARGET_DOWN);
 		if (!m_bBonusObjective)
-			m_Section.m_Course.ApplyScoreModifier(m_iTimeoutPenaltySeconds * 1000);
+			m_Section.m_Course.ApplyScoreModifier(m_iTimeoutPenaltySeconds * 1000.0);
 		foreach (SCR_ScenarioFrameworkActionBase action : m_aTimeoutActions)
 			action.Init(GetOwner());
 		FinishObjective();
