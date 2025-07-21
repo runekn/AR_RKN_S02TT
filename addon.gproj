@@ -1,6 +1,6 @@
 GameProject {
- ID "rknS02TT"
- GUID "65AB380985EBE462"
+ ID "rknS02TT_manw"
+ GUID "65EAE14AC52175DF"
  TITLE "rkn_S02TT"
  Dependencies {
   "58D0FB3206B6F859"
