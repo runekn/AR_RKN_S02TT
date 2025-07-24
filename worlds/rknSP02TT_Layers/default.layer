@@ -7976,7 +7976,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
         coords -57.224 0.05 57.263
         {
          GenericEntity TImeTrialShooterPositionSlot71 : "{5128F9666E234EFC}Prefabs/TimeTrial/ScenarioFramework/TImeTrialShooterPositionSlot.et" {
-          coords -2.303 -0 1.829
+          coords -2.303 0 1.829
           angleY 37.534
          }
         }
@@ -8101,7 +8101,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
           m_aFinishedActions {
            SCR_ScenarioFrameworkActionSpawnObjects "{65DE9B7E03C5141E}" {
             m_aNameOfObjectsToSpawnOnActivation {
-             "TimeTrialSpawnPointSlot1" "TimeTrialSpawnPointSlot2" "TimeTrialSpawnPointSlot3" "TimeTrialSpawnPointSlot4" "TimeTrialSpawnPointSlot5" "TimeTrialSpawnPointSlot6" "TimeTrialSpawnPointSlot9" "TimeTrialSpawnPointSlot8" "TimeTrialSpawnPointSlot10"
+             "TimeTrialSpawnPointSlot1" "TimeTrialSpawnPointSlot2" "TimeTrialSpawnPointSlot3" "TimeTrialSpawnPointSlot4" "TimeTrialSpawnPointSlot5" "TimeTrialSpawnPointSlot6" "TimeTrialSpawnPointSlot7" "TimeTrialSpawnPointSlot9" "TimeTrialSpawnPointSlot8" "TimeTrialSpawnPointSlot10"
             }
             m_eActivationType SAME_AS_PARENT
            }
@@ -9463,6 +9463,12 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
               m_iMaxNumberOfActivations 1
               m_Getter SCR_ScenarioFrameworkGetSpawnedEntity "{65DE9B7B9ABCC4BE}" {
                m_sLayerName "TimeTrialSpawnPointSlot6"
+              }
+             }
+             SCR_ScenarioFrameworkActionDeleteEntity "{65F14107E5CECF9D}" {
+              m_iMaxNumberOfActivations 1
+              m_Getter SCR_ScenarioFrameworkGetSpawnedEntity "{65F14107E5CECE45}" {
+               m_sLayerName "TimeTrialSpawnPointSlot7"
               }
              }
              SCR_ScenarioFrameworkActionDeleteEntity "{65E70C774590AC4F}" {
