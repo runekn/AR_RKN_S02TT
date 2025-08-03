@@ -9217,8 +9217,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
            angleY 72.411
           }
           TimeTrialStandardTargetSlot178 {
-           coords -9.197 0.96 3.356
-           angleY 120.882
+           coords -8.838 0.96 2.954
+           angleY 117.391
           }
           TimeTrialStandardTargetSlot181 {
            components {

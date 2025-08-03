@@ -31,7 +31,7 @@ StringTable {
    ""\
    "3) At the end, take a left up between the rocks and then down to the water front street. Engage the targets on the beach and in the water."\
    ""\
-   "4) Move through the backalley while engagin targets to the left."\
+   "4) Move through the backalley while engagin targets to the right."\
    ""\
    "5) At the road, take a left to the sanbag positions. Engage targets at the refueling station. Turn around and engage targets at the next sandbags."\
    ""\
@@ -40,7 +40,7 @@ StringTable {
    "7) Move up the stairs to the belltower. Engage targets out the doors to your right after ascending the ladder. Then turn 180 and do the same on the other side."\
    ""\
    "8) Turn left out the last tower doors onto the roof. Sprint to the finish line on the other end of the roof."
-   Modified 1709644576
+   Modified 1711693085
    Author "Rune"
    LastChanged "Rune"
   }
