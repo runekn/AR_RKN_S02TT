@@ -200,6 +200,11 @@ class RKN_TimeTrialCourseLayer : SCR_ScenarioFrameworkLayerBase
 		}
 		return m_Manager;
 	}
+	
+	int GetPlayerId()
+	{
+		return GetCourseManager().GetData(m_iCourseIndex).m_CurrentScoreInfo.m_iID;
+	}
 }
 
 class RKN_EquipItemCallback : ScriptedInventoryOperationCallback

@@ -34,6 +34,11 @@ class RKN_TimeTrialCountdownPositionSlot : SCR_ScenarioFrameworkSlotTrigger
 	override void AfterParentAreaChildrenSpawned(SCR_ScenarioFrameworkLayerBase layer)
 	{
 		super.AfterParentAreaChildrenSpawned(layer);
+		SCR_ScenarioFrameworkTriggerEntity trigger = SCR_ScenarioFrameworkTriggerEntity.Cast(m_Entity);
+		if (trigger)
+		{
+			trigger.AddCustomTriggerCondition(new RKN_TimeTrialPlayerTriggerCondition(m_Course.m_iCourseIndex));
+		}
 		TriggerState(false); // Disable it again after super.AfterParentAreaChildrenSpawned enabled it
 	}
 	

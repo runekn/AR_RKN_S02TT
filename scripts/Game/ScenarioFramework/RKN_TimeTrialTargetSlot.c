@@ -103,7 +103,7 @@ class RKN_TimeTrialTargetSlot : RKN_TimeTrialObjectiveSlot
 			m_vDesiredPosition = GetMovePosition();
 			m_bMoveCycleActive = m_bMoveCycle;
 		}
-		m_Target.ActivateTarget();
+		m_Target.ActivateTarget(m_Section.m_Course.GetPlayerId());
 	}
 	
 	void Timeout()

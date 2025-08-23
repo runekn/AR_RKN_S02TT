@@ -6478,6 +6478,14 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
         m_Info SCR_UIInfo "{65DA6662F76721D1}" {
          Name "Training Camp (Start here)"
         }
+        m_aActionsOnSpawnPointUsed {
+         SCR_ScenarioFrameworkActionWaitAndExecute "{65D4578C0338490E}" {
+          m_aActions {
+           RKN_TimeTrialVoiceSequence "{65D4578C358DB38D}" {
+           }
+          }
+         }
+        }
        }
       }
      }

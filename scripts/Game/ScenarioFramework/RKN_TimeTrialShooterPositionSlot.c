@@ -68,6 +68,8 @@ class RKN_TimeTrialShooterPositionSlot : RKN_TimeTrialObjectiveSlot
 			plugin.Init(this);
 		}
 		
+		m_Trigger.AddCustomTriggerCondition(new RKN_TimeTrialPlayerTriggerCondition(m_Section.m_Course.m_iCourseIndex));
+		
 		if (m_bFailIfExitBeforeSectionCompletion)
 			m_Trigger.SetOnce(false);
 		

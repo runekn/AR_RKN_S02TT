@@ -30,6 +30,8 @@ class RKN_TimeTrialTargetEntity : BaseBuilding
 	// state of the target for JIP 
 	private int m_iTargetState;
 	
+	private int m_iPlayerOwner;
+	
 	ref ScriptInvoker Event_TargetChangeState = new ScriptInvoker();
 	
 	ref ScriptInvoker Event_TargetHit = new ScriptInvoker();
@@ -70,6 +72,9 @@ class RKN_TimeTrialTargetEntity : BaseBuilding
 		
 		// don't continue if projectile hit the stand of the target. 
 		if (!IsHitValid(CoordToLocal(outMat[0])))
+			return;
+		
+		if (!IsPlayerOwner(instigator))
 			return;
 		
 		super.OnDamage(damage, type, pHitEntity, outMat, damageSource, instigator, colliderID, speed);
@@ -114,6 +119,11 @@ class RKN_TimeTrialTargetEntity : BaseBuilding
 		return true;
 	}
 	
+	bool IsPlayerOwner(Instigator instigator)
+	{
+		return instigator.GetInstigatorPlayerID() == m_iPlayerOwner;
+	}
+	
 	//------------------------------------------------------------------------------------------------
 	//! Return states of target <0, 1> standing or lies
 	int GetState()
@@ -127,11 +137,13 @@ class RKN_TimeTrialTargetEntity : BaseBuilding
 	{
 		SetState(ETargetState.TARGET_DOWN);
 		m_iHits = 0;
+		m_iPlayerOwner = 0;
 	}
 	
-	void ActivateTarget()
+	void ActivateTarget(int player)
 	{
 		SetState(ETargetState.TARGET_UP);
+		m_iPlayerOwner = player;
 	}
 	
 	//------------------------------------------------------------------------------------------------
@@ -142,7 +154,7 @@ class RKN_TimeTrialTargetEntity : BaseBuilding
 		SetStateMP(state);
 		//Replication.BumpMe();
 	}
-	
+	 
 	[RplRpc(RplChannel.Reliable, RplRcver.Broadcast)]
 	void SetStateMP(int state)
 	{
