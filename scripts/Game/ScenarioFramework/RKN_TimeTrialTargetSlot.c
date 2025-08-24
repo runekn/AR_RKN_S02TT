@@ -168,10 +168,8 @@ class RKN_TimeTrialTargetSlot : RKN_TimeTrialObjectiveSlot
 			else
 			{
 				newPos = target + moveVector;
-				//newPos = { target[0] + moveVector[0], target[1] + moveVector[1], target[2] + moveVector[2] };
 			}
-			m_Target.SetOrigin(newPos);
-			m_Target.Update();
+			m_Target.UpdatePosition(newPos);
 		}
 	}
 	

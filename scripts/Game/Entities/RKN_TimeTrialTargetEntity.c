@@ -189,6 +189,19 @@ class RKN_TimeTrialTargetEntity : BaseBuilding
 		}
 	}
 	
+	void UpdatePosition(vector pos)
+	{
+		Rpc(RpcDo_UpdatePosition, pos);
+		RpcDo_UpdatePosition(pos);
+	}
+	
+	[RplRpc(RplChannel.Unreliable, RplRcver.Broadcast)]
+	void RpcDo_UpdatePosition(vector pos)
+	{
+		SetOrigin(pos);
+		Update();
+	}
+	
 	//------------------------------------------------------------------------------------------------
 	//! Evaluate the hit coordinates to a key
 	string GetHitKey(vector coordOfHit)
