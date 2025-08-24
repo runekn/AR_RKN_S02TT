@@ -191,6 +191,10 @@ class RKN_TimeTrialScoreTablePlayerComponent : ScriptComponent
 				{
 					UpdateRow(w, info.GetName(), info.GetTime(), info.GetTotal());
 				}
+				else
+				{
+					w.SetVisible(false);
+				}
 			}
 		}
 	}
