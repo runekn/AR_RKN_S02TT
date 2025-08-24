@@ -17,11 +17,14 @@ class RKN_ActionPlaySoundOnEntity : SCR_ScenarioFrameworkActionBase
 		if (!ValidateInputEntity(object, null, entity))
 			return;
 
-		SCR_SoundManagerEntity soundManagerEntity = GetGame().GetSoundManagerEntity();
+		/*SCR_SoundManagerEntity soundManagerEntity = GetGame().GetSoundManagerEntity();
 		if (soundManagerEntity)
 		{
 			soundManagerEntity.CreateAndPlayAudioSource(entity, m_sSound);
-		}
+		}*/
+		RKN_TimeTrialControlPanelEntity panel = RKN_TimeTrialControlPanelEntity.Cast(entity);
+		if (panel)
+			panel.PlaySound(m_sSound);
 	}
 	
 	override bool ValidateInputEntity(IEntity object, SCR_ScenarioFrameworkGet getter, out IEntity entity)

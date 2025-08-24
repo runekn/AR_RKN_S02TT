@@ -22,6 +22,21 @@ class RKN_TimeTrialControlPanelEntity : GenericEntity
 		m_SignalManager = SignalsManagerComponent.Cast(FindComponent(SignalsManagerComponent));
 	}
 	
+	void PlaySound(string soundEvent)
+	{
+		Rpc(RplDo_PlaySound, soundEvent);
+	}
+	
+	[RplRpc(RplChannel.Reliable, RplRcver.Broadcast)]
+	void RplDo_PlaySound(string soundEvent)
+	{
+		SCR_SoundManagerEntity soundManagerEntity = GetGame().GetSoundManagerEntity();
+		if (soundManagerEntity)
+		{
+			soundManagerEntity.CreateAndPlayAudioSource(this, soundEvent);
+		}
+	}
+	
 	void StartCountdown(IEntity pUserEntity, bool competitive)
 	{
 		int playerId = GetGame().GetPlayerManager().GetPlayerIdFromControlledEntity(pUserEntity);
@@ -38,21 +53,15 @@ class RKN_TimeTrialControlPanelEntity : GenericEntity
 	[RplRpc(RplChannel.Reliable, RplRcver.Owner)]
 	void RpcAsk_CancelCourse()
 	{
-		SCR_SoundManagerEntity soundManagerEntity = GetGame().GetSoundManagerEntity();
-		if (soundManagerEntity)
-			soundManagerEntity.CreateAndPlayAudioSource(this, SCR_SoundEvent.SOUND_RANGECP_STARTBUTTON);
+		PlaySound(SCR_SoundEvent.SOUND_RANGECP_STARTBUTTON);
 		m_OnCancel.Invoke();
 	}
 	
 	[RplRpc(RplChannel.Reliable, RplRcver.Owner)]
 	void RpcAsk_StartCountdown(int playerId, bool competitive)
 	{
-		SCR_SoundManagerEntity soundManagerEntity = GetGame().GetSoundManagerEntity();
-		if (soundManagerEntity)
-		{
-			soundManagerEntity.CreateAndPlayAudioSource(this, SCR_SoundEvent.SOUND_RANGECP_STARTBUTTON);
-			soundManagerEntity.CreateAndPlayAudioSource(this, SCR_SoundEvent.SOUND_RANGECP_ROUNDSTART);
-		}
+		PlaySound(SCR_SoundEvent.SOUND_RANGECP_STARTBUTTON);
+		PlaySound(SCR_SoundEvent.SOUND_RANGECP_ROUNDSTART);
 		m_OnStart.Invoke(playerId, COUNTDOWN_TIME, competitive);
 	}
 	
