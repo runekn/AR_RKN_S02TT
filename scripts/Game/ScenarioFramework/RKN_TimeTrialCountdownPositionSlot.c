@@ -13,6 +13,8 @@ class RKN_TimeTrialCountdownPositionSlot : SCR_ScenarioFrameworkSlotTrigger
 	
 	RKN_TimeTrialCourseLayer m_Course;
 	
+	ref RKN_TimeTrialPlayerTriggerCondition m_Condition;
+	
 	override void FinishInit()
 	{	
 		super.FinishInit();
@@ -37,7 +39,8 @@ class RKN_TimeTrialCountdownPositionSlot : SCR_ScenarioFrameworkSlotTrigger
 		SCR_ScenarioFrameworkTriggerEntity trigger = SCR_ScenarioFrameworkTriggerEntity.Cast(m_Entity);
 		if (trigger)
 		{
-			trigger.AddCustomTriggerCondition(new RKN_TimeTrialPlayerTriggerCondition(m_Course.m_iCourseIndex));
+			m_Condition = new RKN_TimeTrialPlayerTriggerCondition(m_Course.m_iCourseIndex);
+			trigger.AddCustomTriggerCondition(m_Condition);
 		}
 		TriggerState(false); // Disable it again after super.AfterParentAreaChildrenSpawned enabled it
 	}
@@ -54,6 +57,8 @@ class RKN_TimeTrialCountdownPositionSlot : SCR_ScenarioFrameworkSlotTrigger
 	
 	void OnPlayerExited()
 	{
+		if (m_Condition.Init(m_Entity)) // false alarm
+			return;
 		TriggerState(false);
 		m_Course.FailCourse(false);
 		foreach (SCR_ScenarioFrameworkActionBase action : m_aOnFailActions)

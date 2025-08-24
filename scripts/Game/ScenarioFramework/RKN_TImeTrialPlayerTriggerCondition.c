@@ -10,6 +10,16 @@ class RKN_TimeTrialPlayerTriggerCondition : SCR_CustomTriggerConditions
 	
 	override bool Init(IEntity entity)
 	{
+		/* QueryEntityInside does not seem to work 
+		int expectedId = RKN_TimeTrialUtils.GetCourseManager().GetData(m_iCourseId).m_CurrentScoreInfo.m_iID;
+		if (expectedId == 0)
+			return false;
+		IEntity expected = GetGame().GetPlayerManager().GetPlayerControlledEntity(expectedId);
+		if (!expected)
+			return false;
+		SCR_ScenarioFrameworkTriggerEntity trigger = SCR_ScenarioFrameworkTriggerEntity.Cast(entity);
+		return trigger.QueryEntityInside(expected);
+		*/
 		SCR_ScenarioFrameworkTriggerEntity trigger = SCR_ScenarioFrameworkTriggerEntity.Cast(entity);
 		array<IEntity> players = {};
 		trigger.GetPlayersByFactionInsideTrigger(players);

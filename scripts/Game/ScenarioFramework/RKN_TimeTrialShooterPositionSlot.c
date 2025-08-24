@@ -14,6 +14,8 @@ class RKN_TimeTrialShooterPositionSlot : RKN_TimeTrialObjectiveSlot
 	SCR_ScenarioFrameworkTriggerEntity m_Trigger;
 	bool m_bShooterWithin;
 	
+	ref RKN_TimeTrialPlayerTriggerCondition m_Condition;
+	
 	//------------------------------------------------------------------------------------------------
 	//! Initializes trigger entities, disables periodic queries, and sets init sequence done to false.
 	override void FinishInit()
@@ -68,7 +70,8 @@ class RKN_TimeTrialShooterPositionSlot : RKN_TimeTrialObjectiveSlot
 			plugin.Init(this);
 		}
 		
-		m_Trigger.AddCustomTriggerCondition(new RKN_TimeTrialPlayerTriggerCondition(m_Section.m_Course.m_iCourseIndex));
+		m_Condition = new RKN_TimeTrialPlayerTriggerCondition(m_Section.m_Course.m_iCourseIndex);
+		m_Trigger.AddCustomTriggerCondition(m_Condition);
 		
 		if (m_bFailIfExitBeforeSectionCompletion)
 			m_Trigger.SetOnce(false);
@@ -120,6 +123,8 @@ class RKN_TimeTrialShooterPositionSlot : RKN_TimeTrialObjectiveSlot
 	void FailCourse()
 	{
 		if (!m_bShooterWithin)
+			return;
+		if (m_Condition.Init(m_Entity)) // false alarm
 			return;
 		DisableTrigger();
 		m_Section.m_Course.FailCourse(false);
