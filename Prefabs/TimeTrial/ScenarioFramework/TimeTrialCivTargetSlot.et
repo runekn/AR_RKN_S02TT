@@ -10,7 +10,7 @@ GenericEntity : "{C62AFC64D4F5495E}Prefabs/TimeTrial/ScenarioFramework/TimeTrial
    m_aOnHitActions {
     RKN_TimeTrialVoiceLine "{65D2F04543B0CD7B}" {
      m_sLineName "PENALTY"
-     m_PlayerGetter SCR_ScenarioFrameworkGetPlayerEntity "{65D2F04575EB8C76}" {
+     m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65D2F04575EB8C76}" {
      }
     }
    }

@@ -5,7 +5,7 @@ GenericEntity {
    m_aOnScheduleActions {
     RKN_TimeTrialVoiceLine "{65D6F2F86A414579}" {
      m_sLineName "START"
-     m_PlayerGetter SCR_ScenarioFrameworkGetPlayerEntity "{65D13D070B6FA4A6}" {
+     m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65D13D070B6FA4A6}" {
      }
     }
    }
@@ -21,28 +21,28 @@ GenericEntity {
      m_aOnGoldActions {
       RKN_TimeTrialVoiceLine "{65D2F04D6C9745D6}" {
        m_sLineName "FINISH_GOLD"
-       m_PlayerGetter SCR_ScenarioFrameworkGetPlayerEntity "{65D2F04D6EEA0CF2}" {
+       m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{66305D421A7FB775}" {
        }
       }
      }
      m_aOnSilverActions {
       RKN_TimeTrialVoiceLine "{65D2F04D6051DF2E}" {
        m_sLineName "FINISH_SILVER"
-       m_PlayerGetter SCR_ScenarioFrameworkGetPlayerEntity "{65D2F04D6EEA0CF2}" {
+       m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{66305D421005196A}" {
        }
       }
      }
      m_aOnBronzeActions {
       RKN_TimeTrialVoiceLine "{65D2F04E9E8150B9}" {
        m_sLineName "FINISH_BRONZE"
-       m_PlayerGetter SCR_ScenarioFrameworkGetPlayerEntity "{65D2F04D6EEA0CF2}" {
+       m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{66305D420F568D82}" {
        }
       }
      }
      m_aOnNoneActions {
       RKN_TimeTrialVoiceLine "{65D2F04E95385D6B}" {
        m_sLineName "FINISH_NONE"
-       m_PlayerGetter SCR_ScenarioFrameworkGetPlayerEntity "{65D2F04D6EEA0CF2}" {
+       m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{66305D420A62D9E9}" {
        }
       }
      }
@@ -51,7 +51,7 @@ GenericEntity {
    m_aOnFailActions {
     RKN_TimeTrialVoiceLine "{65E11C3F84EB1079}" {
      m_sLineName "FAIL"
-     m_PlayerGetter SCR_ScenarioFrameworkGetPlayerEntity "{65E11C3FBD793036}" {
+     m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{66305D42E1518580}" {
      }
     }
     RKN_ActionPlaySoundOnEntity "{65E147B4038EC275}" {

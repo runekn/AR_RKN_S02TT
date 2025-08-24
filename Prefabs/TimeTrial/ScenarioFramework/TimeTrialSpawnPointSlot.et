@@ -7,21 +7,12 @@ GenericEntity : "{AA01691FDC4E9167}Prefabs/Systems/ScenarioFramework/Components/
      m_fSpawnRadius 2
      m_sFaction "CIV"
      m_aActionsOnSpawnPointUsed {
-      SCR_ScenarioFrameworkActionAddItemToInventory "{65D13D05E82B0EE5}" {
-       m_Getter SCR_ScenarioFrameworkGetPlayerEntity "{65E911E6A44DB2BF}" {
-       }
-       m_aPrefabFilter {
-        SCR_ScenarioFrameworkPrefabFilterCountNoInheritance "{65D13D051D4AB209}" {
-         m_sPrefabName "{62AA1DC9919E6E61}Prefabs/TimeTrial/TimeTrial_Radio_ANPRC68.et"
-        }
-       }
-      }
       SCR_ScenarioFrameworkActionWaitAndExecute "{65D4578C0338490E}" {
        m_iDelayInSeconds 1
        m_aActions {
         RKN_TimeTrialVoiceSequence "{65D4578C358DB38D}" {
          m_sSequenceName "SPAWN"
-         m_PlayerGetter SCR_ScenarioFrameworkGetPlayerEntity "{65D25B7F28BA81F2}" {
+         m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{66305D5DF5C07254}" {
          }
         }
        }

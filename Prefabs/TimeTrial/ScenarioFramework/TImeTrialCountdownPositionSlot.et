@@ -16,7 +16,7 @@ GenericEntity : "{032C15BBEBE9E1E9}Prefabs/Systems/ScenarioFramework/Components/
    m_aOnFailActions {
     RKN_TimeTrialVoiceLine "{65EA55440A15C757}" {
      m_sLineName "FAIL_START"
-     m_PlayerGetter SCR_ScenarioFrameworkGetPlayerEntity "{65EA554407572FB2}" {
+     m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65EA554407572FB2}" {
      }
     }
     RKN_ActionPlaySoundOnEntity "{65EA55443DA67F39}" {

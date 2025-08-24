@@ -17,7 +17,7 @@ GenericEntity {
    m_aOnFailActions {
     RKN_TimeTrialVoiceLine "{65E24A79D4ACDF5D}" {
      m_sLineName "FAIL_POS"
-     m_PlayerGetter SCR_ScenarioFrameworkGetPlayerEntity "{65E24A79D0926E2B}" {
+     m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65E24A79D0926E2B}" {
      }
     }
    }

@@ -6,6 +6,9 @@ SCR_ChimeraCharacter : "{3AE3C1A509298D9D}Prefabs/Characters/Factions/CIV/Generi
   SCR_InventoryStorageManagerComponent "{520EA1D2DB118DE5}" {
    InitialInventoryItems {
     ItemsInitConfigurationItem "{60DCBCECAC6C6E65}" {
+     PrefabsToSpawn + {
+      "{62AA1DC9919E6E61}Prefabs/TimeTrial/TimeTrial_Radio_ANPRC68.et"
+     }
     }
    }
   }

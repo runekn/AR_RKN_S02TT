@@ -11,6 +11,7 @@ RKN_TimeTrialStandardTarget {
    ResponseIndex "TinyDestructible"
    ModelGeometry 1
    Static 1
+   Kinematic 0
   }
   ProcAnimComponent "{65BA6C49E848AC28}" {
    Parameters {
