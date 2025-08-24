@@ -187,7 +187,7 @@ class RKN_TimeTrialCourseLayer : SCR_ScenarioFrameworkLayerBase
 		{
 			InventoryOperationCallback cb = null;		
 			if (loadoutItem.m_bEquip)
-				cb = new RKN_EquipItemCallback(CharacterControllerComponent.Cast(player.FindComponent(CharacterControllerComponent)));
+				cb = new RKN_EquipItemCallback(FindPlayerUIComponent(player));
 			comp.TrySpawnPrefabToStorage(loadoutItem.m_sPrefab, count: loadoutItem.m_iCount, cb: cb);
 		}
 	}
@@ -209,9 +209,10 @@ class RKN_TimeTrialCourseLayer : SCR_ScenarioFrameworkLayerBase
 
 class RKN_EquipItemCallback : ScriptedInventoryOperationCallback
 {
-	CharacterControllerComponent m_pController;
+	//CharacterControllerComponent m_pController;
+	RKN_TimeTrialScoreTablePlayerComponent m_pController;
 	
-	void RKN_EquipItemCallback(CharacterControllerComponent pController)
+	void RKN_EquipItemCallback(RKN_TimeTrialScoreTablePlayerComponent pController)
 	{
 		m_pController = pController;
 	}
@@ -219,8 +220,9 @@ class RKN_EquipItemCallback : ScriptedInventoryOperationCallback
 	override void OnComplete()
 	{
 		RplId id = GetItem();
-		IEntity e = RplComponent.Cast(Replication.FindItem(id)).GetEntity();
-		m_pController.TryEquipRightHandItem(e, EEquipItemType.EEquipTypeWeapon);
+		/*IEntity e = RplComponent.Cast(Replication.FindItem(id)).GetEntity();
+		m_pController.TryEquipRightHandItem(e, EEquipItemType.EEquipTypeWeapon);*/
+		m_pController.EquipWeapon(id);
 	}
 	
 	override void OnFailed()

@@ -44,6 +44,21 @@ class RKN_TimeTrialScoreTablePlayerComponent : ScriptComponent
 			m_wRoot.RemoveFromHierarchy();
 	}
 	
+	// TODO: move to more appropriate place
+	void EquipWeapon(RplId id)
+	{
+		Rpc(RpcDo_EquipWeapon, id);
+	}
+	
+	// TODO: move to more appropriate place
+	[RplRpc(RplChannel.Reliable, RplRcver.Owner)]
+	void RpcDo_EquipWeapon(RplId id)
+	{
+		CharacterControllerComponent controller = CharacterControllerComponent.Cast(GetOwner().FindComponent(CharacterControllerComponent));
+		IEntity e = RplComponent.Cast(Replication.FindItem(id)).GetEntity();
+		controller.TryEquipRightHandItem(e, EEquipItemType.EEquipTypeWeapon);
+	}
+	
 	void ShowScoreTable(int courseId, bool overrideTable)
 	{
 		Rpc(RpcDo_ShowScoreTable, courseId, overrideTable);
