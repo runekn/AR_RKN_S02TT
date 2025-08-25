@@ -25,6 +25,7 @@ class RKN_TimeTrialControlPanelEntity : GenericEntity
 	void PlaySound(string soundEvent)
 	{
 		Rpc(RplDo_PlaySound, soundEvent);
+		RplDo_PlaySound(soundEvent);
 	}
 	
 	[RplRpc(RplChannel.Reliable, RplRcver.Broadcast)]
