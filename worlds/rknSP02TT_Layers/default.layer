@@ -3,17 +3,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
   coords 7456.157 137.034 4749.71
   {
    GenericEntity TimeTrialSpawnPointSlot1 : "{701063E0786BE818}Prefabs/TimeTrial/ScenarioFramework/TimeTrialSpawnPointSlot.et" {
-    components {
-     SCR_ScenarioFrameworkSlotBase "{5A22E1D67E712EC8}" {
-      m_aPlugins {
-       SCR_ScenarioFrameworkPluginSpawnPoint "{65AB38F319447228}" {
-        m_Info SCR_UIInfo "{65D8A215920CBF35}" {
-         Name "Levie"
-        }
-       }
-      }
-     }
-    }
     coords -6.345 0.252 -16.39
     angleY 0
    }
@@ -62,9 +51,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
        m_sCourseId "red1"
        m_aOnScheduleActions {
         RKN_TimeTrialVoiceLine "{65D6F2F86A414579}" {
-         m_sLineName "START"
-         m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65D13D070B6FA4A6}" {
-         }
         }
         SCR_ScenarioFrameworkActionRestoreLayerToDefault "{65D110D0E559682D}" {
          m_Getter SCR_ScenarioFrameworkGetLayerBase "{65D110DED220D5E5}" {
@@ -166,7 +152,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
          RKN_TimeTrialSectionLayer "{65BA6C59BAF2330C}" {
           m_aOnFinishActions {
            RKN_TimeTrialVoiceLine "{65D2F04835CDD115}" {
-            m_sLineName "CLEAR"
+            m_sSoundEvents {
+             "CLEAR"
+            }
            }
           }
          }
@@ -369,7 +357,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
          RKN_TimeTrialSectionLayer "{65BA6C59BAF2330C}" {
           m_aOnFinishActions {
            RKN_TimeTrialVoiceLine "{65D2F04835CDD115}" {
-            m_sLineName "FINISHLINE"
+            m_sSoundEvents {
+             "FINISHLINE"
+            }
            }
           }
          }
@@ -489,8 +479,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
        m_sCourseId "red2"
        m_aOnScheduleActions {
         RKN_TimeTrialVoiceLine "{65D6F2F86A414579}" {
-         m_sLineName "START"
-         m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65D13D070B6FA4A6}" {
+         m_sSoundEvents +{
          }
         }
         SCR_ScenarioFrameworkActionRestoreLayerToDefault "{65D6AAAE80E6A1FD}" {
@@ -753,8 +742,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             m_sObjectToSpawn "{DA58C3DF4455555E}Prefabs/Systems/ScenarioFramework/Triggers/ScenarioFrameworkTrigger.et"
             m_aOnFinishActions {
              RKN_TimeTrialVoiceLine "{65E11C393826C5E3}" {
-              m_sLineName "FIRINGRANGE"
-              m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65E11C3935E361A3}" {
+              m_sSoundEvents {
+               "FIRINGRANGE"
               }
              }
             }
@@ -863,8 +852,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             m_sObjectToSpawn "{DA58C3DF4455555E}Prefabs/Systems/ScenarioFramework/Triggers/ScenarioFrameworkTrigger.et"
             m_aOnFinishActions {
              RKN_TimeTrialVoiceLine "{65E11C26133AAEA9}" {
-              m_sLineName "AMBUSH"
-              m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65E11C260F900556}" {
+              m_sSoundEvents {
+               "AMBUSH"
               }
              }
             }
@@ -933,8 +922,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
              m_fBonusAwardSeconds 3
              m_aOnHitActions {
               RKN_TimeTrialVoiceLine "{65D6F2E153E16E28}" {
-               m_sLineName "BONUS"
-               m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65D25B7E3F7E09C5}" {
+               m_sSoundEvents {
+                "BONUS"
                }
               }
              }
@@ -950,8 +939,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
              m_fBonusAwardSeconds 3
              m_aOnHitActions {
               RKN_TimeTrialVoiceLine "{65D6F2E153E16E28}" {
-               m_sLineName "BONUS"
-               m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65D25B7E3F7E09C5}" {
+               m_sSoundEvents {
+                "BONUS"
                }
               }
              }
@@ -968,7 +957,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
          RKN_TimeTrialSectionLayer "{65BA6C59BAF2330C}" {
           m_aOnFinishActions {
            RKN_TimeTrialVoiceLine "{65D2F04835CDD115}" {
-            m_sLineName "FIRINGRANGE"
+            m_sSoundEvents {
+             "FIRINGRANGE"
+            }
            }
           }
          }
@@ -1027,8 +1018,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
              m_fBonusAwardSeconds 1
              m_aOnHitActions {
               RKN_TimeTrialVoiceLine "{65D6ED8B648FD230}" {
-               m_sLineName "BONUS"
-               m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65D6ED8B610DA824}" {
+               m_sSoundEvents {
+                "BONUS"
                }
               }
              }
@@ -1092,13 +1083,13 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
               m_aEntityEnteredActions {
                RKN_TimeTrialVoiceLine "{65D6AAA8E8A99985}" {
                 m_iMaxNumberOfActivations 1
-                m_sLineName "RIFLE"
+                m_bResetNumberOfActivations 1
+                m_sSoundEvents {
+                 "RIFLE"
+                }
                 m_ActorGetter SCR_ScenarioFrameworkGetEntityByName "{65D6AAA8E7C5F380}" {
                  m_sEntityName "CourseRed2"
                 }
-                m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65D6AAA81F2CE4C4}" {
-                }
-                m_bResetNumberOfActivations 1
                }
               }
              }
@@ -1381,11 +1372,11 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
               m_aEntityEnteredActions {
                RKN_TimeTrialVoiceLine "{65D6F2EB55D83BD4}" {
                 m_iMaxNumberOfActivations 1
-                m_sLineName "CROUCH"
+                m_sSoundEvents {
+                 "CROUCH"
+                }
                 m_ActorGetter SCR_ScenarioFrameworkGetEntityByName "{65D6F2EB50DE628F}" {
                  m_sEntityName "CourseRed2"
-                }
-                m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65D6F2EB4AA29B6D}" {
                 }
                }
               }
@@ -1600,8 +1591,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
         RKN_TimeTrialCountdownPositionSlot "{6118D659EDB7084E}" {
          m_aOnFailActions {
           RKN_TimeTrialVoiceLine "{65E147B5A15E3C02}" {
-           m_sLineName "FAIL_START"
-           m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65E147B5CEBF9BBD}" {
+           m_sSoundEvents {
+            "FAIL_START"
            }
           }
          }
@@ -1618,8 +1609,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
        m_sCourseId "red3"
        m_aOnScheduleActions {
         RKN_TimeTrialVoiceLine "{65D6F2F86A414579}" {
-         m_sLineName "START"
-         m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65D13D070B6FA4A6}" {
+         m_sSoundEvents +{
          }
         }
         SCR_ScenarioFrameworkActionRestoreLayerToDefault "{65D6F2F108C7A667}" {
@@ -2335,7 +2325,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
          RKN_TimeTrialSectionLayer "{65BA6C59BAF2330C}" {
           m_aOnFinishActions {
            RKN_TimeTrialVoiceLine "{65D2F04835CDD115}" {
-            m_sLineName "CAR"
+            m_sSoundEvents {
+             "CAR"
+            }
            }
           }
          }
@@ -2475,7 +2467,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
          RKN_TimeTrialSectionLayer "{65BA6C59BAF2330C}" {
           m_aOnFinishActions {
            RKN_TimeTrialVoiceLine "{65D2F04835CDD115}" {
-            m_sLineName "FIRINGRANGE"
+            m_sSoundEvents {
+             "FIRINGRANGE"
+            }
            }
           }
          }
@@ -2546,7 +2540,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
          RKN_TimeTrialSectionLayer "{65BA6C59BAF2330C}" {
           m_aOnFinishActions {
            RKN_TimeTrialVoiceLine "{65D2F04835CDD115}" {
-            m_sLineName "ROOF"
+            m_sSoundEvents {
+             "ROOF"
+            }
            }
           }
          }
@@ -2770,7 +2766,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
          RKN_TimeTrialSectionLayer "{65BA6C59BAF2330C}" {
           m_aOnFinishActions {
            RKN_TimeTrialVoiceLine "{65D2F04835CDD115}" {
-            m_sLineName "LADDER"
+            m_sSoundEvents {
+             "LADDER"
+            }
            }
           }
          }
@@ -2782,8 +2780,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
            RKN_TimeTrialShooterPositionSlot "{65BAA09C846E881C}" {
             m_aOnFinishActions {
              RKN_TimeTrialVoiceLine "{65E11C399C77F613}" {
-              m_sLineName "LONGRANGE"
-              m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65E11C39989DBB7F}" {
+              m_sSoundEvents {
+               "LONGRANGE"
               }
              }
             }
@@ -2827,8 +2825,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
              m_aOnHitActions {
               RKN_TimeTrialVoiceLine "{65D6F2CFCC83B955}" {
-               m_sLineName "HIT"
-               m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65D6F2CFC83F8037}" {
+               m_sSoundEvents {
+                "HIT"
                }
               }
              }
@@ -2842,8 +2840,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
              m_aOnHitActions {
               RKN_TimeTrialVoiceLine "{65D6F2CFCC83B955}" {
-               m_sLineName "HIT"
-               m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65D6F2CFC83F8037}" {
+               m_sSoundEvents {
+                "HIT"
                }
               }
              }
@@ -2857,8 +2855,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
              m_aOnHitActions {
               RKN_TimeTrialVoiceLine "{65D6F2CFCC83B955}" {
-               m_sLineName "HIT"
-               m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65D6F2CFC83F8037}" {
+               m_sSoundEvents {
+                "HIT"
                }
               }
              }
@@ -2872,8 +2870,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
              m_aOnHitActions {
               RKN_TimeTrialVoiceLine "{65D6F2CFCC83B955}" {
-               m_sLineName "HIT"
-               m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65D6F2CFC83F8037}" {
+               m_sSoundEvents {
+                "HIT"
                }
               }
              }
@@ -2887,8 +2885,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
              m_aOnHitActions {
               RKN_TimeTrialVoiceLine "{65D6F2CFCC83B955}" {
-               m_sLineName "HIT"
-               m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65D6F2CFC83F8037}" {
+               m_sSoundEvents {
+                "HIT"
                }
               }
              }
@@ -2902,8 +2900,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             RKN_TimeTrialTargetSlot "{65BA6C534EB481D4}" {
              m_aOnHitActions {
               RKN_TimeTrialVoiceLine "{65D6F2CFCC83B955}" {
-               m_sLineName "HIT"
-               m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65D6F2CFC83F8037}" {
+               m_sSoundEvents {
+                "HIT"
                }
               }
              }
@@ -3779,8 +3777,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
           RKN_TimeTrialShooterPositionSlot "{65BAA09C846E881C}" {
            m_aOnFinishActions {
             RKN_TimeTrialVoiceLine "{65E11C395EDCAFD6}" {
-             m_sLineName "LONGRANGE"
-             m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65E11C395AEE6C7A}" {
+             m_sSoundEvents {
+              "LONGRANGE"
              }
             }
            }
@@ -3806,8 +3804,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             }
             m_aOnHitActions {
              RKN_TimeTrialVoiceLine "{65D8CEF55186CE30}" {
-              m_sLineName "HIT"
-              m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65D8CEF553C8AFA9}" {
+              m_sSoundEvents {
+               "HIT"
               }
              }
             }
@@ -3828,8 +3826,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             }
             m_aOnHitActions {
              RKN_TimeTrialVoiceLine "{65D8CEF55186CE30}" {
-              m_sLineName "HIT"
-              m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65D8CEF553C8AFA9}" {
+              m_sSoundEvents {
+               "HIT"
               }
              }
             }
@@ -3850,8 +3848,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             }
             m_aOnHitActions {
              RKN_TimeTrialVoiceLine "{65D8CEF55186CE30}" {
-              m_sLineName "HIT"
-              m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65D8CEF553C8AFA9}" {
+              m_sSoundEvents {
+               "HIT"
               }
              }
             }
@@ -3873,8 +3871,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             }
             m_aOnHitActions {
              RKN_TimeTrialVoiceLine "{65D8CEF55186CE30}" {
-              m_sLineName "HIT"
-              m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65D8CEF553C8AFA9}" {
+              m_sSoundEvents {
+               "HIT"
               }
              }
             }
@@ -3896,8 +3894,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             }
             m_aOnHitActions {
              RKN_TimeTrialVoiceLine "{65D8CEF55186CE30}" {
-              m_sLineName "HIT"
-              m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65D8CEF553C8AFA9}" {
+              m_sSoundEvents {
+               "HIT"
               }
              }
             }
@@ -3919,8 +3917,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             m_fActivationDelaySeconds 5
             m_aOnHitActions {
              RKN_TimeTrialVoiceLine "{65D8CEF55186CE30}" {
-              m_sLineName "HIT"
-              m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65D8CEF553C8AFA9}" {
+              m_sSoundEvents {
+               "HIT"
               }
              }
             }
@@ -3941,8 +3939,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             }
             m_aOnHitActions {
              RKN_TimeTrialVoiceLine "{65D8CEF55186CE30}" {
-              m_sLineName "HIT"
-              m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65D8CEF553C8AFA9}" {
+              m_sSoundEvents {
+               "HIT"
               }
              }
             }
@@ -4096,8 +4094,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             }
             m_aOnHitActions {
              RKN_TimeTrialVoiceLine "{65D8CEFF2535C325}" {
-              m_sLineName "HIT"
-              m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65D8CEFF26BC42DF}" {
+              m_sSoundEvents {
+               "HIT"
               }
              }
             }
@@ -4119,8 +4117,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             }
             m_aOnHitActions {
              RKN_TimeTrialVoiceLine "{65D8CEFF2535C325}" {
-              m_sLineName "HIT"
-              m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65D8CEFF26BC42DF}" {
+              m_sSoundEvents {
+               "HIT"
               }
              }
             }
@@ -4142,8 +4140,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             }
             m_aOnHitActions {
              RKN_TimeTrialVoiceLine "{65D8CEFF2535C325}" {
-              m_sLineName "HIT"
-              m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65D8CEFF26BC42DF}" {
+              m_sSoundEvents {
+               "HIT"
               }
              }
             }
@@ -4164,8 +4162,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             }
             m_aOnHitActions {
              RKN_TimeTrialVoiceLine "{65D8CEFF2535C325}" {
-              m_sLineName "HIT"
-              m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65D8CEFF26BC42DF}" {
+              m_sSoundEvents {
+               "HIT"
               }
              }
             }
@@ -4181,8 +4179,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             }
             m_aOnHitActions {
              RKN_TimeTrialVoiceLine "{65D8CEFF2535C325}" {
-              m_sLineName "HIT"
-              m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65D8CEFF26BC42DF}" {
+              m_sSoundEvents {
+               "HIT"
               }
              }
             }
@@ -4198,8 +4196,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             }
             m_aOnHitActions {
              RKN_TimeTrialVoiceLine "{65D8CEFF2535C325}" {
-              m_sLineName "HIT"
-              m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65D8CEFF26BC42DF}" {
+              m_sSoundEvents {
+               "HIT"
               }
              }
             }
@@ -4215,8 +4213,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             }
             m_aOnHitActions {
              RKN_TimeTrialVoiceLine "{65D8CEFF2535C325}" {
-              m_sLineName "HIT"
-              m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65D8CEFF26BC42DF}" {
+              m_sSoundEvents {
+               "HIT"
               }
              }
             }
@@ -4232,8 +4230,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             }
             m_aOnHitActions {
              RKN_TimeTrialVoiceLine "{65D8CEFF2535C325}" {
-              m_sLineName "HIT"
-              m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65D8CEFF26BC42DF}" {
+              m_sSoundEvents {
+               "HIT"
               }
              }
             }
@@ -4250,8 +4248,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             }
             m_aOnHitActions {
              RKN_TimeTrialVoiceLine "{65D8CEFF2535C325}" {
-              m_sLineName "HIT"
-              m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65D8CEFF26BC42DF}" {
+              m_sSoundEvents {
+               "HIT"
               }
              }
             }
@@ -4268,8 +4266,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             }
             m_aOnHitActions {
              RKN_TimeTrialVoiceLine "{65D8CEFF2535C325}" {
-              m_sLineName "HIT"
-              m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65D8CEFF26BC42DF}" {
+              m_sSoundEvents {
+               "HIT"
               }
              }
             }
@@ -4391,8 +4389,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
       m_sCourseId "yellow1"
       m_aOnScheduleActions {
        RKN_TimeTrialVoiceLine "{65D6F2F86A414579}" {
-        m_sLineName "START"
-        m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65D13D070B6FA4A6}" {
+        m_sSoundEvents +{
         }
        }
        SCR_ScenarioFrameworkActionRestoreLayerToDefault "{65DA6623885CA9B2}" {
@@ -4749,7 +4746,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
         RKN_TimeTrialSectionLayer "{65BA6C59BAF2330C}" {
          m_aOnFinishActions {
           RKN_TimeTrialVoiceLine "{65D2F04835CDD115}" {
-           m_sLineName "EXIT_BACKDOOR"
+           m_sSoundEvents {
+            "EXIT_BACKDOOR"
+           }
           }
          }
         }
@@ -4770,8 +4769,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             }
             m_aOnFinishActions {
              RKN_TimeTrialVoiceLine "{65E11C39B3EB140D}" {
-              m_sLineName "CLEAR"
-              m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65E11C39AF47BA9E}" {
+              m_sSoundEvents {
+               "CLEAR"
               }
              }
             }
@@ -5155,7 +5154,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
         RKN_TimeTrialSectionLayer "{65BA6C59BAF2330C}" {
          m_aOnFinishActions {
           RKN_TimeTrialVoiceLine "{65D2F04835CDD115}" {
-           m_sLineName "FINISHLINE"
+           m_sSoundEvents {
+            "FINISHLINE"
+           }
           }
          }
         }
@@ -5453,8 +5454,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
       m_sCourseId "orange1"
       m_aOnScheduleActions {
        RKN_TimeTrialVoiceLine "{65D6F2F86A414579}" {
-        m_sLineName "START"
-        m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65D13D070B6FA4A6}" {
+        m_sSoundEvents +{
         }
        }
        SCR_ScenarioFrameworkActionDeleteEntity "{65DA663780B3F1AB}" {
@@ -5868,7 +5868,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
         RKN_TimeTrialSectionLayer "{65BA6C59BAF2330C}" {
          m_aOnFinishActions {
           RKN_TimeTrialVoiceLine "{65D2F04835CDD115}" {
-           m_sLineName "CAR"
+           m_sSoundEvents {
+            "CAR"
+           }
           }
          }
         }
@@ -6231,8 +6233,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
           RKN_TimeTrialShooterPositionSlot "{65BAA09C846E881C}" {
            m_aOnFinishActions {
             RKN_TimeTrialVoiceLine "{65E11C39F24A73A7}" {
-             m_sLineName "LONGRANGE"
-             m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65E11C39EE82A5BA}" {
+             m_sSoundEvents {
+              "LONGRANGE"
              }
             }
            }
@@ -6249,8 +6251,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             }
             m_aOnHitActions {
              RKN_TimeTrialVoiceLine "{65DA6611D3330605}" {
-              m_sLineName "HIT"
-              m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65DA6611C9C044CD}" {
+              m_sSoundEvents {
+               "HIT"
               }
              }
             }
@@ -6266,8 +6268,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             }
             m_aOnHitActions {
              RKN_TimeTrialVoiceLine "{65DA6611D3330605}" {
-              m_sLineName "HIT"
-              m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65DA6611C9C044CD}" {
+              m_sSoundEvents {
+               "HIT"
               }
              }
             }
@@ -6283,8 +6285,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             }
             m_aOnHitActions {
              RKN_TimeTrialVoiceLine "{65DA6611D3330605}" {
-              m_sLineName "HIT"
-              m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65DA6611C9C044CD}" {
+              m_sSoundEvents {
+               "HIT"
               }
              }
             }
@@ -6300,8 +6302,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             }
             m_aOnHitActions {
              RKN_TimeTrialVoiceLine "{65DA6611D3330605}" {
-              m_sLineName "HIT"
-              m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65DA6611C9C044CD}" {
+              m_sSoundEvents {
+               "HIT"
               }
              }
             }
@@ -6317,8 +6319,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             }
             m_aOnHitActions {
              RKN_TimeTrialVoiceLine "{65DA6611D3330605}" {
-              m_sLineName "HIT"
-              m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65DA6611C9C044CD}" {
+              m_sSoundEvents {
+               "HIT"
               }
              }
             }
@@ -6334,8 +6336,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             }
             m_aOnHitActions {
              RKN_TimeTrialVoiceLine "{65DA6611D3330605}" {
-              m_sLineName "HIT"
-              m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65DA6611C9C044CD}" {
+              m_sSoundEvents {
+               "HIT"
               }
              }
             }
@@ -6353,8 +6355,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             }
             m_aOnHitActions {
              RKN_TimeTrialVoiceLine "{65DA6611D3330605}" {
-              m_sLineName "HIT"
-              m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65DA6611C9C044CD}" {
+              m_sSoundEvents {
+               "HIT"
               }
              }
             }
@@ -6376,8 +6378,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             }
             m_aOnHitActions {
              RKN_TimeTrialVoiceLine "{65DA6611D3330605}" {
-              m_sLineName "HIT"
-              m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65DA6611C9C044CD}" {
+              m_sSoundEvents {
+               "HIT"
               }
              }
             }
@@ -6399,8 +6401,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             }
             m_aOnHitActions {
              RKN_TimeTrialVoiceLine "{65DA6611D3330605}" {
-              m_sLineName "HIT"
-              m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65DA6611C9C044CD}" {
+              m_sSoundEvents {
+               "HIT"
               }
              }
             }
@@ -6477,14 +6479,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
        SCR_ScenarioFrameworkPluginSpawnPoint "{65AB38F319447228}" {
         m_Info SCR_UIInfo "{65DA6662F76721D1}" {
          Name "Training Camp (Start here)"
-        }
-        m_aActionsOnSpawnPointUsed {
-         SCR_ScenarioFrameworkActionWaitAndExecute "{65D4578C0338490E}" {
-          m_aActions {
-           RKN_TimeTrialVoiceSequence "{65D4578C358DB38D}" {
-           }
-          }
-         }
         }
        }
       }
@@ -6961,7 +6955,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
          RKN_TimeTrialSectionLayer "{65BA6C59BAF2330C}" {
           m_aOnFinishActions {
            RKN_TimeTrialVoiceLine "{65D2F04835CDD115}" {
-            m_sLineName "FINISHLINE"
+            m_sSoundEvents {
+             "FINISHLINE"
+            }
            }
           }
          }
@@ -7207,24 +7203,13 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
               m_aEntityEnteredActions {
                RKN_TimeTrialVoiceLine "{65DA666BFEEE77B1}" {
                 m_iMaxNumberOfActivations 1
-                m_sLineName "STAND"
+                m_bResetNumberOfActivations 1
+                m_sSoundEvents {
+                 "STAND" "PISTOL"
+                }
                 m_ActorGetter SCR_ScenarioFrameworkGetEntityByName "{65DA666986334C66}" {
                  m_sEntityName "CourseBlue1"
                 }
-                m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65DA666BFACE8D7F}" {
-                }
-                m_aActions {
-                 RKN_TimeTrialVoiceLine "{65DA666926716575}" {
-                  m_sLineName "PISTOL"
-                  m_ActorGetter SCR_ScenarioFrameworkGetEntityByName "{65DA66695D0D8D1E}" {
-                   m_sEntityName "CourseBlue1"
-                  }
-                  m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65DA66695F08B09B}" {
-                  }
-                  m_bResetNumberOfActivations 1
-                 }
-                }
-                m_bResetNumberOfActivations 1
                }
               }
              }
@@ -7343,24 +7328,13 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
               m_aEntityEnteredActions {
                RKN_TimeTrialVoiceLine "{65DA666BED911360}" {
                 m_iMaxNumberOfActivations 1
-                m_sLineName "PRONE"
+                m_bResetNumberOfActivations 1
+                m_sSoundEvents {
+                 "PRONE" "RIFLE"
+                }
                 m_ActorGetter SCR_ScenarioFrameworkGetEntityByName "{65DA6669BEB210B9}" {
                  m_sEntityName "CourseBlue1"
                 }
-                m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65DA666BEB7956C6}" {
-                }
-                m_aActions {
-                 RKN_TimeTrialVoiceLine "{65DA66694A10D99E}" {
-                  m_sLineName "RIFLE"
-                  m_ActorGetter SCR_ScenarioFrameworkGetEntityByName "{65DA66695D0D8D1E}" {
-                   m_sEntityName "CourseBlue1"
-                  }
-                  m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65DA66695F08B09B}" {
-                  }
-                  m_bResetNumberOfActivations 1
-                 }
-                }
-                m_bResetNumberOfActivations 1
                }
               }
              }
@@ -7456,7 +7430,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
          RKN_TimeTrialSectionLayer "{65BA6C59BAF2330C}" {
           m_aOnFinishActions {
            RKN_TimeTrialVoiceLine "{65D2F04835CDD115}" {
-            m_sLineName "FINISHLINE"
+            m_sSoundEvents {
+             "FINISHLINE"
+            }
            }
           }
          }
@@ -7480,24 +7456,13 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
               m_aEntityEnteredActions {
                RKN_TimeTrialVoiceLine "{65DA666B17D4A839}" {
                 m_iMaxNumberOfActivations 1
-                m_sLineName "CROUCH"
+                m_bResetNumberOfActivations 1
+                m_sSoundEvents {
+                 "CROUCH" "RIFLE"
+                }
                 m_ActorGetter SCR_ScenarioFrameworkGetEntityByName "{65DA6669BB757C0A}" {
                  m_sEntityName "CourseBlue1"
                 }
-                m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65DA666B13BDCF37}" {
-                }
-                m_aActions {
-                 RKN_TimeTrialVoiceLine "{65DA66697B94C062}" {
-                  m_sLineName "RIFLE"
-                  m_ActorGetter SCR_ScenarioFrameworkGetEntityByName "{65DA66695D0D8D1E}" {
-                   m_sEntityName "CourseBlue1"
-                  }
-                  m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{66305D42BFAA59C6}" {
-                  }
-                  m_bResetNumberOfActivations 1
-                 }
-                }
-                m_bResetNumberOfActivations 1
                }
               }
              }
@@ -7958,7 +7923,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
          RKN_TimeTrialSectionLayer "{65BA6C59BAF2330C}" {
           m_aOnFinishActions {
            RKN_TimeTrialVoiceLine "{65D2F04835CDD115}" {
-            m_sLineName "FINISHLINE"
+            m_sSoundEvents {
+             "FINISHLINE"
+            }
            }
           }
          }
@@ -8138,9 +8105,6 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
           m_aActionsOnSpawnPointUsed {
            SCR_ScenarioFrameworkActionWaitAndExecute "{65D4578C0338490E}" {
             m_aActions {
-             RKN_TimeTrialVoiceSequence "{65D4578C358DB38D}" {
-              m_iMaxNumberOfActivations 0
-             }
              SCR_ScenarioFrameworkActionDeleteEntity "{65DE9B65FEF4D62F}" {
               m_Getter SCR_ScenarioFrameworkGetSpawnedEntity "{65DE9B65B4DFB1CB}" {
                m_sLayerName "CatacombsSpawnpoint"
@@ -8322,8 +8286,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
        m_sCourseId "black1"
        m_aOnScheduleActions {
         RKN_TimeTrialVoiceLine "{65D6F2F86A414579}" {
-         m_sLineName "START"
-         m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65D13D070B6FA4A6}" {
+         m_sSoundEvents +{
          }
         }
         SCR_ScenarioFrameworkActionRestoreLayerToDefault "{65DE9B68219C78BB}" {
@@ -9235,8 +9198,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
              m_fBonusAwardSeconds 1
              m_aOnHitActions {
               RKN_TimeTrialVoiceLine "{65DE9B1D612E8853}" {
-               m_sLineName "BONUS"
-               m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65DE9B1D68B02B06}" {
+               m_sSoundEvents {
+                "BONUS"
                }
               }
              }
@@ -9382,8 +9345,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
              m_fBonusAwardSeconds 2
              m_aOnHitActions {
               RKN_TimeTrialVoiceLine "{65DE9B1D6C6E8B9F}" {
-               m_sLineName "BONUS"
-               m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65DE9B1D68B02B06}" {
+               m_sSoundEvents {
+                "BONUS"
                }
               }
              }
@@ -9787,8 +9750,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
              m_fBonusAwardSeconds 1
              m_aOnHitActions {
               RKN_TimeTrialVoiceLine "{65DE9B6B5B984C6A}" {
-               m_sLineName "BONUS"
-               m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65DE9B6B5A4E9414}" {
+               m_sSoundEvents {
+                "BONUS"
                }
               }
              }
@@ -9805,7 +9768,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
          RKN_TimeTrialSectionLayer "{65BA6C59BAF2330C}" {
           m_aOnFinishActions {
            RKN_TimeTrialVoiceLine "{65D2F04835CDD115}" {
-            m_sLineName "FINISHLINE"
+            m_sSoundEvents {
+             "FINISHLINE"
+            }
            }
           }
          }
@@ -9855,8 +9820,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
              m_fBonusAwardSeconds 2
              m_aOnHitActions {
               RKN_TimeTrialVoiceLine "{65DE9B1404AA77A1}" {
-               m_sLineName "BONUS"
-               m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65DE9B14015FF53C}" {
+               m_sSoundEvents {
+                "BONUS"
                }
               }
              }
@@ -10086,8 +10051,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
        m_sCourseId "black2"
        m_aOnScheduleActions {
         RKN_TimeTrialVoiceLine "{65D6F2F86A414579}" {
-         m_sLineName "START"
-         m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65D13D070B6FA4A6}" {
+         m_sSoundEvents +{
          }
         }
         SCR_ScenarioFrameworkActionRestoreLayerToDefault "{65DE9B1A48A62BF8}" {
@@ -10802,8 +10766,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
        m_sCourseId "black3"
        m_aOnScheduleActions {
         RKN_TimeTrialVoiceLine "{65D6F2F86A414579}" {
-         m_sLineName "START"
-         m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65D13D070B6FA4A6}" {
+         m_sSoundEvents +{
          }
         }
         SCR_ScenarioFrameworkActionRestoreLayerToDefault "{65E0F614A73328D5}" {
@@ -11361,25 +11324,13 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
               m_aEntityEnteredActions {
                RKN_TimeTrialVoiceLine "{65E0BA98D1FE166C}" {
                 m_iMaxNumberOfActivations 1
-                m_sLineName "LEAN"
+                m_bResetNumberOfActivations 1
+                m_sSoundEvents {
+                 "LEAN" "PISTOL"
+                }
                 m_ActorGetter SCR_ScenarioFrameworkGetEntityByName "{65E0BA98C843DDE1}" {
                  m_sEntityName "CourseBlack3"
                 }
-                m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65E0BA98CFE930FF}" {
-                }
-                m_aActions {
-                 RKN_TimeTrialVoiceLine "{65E0BA9D3944FED6}" {
-                  m_iMaxNumberOfActivations 1
-                  m_sLineName "PISTOL"
-                  m_ActorGetter SCR_ScenarioFrameworkGetEntityByName "{65E0BA982BFFC254}" {
-                   m_sEntityName "CourseBlack3"
-                  }
-                  m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65E0BA982BFFC256}" {
-                  }
-                  m_bResetNumberOfActivations 1
-                 }
-                }
-                m_bResetNumberOfActivations 1
                }
               }
              }
@@ -11473,25 +11424,13 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
               m_aEntityEnteredActions {
                RKN_TimeTrialVoiceLine "{65E0BA98D1FE166C}" {
                 m_iMaxNumberOfActivations 1
-                m_sLineName "PRONE"
+                m_bResetNumberOfActivations 1
+                m_sSoundEvents {
+                 "PRONE" "RIFLE"
+                }
                 m_ActorGetter SCR_ScenarioFrameworkGetEntityByName "{65E0BA98C843DDE1}" {
                  m_sEntityName "CourseBlack3"
                 }
-                m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65E0BA98CFE930FF}" {
-                }
-                m_aActions {
-                 RKN_TimeTrialVoiceLine "{65E0BA9D2F15A6DB}" {
-                  m_iMaxNumberOfActivations 1
-                  m_sLineName "RIFLE"
-                  m_ActorGetter SCR_ScenarioFrameworkGetEntityByName "{65E0BA982BFFC254}" {
-                   m_sEntityName "CourseBlack3"
-                  }
-                  m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65E0BA982BFFC256}" {
-                  }
-                  m_bResetNumberOfActivations 1
-                 }
-                }
-                m_bResetNumberOfActivations 1
                }
               }
              }
@@ -11614,25 +11553,13 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
               m_aEntityEnteredActions {
                RKN_TimeTrialVoiceLine "{65E0BA98D1FE166C}" {
                 m_iMaxNumberOfActivations 1
-                m_sLineName "STAND"
+                m_bResetNumberOfActivations 1
+                m_sSoundEvents {
+                 "STAND" "PISTOL"
+                }
                 m_ActorGetter SCR_ScenarioFrameworkGetEntityByName "{65E0BA98C843DDE1}" {
                  m_sEntityName "CourseBlack3"
                 }
-                m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65E0BA98CFE930FF}" {
-                }
-                m_aActions {
-                 RKN_TimeTrialVoiceLine "{65E0BA9D2453D849}" {
-                  m_iMaxNumberOfActivations 1
-                  m_sLineName "PISTOL"
-                  m_ActorGetter SCR_ScenarioFrameworkGetEntityByName "{65E0BA982BFFC254}" {
-                   m_sEntityName "CourseBlack3"
-                  }
-                  m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65E0BA982BFFC256}" {
-                  }
-                  m_bResetNumberOfActivations 1
-                 }
-                }
-                m_bResetNumberOfActivations 1
                }
               }
              }
@@ -11723,13 +11650,13 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
               m_aEntityEnteredActions {
                RKN_TimeTrialVoiceLine "{65E0BA98D1FE166C}" {
                 m_iMaxNumberOfActivations 1
-                m_sLineName "CROUCH"
+                m_bResetNumberOfActivations 1
+                m_sSoundEvents {
+                 "CROUCH"
+                }
                 m_ActorGetter SCR_ScenarioFrameworkGetEntityByName "{65E0BA98C843DDE1}" {
                  m_sEntityName "CourseBlack3"
                 }
-                m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65E0BA98CFE930FF}" {
-                }
-                m_bResetNumberOfActivations 1
                }
               }
              }
@@ -11811,13 +11738,13 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
               m_aEntityEnteredActions {
                RKN_TimeTrialVoiceLine "{65E0BA98D1FE166C}" {
                 m_iMaxNumberOfActivations 1
-                m_sLineName "STAND"
+                m_bResetNumberOfActivations 1
+                m_sSoundEvents {
+                 "STAND"
+                }
                 m_ActorGetter SCR_ScenarioFrameworkGetEntityByName "{65E0BA98C843DDE1}" {
                  m_sEntityName "CourseBlack3"
                 }
-                m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65E0BA98CFE930FF}" {
-                }
-                m_bResetNumberOfActivations 1
                }
               }
              }
@@ -11921,11 +11848,11 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
              SCR_ScenarioFrameworkPluginTrigger "{65BAE8B220E74406}" {
               m_aEntityEnteredActions {
                RKN_TimeTrialVoiceLine "{65E11C2820DC8725}" {
-                m_sLineName "PISTOL"
+                m_sSoundEvents {
+                 "PISTOL"
+                }
                 m_ActorGetter SCR_ScenarioFrameworkGetEntityByName "{65E11C2822133D98}" {
                  m_sEntityName "CourseBlack3"
-                }
-                m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65E11C28597AFC5E}" {
                 }
                }
               }
@@ -12059,13 +11986,13 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
               m_aEntityEnteredActions {
                RKN_TimeTrialVoiceLine "{65E0BA98D1FE166C}" {
                 m_iMaxNumberOfActivations 1
-                m_sLineName "SNIPER"
+                m_bResetNumberOfActivations 1
+                m_sSoundEvents {
+                 "SNIPER"
+                }
                 m_ActorGetter SCR_ScenarioFrameworkGetEntityByName "{65E0BA98C843DDE1}" {
                  m_sEntityName "CourseBlack3"
                 }
-                m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65E0BA98CFE930FF}" {
-                }
-                m_bResetNumberOfActivations 1
                }
               }
              }
@@ -12141,13 +12068,13 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
               m_aEntityEnteredActions {
                RKN_TimeTrialVoiceLine "{65E0F61A4F6C1B64}" {
                 m_iMaxNumberOfActivations 1
-                m_sLineName "RIFLE"
+                m_bResetNumberOfActivations 1
+                m_sSoundEvents {
+                 "RIFLE"
+                }
                 m_ActorGetter SCR_ScenarioFrameworkGetEntityByName "{65E0F6156D18B41A}" {
                  m_sEntityName "CourseBlack3"
                 }
-                m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65E0F61A4AD5E4A2}" {
-                }
-                m_bResetNumberOfActivations 1
                }
               }
              }
@@ -12288,7 +12215,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
          RKN_TimeTrialSectionLayer "{65BA6C59BAF2330C}" {
           m_aOnFinishActions {
            RKN_TimeTrialVoiceLine "{65D2F04835CDD115}" {
-            m_sLineName "FINISHLINE"
+            m_sSoundEvents {
+             "FINISHLINE"
+            }
            }
           }
          }
@@ -12309,13 +12238,13 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
               m_aEntityEnteredActions {
                RKN_TimeTrialVoiceLine "{65E0F61A4F6C1B64}" {
                 m_iMaxNumberOfActivations 1
-                m_sLineName "PISTOL"
+                m_bResetNumberOfActivations 1
+                m_sSoundEvents {
+                 "PISTOL"
+                }
                 m_ActorGetter SCR_ScenarioFrameworkGetEntityByName "{65E0F615769F0DC8}" {
                  m_sEntityName "CourseBlack3"
                 }
-                m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65E0F61A4AD5E4A2}" {
-                }
-                m_bResetNumberOfActivations 1
                }
               }
              }
@@ -12553,8 +12482,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
       m_sCourseId "lime1"
       m_aOnScheduleActions {
        RKN_TimeTrialVoiceLine "{65D6F2F86A414579}" {
-        m_sLineName "START"
-        m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65D13D070B6FA4A6}" {
+        m_sSoundEvents +{
         }
        }
        SCR_ScenarioFrameworkActionRestoreLayerToDefault "{65E055DC1A7D1BA7}" {
@@ -13013,8 +12941,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             m_fBonusAwardSeconds 1
             m_aOnHitActions {
              RKN_TimeTrialVoiceLine "{65E055DDA8F36325}" {
-              m_sLineName "BONUS"
-              m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65E055DDA5A441F2}" {
+              m_sSoundEvents {
+               "BONUS"
               }
              }
             }
@@ -13543,8 +13471,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
            m_sObjectToSpawn "{DA58C3DF4455555E}Prefabs/Systems/ScenarioFramework/Triggers/ScenarioFrameworkTrigger.et"
            m_aOnFinishActions {
             RKN_TimeTrialVoiceLine "{65E911FD3C51B184}" {
-             m_sLineName "AMBUSH"
-             m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65E911FD3A43708D}" {
+             m_sSoundEvents {
+              "AMBUSH"
              }
             }
            }
@@ -13882,8 +13810,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             m_fBonusAwardSeconds 1
             m_aOnHitActions {
              RKN_TimeTrialVoiceLine "{65E911FEFC2E5FD1}" {
-              m_sLineName "BONUS"
-              m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65E911FEFB0DC218}" {
+              m_sSoundEvents {
+               "BONUS"
               }
              }
             }
@@ -14079,8 +14007,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
            m_fBonusAwardSeconds 1
            m_aOnHitActions {
             RKN_TimeTrialVoiceLine "{65E911FEFC2E5FD1}" {
-             m_sLineName "BONUS"
-             m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65E911FEFB0DC218}" {
+             m_sSoundEvents {
+              "BONUS"
              }
             }
            }
@@ -14566,8 +14494,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             m_fBonusAwardSeconds 3
             m_aOnHitActions {
              RKN_TimeTrialVoiceLine "{65EA555DFFC4FF4C}" {
-              m_sLineName "BONUS"
-              m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65EA555DF4EE8BD0}" {
+              m_sSoundEvents {
+               "BONUS"
               }
              }
             }
@@ -14589,8 +14517,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             m_fBonusAwardSeconds 5
             m_aOnHitActions {
              RKN_TimeTrialVoiceLine "{65EA555DFFC4FF4C}" {
-              m_sLineName "BONUS"
-              m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65EA555DF4EE8BD0}" {
+              m_sSoundEvents {
+               "BONUS"
               }
              }
             }
@@ -14614,8 +14542,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             m_fBonusAwardSeconds 5
             m_aOnHitActions {
              RKN_TimeTrialVoiceLine "{65EA555DFFC4FF4C}" {
-              m_sLineName "BONUS"
-              m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65EA555DF4EE8BD0}" {
+              m_sSoundEvents {
+               "BONUS"
               }
              }
             }
@@ -14639,8 +14567,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             m_fBonusAwardSeconds 5
             m_aOnHitActions {
              RKN_TimeTrialVoiceLine "{65EA555DFFC4FF4C}" {
-              m_sLineName "BONUS"
-              m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65EA555DF4EE8BD0}" {
+              m_sSoundEvents {
+               "BONUS"
               }
              }
             }
@@ -14664,8 +14592,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
             m_fBonusAwardSeconds 8
             m_aOnHitActions {
              RKN_TimeTrialVoiceLine "{65EA555DFFC4FF4C}" {
-              m_sLineName "BONUS"
-              m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65EA555DF4EE8BD0}" {
+              m_sSoundEvents {
+               "BONUS"
               }
              }
             }

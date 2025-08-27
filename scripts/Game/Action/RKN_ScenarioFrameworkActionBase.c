@@ -1,3 +1,4 @@
+[BaseContainerProps(), SCR_ContainerActionTitle()]
 modded class SCR_ScenarioFrameworkActionBase
 {
 	override bool ValidateInputEntity(IEntity object, SCR_ScenarioFrameworkGet getter, out IEntity entity)

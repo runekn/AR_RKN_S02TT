@@ -48,7 +48,7 @@ AudioClass {
  sounds {
   SoundClass : "{64A825EC9DC1123C}Sounds/_SharedData/Configs/Sound/Tutorial/Sound_Tutorial_VO_Radio.conf" {
    id 99337
-   name "TIMETRIAL_RO_HIT"
+   name "HIT"
    version 5
    tl -199.077 252.913
    parent "{64A825EC9DC1123C}Sounds/_SharedData/Configs/Sound/Tutorial/Sound_Tutorial_VO_Radio.conf"
@@ -68,7 +68,7 @@ AudioClass {
   }
   SoundClass : "{64A825EC9DC1123C}Sounds/_SharedData/Configs/Sound/Tutorial/Sound_Tutorial_VO_Radio.conf" {
    id 102409
-   name "TIMETRIAL_RO_CLEAR"
+   name "CLEAR"
    version 5
    tl -196.908 444.673
    parent "{64A825EC9DC1123C}Sounds/_SharedData/Configs/Sound/Tutorial/Sound_Tutorial_VO_Radio.conf"
@@ -88,7 +88,7 @@ AudioClass {
   }
   SoundClass : "{64A825EC9DC1123C}Sounds/_SharedData/Configs/Sound/Tutorial/Sound_Tutorial_VO_Radio.conf" {
    id 108553
-   name "TIMETRIAL_RO_FINISHLINE"
+   name "FINISHLINE"
    version 5
    tl -198.039 643.903
    parent "{64A825EC9DC1123C}Sounds/_SharedData/Configs/Sound/Tutorial/Sound_Tutorial_VO_Radio.conf"
@@ -108,7 +108,7 @@ AudioClass {
   }
   SoundClass : "{64A825EC9DC1123C}Sounds/_SharedData/Configs/Sound/Tutorial/Sound_Tutorial_VO_Radio.conf" {
    id 111625
-   name "TIMETRIAL_RO_CAR"
+   name "CAR"
    version 5
    tl -197.956 826.693
    parent "{64A825EC9DC1123C}Sounds/_SharedData/Configs/Sound/Tutorial/Sound_Tutorial_VO_Radio.conf"
@@ -128,7 +128,7 @@ AudioClass {
   }
   SoundClass : "{64A825EC9DC1123C}Sounds/_SharedData/Configs/Sound/Tutorial/Sound_Tutorial_VO_Radio.conf" {
    id 117769
-   name "TIMETRIAL_RO_ROOF"
+   name "ROOF"
    version 5
    tl -197.256 1016.543
    parent "{64A825EC9DC1123C}Sounds/_SharedData/Configs/Sound/Tutorial/Sound_Tutorial_VO_Radio.conf"
@@ -148,7 +148,7 @@ AudioClass {
   }
   SoundClass : "{64A825EC9DC1123C}Sounds/_SharedData/Configs/Sound/Tutorial/Sound_Tutorial_VO_Radio.conf" {
    id 118793
-   name "TIMETRIAL_RO_EXIT"
+   name "EXIT"
    version 5
    tl -196.256 1198.543
    parent "{64A825EC9DC1123C}Sounds/_SharedData/Configs/Sound/Tutorial/Sound_Tutorial_VO_Radio.conf"
@@ -168,7 +168,7 @@ AudioClass {
   }
   SoundClass : "{64A825EC9DC1123C}Sounds/_SharedData/Configs/Sound/Tutorial/Sound_Tutorial_VO_Radio.conf" {
    id 122889
-   name "TIMETRIAL_RO_EXIT_BACKDOOR"
+   name "EXIT_BACKDOOR"
    version 5
    tl -195.656 1379.843
    parent "{64A825EC9DC1123C}Sounds/_SharedData/Configs/Sound/Tutorial/Sound_Tutorial_VO_Radio.conf"
@@ -188,7 +188,7 @@ AudioClass {
   }
   SoundClass : "{64A825EC9DC1123C}Sounds/_SharedData/Configs/Sound/Tutorial/Sound_Tutorial_VO_Radio.conf" {
    id 130057
-   name "TIMETRIAL_RO_EXIT_FRONTDOOR"
+   name "EXIT_FRONTDOOR"
    version 5
    tl -195.196 1569.19
    parent "{64A825EC9DC1123C}Sounds/_SharedData/Configs/Sound/Tutorial/Sound_Tutorial_VO_Radio.conf"
@@ -208,7 +208,7 @@ AudioClass {
   }
   SoundClass : "{64A825EC9DC1123C}Sounds/_SharedData/Configs/Sound/Tutorial/Sound_Tutorial_VO_Radio.conf" {
    id 131081
-   name "TIMETRIAL_RO_LADDER"
+   name "LADDER"
    version 5
    tl -195.656 1752.443
    parent "{64A825EC9DC1123C}Sounds/_SharedData/Configs/Sound/Tutorial/Sound_Tutorial_VO_Radio.conf"
@@ -228,7 +228,7 @@ AudioClass {
   }
   SoundClass : "{64A825EC9DC1123C}Sounds/_SharedData/Configs/Sound/Tutorial/Sound_Tutorial_VO_Radio.conf" {
    id 143369
-   name "TIMETRIAL_RO_FAIL_START"
+   name "FAIL_START"
    version 5
    tl -194.256 1935.543
    parent "{64A825EC9DC1123C}Sounds/_SharedData/Configs/Sound/Tutorial/Sound_Tutorial_VO_Radio.conf"
@@ -248,7 +248,7 @@ AudioClass {
   }
   SoundClass : "{64A825EC9DC1123C}Sounds/_SharedData/Configs/Sound/Tutorial/Sound_Tutorial_VO_Radio.conf" {
    id 149513
-   name "TIMETRIAL_RO_FAIL"
+   name "FAIL"
    version 5
    tl -193.356 2119.293
    parent "{64A825EC9DC1123C}Sounds/_SharedData/Configs/Sound/Tutorial/Sound_Tutorial_VO_Radio.conf"
@@ -268,7 +268,7 @@ AudioClass {
   }
   SoundClass : "{64A825EC9DC1123C}Sounds/_SharedData/Configs/Sound/Tutorial/Sound_Tutorial_VO_Radio.conf" {
    id 153609
-   name "TIMETRIAL_RO_FAIL_POS"
+   name "FAIL_POS"
    version 5
    tl -196.518 2315.08
    parent "{64A825EC9DC1123C}Sounds/_SharedData/Configs/Sound/Tutorial/Sound_Tutorial_VO_Radio.conf"
@@ -288,7 +288,7 @@ AudioClass {
   }
   SoundClass : "{64A825EC9DC1123C}Sounds/_SharedData/Configs/Sound/Tutorial/Sound_Tutorial_VO_Radio.conf" {
    id 156681
-   name "TIMETRIAL_RO_LONGRANGE"
+   name "LONGRANGE"
    version 5
    tl -197.956 2498.793
    parent "{64A825EC9DC1123C}Sounds/_SharedData/Configs/Sound/Tutorial/Sound_Tutorial_VO_Radio.conf"
@@ -308,7 +308,7 @@ AudioClass {
   }
   SoundClass : "{64A825EC9DC1123C}Sounds/_SharedData/Configs/Sound/Tutorial/Sound_Tutorial_VO_Radio.conf" {
    id 162825
-   name "TIMETRIAL_RO_AMBUSH"
+   name "AMBUSH"
    version 5
    tl -197.105 2685.63
    parent "{64A825EC9DC1123C}Sounds/_SharedData/Configs/Sound/Tutorial/Sound_Tutorial_VO_Radio.conf"
@@ -328,7 +328,7 @@ AudioClass {
   }
   SoundClass : "{64A825EC9DC1123C}Sounds/_SharedData/Configs/Sound/Tutorial/Sound_Tutorial_VO_Radio.conf" {
    id 164873
-   name "TIMETRIAL_RO_FIRINGRANGE"
+   name "FIRINGRANGE"
    version 5
    tl -196.105 2865.63
    parent "{64A825EC9DC1123C}Sounds/_SharedData/Configs/Sound/Tutorial/Sound_Tutorial_VO_Radio.conf"
@@ -348,7 +348,7 @@ AudioClass {
   }
   SoundClass : "{64A825EC9DC1123C}Sounds/_SharedData/Configs/Sound/Tutorial/Sound_Tutorial_VO_Radio.conf" {
    id 171017
-   name "TIMETRIAL_RO_TIMEOUT"
+   name "TIMEOUT"
    version 5
    tl -195.305 3051.58
    parent "{64A825EC9DC1123C}Sounds/_SharedData/Configs/Sound/Tutorial/Sound_Tutorial_VO_Radio.conf"
@@ -1250,8 +1250,8 @@ AudioClass {
    tl -1254.166 810.274
    ctl 0 -21
    curve Logarithm
-   innerRange 3.5
-   outerRange 10
+   innerRange 5
+   outerRange 30
   }
  }
  frequency {

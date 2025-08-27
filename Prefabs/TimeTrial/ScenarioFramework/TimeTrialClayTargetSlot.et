@@ -9,8 +9,8 @@ GenericEntity : "{C62AFC64D4F5495E}Prefabs/TimeTrial/ScenarioFramework/TimeTrial
    m_fBonusAwardSeconds 2
    m_aOnHitActions {
     RKN_TimeTrialVoiceLine "{65D25B7E07D246B5}" {
-     m_sLineName "BONUS"
-     m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65D25B7E3F7E09C5}" {
+     m_sSoundEvents {
+      "BONUS"
      }
     }
    }

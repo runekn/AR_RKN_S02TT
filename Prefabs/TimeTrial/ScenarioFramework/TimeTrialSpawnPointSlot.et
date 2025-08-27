@@ -6,13 +6,16 @@ GenericEntity : "{AA01691FDC4E9167}Prefabs/Systems/ScenarioFramework/Components/
     SCR_ScenarioFrameworkPluginSpawnPoint "{65AB38F319447228}" {
      m_fSpawnRadius 2
      m_sFaction "CIV"
+     m_Info SCR_UIInfo "{65D8A215920CBF35}" {
+      Name "Levie"
+     }
      m_aActionsOnSpawnPointUsed {
       SCR_ScenarioFrameworkActionWaitAndExecute "{65D4578C0338490E}" {
        m_iDelayInSeconds 1
        m_aActions {
-        RKN_TimeTrialVoiceSequence "{65D4578C358DB38D}" {
-         m_sSequenceName "SPAWN"
-         m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{66305D5DF5C07254}" {
+        RKN_TimeTrialVoiceLine "{663663FCAFD43E14}" {
+         m_sSoundEvents {
+          "SPAWN_1" "SPAWN_2" "SPAWN_3"
          }
         }
        }

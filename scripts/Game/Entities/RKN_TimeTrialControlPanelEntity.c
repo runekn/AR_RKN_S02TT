@@ -51,14 +51,14 @@ class RKN_TimeTrialControlPanelEntity : GenericEntity
 		AnimateButton();
 	}
 	
-	[RplRpc(RplChannel.Reliable, RplRcver.Owner)]
+	[RplRpc(RplChannel.Reliable, RplRcver.Server)]
 	void RpcAsk_CancelCourse()
 	{
 		PlaySound(SCR_SoundEvent.SOUND_RANGECP_STARTBUTTON);
 		m_OnCancel.Invoke();
 	}
 	
-	[RplRpc(RplChannel.Reliable, RplRcver.Owner)]
+	[RplRpc(RplChannel.Reliable, RplRcver.Server)]
 	void RpcAsk_StartCountdown(int playerId, bool competitive)
 	{
 		PlaySound(SCR_SoundEvent.SOUND_RANGECP_STARTBUTTON);

@@ -1,13 +1,20 @@
 SCR_ChimeraCharacter : "{3AE3C1A509298D9D}Prefabs/Characters/Factions/CIV/GenericCivilians/Character_CIV_DenimJacket_2.et" {
  ID "520EC961A090B1EE"
  components {
+  SCR_CommunicationSoundComponent "{54FD05D0C92D071F}" {
+   Filenames + {
+    "{8DEFEA60355EB3C0}Sounds/TimeTrial/RangeOfficer.acp" "{264EB3622C550C32}Sounds/TimeTrial/RangeOfficer2.acp"
+   }
+  }
+  RKN_TimeTrialRadioComponent "{6636C0388DA37156}" {
+  }
   RKN_TimeTrialScoreTablePlayerComponent "{65CE5B99FA658EC4}" {
   }
   SCR_InventoryStorageManagerComponent "{520EA1D2DB118DE5}" {
    InitialInventoryItems {
     ItemsInitConfigurationItem "{60DCBCECAC6C6E65}" {
      PrefabsToSpawn + {
-      "{62AA1DC9919E6E61}Prefabs/TimeTrial/TimeTrial_Radio_ANPRC68.et"
+      "{73950FBA2D7DB5C5}Prefabs/Items/Equipment/Radios/Radio_ANPRC68.et"
      }
     }
    }

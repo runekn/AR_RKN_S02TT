@@ -23,8 +23,8 @@ GenericEntity : "{C62AFC64D4F5495E}Prefabs/TimeTrial/ScenarioFramework/TimeTrial
    }
    m_aTimeoutActions {
     RKN_TimeTrialVoiceLine "{65E24A78665F74D4}" {
-     m_sLineName "TIMEOUT"
-     m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{65E24A7F8FA1FB55}" {
+     m_sSoundEvents {
+      "TIMEOUT"
      }
     }
    }

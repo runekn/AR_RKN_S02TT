@@ -6,8 +6,8 @@ GenericEntity {
    }
    m_aOnFinishActions {
     RKN_TimeTrialVoiceLine "{65D2F04835CDD115}" {
-     m_sLineName "SECTION"
-     m_PlayerGetter SCR_ScenarioFrameworkGetArrayOfPlayers "{66305D428F433788}" {
+     m_sSoundEvents {
+      "SECTION"
      }
     }
    }

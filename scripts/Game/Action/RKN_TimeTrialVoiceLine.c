@@ -1,19 +1,44 @@
 // Something that can find the player's radio
 
 [BaseContainerProps(), SCR_ContainerActionTitle()]
-class RKN_TimeTrialVoiceLine : SCR_ScenarioFrameworkActionVoiceOverPlayLine
-{
-	[Attribute("{62AA1DC9919E6E61}Prefabs/TimeTrial_Radio_ANPRC68.et", params: "et")]
-	ResourceName m_sRadioPrefab;
-	
+class RKN_TimeTrialVoiceLine : SCR_ScenarioFrameworkActionBase
+{	
 	[Attribute("false")]
 	bool m_bResetNumberOfActivations;
 	
+	[Attribute(desc: "Name of the sound as defined .acp file")]
+	ref array<string> m_sSoundEvents;
+	
+	[Attribute(desc: "Name of the sound as defined .acp file")]
+	string m_sLineName;
+	
+	[Attribute(desc: "Character playing the voiceover. Must have RKN_TimeTrialRadioComponent. If empty, action will look for parent course and choose active competitor.")]
+	ref SCR_ScenarioFrameworkGet m_ActorGetter;
+	
+	[Attribute()]
+	ref array<ref SCR_ScenarioFrameworkActionBase> m_aActions
+	
 	RKN_TimeTrialCourseLayer m_Course;
+	RKN_TimeTrialRadioComponent m_Radio;
+
+	//------------------------------------------------------------------------------------------------
+	override void OnActivate(IEntity object)
+	{
+		if (!CanActivate())
+			return;
+		
+		if (!ValidateInputEntity(object, m_ActorGetter, m_Entity))
+			return;
+		
+		m_Radio = RKN_TimeTrialRadioComponent.Cast(m_Entity.FindComponent(RKN_TimeTrialRadioComponent));
+		if (!m_Radio)
+			return;
+		
+		m_Radio.QueueSoundEvents(m_sSoundEvents);
+	}
 	
 	override bool ValidateInputEntity(IEntity object, SCR_ScenarioFrameworkGet getter, out IEntity entity)
-	{
-		SCR_ChimeraCharacter player;
+	{	
 		if (getter)
 		{
 			SCR_ScenarioFrameworkParamBase paramBase = getter.Get();
@@ -27,11 +52,15 @@ class RKN_TimeTrialVoiceLine : SCR_ScenarioFrameworkActionVoiceOverPlayLine
 			array<IEntity> players = {};
 			trigger.GetPlayersByFactionInsideTrigger(players);
 			if (!players.IsEmpty())
-				player = SCR_ChimeraCharacter.Cast(players[0]);
+			{
+				entity = SCR_ChimeraCharacter.Cast(players[0]);
+				return true;
+			}
 		}
 		if (SCR_ChimeraCharacter.Cast(object))
 		{
-			player = SCR_ChimeraCharacter.Cast(object);
+			entity = SCR_ChimeraCharacter.Cast(object);
+			return true;
 		}
 		else
 		{
@@ -73,21 +102,7 @@ class RKN_TimeTrialVoiceLine : SCR_ScenarioFrameworkActionVoiceOverPlayLine
 				return false;
 			}
 			
-			player = SCR_ChimeraCharacter.Cast(GetGame().GetPlayerManager().GetPlayerControlledEntity(data.m_CurrentScoreInfo.m_iID));
-		}
-		
-		if (!player)
-		{
-			Print("No player found", LogLevel.ERROR);
-			return false;
-		}
-		
-		SCR_InventoryStorageManagerComponent inv = SCR_InventoryStorageManagerComponent.Cast(player.FindComponent(SCR_InventoryStorageManagerComponent));
-		entity = inv.FindItem(new SCR_ResourceNamePredicate(m_sRadioPrefab));
-		if (!entity)
-		{
-			Print("No radio found on player", LogLevel.ERROR);
-			return false;
+			entity = SCR_ChimeraCharacter.Cast(GetGame().GetPlayerManager().GetPlayerControlledEntity(data.m_CurrentScoreInfo.m_iID));
 		}
 		
 		return true;
