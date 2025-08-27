@@ -36,6 +36,12 @@ class RKN_TimeTrialTargetEntity : BaseBuilding
 	
 	ref ScriptInvoker Event_TargetHit = new ScriptInvoker();
 	
+	vector m_vTargetMovePosition;
+	vector m_vDesiredMovePosition;
+	vector m_vOriginalPosition;
+	bool m_bMoveCycleActive;
+	float m_fMoveSpeed;
+	
 	//------------------------------------------------------------------------------------------------
 	void RKN_TimeTrialStandardTarget(IEntitySource src, IEntity parent)
 	{
@@ -93,9 +99,6 @@ class RKN_TimeTrialTargetEntity : BaseBuilding
 
 		SetState(ETargetState.TARGET_DOWN);
 		
-		// activate entity EOnFrame
-		//SetEventMask(EntityEvent.FRAME);
-		
 		// get lobby
 		// get ID of the player who hits the target	
 		int playerID = instigator.GetInstigatorPlayerID();
@@ -152,7 +155,6 @@ class RKN_TimeTrialTargetEntity : BaseBuilding
 	{
 		Rpc(SetStateMP, state);
 		SetStateMP(state);
-		//Replication.BumpMe();
 	}
 	 
 	[RplRpc(RplChannel.Reliable, RplRcver.Broadcast)]
@@ -184,22 +186,76 @@ class RKN_TimeTrialTargetEntity : BaseBuilding
 			if (soundManagerEntity)
 			{
 				soundManagerEntity.CreateAndPlayAudioSource(this, SCR_SoundEvent.SOUND_TARGET_UP); 
-			}			
-			//Replication.BumpMe();
+			}
 		}
 	}
 	
-	void UpdatePosition(vector pos)
+	void StartMovement(WorldTimestamp timestamp, vector targetPosition, bool moveCycleActive, vector originalPosition, float speed)
 	{
-		Rpc(RpcDo_UpdatePosition, pos);
-		RpcDo_UpdatePosition(pos);
+		Rpc(RpcDo_StartMovement, timestamp, targetPosition, moveCycleActive, originalPosition, speed);
+		RpcDo_StartMovement(timestamp, targetPosition, moveCycleActive, originalPosition, speed);
 	}
 	
-	[RplRpc(RplChannel.Unreliable, RplRcver.Broadcast)]
-	void RpcDo_UpdatePosition(vector pos)
+	[RplRpc(RplChannel.Reliable, RplRcver.Broadcast)]
+	void RpcDo_StartMovement(WorldTimestamp timestamp, vector targetPosition, bool moveCycleActive, vector originalPosition, float speed)
 	{
-		SetOrigin(pos);
-		Update();
+		m_vDesiredMovePosition = targetPosition;
+		m_vTargetMovePosition = targetPosition;
+		m_bMoveCycleActive = moveCycleActive;
+		m_vOriginalPosition = originalPosition;
+		m_fMoveSpeed = speed;
+		
+		if (Replication.IsClient())
+		{
+			// Pre-move target by amount that server target has so far
+			ChimeraWorld world = GetGame().GetWorld();
+			float timeSlice = world.GetServerTimestamp().DiffSeconds(timestamp);
+			if (timeSlice > 0)
+				UpdateMovement(timeSlice);
+		}
+		
+		SetEventMask(EntityEvent.FRAME);
+	}
+	
+	override void EOnFrame(IEntity owner, float timeSlice)
+	{
+		UpdateMovement(timeSlice);
+	}
+	
+	protected void UpdateMovement(float timeSlice)
+	{
+		if (m_vDesiredMovePosition != vector.Zero)
+		{
+			vector target = GetOrigin();
+			vector dir = vector.Direction(target, m_vDesiredMovePosition);
+			float dist = dir.Length();
+			dir = dir.Normalized();
+			float component = m_fMoveSpeed * timeSlice;
+			vector moveVector = dir * component;
+			vector newPos;
+			if (moveVector.Length() >= dist)
+			{
+				newPos = m_vDesiredMovePosition;
+				if (m_bMoveCycleActive)
+				{
+					if (m_vDesiredMovePosition == m_vOriginalPosition)
+						m_vDesiredMovePosition = m_vTargetMovePosition;
+					else
+						m_vDesiredMovePosition = m_vOriginalPosition;
+				}
+				else
+				{
+					m_vDesiredMovePosition = vector.Zero;
+					ClearEventMask(EntityEvent.FRAME);
+				}
+			}
+			else
+			{
+				newPos = target + moveVector;
+			}
+			SetOrigin(newPos);
+			Update();
+		}
 	}
 	
 	//------------------------------------------------------------------------------------------------

@@ -55,8 +55,6 @@ class RKN_TimeTrialTargetSlot : RKN_TimeTrialObjectiveSlot
 	
 	ref map<string, int> m_mHitAreasMap = new map<string, int>();
 	RKN_TimeTrialTargetEntity m_Target;
-	vector m_vDesiredPosition;
-	bool m_bMoveCycleActive;
 	ref array<IEntity> m_aTrackEntities = {};
 	
 	override void FinishInit()
@@ -84,9 +82,7 @@ class RKN_TimeTrialTargetSlot : RKN_TimeTrialObjectiveSlot
 		GetGame().GetCallqueue().Remove(Timeout);
 		if (m_MovePoint)
 		{
-			m_vDesiredPosition = GetOwner().GetOrigin();
-			SetEventMask(GetOwner(), EntityEvent.FRAME);
-			m_bMoveCycleActive = false;
+			m_Target.StartMovement(GetGame().GetWorld().GetTimestamp(), GetOwner().GetOrigin(), false, GetOwner().GetOrigin(), m_fMoveSpeedMetersPerSecond);
 		}
 	}
 	
@@ -99,9 +95,7 @@ class RKN_TimeTrialTargetSlot : RKN_TimeTrialObjectiveSlot
 		}
 		if (m_MovePoint)
 		{
-			SetEventMask(GetOwner(), EntityEvent.FRAME);
-			m_vDesiredPosition = GetMovePosition();
-			m_bMoveCycleActive = m_bMoveCycle;
+			m_Target.StartMovement(GetGame().GetWorld().GetTimestamp(), GetMovePosition(), m_bMoveCycle, GetOwner().GetOrigin(), m_fMoveSpeedMetersPerSecond);
 		}
 		m_Target.ActivateTarget(m_Section.m_Course.GetPlayerId());
 	}
@@ -135,42 +129,6 @@ class RKN_TimeTrialTargetSlot : RKN_TimeTrialObjectiveSlot
 		foreach (SCR_ScenarioFrameworkActionBase action : m_aOnHitActions)
 			action.Init(GetOwner());
 		FinishObjective();
-	}
-	
-	override void EOnFrame(IEntity owner, float timeSlice)
-	{
-		if (m_vDesiredPosition != vector.Zero)
-		{
-			vector target = m_Target.GetOrigin();
-			vector dir = vector.Direction(target, m_vDesiredPosition);
-			float dist = dir.Length();
-			dir = dir.Normalized();
-			float component = m_fMoveSpeedMetersPerSecond * timeSlice;
-			vector moveVector = dir * component;
-			vector newPos;
-			if (moveVector.Length() >= dist)
-			{
-				newPos = m_vDesiredPosition;
-				if (m_bMoveCycleActive)
-				{
-					vector origin = GetOwner().GetOrigin();
-					if (m_vDesiredPosition == origin)
-						m_vDesiredPosition = GetMovePosition();
-					else
-						m_vDesiredPosition = origin;
-				}
-				else
-				{
-					m_vDesiredPosition = vector.Zero;
-					ClearEventMask(GetOwner(), EntityEvent.FRAME);
-				}
-			}
-			else
-			{
-				newPos = target + moveVector;
-			}
-			m_Target.UpdatePosition(newPos);
-		}
 	}
 	
 	override IEntity SpawnAsset()
