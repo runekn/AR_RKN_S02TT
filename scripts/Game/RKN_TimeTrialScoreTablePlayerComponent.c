@@ -53,7 +53,7 @@ class RKN_TimeTrialScoreTablePlayerComponent : ScriptComponent
 	
 	// TODO: move to more appropriate place
 	[RplRpc(RplChannel.Reliable, RplRcver.Broadcast)]
-	void RpcDo_EquipWeapon(RplId id)
+	protected void RpcDo_EquipWeapon(RplId id)
 	{
 		CharacterControllerComponent controller = CharacterControllerComponent.Cast(GetOwner().FindComponent(CharacterControllerComponent));
 		IEntity e = RplComponent.Cast(Replication.FindItem(id)).GetEntity();
@@ -71,7 +71,7 @@ class RKN_TimeTrialScoreTablePlayerComponent : ScriptComponent
 	}
 	
 	[RplRpc(RplChannel.Reliable, RplRcver.Owner)]
-	void RpcDo_ShowScoreTable(int courseId, bool overrideTable)
+	protected void RpcDo_ShowScoreTable(int courseId, bool overrideTable)
 	{
 		if (m_bOverride)
 			return;
@@ -87,7 +87,7 @@ class RKN_TimeTrialScoreTablePlayerComponent : ScriptComponent
 	}
 	
 	[RplRpc(RplChannel.Reliable, RplRcver.Owner)]
-	void RpcDo_RemoveScoreTable(int courseId, bool overrideTable)
+	protected void RpcDo_RemoveScoreTable(int courseId, bool overrideTable)
 	{
 		if (m_bOverride && !overrideTable)
 			return;

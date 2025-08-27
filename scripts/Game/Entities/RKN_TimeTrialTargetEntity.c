@@ -190,14 +190,14 @@ class RKN_TimeTrialTargetEntity : BaseBuilding
 		}
 	}
 	
-	void StartMovement(WorldTimestamp timestamp, vector targetPosition, bool moveCycleActive, vector originalPosition, float speed)
+	void StartMovement(vector targetPosition, bool moveCycleActive, vector originalPosition, float speed)
 	{
-		Rpc(RpcDo_StartMovement, timestamp, targetPosition, moveCycleActive, originalPosition, speed);
-		RpcDo_StartMovement(timestamp, targetPosition, moveCycleActive, originalPosition, speed);
+		Rpc(RpcDo_StartMovement, GetWorld().GetTimestamp(), targetPosition, moveCycleActive, originalPosition, speed);
+		RpcDo_StartMovement(null, targetPosition, moveCycleActive, originalPosition, speed);
 	}
 	
 	[RplRpc(RplChannel.Reliable, RplRcver.Broadcast)]
-	void RpcDo_StartMovement(WorldTimestamp timestamp, vector targetPosition, bool moveCycleActive, vector originalPosition, float speed)
+	protected void RpcDo_StartMovement(WorldTimestamp timestamp, vector targetPosition, bool moveCycleActive, vector originalPosition, float speed)
 	{
 		m_vDesiredMovePosition = targetPosition;
 		m_vTargetMovePosition = targetPosition;
@@ -205,7 +205,7 @@ class RKN_TimeTrialTargetEntity : BaseBuilding
 		m_vOriginalPosition = originalPosition;
 		m_fMoveSpeed = speed;
 		
-		if (Replication.IsClient())
+		if (timestamp && Replication.IsClient())
 		{
 			// Pre-move target by amount that server target has so far
 			ChimeraWorld world = GetGame().GetWorld();

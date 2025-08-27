@@ -17,7 +17,7 @@ class RKN_TimeTrialRadioComponent : ScriptGameComponent
 	}
 	
 	[RplRpc(RplChannel.Reliable, RplRcver.Broadcast)]
-	void RpcDo_QueueSoundEvents(array<string> soundEvents)
+	protected void RpcDo_QueueSoundEvents(array<string> soundEvents)
 	{
 		if (!m_PlayingSoundComponent)
 		{

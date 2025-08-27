@@ -82,7 +82,7 @@ class RKN_TimeTrialTargetSlot : RKN_TimeTrialObjectiveSlot
 		GetGame().GetCallqueue().Remove(Timeout);
 		if (m_MovePoint)
 		{
-			m_Target.StartMovement(GetGame().GetWorld().GetTimestamp(), GetOwner().GetOrigin(), false, GetOwner().GetOrigin(), m_fMoveSpeedMetersPerSecond);
+			m_Target.StartMovement(GetOwner().GetOrigin(), false, GetOwner().GetOrigin(), m_fMoveSpeedMetersPerSecond);
 		}
 	}
 	
@@ -95,7 +95,7 @@ class RKN_TimeTrialTargetSlot : RKN_TimeTrialObjectiveSlot
 		}
 		if (m_MovePoint)
 		{
-			m_Target.StartMovement(GetGame().GetWorld().GetTimestamp(), GetMovePosition(), m_bMoveCycle, GetOwner().GetOrigin(), m_fMoveSpeedMetersPerSecond);
+			m_Target.StartMovement(GetMovePosition(), m_bMoveCycle, GetOwner().GetOrigin(), m_fMoveSpeedMetersPerSecond);
 		}
 		m_Target.ActivateTarget(m_Section.m_Course.GetPlayerId());
 	}
