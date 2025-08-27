@@ -345,5 +345,24 @@ StringTable {
    Author "Rune"
    LastChanged "Rune"
   }
+  CustomStringTableItem "{6636E78483991FB9}" {
+   Id "AR-RKN_S02TT-Journal_Intro_Text"
+   Target_en_us "<h2>RKN Time Trials</h2>"\
+   "Complete shooting and driving courses, and compete for the best scores."\
+   ""\
+   "Spawn at \"Training Camp\" and play the intro course if this is your first time playing RKN Time Trials."\
+   ""\
+   "Look at your map to find courses. Walk up to the course control panel and use the actions to get course description or start the course."
+   Modified 1714874663
+   Author "Rune"
+   LastChanged "Rune"
+  }
+  CustomStringTableItem "{6636E78485E2128F}" {
+   Id "AR-RKN_S02TT-Journal_Intro_Title"
+   Target_en_us "Read Me"
+   Modified 1714874708
+   Author "Rune"
+   LastChanged "Rune"
+  }
  }
 }

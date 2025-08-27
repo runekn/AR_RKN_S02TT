@@ -198,6 +198,9 @@ SCR_BaseGameMode GameModeSF1 : "{ECEEDB2D3737204B}Prefabs/Systems/ScenarioFramew
   }
   SCR_RespawnSystemComponent "{56B2B4793051E7C9}" {
    components {
+    SCR_RespawnBriefingComponent "{6636E017C3E54D56}" {
+     m_sJournalConfigPath "{ACF0A05E86FEBA07}Configs/TimeTrial_Intro_Journal.conf"
+    }
     SCR_RespawnTimerComponent "{65DE9B7A35202F04}" {
      m_fRespawnTime 0
     }
