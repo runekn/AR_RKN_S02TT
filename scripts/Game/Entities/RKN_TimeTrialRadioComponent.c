@@ -1,8 +1,8 @@
-class RKN_TimeTrialRadioComponentClass : ScriptComponentClass
+class RKN_TimeTrialRadioComponentClass : ScriptGameComponentClass
 {
 }
 
-class RKN_TimeTrialRadioComponent : ScriptComponent
+class RKN_TimeTrialRadioComponent : ScriptGameComponent
 {	
 	protected AudioHandle m_iAudioHandle = AudioHandle.Invalid;
 	protected SCR_CommunicationSoundComponent m_PlayingSoundComponent;
@@ -13,10 +13,10 @@ class RKN_TimeTrialRadioComponent : ScriptComponent
 		if (!HasRadio())
 			return;
 		Rpc(RpcDo_QueueSoundEvents, soundEvents);
-		//RpcDo_QueueSoundEvents(soundEvents);
+		RpcDo_QueueSoundEvents(soundEvents);
 	}
 	
-	[RplRpc(RplChannel.Reliable, RplRcver.Owner)]
+	[RplRpc(RplChannel.Reliable, RplRcver.Broadcast)]
 	void RpcDo_QueueSoundEvents(array<string> soundEvents)
 	{
 		if (!m_PlayingSoundComponent)
@@ -71,7 +71,6 @@ class RKN_TimeTrialRadioComponent : ScriptComponent
 				string soundEvent = m_aQueue[0];
 				m_aQueue.RemoveOrdered(0);
 				m_iAudioHandle = m_PlayingSoundComponent.SoundEvent(soundEvent);
-				Rpc(RpcAsk_PlaySoundEvent, soundEvent, GetGame().GetPlayerController().GetPlayerId()); // yuck. But unless I can get EOnFrame to work on non-owner clients, then this is the best I got.
 			}
 		}
 		else if (m_PlayingSoundComponent.IsFinishedPlaying(m_iAudioHandle))
@@ -80,30 +79,8 @@ class RKN_TimeTrialRadioComponent : ScriptComponent
 		}
 	}
 	
-	[RplRpc(RplChannel.Reliable, RplRcver.Server)]
-	void RpcAsk_PlaySoundEvent(string soundEvent, int playerId)
+	override bool OnTicksOnRemoteProxy()
 	{
-		Rpc(RpcDo_PlaySoundEvent, soundEvent, playerId);
+		return true;
 	}
-	
-	[RplRpc(RplChannel.Unreliable, RplRcver.Broadcast)]
-	void RpcDo_PlaySoundEvent(string soundEvent, int playerId)
-	{
-		if (GetGame().GetPlayerController().GetPlayerId() == playerId)
-			return;
-		
-		if (!m_PlayingSoundComponent)
-		{
-			m_PlayingSoundComponent = SCR_CommunicationSoundComponent.Cast(GetOwner().FindComponent(SCR_CommunicationSoundComponent));
-			if (!m_PlayingSoundComponent)
-			{
-				Print("Could not find sound component!", LogLevel.ERROR);
-				return;
-			}
-		}
-		m_PlayingSoundComponent.TerminateAll();
-		m_PlayingSoundComponent.SoundEvent(soundEvent);
-	}
-	
-	
 }

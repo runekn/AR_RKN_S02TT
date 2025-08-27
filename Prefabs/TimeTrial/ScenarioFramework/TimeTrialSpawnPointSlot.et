@@ -22,10 +22,6 @@ GenericEntity : "{AA01691FDC4E9167}Prefabs/Systems/ScenarioFramework/Components/
       }
       RKN_PermanentlyEnableFastTravelAction "{65D85ED91D850880}" {
       }
-      SCR_ScenarioFrameworkActionShowHint "{65DA6611281FD13C}" {
-       m_sTitle "Fast Travel"
-       m_sText "Open your map and click the icons to fast travel there. Don't throw away your map!"
-      }
      }
     }
    }

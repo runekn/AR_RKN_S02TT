@@ -352,8 +352,10 @@ StringTable {
    ""\
    "Spawn at \"Training Camp\" and play the intro course if this is your first time playing RKN Time Trials."\
    ""\
-   "Look at your map to find courses. Walk up to the course control panel and use the actions to get course description or start the course."
-   Modified 1714874663
+   "Look at your map to find courses. Walk up to the course control panel and use the actions to get course description or start the course."\
+   ""\
+   "Open your map and click the spawn icons to fast travel there. If you throw away your map, you can respawn with a new one."
+   Modified 1714876569
    Author "Rune"
    LastChanged "Rune"
   }
