@@ -183,6 +183,12 @@ class RKN_TimeTrialCourseLayer : SCR_ScenarioFrameworkLayerBase
 		}
 		
 		// Insert competitive loadout
+		// Have to have a bit. Probably to let server and client sync the deletion of inventory. Otherwise desync of weapon equip happens.
+		GetGame().GetCallqueue().CallLater(EquipCompetitiveEquipment, 200, false, player, data, comp);
+	}
+	
+	void EquipCompetitiveEquipment(IEntity player, RKN_TimeTrialCourseData data, SCR_InventoryStorageManagerComponent comp)
+	{
 		foreach (RKN_TimeTrialLoadoutItem loadoutItem : data.m_Config.m_aCompetitiveLoadout)
 		{
 			InventoryOperationCallback cb = null;		

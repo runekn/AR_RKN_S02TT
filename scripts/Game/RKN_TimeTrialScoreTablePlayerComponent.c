@@ -48,11 +48,10 @@ class RKN_TimeTrialScoreTablePlayerComponent : ScriptComponent
 	void EquipWeapon(RplId id)
 	{
 		Rpc(RpcDo_EquipWeapon, id);
-		RpcDo_EquipWeapon(id);
 	}
 	
 	// TODO: move to more appropriate place
-	[RplRpc(RplChannel.Reliable, RplRcver.Broadcast)]
+	[RplRpc(RplChannel.Reliable, RplRcver.Owner)]
 	protected void RpcDo_EquipWeapon(RplId id)
 	{
 		CharacterControllerComponent controller = CharacterControllerComponent.Cast(GetOwner().FindComponent(CharacterControllerComponent));
